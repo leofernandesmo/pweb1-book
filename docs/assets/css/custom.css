@@ -8,3 +8,16 @@
   margin-top: 8px;
   font-weight: bold;
 }
+
+.code-runner textarea {
+  width: 100%;
+  height: 150px;
+  font-family: monospace;
+}
+
+.code-runner iframe {
+  width: 100%;
+  height: 200px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
