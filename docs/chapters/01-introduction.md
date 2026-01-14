@@ -44,6 +44,15 @@ This book uses plain Markdown so it can be:
 </div>
 
 
+
+## Vídeo da aula
+
+<iframe width="100%" height="400"
+src="https://www.youtube.com/embed/SEU_VIDEO_ID"
+title="Vídeo da aula"
+frameborder="0"
+allowfullscreen></iframe>
+
 ---
 
 ## 1.2 Images
