@@ -29,6 +29,21 @@ This book uses plain Markdown so it can be:
   <p class="feedback"></p>
 </div>
 
+
+## Experimente o código
+
+<div class="code-runner">
+  <textarea class="code-input">
+<h1>Hello, mundo!</h1>
+<p>Modifique este HTML e clique em Executar.</p>
+  </textarea>
+
+  <button class="run-code">Executar</button>
+
+  <iframe class="code-output"></iframe>
+</div>
+
+
 ---
 
 ## 1.2 Images
