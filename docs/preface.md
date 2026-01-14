@@ -7,7 +7,7 @@ Ele foi projetado para ser:
 - **Vivo**: atualizado conforme o curso evolui.
 - **Multimodal**: combinando texto, código, imagens, vídeo e áudio.
 
-!!! note "Como Usar Este Livro"
+### Como Usar Este Livro
     - Leia os capítulos na ordem se você é iniciante no assunto.  
     - Use o apêndice como referência rápida.  
     - Explore os links para vídeos e podcasts para um entendimento mais profundo.
