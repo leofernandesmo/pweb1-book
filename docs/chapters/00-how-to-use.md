@@ -81,13 +81,13 @@ Você aprende **fazendo**, não apenas lendo.
 
 Este livro combina diferentes formatos:
 
-- **Texto**  
-- **Exemplos de código**  
-- **Vídeos curtos**  
-- **Exercícios interativos**  
-- **Quizzes**  
-- **Editores de código embutidos**  
-- **Links para ferramentas externas**  
+- Texto**  
+- Exemplos de código  
+- Vídeos curtos  
+- Exercícios interativos  
+- Quizzes  
+- Editores de código embutidos  
+- Links para ferramentas externas  
 
 Cada formato tem um propósito:
 
