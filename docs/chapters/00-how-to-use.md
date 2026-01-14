@@ -29,7 +29,7 @@ Isso significa que:
 - Você **estuda o conteúdo teórico** no seu ritmo, usando este livro, vídeos e exemplos.  
 - Você **vem para a aula presencial** para praticar, tirar dúvidas, programar e trabalhar em projetos.  
 
-O foco da aula presencial é **fazer**, não assistir explicações longas.
+O foco da aula presencial é **fazer**, não assistir a explicações longas.
 
 ---
 
@@ -37,23 +37,23 @@ O foco da aula presencial é **fazer**, não assistir explicações longas.
 
 A lógica é simples:
 
-1. **Antes da aula:**  
-   - Ler o capítulo indicado  
-   - Assistir aos vídeos curtos  
+1. **Antes da aula:**
+   - Ler o capítulo indicado
+   - Assistir aos vídeos curtos
    - Fazer pequenos exercícios de aquecimento  
 
-2. **Durante a aula:**  
-   - Resolver problemas reais  
-   - Programar em dupla ou em grupo  
-   - Trabalhar no projeto da disciplina  
+3. **Durante a aula:**
+   - Resolver problemas reais
+   - Programar em dupla ou em grupo
+   - Trabalhar no projeto da disciplina
    - Receber orientação do professor  
 
-3. **Depois da aula:**  
-   - Revisar o conteúdo  
-   - Registrar dúvidas  
+5. **Depois da aula:**
+   - Revisar o conteúdo
+   - Registrar dúvidas
    - Avançar no projeto  
 
-Essa abordagem aumenta sua autonomia e melhora a qualidade do tempo em sala.
+Essa abordagem aumenta sua **autonomia** e melhora a qualidade do tempo em sala.
 
 ---
 
@@ -63,8 +63,7 @@ Ao longo da disciplina, você será exposto a **problemas reais**, como:
 
 - Criar uma página responsiva  
 - Consumir uma API  
-- Construir uma aplicação completa  
-- Modelar e implementar uma API backend  
+- Construir uma aplicação completa (pelo menos a parte de frontend) 
 
 Cada problema exige:
 
