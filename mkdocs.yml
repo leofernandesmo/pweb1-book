@@ -52,8 +52,7 @@ plugins:
   - search
   - print-site:
       add_to_navigation: true
-      print_page_title: "Print / Save PDF"
-  - mkdocs_quiz
+      print_page_title: "Print / Save PDF"  
 
 
 
