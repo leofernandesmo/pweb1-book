@@ -94,6 +94,14 @@ allowfullscreen></iframe>
 
 </div>
 
+<div class="grid cards">
+  <ul>
+    <li> Introdução ao HTML e estrutura básica. </li>
+    <li> Estilização, layout e responsividade. </li>
+    <li> Interatividade, DOM e APIs. </li>
+  </ul>
+</div>
+
 
 ---
 
