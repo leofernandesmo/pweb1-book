@@ -17,16 +17,17 @@ This book uses plain Markdown so it can be:
 > inspect not only the final text but also the structure of the book, its
 > version history, and collaborative contributions.
 
-<quiz>
-What's the best static site generator?
-- [x] mkdocs
-- [ ] Jekyll
-- [ ] Sphinx
+## Quiz rápido
 
-If you entered mkdocs, you've come to the right place!
+<div class="quiz" data-answer="b">
+  <p>Qual tag define um parágrafo em HTML?</p>
 
-![Random cat photo](https://cataas.com/cat)
-</quiz>
+  <button data-option="a">&lt;div&gt;</button>
+  <button data-option="b">&lt;p&gt;</button>
+  <button data-option="c">&lt;span&gt;</button>
+
+  <p class="feedback"></p>
+</div>
 
 ---
 
