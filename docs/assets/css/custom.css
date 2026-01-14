@@ -1,0 +1,10 @@
+.quiz button {
+  margin: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.quiz .feedback {
+  margin-top: 8px;
+  font-weight: bold;
+}
