@@ -17,6 +17,17 @@ This book uses plain Markdown so it can be:
 > inspect not only the final text but also the structure of the book, its
 > version history, and collaborative contributions.
 
+<quiz>
+What's the best static site generator?
+- [x] mkdocs
+- [ ] Jekyll
+- [ ] Sphinx
+
+If you entered mkdocs, you've come to the right place!
+
+![Random cat photo](https://cataas.com/cat)
+</quiz>
+
 ---
 
 ## 1.2 Images
