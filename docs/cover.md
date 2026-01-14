@@ -1,13 +1,13 @@
-# 📘 My Open Book Title
+# 📘 Programação Web 1
 
-**Subtitle:** A Gentle Introduction to [Topic]
+**Subtitle:** Uma Introdução à Web com HTML, CSS e Javascript
 
-**Author:** Your Name  
-**Institution:** Your Institution (optional)
+**Author:** Leo Fernandes, PhD  
+**Institution:** Instituto Federal de Educação, Ciência e Tecnologia de Alagoas (IFAL)
 
 ---
 
-> _“A short inspiring quote or tagline for the book.”_
+> _“Se eu vi mais longe, foi por estar sobre ombros de gigantes.”_ _**Isaac Newton**_
 
 ---
 
