@@ -55,9 +55,13 @@ plugins:
       print_page_title: "Print / Save PDF"  
 
 
+extra_javascript:
+  - assets/js/quiz.js
+  - assets/js/code-runner.js
 
 extra_css:
   - assets/extra.css
+  - assets/css/custom.css
 
 nav:
   - Home: index.md
