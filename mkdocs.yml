@@ -69,6 +69,7 @@ nav:
   - Title Page: title-page.md
   - Preface: preface.md
   - Chapters:
+      - "0. Como User Este Material": chapters/00-how-to-use.md
       - "1. Introduction": chapters/01-introduction.md
       - "2. First Steps": chapters/02-first-steps.md
       - "Appendix": chapters/99-appendix.md
