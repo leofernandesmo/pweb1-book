@@ -23,43 +23,35 @@
 }
 
 /* Container da grade */
+/* Grade responsiva */
 .grid.cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;
   margin: 1.5rem 0;
-  padding: 0;
-  list-style: none;
 }
 
 /* Cada card */
-.grid.cards > * {
+.grid.cards > ul > li {
+  list-style: none;
   background: var(--md-surface);
   border-radius: 8px;
   padding: 1rem 1.2rem;
   box-shadow: var(--md-shadow-z1);
+  border: 1px solid rgba(0,0,0,0.08);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
-  border: 1px solid rgba(0,0,0,0.05);
-}
-
-/* Título do card */
-.grid.cards > * > strong,
-.grid.cards > * > h3 {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 1.05rem;
-  font-weight: 600;
 }
 
 /* Hover */
-.grid.cards > *:hover {
+.grid.cards > ul > li:hover {
   transform: translateY(-3px);
   box-shadow: var(--md-shadow-z2);
 }
 
-/* Ícones Material */
-.grid.cards .md-icon {
-  font-size: 1.4rem;
-  vertical-align: middle;
-  margin-right: 0.4rem;
+/* Título do card */
+.grid.cards > ul > li strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
 }
