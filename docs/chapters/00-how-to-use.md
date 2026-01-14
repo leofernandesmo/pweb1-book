@@ -1,11 +1,11 @@
-# Como Usar Este Material
+# 0. Como Usar Este Material
 
 Este capítulo explica **como você, estudante**, deve consumir este material ao longo da disciplina.  
 Nosso objetivo é que você aprenda de forma eficiente, prática e moderna, combinando estudo individual, atividades guiadas e projetos reais.
 
 ---
 
-## 📚 Modelo de Aprendizagem da Disciplina
+## 0.1 Modelo de Aprendizagem da Disciplina
 
 A disciplina utiliza três pilares pedagógicos:
 
@@ -17,7 +17,7 @@ Essas abordagens tornam o processo mais ativo, prático e conectado ao mundo rea
 
 ---
 
-## 🧩 Ensino Híbrido
+## 0.2 Ensino Híbrido
 
 O ensino híbrido combina:
 
@@ -33,7 +33,7 @@ O foco da aula presencial é **fazer**, não assistir explicações longas.
 
 ---
 
-## 🔁 Sala de Aula Invertida (Flipped Classroom)
+## 0.3 Sala de Aula Invertida (Flipped Classroom)
 
 A lógica é simples:
 
@@ -57,7 +57,7 @@ Essa abordagem aumenta sua autonomia e melhora a qualidade do tempo em sala.
 
 ---
 
-## 🧠 Aprendizagem Baseada em Problemas (PBL)
+## 0.4 Aprendizagem Baseada em Problemas (PBL)
 
 Ao longo da disciplina, você será exposto a **problemas reais**, como:
 
@@ -78,7 +78,7 @@ Você aprende **fazendo**, não apenas lendo.
 
 ---
 
-## 🎧 Materiais Multimodais
+## 0.5 Materiais Multimodais
 
 Este livro combina diferentes formatos:
 
@@ -164,7 +164,7 @@ A seguir, um guia rápido de cada ferramenta.
 
 ---
 
-## 🏫 Google Classroom
+## Google Classroom
 
 Usado para:
 
@@ -177,7 +177,7 @@ Você deve acessar o Classroom **toda semana**.
 
 ---
 
-## 🐙 GitHub Classroom
+## GitHub Classroom
 
 Usado para:
 
@@ -193,7 +193,7 @@ Você precisa ter:
 
 ---
 
-## 💻 CodePen / JSFiddle
+## CodePen / JSFiddle
 
 Usados para:
 
@@ -206,7 +206,7 @@ Essas ferramentas são perfeitas para iniciantes.
 
 ---
 
-## 📌 GitHub Projects
+## GitHub Projects
 
 Usado para:
 
@@ -219,7 +219,7 @@ Você usará GitHub Projects em equipe.
 
 ---
 
-## 🎨 Figma
+## Figma
 
 Usado para:
 
@@ -232,7 +232,7 @@ Antes de programar, você vai **desenhar**.
 
 ---
 
-## 🔌 Postman / Insomnia
+## Postman / Insomnia
 
 Usados para:
 
