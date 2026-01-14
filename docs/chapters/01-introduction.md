@@ -77,12 +77,19 @@ allowfullscreen></iframe>
 ### Cards
 
 <div class="grid cards">
+
 -   :material-code-tags: **HTML**
     ---
-    Introdução ao HTML.
+    Introdução ao HTML e estrutura básica.
+
 -   :material-palette: **CSS**
     ---
-    Estilização de páginas.
+    Estilização, layout e responsividade.
+
+-   :material-language-javascript: **JavaScript**
+    ---
+    Interatividade, DOM e APIs.
+
 </div>
 
 
