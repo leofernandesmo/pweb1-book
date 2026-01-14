@@ -1,7 +1,7 @@
-site_name: "My Open Book Title (REPLACE ME)"
-site_description: "An open textbook about <topic> (REPLACE ME)"
+site_name: "Programação Web 1"
+site_description: "Material do Curso de Programação Web 1 do curso de Técnico em Desenvolvimento de Sistemas do IFAL"
 site_url: "https://<github-username>.github.io/<book-repo-name>/"
-repo_url: "https://github.com/<github-username>/<book-repo-name>"
+repo_url: "https://github.com/leofernandesmo/pweb1-book/"
 repo_name: "GitHub"
 
 theme:
