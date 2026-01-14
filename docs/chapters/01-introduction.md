@@ -53,6 +53,39 @@ title="Vídeo da aula"
 frameborder="0"
 allowfullscreen></iframe>
 
+
+## Criando componentes interativos com Material for MkDocs
+
+### Abas
+
+=== "HTML"
+    ```html
+    <p>Exemplo HTML</p>
+    ```
+
+=== "CSS"
+    ```css
+    p { color: red; }
+    ```
+
+
+### Acordeões
+??? note "Clique para expandir"
+    Este é um conteúdo oculto.
+
+
+### Cards
+
+<div class="grid cards">
+-   :material-code-tags: **HTML**
+    ---
+    Introdução ao HTML.
+-   :material-palette: **CSS**
+    ---
+    Estilização de páginas.
+</div>
+
+
 ---
 
 ## 1.2 Images
