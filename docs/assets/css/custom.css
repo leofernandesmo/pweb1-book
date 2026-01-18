@@ -55,3 +55,59 @@
   font-size: 1.05rem;
   font-weight: 600;
 }
+
+
+
+/* Estilo da caixa container */
+.box-destaque {
+    /* Cor de fundo suave (um cinza azulado muito claro) */
+    background-color: #f0f4f8;
+    
+    /* Borda lateral grossa para chamar atenção */
+    border-left: 5px solid #2980b9;
+    
+    /* Espaçamento interno para o texto não colar na borda */
+    padding: 20px;
+    
+    /* Espaçamento externo para separar dos outros parágrafos */
+    margin: 25px 0;
+    
+    /* Arredondar levemente os cantos direitos */
+    border-radius: 0 5px 5px 0;
+    
+    /* Sombra suave para dar profundidade (opcional) */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+    
+    /* Garante que a fonte seja legível */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilo do título dentro da caixa */
+.box-destaque .box-titulo {
+    /* Remove a margem superior padrão para alinhar com a caixa */
+    margin-top: 0;
+    
+    /* Cor do título combinando com a borda lateral */
+    color: #2c3e50;
+    
+    /* Tamanho da fonte */
+    font-size: 1.1em;
+    
+    /* Peso da fonte */
+    font-weight: bold;
+    
+    /* Espaço abaixo do título */
+    margin-bottom: 10px;
+}
+
+/* Estilo do texto do parágrafo dentro da caixa */
+.box-destaque p {
+    /* Cor do texto para bom contraste */
+    color: #34495e;
+    
+    /* Altura da linha para melhorar leitura */
+    line-height: 1.6;
+    
+    /* Remove margem inferior do último parágrafo */
+    margin-bottom: 0;
+}
