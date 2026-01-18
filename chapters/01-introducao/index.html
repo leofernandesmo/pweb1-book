@@ -692,6 +692,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#breve-historico-da-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📜 Breve Histórico da Web
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#111-cliente-servidor-e-navegador" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -699,6 +710,45 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="1.1.1 — Cliente, Servidor e Navegador">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-cliente-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O Cliente (Client)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-servidor-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O Servidor (Server)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-navegador-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O Navegador (Browser)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1122,8 +1172,22 @@ Neste ecossistema digital, documentos e recursos — sejam eles textos, imagens 
 <p>Do ponto de vista operacional, o funcionamento da Web baseia-se na <strong>arquitetura cliente-servidor</strong>, regida majoritariamente pelo protocolo de aplicação <strong>HTTP</strong> (Hypertext Transfer Protocol). 
 O ciclo de vida de uma interação na Web inicia-se quando um "agente de usuário" (o cliente, tipicamente um navegador), submete uma <strong>requisição</strong> a um servidor remoto solicitando um recurso específico; este servidor processa o pedido e retorna uma <strong>resposta</strong> contendo o conteúdo solicitado — geralmente estruturado semanticamente em <strong>HTML</strong> e estilizado visualmente via <strong>CSS</strong>. 
 O navegador, então, interpreta esses códigos recebidos para renderizar a interface gráfica final para o usuário, ocultando toda a complexidade da troca de dados subjacente.</p>
+<blockquote>
+<h3 id="breve-historico-da-web">📜 Breve Histórico da Web<a class="headerlink" href="#breve-historico-da-web" title="Permanent link">&para;</a></h3>
+<p>A gênese da World Wide Web remonta a março de <strong>1989</strong>, nas instalações do <strong>CERN</strong> (Organização Europeia para a Pesquisa Nuclear), próximo a Genebra. Foi neste cenário que o cientista da computação britânico <strong>Sir Tim Berners-Lee</strong> redigiu a proposta inicial para um sistema de gestão de informações baseado em hipertexto, visando resolver a dificuldade de compartilhamento de dados entre cientistas de diferentes universidades.
+Em <strong>1990</strong>, utilizando um computador NeXT, Berners-Lee desenvolveu as pedras angulares da Web: a linguagem HTML, o protocolo HTTP e o primeiro navegador (chamado <em>WorldWideWeb</em>). A materialização deste projeto ocorreu quando o <strong><a href="http://info.cern.ch/hypertext/WWW/TheProject.html">primeiro website da história</a></strong> foi publicado, servindo como uma página explicativa sobre o próprio projeto. Em 1993, o CERN colocou o software da Web em domínio público, catalisando a explosão da Internet comercial.
+<strong>Referência:</strong> <a href="https://home.cern/science/computing/birth-web">CERN - The birth of the Web</a></p>
+</blockquote>
 <h3 id="111-cliente-servidor-e-navegador">1.1.1 — Cliente, Servidor e Navegador<a class="headerlink" href="#111-cliente-servidor-e-navegador" title="Permanent link">&para;</a></h3>
-<p><em>(conteúdo será preenchido posteriormente)</em></p>
+<p>A arquitetura da Web é fundamentada em um modelo de distribuição de tarefas conhecido como <strong>Cliente-Servidor</strong>. Para compreender o funcionamento da rede em um nível de engenharia de software, é imperativo dissociar os papéis funcionais de cada componente, entendendo que a comunicação entre eles é estritamente protocolada.
+<img alt="Diagrama da Arquitetura Cliente-Servidor mostrando vários dispositivos conectados a um servidor e trocando dados através da web" src="../../figures/01_cliente_servidor.png" /></p>
+<p><img src="../figures/01_cliente_servidor.png" alt="Diagrama Cliente-Servidor" width="600"></p>
+<h4 id="o-cliente-client">O Cliente (Client)<a class="headerlink" href="#o-cliente-client" title="Permanent link">&para;</a></h4>
+<p>No contexto técnico, o <strong>cliente</strong> é a entidade ativa que inicia a comunicação. Ele não se define pelo hardware (o computador ou smartphone), mas sim pelo software que submete uma requisição de serviço. Na terminologia do protocolo HTTP, o cliente é frequentemente referido como <strong>User Agent</strong> (Agente de Usuário). Sua função primária é formatar mensagens de solicitação (Requests) seguindo padrões definidos — especificando método, cabeçalhos e corpo — e enviá-las através da rede para um endereço específico. Embora o navegador seja o exemplo mais comum, scripts de automação (como <em>crawlers</em> ou <em>bots</em>), aplicações móveis e interfaces de linha de comando (como cURL) também atuam como clientes.</p>
+<h4 id="o-servidor-server">O Servidor (Server)<a class="headerlink" href="#o-servidor-server" title="Permanent link">&para;</a></h4>
+<p>O termo <strong>servidor</strong> possui uma dualidade semântica na informática. Fisicamente, refere-se ao <strong>hardware</strong>: computadores de alto desempenho, otimizados para operar ininterruptamente (24/7), equipados com redundância de armazenamento (RAID) e conexão de banda larga de alta capacidade. Logicamente, e mais importante para o desenvolvimento web, refere-se ao <strong>software servidor</strong> (como Apache, Nginx ou IIS). Este software atua como um processo <em>daemon</em> (processo de segundo plano) que "escuta" (listening) portas específicas da rede — tradicionalmente a porta 80 para HTTP e 443 para HTTPS. Ao receber uma requisição do cliente, o software servidor processa a lógica necessária, acessa bancos de dados se preciso, e devolve o recurso ou uma mensagem de erro.</p>
+<h4 id="o-navegador-browser">O Navegador (Browser)<a class="headerlink" href="#o-navegador-browser" title="Permanent link">&para;</a></h4>
+<p>O <strong>navegador</strong> é uma implementação específica de um cliente HTTP, projetado para interação humana. Sua complexidade técnica reside no <strong>Motor de Renderização</strong> (<em>Rendering Engine</em>), um componente de software responsável por receber o fluxo de dados brutos do servidor (texto HTML, regras CSS, scripts JS) e transformá-los em uma representação visual interativa. O navegador compila esses dados na memória do dispositivo construindo a <strong>DOM</strong> (Document Object Model), uma árvore estrutural de objetos que o usuário pode visualizar e manipular. Exemplos de motores de renderização incluem o <em>Blink</em> (usado no Chrome e Edge), <em>Gecko</em> (Firefox) e <em>WebKit</em> (Safari).</p>
 <h3 id="112-requisicoes-e-respostas-http">1.1.2 — Requisições e Respostas (HTTP)<a class="headerlink" href="#112-requisicoes-e-respostas-http" title="Permanent link">&para;</a></h3>
 <p><em>(conteúdo será preenchido posteriormente)</em></p>
 <h3 id="113-como-paginas-sao-renderizadas">1.1.3 — Como páginas são renderizadas<a class="headerlink" href="#113-como-paginas-sao-renderizadas" title="Permanent link">&para;</a></h3>
