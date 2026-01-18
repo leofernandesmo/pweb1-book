@@ -257,10 +257,57 @@ Quando um usuário digita um domínio mnemônico (como `www.exemplo.com.br`) na 
 *(conteúdo será preenchido posteriormente)*
 
 #### **Atividades — Seção 1.1**
-- **Quiz:** Fundamentos da Web *(link será adicionado)*
-- **GitHub Classroom:** Fluxo Cliente → Servidor → Navegador *(link será adicionado)*
+
+<div class="quiz" data-answer="b">
+  <p><strong>1.</strong> Qual é a diferença fundamental entre a Internet e a World Wide Web (WWW)?</p>
+
+  <button data-option="a">Não há diferença, são sinônimos exatos.</button>
+  <button data-option="b">A Internet é a infraestrutura física de conexão; a Web é o sistema de informações que roda sobre ela.</button>
+  <button data-option="c">A Web refere-se aos cabos submarinos, enquanto a Internet são os sites.</button>
+  <button data-option="d">A Internet utiliza o protocolo HTTP, enquanto a Web utiliza apenas TCP/IP.</button>
+
+  <p class="feedback"></p>
+</div>
+
+<div class="quiz" data-answer="c">
+  <p><strong>2.</strong> No contexto de uma requisição HTTP, o que indica um Código de Status da classe 4xx (como o 404)?</p>
+
+  <button data-option="a">Sucesso na operação.</button>
+  <button data-option="b">Erro interno do servidor.</button>
+  <button data-option="c">Erro originado no cliente (ex: página não encontrada).</button>
+  <button data-option="d">Redirecionamento para outra URL.</button>
+
+  <p class="feedback"></p>
+</div>
+
+<div class="quiz" data-answer="a">
+  <p><strong>3.</strong> Antes de enviar uma requisição HTTP, o navegador precisa traduzir o nome do domínio (ex: www.site.com) em um endereço IP. Qual sistema é responsável por isso?</p>
+
+  <button data-option="a">DNS (Domain Name System)</button>
+  <button data-option="b">DOM (Document Object Model)</button>
+  <button data-option="c">CSSOM (CSS Object Model)</button>
+  <button data-option="d">TLS (Transport Layer Security)</button>
+
+  <p class="feedback"></p>
+</div>
+
+<div class="quiz" data-answer="d">
+  <p><strong>4.</strong> Durante o Caminho Crítico de Renderização, o que é a "Render Tree" (Árvore de Renderização)?</p>
+
+  <button data-option="a">É o arquivo HTML puro baixado do servidor.</button>
+  <button data-option="b">É a estrutura que contém apenas as regras de CSS (cores, fontes).</button>
+  <button data-option="c">É o histórico de páginas visitadas pelo usuário.</button>
+  <button data-option="d">É a combinação da DOM e do CSSOM, contendo apenas os elementos que serão visíveis na tela.</button>
+
+  <p class="feedback"></p>
+</div>
 
 ---
+
+
+
+
+
 
 ## 1.2 — Ferramentas Essenciais para Desenvolvimento Web
 
