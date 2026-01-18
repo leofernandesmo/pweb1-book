@@ -114,8 +114,6 @@ Quando um usuário digita um domínio mnemônico (como `www.exemplo.com.br`) na 
 
 ---
 
-
-
 <div class="box-destaque">
     <h3 class="box-titulo">O que acontece quando você digita uma URL no navegador?</h3>
     <p> 
@@ -214,17 +212,6 @@ Quando um usuário digita um domínio mnemônico (como `www.exemplo.com.br`) na 
             <hr>
         
             <li>
-              <h3>Diferença entre URI e URL</h3>
-              <ul>
-                <li><strong>URI (Uniform Resource Identifier):</strong> Identifica um recurso de forma genérica (Ex: <code>mailto:contato@exemplo.com</code>).</li>
-                <li><strong>URL (Uniform Resource Locator):</strong> Identifica e <strong>localiza</strong> um recurso na Web.</li>
-              </ul>
-              <p><em>Nota: Toda URL é uma URI, mas nem toda URI é uma URL.</em></p>
-            </li>
-        
-            <hr>
-        
-            <li>
               <h3>Cliente envia requisição ao servidor</h3>
               <p>Com o IP em mãos, o navegador abre uma conexão (TCP ou QUIC) e envia a requisição:</p>
               <pre><code>GET /produtos HTTP/1.1
@@ -261,10 +248,6 @@ Quando um usuário digita um domínio mnemônico (como `www.exemplo.com.br`) na 
         
     </p>
 </div>
-
-
-
-
 
 
 
