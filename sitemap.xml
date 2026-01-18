@@ -2,54 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <lastmod>2026-01-18</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/back-cover/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <lastmod>2026-01-18</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/cover/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <lastmod>2026-01-18</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/preface/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <lastmod>2026-01-18</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/title-page/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <lastmod>2026-01-18</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/00-how-to-use/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <lastmod>2026-01-18</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/01-introducao/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <lastmod>2026-01-18</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/01-introduction/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <lastmod>2026-01-18</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/02-first-steps/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <lastmod>2026-01-18</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/02-html-fundamentos/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <lastmod>2026-01-18</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/03-html-semantico/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <lastmod>2026-01-18</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/04-html-acessibilidade-e-boas-praticas/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <lastmod>2026-01-18</lastmod>
+    </url>
+    <url>
+         <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/98-glossario/</loc>
+         <lastmod>2026-01-18</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/99-appendix/</loc>
-         <lastmod>2026-01-14</lastmod>
+         <lastmod>2026-01-18</lastmod>
     </url>
 </urlset>
