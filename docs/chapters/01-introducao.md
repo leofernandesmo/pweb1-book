@@ -251,11 +251,6 @@ Quando um usuário digita um domínio mnemônico (como `www.exemplo.com.br`) na 
 
 
 
-
-
-### 1.1.3 — Como páginas são renderizadas
-*(conteúdo será preenchido posteriormente)*
-
 #### **Atividades — Seção 1.1**
 
 <div class="quiz" data-answer="b">
@@ -287,17 +282,6 @@ Quando um usuário digita um domínio mnemônico (como `www.exemplo.com.br`) na 
   <button data-option="b">DOM (Document Object Model)</button>
   <button data-option="c">CSSOM (CSS Object Model)</button>
   <button data-option="d">TLS (Transport Layer Security)</button>
-
-  <p class="feedback"></p>
-</div>
-
-<div class="quiz" data-answer="d">
-  <p><strong>4.</strong> Durante o Caminho Crítico de Renderização, o que é a "Render Tree" (Árvore de Renderização)?</p>
-
-  <button data-option="a">É o arquivo HTML puro baixado do servidor.</button>
-  <button data-option="b">É a estrutura que contém apenas as regras de CSS (cores, fontes).</button>
-  <button data-option="c">É o histórico de páginas visitadas pelo usuário.</button>
-  <button data-option="d">É a combinação da DOM e do CSSOM, contendo apenas os elementos que serão visíveis na tela.</button>
 
   <p class="feedback"></p>
 </div>
