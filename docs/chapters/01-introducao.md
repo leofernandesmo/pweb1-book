@@ -31,7 +31,7 @@ O navegador, então, interpreta esses códigos recebidos para renderizar a inter
 
 A arquitetura da Web é fundamentada em um modelo de distribuição de tarefas conhecido como **Cliente-Servidor** (ver Figura Cliente-Servidor). 
 Para compreender o funcionamento da rede em um nível de engenharia de software, é imperativo dissociar os papéis funcionais de cada componente, entendendo que a comunicação entre eles é estritamente protocolada.
-<img src="../figures/01_cliente_servidor.png" alt="Cliente-Servidor" width="600">
+![Diagrama da Arquitetura Cliente-Servidor mostrando vários dispositivos conectados a um servidor central](../figures/01_cliente_servidor.png)
 
 #### O Cliente (Client)
 
