@@ -1411,190 +1411,147 @@ O DNS atua como uma lista telefônica dinâmica e descentralizada da Internet.</
 <hr />
 <div class="box-destaque">
     <h3 class="box-titulo">O que acontece quando você digita uma URL no navegador?</h3>
-    <p>        
+    <p> 
+        Imagine que o usuário digita:
 
-Imagine que o usuário digita:
-
-<div class="highlight"><pre><span></span><code>https://www.exemplo.com/produtos
+        <div class="highlight"><pre><span></span><code>https://www.exemplo.com/produtos
 </code></pre></div>
 
-O navegador inicia uma sequência complexa de operações. Vamos detalhar cada etapa.
-
----
-
-## **1. Verificação do Cache Local**
-
-Antes de ir à web, o navegador tenta economizar tempo e banda verificando se já possui uma cópia recente do recurso solicitado.
-
-Ele consulta:
-
-- **Cache-Control**  
-- **Expires**  
-- **ETag**  
-
-Esses mecanismos serão estudados em profundidade mais adiante, mas por enquanto basta saber:
-
-> Se o navegador encontrar uma versão válida no cache, ele **não precisa acessar o servidor**.
-
-Se **não** encontrar, ele segue para a próxima etapa.
-
----
-
-## **2. Resolução de nomes (DNS)**
-
-O navegador precisa transformar o nome do domínio:
-
-<div class="highlight"><pre><span></span><code>www.exemplo.com
-</code></pre></div>
-
-em um endereço IP, como:
-
-- IPv4 → `192.0.2.1`  
-- IPv6 → `2001:db8::1`
-
-Essa conversão é feita pelo **DNS (Domain Name System)**.
-
-### **Como funciona o DNS?**
-
-1. O navegador pergunta ao sistema operacional:  
-   “Você sabe o IP de `www.exemplo.com`?”
-
-2. Se o sistema não souber, ele consulta o **servidor DNS configurado** (geralmente o do provedor ou do Google/Cloudflare).
-
-3. O servidor DNS segue uma cadeia hierárquica:
-
-   - **Root Servers** — servidores raiz (13 conjuntos globais)  
-   - **TLD Servers** — servidores do domínio de topo (`.com`, `.org`, `.br`)  
-   - **Authoritative DNS** — servidor responsável pelo domínio (`exemplo.com`)
-
-4. O servidor autoritativo responde:  
-   “O IP de `www.exemplo.com` é `192.0.2.1`.”
-
-5. O navegador armazena essa resposta em cache por um tempo (TTL).
-
-### **DNS usa UDP ou TCP?**
-
-- Normalmente **UDP porta 53** (rápido e leve)  
-- Em casos específicos, **TCP** (respostas grandes, DNSSEC)
-
----
-
-## **3. Protocolo IP e suas versões**
-
-O endereço IP identifica dispositivos na rede.
-
-### **IPv4**
-- 32 bits  
-- ~4 bilhões de endereços  
-- Exemplo: `192.168.0.1`
-
-### **IPv6**
-- 128 bits  
-- Quantidade praticamente infinita  
-- Exemplo: `2001:0db8:85a3::8a2e:0370:7334`
-
-A Web moderna funciona com ambos, mas o IPv6 está crescendo rapidamente.
-
----
-
-## **4. Estrutura da URL**
-
-Uma URL possui três partes principais:
-
-<div class="highlight"><pre><span></span><code>https://www.exemplo.com/produtos
-</code></pre></div>
-
-### **1. Protocolo**
-Define como o navegador deve se comunicar com o servidor.
-
-- `http://`  
-- `https://` (seguro, criptografado)
-
-### **2. Domínio**
-Nome registrado que aponta para um servidor.
-
-- `www.exemplo.com`
-
-### **3. Caminho (ou Recurso)**
-Indica qual recurso está sendo solicitado.
-
-- `/produtos`
-
----
-
-## **5. Diferença entre URI e URL**
-
-- **URI (Uniform Resource Identifier)**  
-  Identifica um recurso de forma genérica.  
-  Exemplo: `mailto:contato@exemplo.com`
-
-- **URL (Uniform Resource Locator)**  
-  Identifica e **localiza** um recurso na Web.  
-  Exemplo: `https://exemplo.com/produtos`
-
-Toda URL é uma URI, mas nem toda URI é uma URL.
-
----
-
-## **6. Cliente envia requisição ao servidor**
-
-Com o IP em mãos, o navegador abre uma conexão usando:
-
-- **TCP** (para HTTP/1.1 e HTTP/2)  
-- **TLS** (para HTTPS)  
-- **QUIC/UDP** (para HTTP/3)
-
-Ele envia uma requisição HTTP, como:
-
-<div class="highlight"><pre><span></span><code>GET /produtos HTTP/1.1
-Host: www.exemplo.com
-</code></pre></div>
-
----
-
-## **7. Servidor responde**
-
-O servidor processa a requisição e devolve:
-
-- Código de status (200, 404, 500…)  
-- Cabeçalhos  
-- Corpo da resposta (HTML, JSON, imagem, etc.)
-
----
-
-## **8. Navegador renderiza a página**
-
-O navegador:
-
-1. Lê o HTML  
-2. Baixa CSS, JS e imagens  
-3. Monta a árvore DOM  
-4. Aplica estilos  
-5. Executa scripts  
-6. Exibe a página ao usuário
-
-Esse processo é chamado de **renderização**.
-
----
-
-# 🧩 Extra: Comparação entre o Modelo OSI e os Protocolos da Internet
-
-A Internet não segue o modelo OSI literalmente, mas podemos fazer um paralelo útil.
-
-| Camada OSI | Equivalente na Internet | Exemplos |
-|------------|-------------------------|----------|
-| 7 — Aplicação | Aplicação | HTTP, HTTPS, DNS |
-| 6 — Apresentação | (embutida na aplicação) | SSL/TLS |
-| 5 — Sessão | (embutida na aplicação) | Cookies, tokens |
-| 4 — Transporte | Transporte | TCP, UDP, QUIC |
-| 3 — Rede | Internet | IP, ICMP |
-| 2 — Enlace | Enlace | Ethernet, Wi‑Fi |
-| 1 — Física | Física | Cabos, rádio, fibra |
-
-O modelo OSI é conceitual;  
-A pilha TCP/IP é prática e usada na Web real.
-
-</p>
+        O navegador inicia uma sequência complexa de operações. Vamos detalhar cada etapa.        
+          <ol>
+
+            <li>
+              <h3>Verificação do Cache Local</h3>
+              <p>Antes de ir à web, o navegador tenta economizar tempo e banda verificando se já possui uma cópia recente do recurso solicitado.</p>
+              <p>Ele consulta cabeçalhos como:</p>
+              <ul>
+                <li><strong>Cache-Control</strong></li>
+                <li><strong>Expires</strong></li>
+                <li><strong>ETag</strong></li>
+              </ul>
+              <blockquote>
+                Se o navegador encontrar uma versão válida no cache, ele <strong>não precisa acessar o servidor</strong>. Se <strong>não</strong> encontrar, ele segue para a próxima etapa.
+              </blockquote>
+            </li>
+
+            <hr>
+
+            <li>
+              <h3>Resolução de nomes (DNS)</h3>
+              <p>O navegador precisa transformar o nome do domínio:</p>
+              <pre><code>www.exemplo.com</code></pre>
+              <p>Em um endereço IP, como:</p>
+              <ul>
+                <li>IPv4 → <code>192.0.2.1</code></li>
+                <li>IPv6 → <code>2001:db8::1</code></li>
+              </ul>
+              <p>Essa conversão é feita pelo <strong>DNS (Domain Name System)</strong>.</p>
+
+              <div class="sub-secao">
+                <h4>Como funciona o DNS?</h4>
+                <ol>
+                  <li>O navegador pergunta ao SO: <em>“Você sabe o IP de www.exemplo.com?”</em></li>
+                  <li>Se o sistema não souber, consulta o <strong>servidor DNS configurado</strong> (provedor, Google, etc).</li>
+                  <li>O servidor DNS segue a cadeia hierárquica (Root → TLD → Authoritative).</li>
+                  <li>O servidor autoritativo responde com o IP correto.</li>
+                  <li>O navegador armazena a resposta (TTL).</li>
+                </ol>
+              </div>
+
+              <div class="sub-secao">
+                <h4>DNS usa UDP ou TCP?</h4>
+                <ul>
+                  <li>Normalmente <strong>UDP porta 53</strong> (rápido e leve).</li>
+                  <li>Em casos específicos, <strong>TCP</strong> (respostas grandes, DNSSEC).</li>
+                </ul>
+              </div>
+            </li>
+
+            <hr>
+
+            <li>
+              <h3>Protocolo IP e suas versões</h3>
+              <p>O endereço IP identifica dispositivos na rede.</p>
+
+              <h4>IPv4</h4>
+              <ul>
+                <li>32 bits</li>
+                <li>~4 bilhões de endereços</li>
+                <li>Exemplo: <code>192.168.0.1</code></li>
+              </ul>
+
+              <h4>IPv6</h4>
+              <ul>
+                <li>128 bits</li>
+                <li>Quantidade praticamente infinita</li>
+                <li>Exemplo: <code>2001:0db8:85a3::8a2e...</code></li>
+              </ul>
+              <p>A Web moderna funciona com ambos, mas o IPv6 está crescendo rapidamente.</p>
+            </li>
+
+            <hr>
+
+            <li>
+              <h3>Estrutura da URL</h3>
+              <p>Uma URL possui três partes principais:</p>
+              <pre><code>https://www.exemplo.com/produtos</code></pre>
+
+              <ul>
+                <li><strong>1. Protocolo:</strong> Define a comunicação (`http://` ou `https://`).</li>
+                <li><strong>2. Domínio:</strong> Nome registrado que aponta para um servidor (`www.exemplo.com`).</li>
+                <li><strong>3. Caminho:</strong> Indica o recurso solicitado (`/produtos`).</li>
+              </ul>
+            </li>
+
+            <hr>
+
+            <li>
+              <h3>Diferença entre URI e URL</h3>
+              <ul>
+                <li><strong>URI (Uniform Resource Identifier):</strong> Identifica um recurso de forma genérica (Ex: <code>mailto:contato@exemplo.com</code>).</li>
+                <li><strong>URL (Uniform Resource Locator):</strong> Identifica e <strong>localiza</strong> um recurso na Web.</li>
+              </ul>
+              <p><em>Nota: Toda URL é uma URI, mas nem toda URI é uma URL.</em></p>
+            </li>
+
+            <hr>
+
+            <li>
+              <h3>Cliente envia requisição ao servidor</h3>
+              <p>Com o IP em mãos, o navegador abre uma conexão (TCP ou QUIC) e envia a requisição:</p>
+              <pre><code>GET /produtos HTTP/1.1
+        Host: www.exemplo.com</code></pre>
+            </li>
+
+            <hr>
+
+            <li>
+              <h3>Servidor responde</h3>
+              <p>O servidor processa a requisição e devolve:</p>
+              <ul>
+                <li>Código de status (200, 404, 500…)</li>
+                <li>Cabeçalhos</li>
+                <li>Corpo da resposta (HTML, JSON, imagem, etc.)</li>
+              </ul>
+            </li>
+
+            <hr>
+
+            <li>
+              <h3>Navegador renderiza a página</h3>
+              <p>O processo final de renderização:</p>
+              <ol>
+                <li>Lê o HTML.</li>
+                <li>Baixa recursos externos (CSS, JS, Imagens).</li>
+                <li>Monta a árvore DOM.</li>
+                <li>Aplica estilos e executa scripts.</li>
+                <li>Exibe a página ao usuário.</li>
+              </ol>
+            </li>
+
+          </ol>
+
+    </p>
 </div>
 
 <h3 id="chapters-01-introducao-113-como-paginas-sao-renderizadas">1.1.3 — Como páginas são renderizadas<a class="headerlink" href="#chapters-01-introducao-113-como-paginas-sao-renderizadas" title="Permanent link">&para;</a></h3>
