@@ -74,6 +74,5 @@ nav:
       - "2. Fundamentos do HTML": chapters/02-html-fundamentos.md
       - "3. HTML Semântico": chapters/03-html-semantico.md
       - "4. Acessibilidade e Boas Práticas com HTML": chapters/04-html-acessibilidade-e-boas-praticas.md      
-      - "Appendix": chapters/99-appendix.md
-      - "Glossário": chapters/98-glossario.md
+      - "Appendix": chapters/99-appendix.md      
   - Back Cover: back-cover.md
