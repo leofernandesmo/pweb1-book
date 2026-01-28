@@ -431,23 +431,6 @@ Quando um usuário digita um domínio mnemônico (como `www.exemplo.com.br`) na 
 
 ### 1.2 — Ferramentas Essenciais para Desenvolvimento Web
 
-> **Vídeo curto explicativo**  
-> <iframe width="100%" height="400"
-    src="https://www.youtube-nocookie.com/embed/miBh6WRuEy8?rel=0&modestbranding=1"
-    title="O que é DevTools e como ele pode te ajudar"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-    loading="lazy">
-</iframe>
-
-
-
-
-
-
-
-
-
 O desenvolvimento Web moderno exige mais do que apenas conhecer linguagens como HTML, CSS e JavaScript. Ele demanda um conjunto de ferramentas que ampliam a produtividade, facilitam o diagnóstico de problemas, automatizam tarefas e permitem versionar e compartilhar código de forma profissional. Nesta seção, exploraremos as ferramentas fundamentais que todo desenvolvedor Web deve dominar desde o início da sua formação.
 
 ---
@@ -466,6 +449,15 @@ Cada navegador utiliza um motor responsável por interpretar HTML, CSS e JavaScr
 Esses motores convertem código em interfaces visuais, manipulam o DOM ([Document Object Model](https://developer.mozilla.org/pt-BR/docs/Web/API/Document_Object_Model)), aplicam estilos e executam scripts. Entender como eles funcionam ajuda a diagnosticar problemas de compatibilidade e desempenho.
 
 **DevTools: o laboratório do desenvolvedor**
+> **Vídeo: O que é DevTools e como ele pode te ajudar**  
+> <iframe width="100%" height="400"
+    src="https://www.youtube-nocookie.com/embed/miBh6WRuEy8?rel=0&modestbranding=1"
+    title="O que é DevTools e como ele pode te ajudar"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    loading="lazy">
+</iframe>
+
 As **Ferramentas de Desenvolvedor (DevTools)** são um conjunto de utilitários integrados ao navegador que permitem:
 
 - Inspecionar e editar o DOM em tempo real  
@@ -487,6 +479,14 @@ O DevTools é indispensável para qualquer desenvolvedor Web. Ele transforma o n
 ---
 
 #### 1.2.2 — Editor de Texto - Opção Atual: VS Code
+> **Vídeo: Como usar o VS CODE para programar? **  
+> <iframe width="100%" height="400"
+    src="https://www.youtube-nocookie.com/embed/pkH6XxH57O8?rel=0&modestbranding=1"
+    title="Como usar o VS CODE para programar?"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    loading="lazy">
+</iframe>
 
 O **Visual Studio Code (VS Code)** é hoje o editor de código mais utilizado no mundo. Ele combina leveza, extensibilidade e uma interface moderna, tornando-se ideal tanto para iniciantes quanto para profissionais.
 
