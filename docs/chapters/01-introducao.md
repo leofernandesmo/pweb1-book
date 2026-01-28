@@ -449,12 +449,6 @@ allowfullscreen></iframe>
   </iframe>
 </div>
 
-<div class="video-actions">
-  <a href="https://www.youtube.com/watch?v=miBh6WRuEy8" target="_blank" rel="noopener noreferrer">
-    Abrir no YouTube
-  </a>
-  <span style="color:#6b7280; font-size:0.9rem;">(legendas disponíveis no player do YouTube quando houver)</span>
-</div>
 
 O desenvolvimento Web moderno exige mais do que apenas conhecer linguagens como HTML, CSS e JavaScript. Ele demanda um conjunto de ferramentas que ampliam a produtividade, facilitam o diagnóstico de problemas, automatizam tarefas e permitem versionar e compartilhar código de forma profissional. Nesta seção, exploraremos as ferramentas fundamentais que todo desenvolvedor Web deve dominar desde o início da sua formação.
 
