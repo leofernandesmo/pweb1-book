@@ -503,6 +503,27 @@ O **Visual Studio Code (VS Code)** é hoje o editor de código mais utilizado no
 ---
 
 #### 1.2.3 — Git e GitHub (visão inicial)
+> **Vídeo: O QUE É GIT E GITHUB? - definição e conceitos importantes**  
+> <iframe width="100%" height="400"
+    src="https://www.youtube-nocookie.com/embed/DqTITcMq68k?rel=0&modestbranding=1"
+    title="O QUE É GIT E GITHUB? - definição e conceitos importantes"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    loading="lazy">
+</iframe>
+
+> **Vídeo: COMO USAR GIT E GITHUB NA PRÁTICA! - desde o primeiro commit até o pull request!**  
+> <iframe width="100%" height="400"
+    src="https://www.youtube-nocookie.com/embed/UBAX-13g8OM?rel=0&modestbranding=1"
+    title="COMO USAR GIT E GITHUB NA PRÁTICA! - desde o primeiro commit até o pull request!"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    loading="lazy">
+</iframe>
+
+
+
+https://www.youtube.com/watch?v=UBAX-13g8OM
 
 O **Git** é um sistema de controle de versão distribuído. Ele permite que desenvolvedores acompanhem mudanças no código, revertam erros, criem ramificações (branches) e colaborem em projetos de forma segura e eficiente.
 
