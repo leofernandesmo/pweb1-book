@@ -7,7 +7,15 @@
 
 ## 1.1 — O que é a Web e como ela funciona
 
-> **Vídeo curto explicativo**
+> **Vídeo:O que é e como funciona a internet**  
+> <iframe width="100%" height="400"
+    src="https://www.youtube-nocookie.com/embed/hBRDMaxKB8Q?rel=0&modestbranding=1"
+    title="O que é e como funciona a internet"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    loading="lazy">
+</iframe>
+
 
 A Web é uma das maiores invenções tecnológicas da história humana. Ela conecta pessoas, empresas, governos, dispositivos e sistemas em escala global. 
 Para uma pessoa desenvolvedora, compreender **como a Web funciona por dentro** não é apenas útil — é essencial. 
