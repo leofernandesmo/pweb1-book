@@ -438,6 +438,24 @@ title="O que é DevTools e como ele pode te ajudar (Vídeo aberto no Youtube e d
 frameborder="0"
 allowfullscreen></iframe>
 
+
+<div class="video-wrapper" role="region" aria-label="Vídeo: O que é DevTools">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/miBh6WRuEy8?rel=0&modestbranding=1"
+    title="O que é DevTools e como ele pode te ajudar"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    loading="lazy">
+  </iframe>
+</div>
+
+<div class="video-actions">
+  <a href="https://www.youtube.com/watch?v=miBh6WRuEy8" target="_blank" rel="noopener noreferrer">
+    Abrir no YouTube
+  </a>
+  <span style="color:#6b7280; font-size:0.9rem;">(legendas disponíveis no player do YouTube quando houver)</span>
+</div>
+
 O desenvolvimento Web moderno exige mais do que apenas conhecer linguagens como HTML, CSS e JavaScript. Ele demanda um conjunto de ferramentas que ampliam a produtividade, facilitam o diagnóstico de problemas, automatizam tarefas e permitem versionar e compartilhar código de forma profissional. Nesta seção, exploraremos as ferramentas fundamentais que todo desenvolvedor Web deve dominar desde o início da sua formação.
 
 ---
@@ -531,7 +549,7 @@ Ambientes online como **CodePen**, **JSFiddle**, **JSBin** e **StackBlitz** perm
 - Útil para depurar pequenos trechos de código  
 
 ---
-
+ 
 ##### **Atividades — Seção 1.2**
 
 - **Quiz:** Ferramentas e DevTools *(link será adicionado)*  
