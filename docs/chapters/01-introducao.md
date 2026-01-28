@@ -521,10 +521,6 @@ O **Visual Studio Code (VS Code)** é hoje o editor de código mais utilizado no
     loading="lazy">
 </iframe>
 
-
-
-https://www.youtube.com/watch?v=UBAX-13g8OM
-
 O **Git** é um sistema de controle de versão distribuído. Ele permite que desenvolvedores acompanhem mudanças no código, revertam erros, criem ramificações (branches) e colaborem em projetos de forma segura e eficiente.
 
 **Por que aprender Git desde o início?**
@@ -550,6 +546,15 @@ O **GitHub** é um serviço baseado em Git que permite:
 ---
 
 #### 1.2.4 — Ambientes online (CodePen, JSFiddle)
+
+> **Vídeo: Por dentro da ferramenta de programação CodePen**  
+> <iframe width="100%" height="400"
+    src="https://www.youtube-nocookie.com/embed/l9vPtKzKkSc?rel=0&modestbranding=1"
+    title="Por dentro da ferramenta de programação CodePen"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    loading="lazy">
+</iframe>
 
 Ambientes online como **CodePen**, **JSFiddle**, **JSBin** e **StackBlitz** permitem testar código HTML, CSS e JavaScript diretamente no navegador, sem necessidade de instalar nada.
 
