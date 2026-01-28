@@ -470,14 +470,13 @@ O DevTools é indispensável para qualquer desenvolvedor Web. Ele transforma o n
 > ![Exemplo de uso do DevTools no Chrome](../figures/02_devtools_01.png)
 > 
 
-
 ---
 
-## ### 1.2.2 — VS Code e extensões recomendadas
+#### 1.2.2 — Editor de Texto - Opção Atual: VS Code
 
 O **Visual Studio Code (VS Code)** é hoje o editor de código mais utilizado no mundo. Ele combina leveza, extensibilidade e uma interface moderna, tornando-se ideal tanto para iniciantes quanto para profissionais.
 
-### **Por que o VS Code é tão popular?**
+**Por que o VS Code é tão popular?**
 
 - Suporte nativo a HTML, CSS e JavaScript  
 - Terminal integrado  
@@ -487,35 +486,13 @@ O **Visual Studio Code (VS Code)** é hoje o editor de código mais utilizado no
 - Autocompletar inteligente (IntelliSense)  
 - Suporte a snippets e formatação automática  
 
-### **Extensões recomendadas para Programação Web 1**
-
-- **Live Server**  
-  Permite visualizar alterações no navegador em tempo real.
-
-- **Prettier**  
-  Formata automaticamente o código, garantindo padronização.
-
-- **ESLint**  
-  Ajuda a identificar erros e más práticas em JavaScript.
-
-- **HTML CSS Support**  
-  Melhora o autocompletar entre HTML e CSS.
-
-- **Material Icon Theme**  
-  Facilita a identificação de arquivos pela iconografia.
-
-- **GitLens**  
-  Explica cada linha do código com base no histórico do Git.
-
-Essas extensões tornam o processo de desenvolvimento mais fluido, organizado e profissional.
-
 ---
 
-## ### 1.2.3 — Git e GitHub (visão inicial)
+#### 1.2.3 — Git e GitHub (visão inicial)
 
 O **Git** é um sistema de controle de versão distribuído. Ele permite que desenvolvedores acompanhem mudanças no código, revertam erros, criem ramificações (branches) e colaborem em projetos de forma segura e eficiente.
 
-### **Por que aprender Git desde o início?**
+**Por que aprender Git desde o início?**
 
 - Evita perda de código  
 - Permite trabalhar em equipe  
@@ -523,7 +500,7 @@ O **Git** é um sistema de controle de versão distribuído. Ele permite que des
 - É exigido em praticamente todas as vagas de TI  
 - É a base do GitHub Classroom, usado na disciplina
 
-### **GitHub: a plataforma social do código**
+**GitHub: a plataforma social do código**
 
 O **GitHub** é um serviço baseado em Git que permite:
 
@@ -535,15 +512,13 @@ O **GitHub** é um serviço baseado em Git que permite:
 - Trabalhar em equipe  
 - Criar portfólio profissional
 
-Para o aluno do IFAL, o GitHub será uma ferramenta central ao longo do curso, especialmente em disciplinas práticas e projetos integradores.
-
 ---
 
-## ### 1.2.4 — Ambientes online (CodePen, JSFiddle)
+#### 1.2.4 — Ambientes online (CodePen, JSFiddle)
 
 Ambientes online como **CodePen**, **JSFiddle**, **JSBin** e **StackBlitz** permitem testar código HTML, CSS e JavaScript diretamente no navegador, sem necessidade de instalar nada.
 
-### **Por que usar esses ambientes?**
+**Por que usar esses ambientes?**
 
 - Ideal para experimentação rápida  
 - Perfeito para iniciantes  
@@ -551,64 +526,21 @@ Ambientes online como **CodePen**, **JSFiddle**, **JSBin** e **StackBlitz** perm
 - Permite testar ideias sem criar arquivos locais  
 - Útil para depurar pequenos trechos de código  
 
-### **Quando usar?**
-
-- Para testar um trecho de CSS  
-- Para experimentar um comportamento JavaScript  
-- Para criar protótipos rápidos  
-- Para compartilhar exemplos com colegas ou professores  
-
-Essas ferramentas complementam o VS Code e ajudam o aluno a desenvolver autonomia e fluidez no aprendizado.
-
 ---
 
-## #### **Atividades — Seção 1.2**
+##### **Atividades — Seção 1.2**
 
 - **Quiz:** Ferramentas e DevTools *(link será adicionado)*  
 - **GitHub Classroom:** Criar repositório inicial e enviar `hello.html` *(link será adicionado)*  
 
 
 
----
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 1.2 — Ferramentas Essenciais para Desenvolvimento Web
-
-> **Vídeo curto explicativo**
-
-### 1.2.1 — Navegadores e DevTools
-### 1.2.2 — VS Code e extensões recomendadas
-### 1.2.3 — Git e GitHub (visão inicial)
-### 1.2.4 — Ambientes online (CodePen, JSFiddle)
-
-#### **Atividades — Seção 1.2**
-- **Quiz:** Ferramentas e DevTools *(link será adicionado)*
-- **GitHub Classroom:** Criar repositório inicial e enviar `hello.html` *(link será adicionado)*
-
----
 
 
 
