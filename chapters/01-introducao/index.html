@@ -1676,26 +1676,26 @@ Cada navegador utiliza um motor responsável por interpretar HTML, CSS e JavaScr
 <li><strong>GitHub Classroom:</strong> Criar repositório inicial e enviar <code>hello.html</code> <em>(link será adicionado)</em>  </li>
 </ul>
 <hr />
-<h1 id="13-estrutura-de-um-projeto-web">## 1.3 — Estrutura de um Projeto Web<a class="headerlink" href="#13-estrutura-de-um-projeto-web" title="Permanent link">&para;</a></h1>
+<h1 id="todo-revisar-esta-secao">TODO - Revisar esta seção<a class="headerlink" href="#todo-revisar-esta-secao" title="Permanent link">&para;</a></h1>
+<h3 id="13-estrutura-de-um-projeto-web">1.3 — Estrutura de um Projeto Web<a class="headerlink" href="#13-estrutura-de-um-projeto-web" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p><strong>Vídeo curto explicativo</strong><br />
 <em>(link será adicionado posteriormente)</em></p>
 </blockquote>
-<p>A organização de arquivos e pastas é um dos aspectos mais negligenciados por iniciantes, mas é fundamental para a manutenção, escalabilidade e clareza de um projeto Web. Um projeto bem estruturado facilita o trabalho em equipe, reduz erros e melhora a produtividade.</p>
+<p>A organização de arquivos e pastas em um projeto Web é uma decisão prática que facilita desenvolvimento, correção de erros e entrega. Para estudantes iniciantes do curso de Sistemas de Informação, adotar uma estrutura simples e consistente desde os primeiros exercícios reduz o atrito ao trabalhar com código, permite executar o projeto localmente com facilidade e prepara o aluno para colaborar em repositórios. Nesta seção apresentamos princípios básicos e exemplos mínimos, sem entrar em conceitos avançados.</p>
 <hr />
-<h2 id="131-arquivos-e-pastas">### 1.3.1 — Arquivos e pastas<a class="headerlink" href="#131-arquivos-e-pastas" title="Permanent link">&para;</a></h2>
-<p>Um projeto Web típico contém:</p>
+<h4 id="131-arquivos-e-pastas-essenciais">1.3.1 — Arquivos e pastas essenciais<a class="headerlink" href="#131-arquivos-e-pastas-essenciais" title="Permanent link">&para;</a></h4>
+<p>Um projeto Web básico costuma agrupar artefatos por tipo. Cada grupo tem uma função clara:</p>
 <ul>
-<li><strong>HTML</strong> (estrutura)  </li>
-<li><strong>CSS</strong> (estilo)  </li>
-<li><strong>JavaScript</strong> (interatividade)  </li>
-<li><strong>Imagens</strong>  </li>
-<li><strong>Fontes</strong>  </li>
-<li><strong>Bibliotecas externas</strong>  </li>
+<li><strong>HTML</strong> — arquivos <code>.html</code> que definem a estrutura das páginas;  </li>
+<li><strong>CSS</strong> — arquivos <code>.css</code> que definem aparência e layout;  </li>
+<li><strong>JavaScript</strong> — arquivos <code>.js</code> que adicionam interatividade;  </li>
+<li><strong>assets</strong> — recursos estáticos como imagens e fontes;  </li>
+<li><strong>documentação</strong> — <code>README.md</code> com instruções de execução e descrição do projeto.</li>
 </ul>
-<p>Uma estrutura comum é:</p>
+<p>Organizar dessa forma torna mais simples localizar onde alterar um texto, um estilo ou um comportamento, e facilita a configuração de ferramentas básicas (servidor local, controle de versão).</p>
+<p><strong>Exemplo de estrutura mínima:</strong></p>
 <div class="highlight"><pre><span></span><code>meu-projeto/
-│
 ├── index.html
 ├── css/
 │   └── style.css
@@ -1705,37 +1705,71 @@ Cada navegador utiliza um motor responsável por interpretar HTML, CSS e JavaScr
     ├── images/
     └── fonts/
 </code></pre></div>
-<p>Essa organização separa responsabilidades e facilita a manutenção.</p>
 <hr />
-<h2 id="132-estrutura-minima-de-um-projeto">### 1.3.2 — Estrutura mínima de um projeto<a class="headerlink" href="#132-estrutura-minima-de-um-projeto" title="Permanent link">&para;</a></h2>
-<p>Um projeto Web mínimo deve conter:</p>
+<h4 id="132-estrutura-minima-pratica-e-como-executar-localmente">1.3.2 — Estrutura mínima prática e como executar localmente<a class="headerlink" href="#132-estrutura-minima-pratica-e-como-executar-localmente" title="Permanent link">&para;</a></h4>
+<p>Para as primeiras atividades da disciplina, adote a estrutura mínima acima. Além dos arquivos, inclua:</p>
 <ul>
-<li><strong>Um arquivo HTML principal</strong> (<code>index.html</code>)  </li>
-<li><strong>Uma pasta para estilos</strong> (<code>css/</code>)  </li>
-<li><strong>Uma pasta para scripts</strong> (<code>js/</code>)  </li>
-<li><strong>Uma pasta para recursos</strong> (<code>assets/</code>)  </li>
+<li><strong><code>README.md</code></strong> — instruções curtas: como abrir o projeto no navegador e dependências (se houver);  </li>
+<li><strong><code>.gitignore</code></strong> — para evitar versionar arquivos desnecessários (ex.: <code>node_modules/</code> se usar Node).  </li>
 </ul>
-<p>Essa estrutura será utilizada ao longo da disciplina e servirá como base para projetos mais complexos.</p>
+<p><strong>Como abrir localmente (modo simples):</strong></p>
+<ol>
+<li>Abra a pasta do projeto no editor (por exemplo, VS Code).  </li>
+<li>Clique com o botão direito em <code>index.html</code> e escolha “Open with Live Server” (se a extensão estiver instalada) ou abra o arquivo diretamente no navegador.  </li>
+<li>Se usar apenas o arquivo, <code>index.html</code> funciona sem servidor; para funcionalidades que exigem requisições (fetch), use um servidor local simples (<code>Live Server</code>, <code>python -m http.server</code>, etc.).</li>
+</ol>
+<p><strong>Exemplo mínimo de <code>index.html</code>:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;pt-BR&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width,initial-scale=1&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Projeto Exemplo<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/style.css&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Projeto Exemplo<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Introdução<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Conteúdo inicial do projeto.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>© IFAL — Programação Web 1<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/script.js&quot;</span> <span class="na">defer</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>Observações técnicas simples:</strong><br />
+- Use <code>defer</code> ao incluir scripts para garantir que o HTML seja carregado antes da execução do JavaScript.<br />
+- Mantenha o <code>lang</code> no elemento <code>&lt;html&gt;</code> e o <code>meta viewport</code> para acessibilidade e responsividade básicas.</p>
 <hr />
-<h2 id="133-boas-praticas-de-organizacao">### 1.3.3 — Boas práticas de organização<a class="headerlink" href="#133-boas-praticas-de-organizacao" title="Permanent link">&para;</a></h2>
-<p>Algumas boas práticas essenciais:</p>
+<h4 id="133-boas-praticas-simples-e-justificadas">1.3.3 — Boas práticas simples e justificadas<a class="headerlink" href="#133-boas-praticas-simples-e-justificadas" title="Permanent link">&para;</a></h4>
+<p>Apresente-se ao hábito de seguir práticas que tornam o trabalho mais claro e profissional, mesmo em projetos iniciais:</p>
 <ul>
-<li>Nomear arquivos de forma clara e consistente  </li>
-<li>Evitar espaços e acentos em nomes de arquivos  </li>
-<li>Separar código por responsabilidade  </li>
-<li>Manter o HTML limpo e sem duplicações  </li>
-<li>Centralizar estilos em arquivos CSS  </li>
-<li>Evitar scripts inline  </li>
-<li>Utilizar comentários quando necessário  </li>
-<li>Manter uma estrutura previsível e padronizada  </li>
+<li><strong>Nomes claros e sem espaços:</strong> use <code>kebab-case</code> (ex.: <code>meu-projeto</code>, <code>style.css</code>). Evite acentos e espaços.  </li>
+<li><strong>Separar por tipo:</strong> HTML em raiz ou <code>pages/</code>, estilos em <code>css/</code>, scripts em <code>js/</code>, imagens em <code>assets/images/</code>. Isso facilita localizar arquivos.  </li>
+<li><strong>Evitar código inline:</strong> prefira arquivos externos (<code>css/style.css</code>, <code>js/script.js</code>) em vez de estilos e scripts dentro do HTML. Facilita leitura e reaproveitamento.  </li>
+<li><strong>Comentários sucintos:</strong> comente trechos não óbvios para facilitar revisão (ex.: <code>/* função que atualiza a lista */</code>).  </li>
+<li><strong>README básico:</strong> inclua objetivo do projeto e instruções para abrir localmente; isso ajuda avaliadores e colegas.  </li>
+<li><strong>Não versionar arquivos gerados:</strong> se usar ferramentas que geram pastas (ex.: <code>dist/</code>, <code>node_modules/</code>), inclua-as em <code>.gitignore</code>.  </li>
+<li><strong>Otimizar imagens:</strong> use imagens com tamanho adequado; para exercícios, prefira formatos leves (JPEG/PNG otimizados) e nomes descritivos (<code>logo.png</code>).</li>
 </ul>
-<p>Essas práticas tornam o projeto mais legível e profissional, facilitando a colaboração e a evolução do código.</p>
+<p>Essas práticas são simples, mas têm impacto direto: reduzem erros ao mover arquivos, evitam conflitos em sistemas de arquivos diferentes e tornam o projeto mais legível para quem for avaliá‑lo.</p>
 <hr />
-<h2 id="atividades-secao-13">#### <strong>Atividades — Seção 1.3</strong><a class="headerlink" href="#atividades-secao-13" title="Permanent link">&para;</a></h2>
+<h4 id="atividades-secao-13">Atividades — Seção 1.3<a class="headerlink" href="#atividades-secao-13" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>Quiz:</strong> Estrutura de projeto <em>(link será adicionado)</em>  </li>
-<li><strong>GitHub Classroom:</strong> Criar estrutura inicial de um mini‑site <em>(link será adicionado)</em>  </li>
+<li><strong>GitHub Classroom:</strong> Criar repositório com a estrutura mínima (<code>index.html</code>, <code>css/style.css</code>, <code>js/script.js</code>, <code>assets/</code>) e incluir <code>README.md</code> com instruções de execução <em>(link será adicionado)</em></li>
 </ul>
+<hr />
 <hr />
 <p><a href="../../preface/">:material-arrow-left: Back to Preface</a>
 <a href="../02-first-steps/">:material-arrow-right: Go to Chapter 2 – First Steps</a></p>
