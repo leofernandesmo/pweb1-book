@@ -1,13 +1,70 @@
-.quiz button {
-  margin: 4px;
-  padding: 6px 12px;
-  cursor: pointer;
+/* ================================
+   QUIZ ESTILO "FORMULÁRIO REAL"
+   ================================ */
+
+.quiz {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 25px 0;
 }
 
-.quiz .feedback {
-  margin-top: 8px;
-  font-weight: bold;
+.quiz p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #111827;
 }
+
+/* Estilo base das opções */
+.quiz button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: #ffffff;
+  border: 2px solid #d1d5db;
+  padding: 12px 14px;
+  margin: 8px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+/* Hover: destaque suave */
+.quiz button:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+/* Quando o aluno clicar (JS adiciona classe) */
+.quiz button.selected {
+  background: #e0f2fe;
+  border-color: #0284c7;
+}
+
+/* Quando a resposta estiver correta */
+.quiz button.correct {
+  background: #dcfce7;
+  border-color: #16a34a;
+  color: #065f46;
+}
+
+/* Quando a resposta estiver errada */
+.quiz button.incorrect {
+  background: #fee2e2;
+  border-color: #dc2626;
+  color: #7f1d1d;
+}
+
+/* Feedback */
+.quiz .feedback {
+  margin-top: 12px;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+/* ================================== */
 
 .code-runner textarea {
   width: 100%;
