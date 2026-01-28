@@ -585,41 +585,34 @@ Ambientes online como **CodePen**, **JSFiddle**, **JSBin** e **StackBlitz** perm
 
 
 
-
-
-
-
-
-
-
-
 ---
 
-# ## 1.3 — Estrutura de um Projeto Web
+# TODO - Revisar esta seção
+### 1.3 — Estrutura de um Projeto Web
 
 > **Vídeo curto explicativo**  
 > *(link será adicionado posteriormente)*
 
-A organização de arquivos e pastas é um dos aspectos mais negligenciados por iniciantes, mas é fundamental para a manutenção, escalabilidade e clareza de um projeto Web. Um projeto bem estruturado facilita o trabalho em equipe, reduz erros e melhora a produtividade.
+A organização de arquivos e pastas em um projeto Web é uma decisão prática que facilita desenvolvimento, correção de erros e entrega. Para estudantes iniciantes do curso de Sistemas de Informação, adotar uma estrutura simples e consistente desde os primeiros exercícios reduz o atrito ao trabalhar com código, permite executar o projeto localmente com facilidade e prepara o aluno para colaborar em repositórios. Nesta seção apresentamos princípios básicos e exemplos mínimos, sem entrar em conceitos avançados.
 
 ---
 
-## ### 1.3.1 — Arquivos e pastas
+#### 1.3.1 — Arquivos e pastas essenciais
 
-Um projeto Web típico contém:
+Um projeto Web básico costuma agrupar artefatos por tipo. Cada grupo tem uma função clara:
 
-- **HTML** (estrutura)  
-- **CSS** (estilo)  
-- **JavaScript** (interatividade)  
-- **Imagens**  
-- **Fontes**  
-- **Bibliotecas externas**  
+- **HTML** — arquivos `.html` que definem a estrutura das páginas;  
+- **CSS** — arquivos `.css` que definem aparência e layout;  
+- **JavaScript** — arquivos `.js` que adicionam interatividade;  
+- **assets** — recursos estáticos como imagens e fontes;  
+- **documentação** — `README.md` com instruções de execução e descrição do projeto.
 
-Uma estrutura comum é:
+Organizar dessa forma torna mais simples localizar onde alterar um texto, um estilo ou um comportamento, e facilita a configuração de ferramentas básicas (servidor local, controle de versão).
+
+**Exemplo de estrutura mínima:**
 
 ```
 meu-projeto/
-│
 ├── index.html
 ├── css/
 │   └── style.css
@@ -630,44 +623,82 @@ meu-projeto/
     └── fonts/
 ```
 
-Essa organização separa responsabilidades e facilita a manutenção.
+---
+
+#### 1.3.2 — Estrutura mínima prática e como executar localmente
+
+Para as primeiras atividades da disciplina, adote a estrutura mínima acima. Além dos arquivos, inclua:
+
+- **`README.md`** — instruções curtas: como abrir o projeto no navegador e dependências (se houver);  
+- **`.gitignore`** — para evitar versionar arquivos desnecessários (ex.: `node_modules/` se usar Node).  
+
+**Como abrir localmente (modo simples):**
+
+1. Abra a pasta do projeto no editor (por exemplo, VS Code).  
+2. Clique com o botão direito em `index.html` e escolha “Open with Live Server” (se a extensão estiver instalada) ou abra o arquivo diretamente no navegador.  
+3. Se usar apenas o arquivo, `index.html` funciona sem servidor; para funcionalidades que exigem requisições (fetch), use um servidor local simples (`Live Server`, `python -m http.server`, etc.).
+
+**Exemplo mínimo de `index.html`:**
+
+```html
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projeto Exemplo</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Projeto Exemplo</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Introdução</h2>
+      <p>Conteúdo inicial do projeto.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© IFAL — Programação Web 1</p>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
+```
+
+**Observações técnicas simples:**  
+- Use `defer` ao incluir scripts para garantir que o HTML seja carregado antes da execução do JavaScript.  
+- Mantenha o `lang` no elemento `<html>` e o `meta viewport` para acessibilidade e responsividade básicas.
 
 ---
 
-## ### 1.3.2 — Estrutura mínima de um projeto
+#### 1.3.3 — Boas práticas simples e justificadas
 
-Um projeto Web mínimo deve conter:
+Apresente-se ao hábito de seguir práticas que tornam o trabalho mais claro e profissional, mesmo em projetos iniciais:
 
-- **Um arquivo HTML principal** (`index.html`)  
-- **Uma pasta para estilos** (`css/`)  
-- **Uma pasta para scripts** (`js/`)  
-- **Uma pasta para recursos** (`assets/`)  
+- **Nomes claros e sem espaços:** use `kebab-case` (ex.: `meu-projeto`, `style.css`). Evite acentos e espaços.  
+- **Separar por tipo:** HTML em raiz ou `pages/`, estilos em `css/`, scripts em `js/`, imagens em `assets/images/`. Isso facilita localizar arquivos.  
+- **Evitar código inline:** prefira arquivos externos (`css/style.css`, `js/script.js`) em vez de estilos e scripts dentro do HTML. Facilita leitura e reaproveitamento.  
+- **Comentários sucintos:** comente trechos não óbvios para facilitar revisão (ex.: `/* função que atualiza a lista */`).  
+- **README básico:** inclua objetivo do projeto e instruções para abrir localmente; isso ajuda avaliadores e colegas.  
+- **Não versionar arquivos gerados:** se usar ferramentas que geram pastas (ex.: `dist/`, `node_modules/`), inclua-as em `.gitignore`.  
+- **Otimizar imagens:** use imagens com tamanho adequado; para exercícios, prefira formatos leves (JPEG/PNG otimizados) e nomes descritivos (`logo.png`).
 
-Essa estrutura será utilizada ao longo da disciplina e servirá como base para projetos mais complexos.
-
----
-
-## ### 1.3.3 — Boas práticas de organização
-
-Algumas boas práticas essenciais:
-
-- Nomear arquivos de forma clara e consistente  
-- Evitar espaços e acentos em nomes de arquivos  
-- Separar código por responsabilidade  
-- Manter o HTML limpo e sem duplicações  
-- Centralizar estilos em arquivos CSS  
-- Evitar scripts inline  
-- Utilizar comentários quando necessário  
-- Manter uma estrutura previsível e padronizada  
-
-Essas práticas tornam o projeto mais legível e profissional, facilitando a colaboração e a evolução do código.
+Essas práticas são simples, mas têm impacto direto: reduzem erros ao mover arquivos, evitam conflitos em sistemas de arquivos diferentes e tornam o projeto mais legível para quem for avaliá‑lo.
 
 ---
 
-## #### **Atividades — Seção 1.3**
+#### Atividades — Seção 1.3
 
 - **Quiz:** Estrutura de projeto *(link será adicionado)*  
-- **GitHub Classroom:** Criar estrutura inicial de um mini‑site *(link será adicionado)*  
+- **GitHub Classroom:** Criar repositório com a estrutura mínima (`index.html`, `css/style.css`, `js/script.js`, `assets/`) e incluir `README.md` com instruções de execução *(link será adicionado)*
+
+---
+
 
 ---
 
