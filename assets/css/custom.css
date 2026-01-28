@@ -168,3 +168,39 @@
     /* Remove margem inferior do último parágrafo */
     margin-bottom: 0;
 }
+
+
+
+
+<!-- Videos embutidos -->
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  /* 16:9 aspect ratio */
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #000;
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-actions {
+  margin-top: 0.5rem;
+  display:flex;
+  gap:0.5rem;
+  align-items:center;
+}
+.video-actions a {
+  color: var(--md-primary-fg);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+
