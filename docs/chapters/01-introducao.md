@@ -438,8 +438,8 @@ title="O que é DevTools e como ele pode te ajudar (Vídeo aberto no Youtube e d
 frameborder="0"
 allowfullscreen></iframe>
 
-> Watch the introduction video:
-> [https://www.youtube.com/watch?v=miBh6WRuEy8](https://www.youtube.com/watch?v=miBh6WRuEy8)
+Watch the introduction video:
+[https://www.youtube.com/watch?v=miBh6WRuEy8](https://www.youtube.com/watch?v=miBh6WRuEy8)
 
 O desenvolvimento Web moderno exige mais do que apenas conhecer linguagens como HTML, CSS e JavaScript. Ele demanda um conjunto de ferramentas que ampliam a produtividade, facilitam o diagnóstico de problemas, automatizam tarefas e permitem versionar e compartilhar código de forma profissional. Nesta seção, exploraremos as ferramentas fundamentais que todo desenvolvedor Web deve dominar desde o início da sua formação.
 
