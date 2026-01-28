@@ -429,6 +429,169 @@ Quando um usuário digita um domínio mnemônico (como `www.exemplo.com.br`) na 
 
 
 
+### 1.2 — Ferramentas Essenciais para Desenvolvimento Web
+
+> **Vídeo curto explicativo**  
+> *(link será adicionado posteriormente)*
+
+O desenvolvimento Web moderno exige mais do que apenas conhecer linguagens como HTML, CSS e JavaScript. Ele demanda um conjunto de ferramentas que ampliam a produtividade, facilitam o diagnóstico de problemas, automatizam tarefas e permitem versionar e compartilhar código de forma profissional. Nesta seção, exploraremos as ferramentas fundamentais que todo desenvolvedor Web deve dominar desde o início da sua formação.
+
+---
+
+#### 1.2.1 — Navegadores e DevTools
+
+Os navegadores modernos — como **Google Chrome**, **Mozilla Firefox**, **Microsoft Edge** e **Safari** — são muito mais do que simples programas para acessar páginas. Eles são verdadeiros **ambientes de execução** para aplicações Web, contendo motores de renderização, interpretadores JavaScript, mecanismos de segurança e ferramentas avançadas de inspeção.
+
+**Motores de Renderização**
+Cada navegador utiliza um motor responsável por interpretar HTML, CSS e JavaScript:
+
+- **Blink** (Chrome, Edge, Opera)  
+- **Gecko** (Firefox)  
+- **WebKit** (Safari)
+
+Esses motores convertem código em interfaces visuais, manipulam o DOM ([Document Object Model](https://developer.mozilla.org/pt-BR/docs/Web/API/Document_Object_Model)), aplicam estilos e executam scripts. Entender como eles funcionam ajuda a diagnosticar problemas de compatibilidade e desempenho.
+
+**DevTools: o laboratório do desenvolvedor**
+As **Ferramentas de Desenvolvedor (DevTools)** são um conjunto de utilitários integrados ao navegador que permitem:
+
+- Inspecionar e editar o DOM em tempo real  
+- Visualizar e modificar CSS dinamicamente  
+- Monitorar requisições HTTP  
+- Analisar desempenho (Performance)  
+- Depurar JavaScript (Debugging)  
+- Verificar acessibilidade  
+- Simular dispositivos móveis  
+- Monitorar armazenamento local (LocalStorage, Cookies, IndexedDB)
+
+O DevTools é indispensável para qualquer desenvolvedor Web. Ele transforma o navegador em um ambiente de experimentação e diagnóstico, permitindo compreender o comportamento da aplicação em detalhes.
+
+> Para abrir o DevTools (Ferramentas do Desenvolvedor) no Chrome ou Firefox, utilize os atalhos universais F12 ou Ctrl+Shift+I (Windows/Linux) e Cmd+Opt+I (Mac). Alternativamente, clique com o botão direito em qualquer página e selecione "Inspecionar" ou acesse o menu de três pontos > "Mais Ferramentas" > "Ferramentas do desenvolvedor
+>
+> ![Exemplo de uso do DevTools no Chrome](../figures/02_devtools_01.png)
+> 
+
+
+---
+
+## ### 1.2.2 — VS Code e extensões recomendadas
+
+O **Visual Studio Code (VS Code)** é hoje o editor de código mais utilizado no mundo. Ele combina leveza, extensibilidade e uma interface moderna, tornando-se ideal tanto para iniciantes quanto para profissionais.
+
+### **Por que o VS Code é tão popular?**
+
+- Suporte nativo a HTML, CSS e JavaScript  
+- Terminal integrado  
+- Git integrado  
+- Depurador embutido  
+- Extensões para praticamente qualquer tecnologia  
+- Autocompletar inteligente (IntelliSense)  
+- Suporte a snippets e formatação automática  
+
+### **Extensões recomendadas para Programação Web 1**
+
+- **Live Server**  
+  Permite visualizar alterações no navegador em tempo real.
+
+- **Prettier**  
+  Formata automaticamente o código, garantindo padronização.
+
+- **ESLint**  
+  Ajuda a identificar erros e más práticas em JavaScript.
+
+- **HTML CSS Support**  
+  Melhora o autocompletar entre HTML e CSS.
+
+- **Material Icon Theme**  
+  Facilita a identificação de arquivos pela iconografia.
+
+- **GitLens**  
+  Explica cada linha do código com base no histórico do Git.
+
+Essas extensões tornam o processo de desenvolvimento mais fluido, organizado e profissional.
+
+---
+
+## ### 1.2.3 — Git e GitHub (visão inicial)
+
+O **Git** é um sistema de controle de versão distribuído. Ele permite que desenvolvedores acompanhem mudanças no código, revertam erros, criem ramificações (branches) e colaborem em projetos de forma segura e eficiente.
+
+### **Por que aprender Git desde o início?**
+
+- Evita perda de código  
+- Permite trabalhar em equipe  
+- Facilita a organização de projetos  
+- É exigido em praticamente todas as vagas de TI  
+- É a base do GitHub Classroom, usado na disciplina
+
+### **GitHub: a plataforma social do código**
+
+O **GitHub** é um serviço baseado em Git que permite:
+
+- Hospedar repositórios  
+- Criar issues  
+- Fazer pull requests  
+- Criar wikis  
+- Automatizar tarefas com GitHub Actions  
+- Trabalhar em equipe  
+- Criar portfólio profissional
+
+Para o aluno do IFAL, o GitHub será uma ferramenta central ao longo do curso, especialmente em disciplinas práticas e projetos integradores.
+
+---
+
+## ### 1.2.4 — Ambientes online (CodePen, JSFiddle)
+
+Ambientes online como **CodePen**, **JSFiddle**, **JSBin** e **StackBlitz** permitem testar código HTML, CSS e JavaScript diretamente no navegador, sem necessidade de instalar nada.
+
+### **Por que usar esses ambientes?**
+
+- Ideal para experimentação rápida  
+- Perfeito para iniciantes  
+- Facilita o compartilhamento de exemplos  
+- Permite testar ideias sem criar arquivos locais  
+- Útil para depurar pequenos trechos de código  
+
+### **Quando usar?**
+
+- Para testar um trecho de CSS  
+- Para experimentar um comportamento JavaScript  
+- Para criar protótipos rápidos  
+- Para compartilhar exemplos com colegas ou professores  
+
+Essas ferramentas complementam o VS Code e ajudam o aluno a desenvolver autonomia e fluidez no aprendizado.
+
+---
+
+## #### **Atividades — Seção 1.2**
+
+- **Quiz:** Ferramentas e DevTools *(link será adicionado)*  
+- **GitHub Classroom:** Criar repositório inicial e enviar `hello.html` *(link será adicionado)*  
+
+
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -447,18 +610,84 @@ Quando um usuário digita um domínio mnemônico (como `www.exemplo.com.br`) na 
 
 ---
 
-## 1.3 — Estrutura de um Projeto Web
 
-> **Vídeo curto explicativo**
 
-### 1.3.1 — Arquivos e pastas
-### 1.3.2 — Estrutura mínima de um projeto
-### 1.3.3 — Boas práticas de organização
 
-#### **Atividades — Seção 1.3**
-- **Quiz:** Estrutura de projeto *(link será adicionado)*
-- **GitHub Classroom:** Criar estrutura inicial de um mini‑site *(link será adicionado)*
+---
 
+# ## 1.3 — Estrutura de um Projeto Web
+
+> **Vídeo curto explicativo**  
+> *(link será adicionado posteriormente)*
+
+A organização de arquivos e pastas é um dos aspectos mais negligenciados por iniciantes, mas é fundamental para a manutenção, escalabilidade e clareza de um projeto Web. Um projeto bem estruturado facilita o trabalho em equipe, reduz erros e melhora a produtividade.
+
+---
+
+## ### 1.3.1 — Arquivos e pastas
+
+Um projeto Web típico contém:
+
+- **HTML** (estrutura)  
+- **CSS** (estilo)  
+- **JavaScript** (interatividade)  
+- **Imagens**  
+- **Fontes**  
+- **Bibliotecas externas**  
+
+Uma estrutura comum é:
+
+```
+meu-projeto/
+│
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+└── assets/
+    ├── images/
+    └── fonts/
+```
+
+Essa organização separa responsabilidades e facilita a manutenção.
+
+---
+
+## ### 1.3.2 — Estrutura mínima de um projeto
+
+Um projeto Web mínimo deve conter:
+
+- **Um arquivo HTML principal** (`index.html`)  
+- **Uma pasta para estilos** (`css/`)  
+- **Uma pasta para scripts** (`js/`)  
+- **Uma pasta para recursos** (`assets/`)  
+
+Essa estrutura será utilizada ao longo da disciplina e servirá como base para projetos mais complexos.
+
+---
+
+## ### 1.3.3 — Boas práticas de organização
+
+Algumas boas práticas essenciais:
+
+- Nomear arquivos de forma clara e consistente  
+- Evitar espaços e acentos em nomes de arquivos  
+- Separar código por responsabilidade  
+- Manter o HTML limpo e sem duplicações  
+- Centralizar estilos em arquivos CSS  
+- Evitar scripts inline  
+- Utilizar comentários quando necessário  
+- Manter uma estrutura previsível e padronizada  
+
+Essas práticas tornam o projeto mais legível e profissional, facilitando a colaboração e a evolução do código.
+
+---
+
+## #### **Atividades — Seção 1.3**
+
+- **Quiz:** Estrutura de projeto *(link será adicionado)*  
+- **GitHub Classroom:** Criar estrutura inicial de um mini‑site *(link será adicionado)*  
 
 ---
 
