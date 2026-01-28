@@ -772,6 +772,67 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="1.1.2 — Requisições e Respostas (HTTP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-estrutura-de-uma-requisicao-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Estrutura de uma Requisição HTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-estrutura-de-uma-resposta-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Estrutura de uma Resposta HTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigos-de-status-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Códigos de Status HTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-como-protocolo-stateless" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP como Protocolo Stateless
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evolucao-do-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📜 Evolução do HTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1226,16 +1287,143 @@ Para compreender o funcionamento da rede em um nível de engenharia de software,
 <h4 id="o-navegador-browser">O Navegador (Browser)<a class="headerlink" href="#o-navegador-browser" title="Permanent link">&para;</a></h4>
 <p>O <strong>navegador</strong> é uma implementação específica de um cliente HTTP, projetado para interação humana. Sua complexidade técnica reside no <strong>Motor de Renderização</strong> (<em>Rendering Engine</em>), um componente de software responsável por receber o fluxo de dados brutos do servidor (texto HTML, regras CSS, scripts JS) e transformá-los em uma representação visual interativa. O navegador compila esses dados na memória do dispositivo construindo a <strong>DOM</strong> (Document Object Model), uma árvore estrutural de objetos que o usuário pode visualizar e manipular. Exemplos de motores de renderização incluem o <em>Blink</em> (usado no Chrome e Edge), <em>Gecko</em> (Firefox) e <em>WebKit</em> (Safari).</p>
 <h3 id="112-requisicoes-e-respostas-http">1.1.2 — Requisições e Respostas (HTTP)<a class="headerlink" href="#112-requisicoes-e-respostas-http" title="Permanent link">&para;</a></h3>
-<p>A comunicação na Web não ocorre de forma contínua ou ininterrupta; ela é discretizada em transações atômicas regidas pelo protocolo <strong>HTTP</strong> (Hypertext Transfer Protocol). 
-Este protocolo opera na Camada de Aplicação do modelo OSI e é definido por sua natureza <em>stateless</em> (sem estado), o que significa que, nativamente, o servidor não retém informações sobre as interações anteriores do cliente. 
-Cada troca de dados é tratada como uma transação independente e isolada, composta invariavelmente por dois elementos estruturais: uma <strong>Requisição</strong> (Request) enviada pelo cliente e uma <strong>Resposta</strong> (Response) devolvida pelo servidor.</p>
-<p>A <strong>Requisição</strong> é a mensagem inicial formatada pelo Agente de Usuário. 
-Sua anatomia é crítica para a interpretação correta pelo servidor e é encabeçada por um <strong>Método HTTP</strong> (ou verbo), que define a intenção da operação. 
-Os métodos mais prevalentes são o <code>GET</code>, utilizado para solicitar a representação de um recurso específico, e o <code>POST</code>, empregado para submeter entidades de dados ao servidor, como em formulários de cadastro. 
-Além do método e da URI alvo, a requisição transporta <strong>Cabeçalhos</strong> (Headers) — metadados que informam características do cliente, tipos de mídia aceitos e cookies de autenticação — e, opcionalmente, um <strong>Corpo</strong> (Body/Payload) contendo os dados brutos a serem processados.</p>
-<p>Em contrapartida, a <strong>Resposta</strong> é a reação lógica do servidor, cujo componente mais significativo é o <strong>Código de Estado</strong> (Status Code). 
-Este código numérico de três dígitos padroniza o resultado da operação para o software cliente: códigos da classe <code>2xx</code> indicam sucesso (ex: <code>200 OK</code>); a classe <code>3xx</code> denota redirecionamentos; a classe <code>4xx</code> sinaliza erros originados no cliente (como o famoso <code>404 Not Found</code>); e a classe <code>5xx</code> alerta sobre falhas internas no servidor. 
-Acompanhando este código, a resposta entrega os dados solicitados (geralmente HTML, JSON ou binários de imagem) no corpo da mensagem, permitindo que o navegador conclua o ciclo de renderização visual para o usuário.</p>
+<p>O protocolo HTTP (Hypertext Transfer Protocol) é o alicerce da comunicação entre clientes e servidores na Web. Embora muitas vezes invisível ao usuário final, ele é o mecanismo que possibilita a transferência de documentos, imagens, scripts, dados estruturados e praticamente qualquer tipo de recurso digital. Para uma pessoa desenvolvedora, compreender o funcionamento do HTTP não é apenas desejável — é indispensável. Sem esse entendimento, torna‑se impossível diagnosticar problemas de rede, otimizar desempenho, implementar segurança ou construir APIs robustas.</p>
+<p>HTTP é um protocolo <strong>baseado em texto</strong>, <strong>sem estado</strong> (stateless) e <strong>orientado a requisições</strong>. Isso significa que cada interação entre cliente e servidor é independente, e o servidor não mantém memória das requisições anteriores, a menos que mecanismos adicionais sejam utilizados (cookies, tokens, sessões, etc.). Essa característica, embora simples, é fundamental para a escalabilidade da Web moderna. Cada troca de dados é tratada como uma transação independente e isolada, composta invariavelmente por dois elementos estruturais: uma <strong>Requisição</strong> (Request) enviada pelo cliente e uma <strong>Resposta</strong> (Response) devolvida pelo servidor.</p>
+<h4 id="a-estrutura-de-uma-requisicao-http"><strong>A Estrutura de uma Requisição HTTP</strong><a class="headerlink" href="#a-estrutura-de-uma-requisicao-http" title="Permanent link">&para;</a></h4>
+<p>Quando o navegador precisa obter um recurso — seja uma página HTML, um arquivo CSS, um script JavaScript ou uma imagem — ele envia uma <strong>requisição HTTP</strong> ao servidor. Essa requisição é composta por três partes principais:</p>
+<p><strong>1. Linha de requisição (Request Line)</strong><br />
+Contém:</p>
+<ul>
+<li><strong>Método HTTP</strong> (GET, POST, PUT, DELETE, etc.)  </li>
+<li><strong>Caminho do recurso</strong>  </li>
+<li><strong>Versão do protocolo</strong></li>
+</ul>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code>GET /produtos HTTP/1.1
+</code></pre></div>
+<p><strong>2. Cabeçalhos (Headers)</strong><br />
+Os cabeçalhos fornecem metadados sobre a requisição, como:</p>
+<ul>
+<li>tipo de conteúdo aceito (<code>Accept</code>)  </li>
+<li>idioma preferido (<code>Accept-Language</code>)  </li>
+<li>informações do navegador (<code>User-Agent</code>)  </li>
+<li>cookies  </li>
+<li>autenticação  </li>
+<li>cache  </li>
+</ul>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code>Host: www.exemplo.com
+User-Agent: Mozilla/5.0
+Accept: text/html
+</code></pre></div>
+<p><strong>3. Corpo da requisição (Body)</strong><br />
+Nem toda requisição possui corpo.<br />
+Métodos como <strong>GET</strong> não enviam corpo, enquanto <strong>POST</strong> e <strong>PUT</strong> frequentemente enviam dados (formulários, JSON, arquivos).</p>
+<hr />
+<h4 id="a-estrutura-de-uma-resposta-http"><strong>A Estrutura de uma Resposta HTTP</strong><a class="headerlink" href="#a-estrutura-de-uma-resposta-http" title="Permanent link">&para;</a></h4>
+<p>Após processar a requisição, o servidor devolve uma <strong>resposta HTTP</strong>, composta por:</p>
+<p><strong>1. Linha de status (Status Line)</strong><br />
+Inclui:</p>
+<ul>
+<li>versão do protocolo  </li>
+<li>código de status  </li>
+<li>mensagem textual</li>
+</ul>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code>HTTP/1.1 200 OK
+</code></pre></div>
+<p><strong>2. Cabeçalhos de resposta</strong><br />
+Informam:</p>
+<ul>
+<li>tipo de conteúdo (<code>Content-Type</code>)  </li>
+<li>tamanho (<code>Content-Length</code>)  </li>
+<li>políticas de cache (<code>Cache-Control</code>)  </li>
+<li>cookies (<code>Set-Cookie</code>)  </li>
+<li>segurança (<code>Strict-Transport-Security</code>, <code>X-Frame-Options</code>)  </li>
+</ul>
+<p><strong>3. Corpo da resposta</strong><br />
+Contém o recurso solicitado: HTML, JSON, imagem, vídeo, etc.</p>
+<hr />
+<h4 id="codigos-de-status-http"><strong>Códigos de Status HTTP</strong><a class="headerlink" href="#codigos-de-status-http" title="Permanent link">&para;</a></h4>
+<p>Os códigos de status são fundamentais para diagnóstico e controle de fluxo. Eles são divididos em classes:</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Significado</th>
+<th>Exemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1xx</strong></td>
+<td>Informacional</td>
+<td>100 Continue</td>
+</tr>
+<tr>
+<td><strong>2xx</strong></td>
+<td>Sucesso</td>
+<td>200 OK, 201 Created</td>
+</tr>
+<tr>
+<td><strong>3xx</strong></td>
+<td>Redirecionamento</td>
+<td>301 Moved Permanently, 302 Found</td>
+</tr>
+<tr>
+<td><strong>4xx</strong></td>
+<td>Erro do cliente</td>
+<td>400 Bad Request, 404 Not Found</td>
+</tr>
+<tr>
+<td><strong>5xx</strong></td>
+<td>Erro do servidor</td>
+<td>500 Internal Server Error, 503 Service Unavailable</td>
+</tr>
+</tbody>
+</table>
+<p>Para desenvolvedores, compreender essas classes é essencial para depuração (localizar e corrigir erros ou bugs no software) e para a construção de APIs.</p>
+<hr />
+<h4 id="http-como-protocolo-stateless"><strong>HTTP como Protocolo Stateless</strong><a class="headerlink" href="#http-como-protocolo-stateless" title="Permanent link">&para;</a></h4>
+<p>A característica <em>stateless</em> significa que cada requisição é independente.<br />
+Isso traz vantagens:</p>
+<ul>
+<li>escalabilidade;  </li>
+<li>simplicidade;  </li>
+<li>paralelismo.  </li>
+</ul>
+<p>Mas também traz desafios:</p>
+<ul>
+<li>autenticação precisa ser reenviada;  </li>
+<li>estado da aplicação deve ser mantido no cliente ou em mecanismos externos;  </li>
+<li>sessões precisam de <em>cookies</em> ou <em>tokens</em>.  </li>
+</ul>
+<p>Essa limitação levou ao surgimento de tecnologias como:</p>
+<ul>
+<li><strong>JWT (JSON Web Tokens)</strong>  </li>
+<li><strong>Cookies de sessão</strong>  </li>
+<li><strong>LocalStorage / SessionStorage</strong>  </li>
+<li><strong>APIs RESTful com autenticação stateless</strong></li>
+</ul>
+<hr />
+<blockquote>
+<h4 id="evolucao-do-http">📜 <strong>Evolução do HTTP</strong><a class="headerlink" href="#evolucao-do-http" title="Permanent link">&para;</a></h4>
+<p>O HTTP passou por várias versões:</p>
+<p><strong>HTTP/1.1 (1997)</strong><br />
+- Conexões persistentes<br />
+- Cabeçalhos mais ricos<br />
+- Amplamente utilizado até hoje  </p>
+<p><strong>HTTP/2 (2015)</strong><br />
+- Multiplexação<br />
+- Compressão de cabeçalhos<br />
+- Server Push<br />
+- Melhor desempenho  </p>
+<p><strong>HTTP/3 (2022)</strong><br />
+- Baseado em QUIC (UDP)<br />
+- Redução de latência<br />
+- Melhor performance em redes instáveis  </p>
+<p>A Web moderna está migrando gradualmente para HTTP/3, especialmente em serviços de grande escala (Google, Cloudflare, Meta).</p>
+</blockquote>
 <hr />
 <h3 id="113-enderecamento-e-infraestrutura">1.1.3 — Endereçamento e Infraestrutura<a class="headerlink" href="#113-enderecamento-e-infraestrutura" title="Permanent link">&para;</a></h3>
 <p>Para que o ciclo de Requisição e Resposta (HTTP) ocorra com êxito, é necessário transpor uma barreira fundamental de comunicação: a localização exata do servidor na vasta topologia da rede global. 
