@@ -432,7 +432,14 @@ Quando um usuário digita um domínio mnemônico (como `www.exemplo.com.br`) na 
 ### 1.2 — Ferramentas Essenciais para Desenvolvimento Web
 
 > **Vídeo curto explicativo**  
-> *(link será adicionado posteriormente)*
+> <iframe width="100%" height="400"
+src="[https://www.youtube.com/embed/SEU_VIDEO_ID](https://www.youtube.com/watch?v=miBh6WRuEy8)"
+title="O que é DevTools e como ele pode te ajudar (Vídeo aberto no Youtube e disponibilizado pela TreinaWeb)"
+frameborder="0"
+allowfullscreen></iframe>
+
+> Watch the introduction video:
+> [[https://www.youtube.com/watch?v=YOUR_VIDEO_ID](https://www.youtube.com/watch?v=miBh6WRuEy8)]([https://www.youtube.com/watch?v=YOUR_VIDEO_ID](https://www.youtube.com/watch?v=miBh6WRuEy8))
 
 O desenvolvimento Web moderno exige mais do que apenas conhecer linguagens como HTML, CSS e JavaScript. Ele demanda um conjunto de ferramentas que ampliam a produtividade, facilitam o diagnóstico de problemas, automatizam tarefas e permitem versionar e compartilhar código de forma profissional. Nesta seção, exploraremos as ferramentas fundamentais que todo desenvolvedor Web deve dominar desde o início da sua formação.
 
