@@ -433,7 +433,7 @@ Quando um usuário digita um domínio mnemônico (como `www.exemplo.com.br`) na 
 
 > **Vídeo curto explicativo**  
 > <iframe width="100%" height="400"
-src="[https://www.youtube.com/embed/SEU_VIDEO_ID](https://www.youtube.com/watch?v=miBh6WRuEy8)"
+src="https://www.youtube.com/watch?v=miBh6WRuEy8"
 title="O que é DevTools e como ele pode te ajudar (Vídeo aberto no Youtube e disponibilizado pela TreinaWeb)"
 frameborder="0"
 allowfullscreen></iframe>
