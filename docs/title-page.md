@@ -1,6 +1,6 @@
 # Programação Web 1
 
-_Uma Introdução à Web com HTML, CSS e Javascript_
+_Uma abordagem usando Node/Express_
 
 **Author**  
 Your Leo Fernandes, PhD  
@@ -10,7 +10,7 @@ leonardo.fernandes@ifal.edu.br
 ---
 
 **Edition:** 1st Edition  
-**Year:** 2025  
+**Year:** 2026  
 
 **License:** CC BY-NC-ND 4.0  
 Ela garante:
