@@ -1,6 +1,6 @@
 # Programação Web 1
 
-_Uma abordagem usando Node/Express_
+_Uma Introdução à Web com HTML, CSS e Javascript_
 
 **Author**  
 Your Leo Fernandes, PhD  
