@@ -865,5 +865,5 @@ O exemplo a seguir ilustra a composição de uma página típica utilizando todo
 
 ---
 
-[:material-arrow-left: Voltar ao Capítulo 1 — Introdução à Web e Ferramentas](01-introducao-web.md)
+[:material-arrow-left: Voltar ao Capítulo 1 — Introdução à Web e Ferramentas](01-introducao.md)
 [:material-arrow-right: Ir ao Capítulo 3 — HTML Semântico e Acessibilidade](03-html-semantico.md)
