@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -1942,50 +1942,873 @@ Cada navegador utiliza um motor responsável por interpretar HTML, CSS e JavaScr
 <p><a href="#preface">:material-arrow-left: Back to Preface</a>
 <a href="#chapters-02-first-steps">:material-arrow-right: Go to Chapter 2 – First Steps</a></p></section><section class="print-page" id="chapters-02-html-fundamentos" heading-number="5.3"><h1 id="chapters-02-html-fundamentos-capitulo-2-fundamentos-do-html">Capítulo 2 — Fundamentos do HTML<a class="headerlink" href="#chapters-02-html-fundamentos-capitulo-2-fundamentos-do-html" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Vídeo curto explicativo</strong><br />
+<p><strong>Vídeo curto explicativo</strong>
 <em>(link será adicionado posteriormente)</em></p>
 </blockquote>
 <hr />
 <h2 id="chapters-02-html-fundamentos-21-introducao-ao-html">2.1 — Introdução ao HTML<a class="headerlink" href="#chapters-02-html-fundamentos-21-introducao-ao-html" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p><strong>Vídeo curto explicativo</strong></p>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
 </blockquote>
+<p>O HTML (<em>HyperText Markup Language</em>) constitui a linguagem de marcação que fundamenta toda a estrutura da Web. Antes de explorar seus elementos e regras sintáticas, é necessário compreender o que essa linguagem é — e, igualmente importante, o que ela <strong>não</strong> é — no contexto do desenvolvimento web moderno.</p>
 <h3 id="chapters-02-html-fundamentos-211-o-que-e-html">2.1.1 — O que é HTML<a class="headerlink" href="#chapters-02-html-fundamentos-211-o-que-e-html" title="Permanent link">&para;</a></h3>
-<h3 id="chapters-02-html-fundamentos-212-estrutura-basica-doctype-html-head-body">2.1.2 — Estrutura básica (<code>&lt;!DOCTYPE&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>)<a class="headerlink" href="#chapters-02-html-fundamentos-212-estrutura-basica-doctype-html-head-body" title="Permanent link">&para;</a></h3>
-<h3 id="chapters-02-html-fundamentos-213-tags-atributos-e-elementos">2.1.3 — Tags, atributos e elementos<a class="headerlink" href="#chapters-02-html-fundamentos-213-tags-atributos-e-elementos" title="Permanent link">&para;</a></h3>
-<h4 id="chapters-02-html-fundamentos-atividades-secao-21"><strong>Atividades — Seção 2.1</strong><a class="headerlink" href="#chapters-02-html-fundamentos-atividades-secao-21" title="Permanent link">&para;</a></h4>
+<p>O <strong>HTML</strong> é uma linguagem de <strong>marcação</strong> (<em>markup language</em>), não uma linguagem de programação. Esta distinção é tecnicamente precisa e conceitualmente importante: linguagens de programação possuem estruturas de controle de fluxo (condicionais, laços de repetição), gerenciamento de estado e capacidade de realizar cômputo generalizado. O HTML, por sua vez, serve a um propósito distinto e mais específico: <strong>descrever a estrutura e o significado do conteúdo</strong> de um documento hipermídia.</p>
+<p>O termo <em>hipertexto</em> (do inglês <em>hypertext</em>) refere-se à capacidade de interligar documentos por meio de referências navegáveis — os hiperlinks —, rompendo a linearidade característica dos documentos impressos e criando a "teia" não linear que deu nome à World Wide Web. O termo <em>marcação</em> (<em>markup</em>) remete à prática editorial de anotar manuscritos com instruções de formatação; no contexto digital, essas anotações são as <strong>tags</strong> HTML, que delimitam e descrevem os fragmentos de conteúdo.</p>
+<p>Do ponto de vista histórico, o HTML foi concebido por <strong>Tim Berners-Lee</strong> em 1991 como uma aplicação simplificada do <strong>SGML</strong> (<em>Standard Generalized Markup Language</em>), norma ISO para estruturação de documentos técnicos. A versão que fundamenta o desenvolvimento web contemporâneo é o <strong>HTML5</strong>, cuja especificação foi publicada pelo <strong>W3C</strong> (<em>World Wide Web Consortium</em>) em 2014 e é mantida atualmente pelo <strong>WHATWG</strong> (<em>Web Hypertext Application Technology Working Group</em>) sob o modelo de <em>living standard</em> — uma especificação em evolução contínua, sem versionamento fixo.</p>
+<blockquote>
+<p><strong>Referência:</strong> <a href="https://html.spec.whatwg.org/">WHATWG — HTML Living Standard</a></p>
+</blockquote>
+<p>É fundamental compreender que o HTML não controla a aparência visual das páginas — essa responsabilidade pertence ao <strong>CSS</strong> — nem o comportamento interativo, que é domínio do <strong>JavaScript</strong>. O HTML define exclusivamente <strong>o quê</strong> o conteúdo é: um título, um parágrafo, uma lista, uma imagem, um link. Esta separação de responsabilidades é um dos princípios arquiteturais mais importantes do desenvolvimento web moderno.</p>
+<blockquote>
+<h4 id="chapters-02-html-fundamentos-breve-historico-do-html">📜 Breve Histórico do HTML<a class="headerlink" href="#chapters-02-html-fundamentos-breve-historico-do-html" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>Quiz:</strong> Estrutura básica do HTML <em>(link será adicionado)</em></li>
+<li><strong>HTML 1.0 (1991)</strong> — Proposta inicial de Berners-Lee; cerca de 18 tags.</li>
+<li><strong>HTML 2.0 (1995)</strong> — Primeira especificação formal pelo IETF.</li>
+<li><strong>HTML 3.2 (1997)</strong> — Incorporou tabelas, applets e elementos de apresentação.</li>
+<li><strong>HTML 4.01 (1999)</strong> — Introduziu separação entre estrutura e apresentação; adoção do CSS.</li>
+<li><strong>XHTML 1.0 (2000)</strong> — Reformulação do HTML 4 com sintaxe XML estrita.</li>
+<li><strong>HTML5 (2014)</strong> — Revisão profunda: semântica, multimídia nativa, APIs JavaScript, formulários avançados.</li>
+<li><strong>HTML Living Standard (atual)</strong> — Mantido pelo WHATWG; atualizado continuamente.</li>
+</ul>
+</blockquote>
+<hr />
+<h3 id="chapters-02-html-fundamentos-212-estrutura-basica-doctype-html-head-body">2.1.2 — Estrutura básica (<code>&lt;!DOCTYPE&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>)<a class="headerlink" href="#chapters-02-html-fundamentos-212-estrutura-basica-doctype-html-head-body" title="Permanent link">&para;</a></h3>
+<p>Todo documento HTML válido obedece a uma estrutura hierárquica mínima, composta por quatro elementos obrigatórios. Compreender a função de cada um é o ponto de partida para qualquer prática de desenvolvimento web.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;pt-BR&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Título do Documento<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Conteúdo visível da página.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Cada componente desta estrutura desempenha um papel específico e insubstituível:</p>
+<p><strong><code>&lt;!DOCTYPE html&gt;</code></strong></p>
+<p>A declaração <code>DOCTYPE</code> (<em>Document Type Declaration</em>) não é uma tag HTML propriamente dita, mas uma instrução de processamento dirigida ao navegador. Ela informa ao motor de renderização que o documento deve ser interpretado segundo a especificação do <strong>HTML5</strong>, ativando o chamado <em>standards mode</em> (modo de conformidade com os padrões). Na ausência desta declaração, o navegador pode ativar o <em>quirks mode</em> — um modo de compatibilidade retroativa que emula comportamentos de navegadores antigos —, produzindo resultados de renderização imprevisíveis. Por esta razão, <code>&lt;!DOCTYPE html&gt;</code> deve ser <strong>sempre</strong> a primeira linha de qualquer documento HTML.</p>
+<p><strong><code>&lt;html lang="..."&gt;</code></strong></p>
+<p>O elemento <code>&lt;html&gt;</code> é o elemento raiz (<em>root element</em>) do documento: todos os demais elementos são seus descendentes. O atributo <code>lang</code> declara o idioma primário do conteúdo textual do documento, utilizando códigos definidos pela norma <strong>BCP 47</strong> (ex.: <code>pt-BR</code> para português brasileiro, <code>en-US</code> para inglês americano). Esta declaração é imprescindível para que leitores de tela utilizem o mecanismo de síntese de voz correto, para que ferramentas de tradução automática identifiquem o idioma de origem e para a correta aplicação de regras tipográficas (hifenização, aspas, etc.).</p>
+<p><strong><code>&lt;head&gt;</code></strong></p>
+<p>O elemento <code>&lt;head&gt;</code> constitui o cabeçalho do documento — distinto do cabeçalho visual da página. Ele contém <strong>metadados</strong>: informações sobre o documento que não são exibidas diretamente ao usuário, mas são consumidas pelo navegador, por mecanismos de busca e por outras aplicações. Os metadados mais comuns incluem:</p>
+<table>
+<thead>
+<tr>
+<th>Elemento / Atributo</th>
+<th>Função</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;meta charset="UTF-8"&gt;</code></td>
+<td>Define a codificação de caracteres do documento. UTF-8 é o padrão universal e suporta praticamente todos os sistemas de escrita.</td>
+</tr>
+<tr>
+<td><code>&lt;meta name="viewport" ...&gt;</code></td>
+<td>Controla o comportamento do <em>viewport</em> em dispositivos móveis. Essencial para o design responsivo.</td>
+</tr>
+<tr>
+<td><code>&lt;title&gt;</code></td>
+<td>Define o título do documento, exibido na aba do navegador e nos resultados de busca.</td>
+</tr>
+<tr>
+<td><code>&lt;link rel="stylesheet" href="..."&gt;</code></td>
+<td>Vincula uma folha de estilos CSS externa ao documento.</td>
+</tr>
+<tr>
+<td><code>&lt;meta name="description" content="..."&gt;</code></td>
+<td>Fornece uma descrição resumida do conteúdo para mecanismos de busca.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>&lt;body&gt;</code></strong></p>
+<p>O elemento <code>&lt;body&gt;</code> contém todo o conteúdo que será efetivamente <strong>renderizado e exibido</strong> ao usuário: textos, imagens, links, formulários, tabelas, vídeos e todos os demais elementos visuais e interativos. É dentro do <code>&lt;body&gt;</code> que a maior parte do trabalho de marcação HTML ocorre.</p>
+<blockquote>
+<p><strong>Boa prática:</strong> O atributo <code>lang</code> no elemento <code>&lt;html&gt;</code> e a meta tag <code>charset="UTF-8"</code> devem ser considerados obrigatórios em qualquer documento HTML, não opcionais. Sua omissão constitui uma falha técnica com impacto direto em acessibilidade e internacionalização.</p>
+</blockquote>
+<hr />
+<h3 id="chapters-02-html-fundamentos-213-tags-atributos-e-elementos">2.1.3 — Tags, atributos e elementos<a class="headerlink" href="#chapters-02-html-fundamentos-213-tags-atributos-e-elementos" title="Permanent link">&para;</a></h3>
+<p>A compreensão precisa da terminologia HTML é fundamental para evitar ambiguidades na comunicação técnica e para interpretar corretamente a documentação especializada.</p>
+<p><strong>Tags</strong></p>
+<p>Uma <strong>tag</strong> é a unidade sintática básica do HTML. Ela é delimitada pelos caracteres <code>&lt;</code> e <code>&gt;</code> e pode ser de dois tipos:</p>
+<ul>
+<li><strong>Tag de abertura:</strong> <code>&lt;p&gt;</code> — indica o início de um elemento.</li>
+<li><strong>Tag de fechamento:</strong> <code>&lt;/p&gt;</code> — indica o término de um elemento, sendo distinguida pela barra <code>/</code> após o caractere <code>&lt;</code>.</li>
+<li><strong>Tag vazia (<em>void element</em>):</strong> <code>&lt;img /&gt;</code>, <code>&lt;br /&gt;</code>, <code>&lt;meta /&gt;</code> — elementos que não possuem conteúdo interno e, portanto, não requerem tag de fechamento.</li>
+</ul>
+<p><strong>Elementos</strong></p>
+<p>Um <strong>elemento</strong> HTML é a unidade semântica completa, composta pela tag de abertura, pelo conteúdo (quando presente) e pela tag de fechamento:</p>
+<div class="highlight"><pre><span></span><code>&lt;p&gt;Este é o conteúdo do parágrafo.&lt;/p&gt;
+ ↑                                  ↑
+Tag de abertura            Tag de fechamento
+└──────────── Elemento completo ────────────┘
+</code></pre></div>
+<p>Os elementos podem ser <strong>aninhados</strong> (<em>nested</em>), ou seja, um elemento pode conter outros elementos, desde que o aninhamento seja realizado de forma correta — sem sobreposição de tags:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Aninhamento CORRETO --&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Texto com <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>ênfase forte<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> no meio.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- Aninhamento INCORRETO — tags sobrepostas --&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Texto com <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>ênfase<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>Atributos</strong></p>
+<p>Os <strong>atributos</strong> fornecem informações adicionais sobre um elemento. Eles são declarados dentro da tag de abertura, na forma de pares <code>nome="valor"</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.exemplo.com&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;noopener noreferrer&quot;</span><span class="p">&gt;</span>
+  Visitar exemplo
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>No exemplo acima, <code>href</code>, <code>target</code> e <code>rel</code> são atributos do elemento <code>&lt;a&gt;</code>. Cada atributo modifica ou complementa o comportamento e o significado do elemento ao qual pertence. Alguns atributos são <strong>globais</strong> — aplicáveis a qualquer elemento HTML (ex.: <code>id</code>, <code>class</code>, <code>lang</code>, <code>title</code>, <code>hidden</code>) — enquanto outros são <strong>específicos</strong> de determinados elementos (ex.: <code>href</code> é exclusivo de <code>&lt;a&gt;</code> e <code>&lt;link&gt;</code>; <code>src</code> é exclusivo de <code>&lt;img&gt;</code>, <code>&lt;script&gt;</code>, <code>&lt;iframe&gt;</code>, entre outros).</p>
+<blockquote>
+<p><strong>Nota técnica:</strong> Em HTML5, as aspas ao redor dos valores de atributos são tecnicamente opcionais para valores sem espaços. Contudo, sua utilização é <strong>fortemente recomendada</strong> como boa prática, pois garante consistência sintática e previne ambiguidades em casos como <code>&lt;input type=text name=meu campo&gt;</code>, onde <code>meu campo</code> seria interpretado incorretamente.</p>
+</blockquote>
+<p><strong>Árvore DOM (<em>Document Object Model</em>)</strong></p>
+<p>Quando o navegador carrega um documento HTML, ele não o interpreta como uma sequência linear de texto, mas o converte em uma estrutura de dados hierárquica em memória denominada <strong>DOM</strong> (<em>Document Object Model</em>). O DOM representa o documento como uma <strong>árvore de nós</strong>, em que cada elemento, atributo e fragmento de texto corresponde a um nó. Esta representação é o que permite ao JavaScript manipular dinamicamente o conteúdo e a estrutura da página.</p>
+<div class="highlight"><pre><span></span><code>document
+└── html
+    ├── head
+    │   ├── meta (charset)
+    │   └── title
+    │       └── &quot;Título&quot;
+    └── body
+        └── p
+            └── &quot;Conteúdo visível.&quot;
+</code></pre></div>
+<p>A compreensão do DOM é essencial não apenas para o JavaScript, mas também para a correta interpretação de seletores CSS e para o diagnóstico de problemas estruturais via DevTools.</p>
+<hr />
+<h4 id="chapters-02-html-fundamentos-atividades-secao-21"><strong>Atividades — Seção 2.1</strong><a class="headerlink" href="#chapters-02-html-fundamentos-atividades-secao-21" title="Permanent link">&para;</a></h4>
+<div class="quiz" data-answer="b">
+  <p><strong>1.</strong> Qual é a função principal do elemento <code>&lt;head&gt;</code> em um documento HTML?</p>
+
+  <button data-option="a">Exibir o cabeçalho visual da página, como logotipo e navegação.</button>
+  <button data-option="b">Conter metadados sobre o documento, como título, codificação e vínculos com folhas de estilo.</button>
+  <button data-option="c">Delimitar o conteúdo principal que será renderizado ao usuário.</button>
+  <button data-option="d">Declarar a versão do HTML utilizada no documento.</button>
+
+  <p class="feedback"></p>
+</div>
+
+<div class="quiz" data-answer="c">
+  <p><strong>2.</strong> O que ocorre quando um documento HTML é carregado sem a declaração <code>&lt;!DOCTYPE html&gt;</code>?</p>
+
+  <button data-option="a">O navegador rejeita o documento e exibe uma mensagem de erro.</button>
+  <button data-option="b">O documento é carregado normalmente, sem qualquer diferença de comportamento.</button>
+  <button data-option="c">O navegador pode ativar o <em>quirks mode</em>, produzindo comportamentos de renderização imprevisíveis.</button>
+  <button data-option="d">O documento é tratado como XHTML automaticamente.</button>
+
+  <p class="feedback"></p>
+</div>
+
+<div class="quiz" data-answer="d">
+  <p><strong>3.</strong> Qual das alternativas apresenta a diferença correta entre uma <em>tag</em> e um <em>elemento</em> HTML?</p>
+
+  <button data-option="a">São sinônimos; os dois termos descrevem a mesma coisa.</button>
+  <button data-option="b">A tag inclui o conteúdo textual; o elemento inclui apenas os delimitadores <code>&lt;&gt;</code>.</button>
+  <button data-option="c">Tags são exclusivas do HTML5; elementos existem desde versões anteriores.</button>
+  <button data-option="d">A tag é o delimitador sintático (<code>&lt;p&gt;</code>, <code>&lt;/p&gt;</code>); o elemento é a unidade completa formada pela tag de abertura, conteúdo e tag de fechamento.</button>
+
+  <p class="feedback"></p>
+</div>
+
+<ul>
 <li><strong>GitHub Classroom:</strong> Criar página HTML mínima <em>(link será adicionado)</em></li>
 </ul>
 <hr />
 <h2 id="chapters-02-html-fundamentos-22-tags-essenciais">2.2 — Tags Essenciais<a class="headerlink" href="#chapters-02-html-fundamentos-22-tags-essenciais" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p><strong>Vídeo curto explicativo</strong></p>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
 </blockquote>
+<p>Com a estrutura básica do documento compreendida, é possível avançar para os elementos responsáveis pela marcação do conteúdo em si. As chamadas <strong>tags essenciais</strong> são aquelas de uso mais frequente no desenvolvimento web e constituem o vocabulário fundamental que todo desenvolvedor deve dominar.</p>
 <h3 id="chapters-02-html-fundamentos-221-titulos-paragrafos-e-textos">2.2.1 — Títulos, parágrafos e textos<a class="headerlink" href="#chapters-02-html-fundamentos-221-titulos-paragrafos-e-textos" title="Permanent link">&para;</a></h3>
+<p><strong>Títulos (<code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>)</strong></p>
+<p>O HTML define seis níveis de títulos, numerados de 1 a 6, em ordem decrescente de importância hierárquica. O elemento <code>&lt;h1&gt;</code> representa o título principal do documento ou da seção de maior nível, enquanto <code>&lt;h6&gt;</code> representa o subtítulo de menor relevância hierárquica.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Título principal da página<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Seção principal<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Subseção<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Subseção de terceiro nível<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Subseção de quarto nível<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h6</span><span class="p">&gt;</span>Subseção de quinto nível<span class="p">&lt;/</span><span class="nt">h6</span><span class="p">&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Atenção crítica:</strong> Os títulos não devem ser escolhidos com base em seu tamanho visual padrão — isso é responsabilidade do CSS. Eles devem refletir fielmente a <strong>hierarquia lógica do conteúdo</strong>. Um erro frequente entre iniciantes é utilizar <code>&lt;h3&gt;</code> porque "o tamanho parece adequado" em vez de <code>&lt;h2&gt;</code>, violando a estrutura hierárquica. Leitores de tela utilizam a hierarquia de títulos como mecanismo primário de navegação pelo documento; saltar níveis (ex.: de <code>&lt;h1&gt;</code> diretamente para <code>&lt;h3&gt;</code>) constitui uma falha de acessibilidade.</p>
+</blockquote>
+<p><strong>Parágrafos (<code>&lt;p&gt;</code>)</strong></p>
+<p>O elemento <code>&lt;p&gt;</code> delimita um <strong>parágrafo</strong> de texto. O navegador aplica, por padrão, margens verticais entre parágrafos consecutivos. É importante destacar que quebras de linha inseridas no código-fonte HTML (tecla Enter) não produzem quebras de linha no documento renderizado — o HTML ignora espaços em branco e quebras de linha extras no código.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Este é o primeiro parágrafo. O HTML ignora
+quebras de linha no código-fonte
+e trata o texto como contínuo.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Este é o segundo parágrafo, separado do anterior por uma margem automática.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Para forçar uma quebra de linha dentro de um parágrafo, utiliza-se o elemento vazio <code>&lt;br&gt;</code>. Entretanto, seu uso deve ser restrito a situações em que a quebra de linha faz parte do conteúdo (ex.: endereços postais, estrofes de poemas), e não como mecanismo de espaçamento — para isso, utiliza-se CSS.</p>
+<p><strong>Formatação semântica de texto</strong></p>
+<p>O HTML oferece um conjunto de elementos para conferir <strong>significado semântico</strong> a trechos de texto. É fundamental distinguir os elementos semânticos dos puramente visuais:</p>
+<table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Significado semântico</th>
+<th>Renderização padrão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;strong&gt;</code></td>
+<td>Importância ou urgência elevada</td>
+<td>Negrito</td>
+</tr>
+<tr>
+<td><code>&lt;em&gt;</code></td>
+<td>Ênfase (muda o sentido da frase)</td>
+<td>Itálico</td>
+</tr>
+<tr>
+<td><code>&lt;mark&gt;</code></td>
+<td>Trecho relevante para o contexto atual</td>
+<td>Destaque amarelo</td>
+</tr>
+<tr>
+<td><code>&lt;small&gt;</code></td>
+<td>Texto de menor relevância (notas, direitos autorais)</td>
+<td>Fonte menor</td>
+</tr>
+<tr>
+<td><code>&lt;del&gt;</code></td>
+<td>Conteúdo removido ou obsoleto</td>
+<td>Tachado</td>
+</tr>
+<tr>
+<td><code>&lt;ins&gt;</code></td>
+<td>Conteúdo inserido ou acrescentado</td>
+<td>Sublinhado</td>
+</tr>
+<tr>
+<td><code>&lt;code&gt;</code></td>
+<td>Fragmento de código-fonte</td>
+<td>Fonte monoespaçada</td>
+</tr>
+<tr>
+<td><code>&lt;abbr&gt;</code></td>
+<td>Abreviação ou sigla</td>
+<td>(variável) + tooltip</td>
+</tr>
+<tr>
+<td><code>&lt;cite&gt;</code></td>
+<td>Título de obra referenciada</td>
+<td>Itálico</td>
+</tr>
+<tr>
+<td><code>&lt;blockquote&gt;</code></td>
+<td>Citação longa de fonte externa</td>
+<td>Recuo</td>
+</tr>
+<tr>
+<td><code>&lt;q&gt;</code></td>
+<td>Citação curta, inline</td>
+<td>Aspas automáticas</td>
+</tr>
+<tr>
+<td><code>&lt;b&gt;</code></td>
+<td>Destaque tipográfico sem importância semântica</td>
+<td>Negrito</td>
+</tr>
+<tr>
+<td><code>&lt;i&gt;</code></td>
+<td>Voz alternativa, termos técnicos, estrangeirismos</td>
+<td>Itálico</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong><code>&lt;strong&gt;</code> vs. <code>&lt;b&gt;</code> e <code>&lt;em&gt;</code> vs. <code>&lt;i&gt;</code>:</strong> Esta é uma das distinções semânticas mais importantes do HTML5. <code>&lt;strong&gt;</code> indica que o trecho possui <strong>importância elevada</strong> no contexto do documento; <code>&lt;b&gt;</code> indica apenas destaque tipográfico convencional, sem implicação semântica. Da mesma forma, <code>&lt;em&gt;</code> indica ênfase que <strong>modifica o sentido</strong> da sentença, enquanto <code>&lt;i&gt;</code> marca texto em voz alternativa (termos técnicos, palavras estrangeiras, títulos de obras em linha). Leitores de tela podem alterar a entonação de voz para elementos <code>&lt;strong&gt;</code> e <code>&lt;em&gt;</code>, mas não para <code>&lt;b&gt;</code> e <code>&lt;i&gt;</code>.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Uso correto de strong e em --&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>É <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>obrigatório<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> fazer backup antes de prosseguir.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Ela <span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span>realmente<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span> disse isso? (a ênfase muda o sentido)<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- Uso correto de b e i --&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>O termo <span class="p">&lt;</span><span class="nt">i</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;la&quot;</span><span class="p">&gt;</span>lorem ipsum<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span> é amplamente utilizado em tipografia.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Pressione o botão <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Salvar<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span> para confirmar.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- Uso correto de abbr --&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>A linguagem <span class="p">&lt;</span><span class="nt">abbr</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;HyperText Markup Language&quot;</span><span class="p">&gt;</span>HTML<span class="p">&lt;/</span><span class="nt">abbr</span><span class="p">&gt;</span> é mantida pelo WHATWG.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<hr />
 <h3 id="chapters-02-html-fundamentos-222-links-e-navegacao">2.2.2 — Links e navegação<a class="headerlink" href="#chapters-02-html-fundamentos-222-links-e-navegacao" title="Permanent link">&para;</a></h3>
+<p>O elemento de âncora <code>&lt;a&gt;</code> (<em>anchor</em>) é o mecanismo fundamental de navegação hipertextual — aquele que, conceitualmente, define a própria natureza da Web como uma rede de documentos interconectados.</p>
+<p><strong>Anatomia do elemento <code>&lt;a&gt;</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.exemplo.com&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;noopener noreferrer&quot;</span><span class="p">&gt;</span>
+  Texto do link
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Os atributos mais relevantes do elemento <code>&lt;a&gt;</code> são:</p>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>href</code></td>
+<td>(<em>Hypertext REFerence</em>) Especifica o destino do link. Pode ser uma URL absoluta, uma URL relativa, uma âncora na mesma página (<code>#id</code>) ou um protocolo especial (<code>mailto:</code>, <code>tel:</code>).</td>
+</tr>
+<tr>
+<td><code>target</code></td>
+<td>Define onde o recurso vinculado será aberto. O valor <code>_blank</code> abre em nova aba; <code>_self</code> (padrão) abre na mesma aba.</td>
+</tr>
+<tr>
+<td><code>rel</code></td>
+<td>Descreve a relação entre o documento atual e o documento vinculado.</td>
+</tr>
+<tr>
+<td><code>download</code></td>
+<td>Indica que o recurso deve ser baixado em vez de navegado.</td>
+</tr>
+<tr>
+<td><code>hreflang</code></td>
+<td>Declara o idioma do documento de destino.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>URLs absolutas e relativas</strong></p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- URL absoluta: inclui protocolo e domínio completo --&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.ifal.edu.br&quot;</span><span class="p">&gt;</span>Site do IFAL<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- URL relativa: relativa ao documento atual --&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;sobre.html&quot;</span><span class="p">&gt;</span>Sobre<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;../index.html&quot;</span><span class="p">&gt;</span>Início<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/contato.html&quot;</span><span class="p">&gt;</span>Contato<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> <span class="cm">&lt;!-- relativa à raiz do site --&gt;</span>
+
+<span class="cm">&lt;!-- Âncora interna: navega para elemento com id específico --&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#secao-2&quot;</span><span class="p">&gt;</span>Ir para a Seção 2<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- Protocolos especiais --&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;mailto:contato@exemplo.com&quot;</span><span class="p">&gt;</span>Enviar e-mail<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;tel:+558200000000&quot;</span><span class="p">&gt;</span>Ligar agora<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>Segurança com <code>target="_blank"</code></strong></p>
+<p>A abertura de links em nova aba com <code>target="_blank"</code> requer atenção a uma questão de segurança: por padrão, a nova página pode acessar e manipular o objeto <code>window</code> da página de origem via <code>window.opener</code>. Para neutralizar este vetor de ataque (<em>reverse tabnapping</em>), é imperativo combinar <code>target="_blank"</code> com <code>rel="noopener noreferrer"</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- SEGURO: noopener bloqueia acesso ao window.opener --&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://site-externo.com&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;noopener noreferrer&quot;</span><span class="p">&gt;</span>
+  Link externo seguro
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>Acessibilidade em links</strong></p>
+<p>O texto de um link deve ser <strong>descritivo e autoexplicativo</strong> fora de contexto, pois usuários de leitores de tela frequentemente navegam pela lista de links do documento sem ler o texto ao redor. Textos genéricos como "clique aqui" ou "saiba mais" constituem falhas de acessibilidade:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- INCORRETO: texto não descritivo --&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/artigo.html&quot;</span><span class="p">&gt;</span>Clique aqui<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- CORRETO: texto descritivo --&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/artigo.html&quot;</span><span class="p">&gt;</span>Leia o artigo completo sobre HTML semântico<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- Quando necessário, use aria-label para complementar --&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/artigo.html&quot;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;Leia o artigo completo sobre HTML semântico&quot;</span><span class="p">&gt;</span>
+  Saiba mais
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<hr />
 <h3 id="chapters-02-html-fundamentos-223-imagens-e-midias">2.2.3 — Imagens e mídias<a class="headerlink" href="#chapters-02-html-fundamentos-223-imagens-e-midias" title="Permanent link">&para;</a></h3>
+<p><strong>O elemento <code>&lt;img&gt;</code></strong></p>
+<p>O elemento <code>&lt;img&gt;</code> incorpora imagens ao documento. Trata-se de um <strong>elemento vazio</strong> (<em>void element</em>): não possui tag de fechamento nem conteúdo interno.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;assets/images/diagrama-cliente-servidor.png&quot;</span>
+  <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Diagrama da arquitetura cliente-servidor mostrando o fluxo de requisição e resposta HTTP&quot;</span>
+  <span class="na">width</span><span class="o">=</span><span class="s">&quot;800&quot;</span>
+  <span class="na">height</span><span class="o">=</span><span class="s">&quot;450&quot;</span>
+  <span class="na">loading</span><span class="o">=</span><span class="s">&quot;lazy&quot;</span>
+<span class="p">/&gt;</span>
+</code></pre></div>
+<p>Os atributos fundamentais do elemento <code>&lt;img&gt;</code> são:</p>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Obrigatoriedade</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>src</code></td>
+<td><strong>Obrigatório</strong></td>
+<td>Caminho (URL absoluta ou relativa) do arquivo de imagem.</td>
+</tr>
+<tr>
+<td><code>alt</code></td>
+<td><strong>Obrigatório</strong></td>
+<td>Texto alternativo que descreve a imagem. Exibido quando a imagem não pode ser carregada; lido por leitores de tela.</td>
+</tr>
+<tr>
+<td><code>width</code> / <code>height</code></td>
+<td>Recomendado</td>
+<td>Dimensões em pixels. Previnem o <em>layout shift</em> durante o carregamento da página.</td>
+</tr>
+<tr>
+<td><code>loading</code></td>
+<td>Recomendado</td>
+<td><code>lazy</code> ativa o carregamento adiado (<em>lazy loading</em>), melhorando o desempenho.</td>
+</tr>
+<tr>
+<td><code>srcset</code></td>
+<td>Opcional</td>
+<td>Define imagens alternativas para diferentes densidades de tela ou tamanhos de viewport.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>O atributo <code>alt</code>: importância e uso correto</strong></p>
+<p>O atributo <code>alt</code> merece atenção especial. Ele não é uma legenda — é uma <strong>descrição funcional</strong> da imagem para contextos em que ela não pode ser percebida visualmente. Seu uso correto segue as seguintes regras:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Imagem informativa: alt descreve o conteúdo e a função --&gt;</span>
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;grafico-vendas.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Gráfico de barras mostrando crescimento de 40% nas vendas do 2º semestre de 2025&quot;</span> <span class="p">/&gt;</span>
+
+<span class="cm">&lt;!-- Imagem decorativa: alt vazio (não omitido) indica que deve ser ignorada por leitores de tela --&gt;</span>
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;decoracao-fundo.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="p">/&gt;</span>
+
+<span class="cm">&lt;!-- INCORRETO: alt omitido — o leitor de tela lerá o nome do arquivo --&gt;</span>
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;grafico-vendas.png&quot;</span> <span class="p">/&gt;</span>
+
+<span class="cm">&lt;!-- INCORRETO: alt redundante — não acrescenta informação --&gt;</span>
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;logo.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;imagem&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+<p><strong>Imagens com legenda: <code>&lt;figure&gt;</code> e <code>&lt;figcaption&gt;</code></strong></p>
+<p>Quando uma imagem requer uma legenda visível associada, o padrão semântico correto utiliza os elementos <code>&lt;figure&gt;</code> e <code>&lt;figcaption&gt;</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">figure</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">img</span>
+    <span class="na">src</span><span class="o">=</span><span class="s">&quot;figures/01_cliente_servidor.png&quot;</span>
+    <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Diagrama da arquitetura cliente-servidor com múltiplos dispositivos conectados a um servidor central&quot;</span>
+    <span class="na">width</span><span class="o">=</span><span class="s">&quot;700&quot;</span>
+    <span class="na">height</span><span class="o">=</span><span class="s">&quot;400&quot;</span>
+  <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+    Figura 1 — Arquitetura cliente-servidor: múltiplos clientes submetem requisições
+    a um servidor centralizado, que processa e retorna as respostas correspondentes.
+  <span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>O elemento <code>&lt;figure&gt;</code> representa conteúdo autônomo — frequentemente com legenda — que é referenciado pelo fluxo principal do documento, mas que poderia ser removido sem comprometer sua continuidade. <code>&lt;figcaption&gt;</code> fornece a legenda ou descrição do conteúdo do <code>&lt;figure&gt;</code>.</p>
+<p><strong>Formatos de imagem para a Web</strong></p>
+<p>A escolha do formato de imagem tem impacto direto no desempenho da página:</p>
+<table>
+<thead>
+<tr>
+<th>Formato</th>
+<th>Características</th>
+<th>Uso recomendado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>JPEG / JPG</strong></td>
+<td>Compressão com perdas; não suporta transparência</td>
+<td>Fotografias e imagens com gradientes complexos</td>
+</tr>
+<tr>
+<td><strong>PNG</strong></td>
+<td>Compressão sem perdas; suporta transparência</td>
+<td>Logotipos, ícones, imagens com texto, screenshots</td>
+</tr>
+<tr>
+<td><strong>SVG</strong></td>
+<td>Vetor escalável; código XML; muito leve</td>
+<td>Ícones, logotipos, ilustrações, diagramas</td>
+</tr>
+<tr>
+<td><strong>WebP</strong></td>
+<td>Compressão superior ao JPEG/PNG; suporta transparência</td>
+<td>Substituto moderno para JPEG e PNG</td>
+</tr>
+<tr>
+<td><strong>AVIF</strong></td>
+<td>Compressão ainda mais eficiente que WebP</td>
+<td>Imagens de alta qualidade com menor tamanho</td>
+</tr>
+<tr>
+<td><strong>GIF</strong></td>
+<td>Suporta animações simples; paleta limitada</td>
+<td>Animações simples (prefira <code>&lt;video&gt;</code> ou CSS)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Vídeo e áudio nativos (<code>&lt;video&gt;</code> e <code>&lt;audio&gt;</code>)</strong></p>
+<p>O HTML5 introduziu suporte nativo a vídeo e áudio, eliminando a dependência de plugins externos como o Adobe Flash:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Elemento de vídeo com múltiplas fontes para compatibilidade --&gt;</span>
+<span class="p">&lt;</span><span class="nt">video</span>
+  <span class="na">controls</span>
+  <span class="na">width</span><span class="o">=</span><span class="s">&quot;800&quot;</span>
+  <span class="na">height</span><span class="o">=</span><span class="s">&quot;450&quot;</span>
+  <span class="na">poster</span><span class="o">=</span><span class="s">&quot;thumbnail.jpg&quot;</span>
+  <span class="na">preload</span><span class="o">=</span><span class="s">&quot;metadata&quot;</span>
+<span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;aula-intro.mp4&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;video/mp4&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;aula-intro.webm&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;video/webm&quot;</span> <span class="p">/&gt;</span>
+  <span class="cm">&lt;!-- Fallback para navegadores sem suporte --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Seu navegador não suporta reprodução de vídeo.
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;aula-intro.mp4&quot;</span><span class="p">&gt;</span>Baixe o vídeo aqui<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>.
+  <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</code></pre></div>
+<hr />
 <h3 id="chapters-02-html-fundamentos-224-listas-ordenadas-e-nao-ordenadas">2.2.4 — Listas (ordenadas e não ordenadas)<a class="headerlink" href="#chapters-02-html-fundamentos-224-listas-ordenadas-e-nao-ordenadas" title="Permanent link">&para;</a></h3>
+<p>O HTML define três tipos de listas, cada uma com semântica específica:</p>
+<p><strong>Lista não ordenada (<code>&lt;ul&gt;</code> — <em>Unordered List</em>)</strong></p>
+<p>Utilizada quando a <strong>ordem dos itens não é relevante</strong> para o significado do conteúdo. O navegador renderiza cada item (<code>&lt;li&gt;</code>) com um marcador visual (por padrão, um ponto preenchido), que pode ser personalizado via CSS.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>HTML<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>CSS<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>JavaScript<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>Lista ordenada (<code>&lt;ol&gt;</code> — <em>Ordered List</em>)</strong></p>
+<p>Utilizada quando a <strong>ordem dos itens é semanticamente significativa</strong> — instruções passo a passo, classificações, procedimentos, etc. O navegador renderiza os itens numerados sequencialmente por padrão.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Verificar o cache local do navegador<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Realizar a resolução DNS do domínio<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Estabelecer a conexão TCP com o servidor<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Enviar a requisição HTTP<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Receber e renderizar a resposta<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>O elemento <code>&lt;ol&gt;</code> aceita atributos que controlam a numeração:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Começar a contagem a partir de 5 --&gt;</span>
+<span class="p">&lt;</span><span class="nt">ol</span> <span class="na">start</span><span class="o">=</span><span class="s">&quot;5&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Quinto item<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Sexto item<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- Contagem regressiva --&gt;</span>
+<span class="p">&lt;</span><span class="nt">ol</span> <span class="na">reversed</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Terceiro lugar<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Segundo lugar<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Primeiro lugar<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- Tipo de marcador: A, a, I, i, 1 (padrão) --&gt;</span>
+<span class="p">&lt;</span><span class="nt">ol</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;A&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Opção A<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Opção B<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>Lista de definições (<code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, <code>&lt;dd&gt;</code> — <em>Description List</em>)</strong></p>
+<p>Utilizada para pares <strong>termo–descrição</strong> (glossários, metadados, dicionários):</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">dl</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>HTTP<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>Protocolo de transferência de hipertexto; define as regras de comunicação entre clientes e servidores na Web.<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>DNS<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>Sistema de nomes de domínio; traduz nomes de domínio legíveis por humanos em endereços IP.<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>DOM<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>Modelo de objeto do documento; representação em árvore de um documento HTML em memória.<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">dl</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>Listas aninhadas</strong></p>
+<p>Listas podem ser aninhadas para representar hierarquias:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Frontend
+    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>HTML<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>CSS<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>JavaScript<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Backend
+    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Node.js<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Python<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
+<hr />
 <h4 id="chapters-02-html-fundamentos-atividades-secao-22"><strong>Atividades — Seção 2.2</strong><a class="headerlink" href="#chapters-02-html-fundamentos-atividades-secao-22" title="Permanent link">&para;</a></h4>
+<div class="quiz" data-answer="b">
+  <p><strong>1.</strong> Qual é a diferença semântica entre os elementos <code>&lt;strong&gt;</code> e <code>&lt;b&gt;</code>?</p>
+
+  <button data-option="a">Não há diferença; ambos produzem texto em negrito da mesma forma.</button>
+  <button data-option="b"><code>&lt;strong&gt;</code> indica importância elevada com implicação semântica; <code>&lt;b&gt;</code> indica apenas destaque tipográfico convencional, sem semântica associada.</button>
+  <button data-option="c"><code>&lt;b&gt;</code> é o elemento correto para textos importantes; <code>&lt;strong&gt;</code> é uma alternativa obsoleta.</button>
+  <button data-option="d"><code>&lt;strong&gt;</code> é exclusivo do HTML5; <code>&lt;b&gt;</code> existe desde versões anteriores.</button>
+
+  <p class="feedback"></p>
+</div>
+
+<div class="quiz" data-answer="c">
+  <p><strong>2.</strong> Por que o atributo <code>alt</code> em imagens é tecnicamente obrigatório, mesmo em imagens decorativas?</p>
+
+  <button data-option="a">Para que o texto alternativo seja exibido ao lado da imagem como legenda.</button>
+  <button data-option="b">Para melhorar exclusivamente o posicionamento da página em mecanismos de busca.</button>
+  <button data-option="c">Porque leitores de tela leem o nome do arquivo quando o atributo é omitido; em imagens decorativas, o <code>alt=""</code> vazio instrui a tecnologia assistiva a ignorá-las.</button>
+  <button data-option="d">Porque sem o atributo <code>alt</code>, o navegador não carrega a imagem.</button>
+
+  <p class="feedback"></p>
+</div>
+
+<div class="quiz" data-answer="a">
+  <p><strong>3.</strong> Em qual situação o uso de <code>&lt;ol&gt;</code> é semanticamente mais apropriado do que <code>&lt;ul&gt;</code>?</p>
+
+  <button data-option="a">Quando a ordem dos itens é semanticamente significativa, como em instruções passo a passo ou classificações.</button>
+  <button data-option="b">Quando se deseja que os itens sejam exibidos horizontalmente.</button>
+  <button data-option="c">Quando a lista contém mais de cinco itens.</button>
+  <button data-option="d">Quando os itens possuem descrições associadas.</button>
+
+  <p class="feedback"></p>
+</div>
+
 <ul>
-<li><strong>Quiz:</strong> Tags essenciais <em>(link será adicionado)</em></li>
 <li><strong>GitHub Classroom:</strong> Criar página com textos, links, imagens e listas <em>(link será adicionado)</em></li>
 </ul>
 <hr />
 <h2 id="chapters-02-html-fundamentos-23-estruturacao-de-conteudo">2.3 — Estruturação de Conteúdo<a class="headerlink" href="#chapters-02-html-fundamentos-23-estruturacao-de-conteudo" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p><strong>Vídeo curto explicativo</strong></p>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
 </blockquote>
+<p>A marcação de elementos individuais — títulos, parágrafos, links, imagens — é apenas o primeiro nível do trabalho de estruturação em HTML. O segundo nível, igualmente importante, consiste em <strong>agrupar e organizar esses elementos</strong> em regiões lógicas e coerentes que reflitam a arquitetura informacional da página. É neste domínio que reside a essência do <strong>HTML semântico</strong> — conceito que será aprofundado no Capítulo 3, mas cujos fundamentos são introduzidos nesta seção.</p>
 <h3 id="chapters-02-html-fundamentos-231-divs-e-secoes">2.3.1 — Divs e seções<a class="headerlink" href="#chapters-02-html-fundamentos-231-divs-e-secoes" title="Permanent link">&para;</a></h3>
+<p><strong>O elemento <code>&lt;div&gt;</code></strong></p>
+<p>O <code>&lt;div&gt;</code> (<em>division</em>) é um <strong>elemento de contêiner genérico</strong>, desprovido de qualquer significado semântico intrínseco. Seu único propósito é <strong>agrupar</strong> outros elementos para fins de estilização via CSS ou manipulação via JavaScript. Quando nenhum elemento semântico adequado existe para representar um determinado agrupamento, o <code>&lt;div&gt;</code> é a escolha correta.</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Uso legítimo de div: contêiner para layout, sem semântica específica --&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;grid-container&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;coluna-principal&quot;</span><span class="p">&gt;</span>
+    <span class="cm">&lt;!-- conteúdo principal --&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;coluna-lateral&quot;</span><span class="p">&gt;</span>
+    <span class="cm">&lt;!-- conteúdo lateral --&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Contudo, um erro recorrente — denominado pejorativamente de <strong><em>divitis</em></strong> na comunidade de desenvolvimento — consiste em utilizar <code>&lt;div&gt;</code> para todo e qualquer agrupamento, ignorando os elementos semânticos disponíveis no HTML5. Esta prática produz documentos estruturalmente opacos, inacessíveis e de difícil manutenção.</p>
+<p><strong>O elemento <code>&lt;span&gt;</code></strong></p>
+<p>O <code>&lt;span&gt;</code> é o equivalente <strong>inline</strong> do <code>&lt;div&gt;</code>: um contêiner genérico sem semântica, utilizado para aplicar estilos ou comportamentos a fragmentos de texto dentro de um parágrafo ou outro elemento inline.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+  O código de status
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;destaque-codigo&quot;</span><span class="p">&gt;</span>404<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+  indica que o recurso solicitado não foi encontrado.
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>Quando usar <code>&lt;div&gt;</code> e <code>&lt;span&gt;</code></strong></p>
+<p>A regra de uso é direta: utilize <code>&lt;div&gt;</code> e <code>&lt;span&gt;</code> <strong>somente quando nenhum elemento semântico for apropriado</strong>. Se existe um elemento HTML que descreva com precisão o conteúdo agrupado — <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;aside&gt;</code>, etc. — esse elemento deve ser preferido.</p>
+<hr />
 <h3 id="chapters-02-html-fundamentos-232-cabecalho-rodape-e-navegacao">2.3.2 — Cabeçalho, rodapé e navegação<a class="headerlink" href="#chapters-02-html-fundamentos-232-cabecalho-rodape-e-navegacao" title="Permanent link">&para;</a></h3>
+<p>O HTML5 introduziu um conjunto de elementos de <strong>seção estrutural</strong> (<em>sectioning elements</em>) que permitem delimitar as regiões funcionais canônicas de uma página web. Estes elementos não apenas organizam visualmente o layout, mas comunicam a função de cada região a navegadores, tecnologias assistivas e mecanismos de busca.</p>
+<blockquote>
+<p><strong>Importante:</strong> Os elementos de seção estrutural não possuem hierarquia visual automática — eles não empurram conteúdo, não aplicam espaçamento, não criam colunas. Toda a apresentação visual continua sendo responsabilidade do CSS. O que esses elementos oferecem é <strong>significado semântico</strong> sobre a função de cada região.</p>
+</blockquote>
+<p><strong><code>&lt;header&gt;</code> — Cabeçalho</strong></p>
+<p>O elemento <code>&lt;header&gt;</code> representa o <strong>conteúdo introdutório</strong> de sua seção de escopo. Tipicamente contém o título principal, logotipo, subtítulo e/ou navegação primária. Importante: <code>&lt;header&gt;</code> não se limita ao cabeçalho global da página — ele pode ser usado como cabeçalho de um <code>&lt;article&gt;</code> ou <code>&lt;section&gt;</code> específico.</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Cabeçalho global da página --&gt;</span>
+<span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;logo.svg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Logotipo IFAL&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;120&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;60&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Programação Web 1<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
+    <span class="cm">&lt;!-- navegação principal --&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- Cabeçalho de um artigo específico --&gt;</span>
+<span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Introdução ao HTML Semântico<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Publicado em <span class="p">&lt;</span><span class="nt">time</span> <span class="na">datetime</span><span class="o">=</span><span class="s">&quot;2026-03-01&quot;</span><span class="p">&gt;</span>1º de março de 2026<span class="p">&lt;/</span><span class="nt">time</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Conteúdo do artigo...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong><code>&lt;nav&gt;</code> — Navegação</strong></p>
+<p>O elemento <code>&lt;nav&gt;</code> delimita um conjunto de <strong>links de navegação</strong> — seja a navegação principal do site, um menu de seções, um sumário ou links de paginação. Não é necessário marcar todos os grupos de links com <code>&lt;nav&gt;</code>; o elemento deve ser reservado para blocos de navegação de importância significativa.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;Navegação principal&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">&gt;</span>Início<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/capitulos&quot;</span><span class="p">&gt;</span>Capítulos<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/atividades&quot;</span><span class="p">&gt;</span>Atividades<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/sobre&quot;</span><span class="p">&gt;</span>Sobre<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong><code>&lt;footer&gt;</code> — Rodapé</strong></p>
+<p>O elemento <code>&lt;footer&gt;</code> representa o <strong>rodapé</strong> de sua seção de escopo. Tipicamente contém informações como autoria, direitos autorais, links secundários, dados de contato e metadados sobre o conteúdo. Assim como <code>&lt;header&gt;</code>, pode ser usado tanto no nível global da página quanto no nível de um <code>&lt;article&gt;</code> ou <code>&lt;section&gt;</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>© 2026 IFAL — Instituto Federal de Alagoas<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;Links do rodapé&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/politica-privacidade&quot;</span><span class="p">&gt;</span>Política de Privacidade<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/acessibilidade&quot;</span><span class="p">&gt;</span>Acessibilidade<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/contato&quot;</span><span class="p">&gt;</span>Contato<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+</code></pre></div>
+<hr />
 <h3 id="chapters-02-html-fundamentos-233-agrupamento-de-conteudo">2.3.3 — Agrupamento de conteúdo<a class="headerlink" href="#chapters-02-html-fundamentos-233-agrupamento-de-conteudo" title="Permanent link">&para;</a></h3>
+<p>Além do cabeçalho, navegação e rodapé, o HTML5 disponibiliza elementos para estruturar o corpo do conteúdo principal com precisão semântica.</p>
+<p><strong><code>&lt;main&gt;</code> — Conteúdo principal</strong></p>
+<p>O elemento <code>&lt;main&gt;</code> delimita o <strong>conteúdo principal e único</strong> da página — o conteúdo diretamente relacionado ao seu tópico central, excluindo elementos repetidos em outras páginas (cabeçalho, navegação, rodapé, <em>sidebars</em>). Deve existir <strong>apenas um <code>&lt;main&gt;</code> por página</strong> e ele não deve ser descendente de <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code> ou <code>&lt;nav&gt;</code>.</p>
+<p><strong><code>&lt;article&gt;</code> — Conteúdo autônomo</strong></p>
+<p>O elemento <code>&lt;article&gt;</code> representa um <strong>conteúdo independente e autossuficiente</strong> — um fragmento que faria sentido publicado de forma isolada, como uma postagem de blog, um artigo jornalístico, um comentário de usuário ou uma ficha de produto.</p>
+<p><strong><code>&lt;section&gt;</code> — Seção temática</strong></p>
+<p>O elemento <code>&lt;section&gt;</code> delimita uma <strong>seção temática genérica</strong> de um documento ou aplicação, tipicamente acompanhada de um título. Deve ser utilizado quando o conteúdo pode ser identificado como um grupo temático distinto, mas não constitui um conteúdo autônomo (que justificaria <code>&lt;article&gt;</code>).</p>
+<p><strong><code>&lt;aside&gt;</code> — Conteúdo tangencial</strong></p>
+<p>O elemento <code>&lt;aside&gt;</code> representa conteúdo <strong>tangencialmente relacionado</strong> ao conteúdo ao seu redor — informações que poderiam ser removidas sem comprometer o fluxo principal. Exemplos: notas de rodapé, caixas de destaque, listas de links relacionados, publicidade, perfis de autor.</p>
+<p><strong>Estrutura de página completa com elementos semânticos</strong></p>
+<p>O exemplo a seguir ilustra a composição de uma página típica utilizando todos os elementos discutidos nesta seção:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;pt-BR&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Programação Web 1 — Capítulo 2<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/style.css&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+  <span class="cm">&lt;!-- Cabeçalho global da página --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/&quot;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;Ir para a página inicial&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;assets/images/logo.svg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;IFAL&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;80&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;40&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Programação Web 1<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+    <span class="cm">&lt;!-- Navegação principal --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;Navegação principal&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/capitulos/01&quot;</span><span class="p">&gt;</span>Capítulo 1<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/capitulos/02&quot;</span> <span class="na">aria-current</span><span class="o">=</span><span class="s">&quot;page&quot;</span><span class="p">&gt;</span>Capítulo 2<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/capitulos/03&quot;</span><span class="p">&gt;</span>Capítulo 3<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+
+  <span class="cm">&lt;!-- Conteúdo principal: único por página --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
+
+    <span class="cm">&lt;!-- Artigo: conteúdo autônomo e identificável --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Capítulo 2 — Fundamentos do HTML<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+          Atualizado em
+          <span class="p">&lt;</span><span class="nt">time</span> <span class="na">datetime</span><span class="o">=</span><span class="s">&quot;2026-03-01&quot;</span><span class="p">&gt;</span>1º de março de 2026<span class="p">&lt;/</span><span class="nt">time</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+
+      <span class="cm">&lt;!-- Seção temática dentro do artigo --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">section</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">&quot;titulo-intro&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;titulo-intro&quot;</span><span class="p">&gt;</span>2.1 — Introdução ao HTML<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>O HTML é a linguagem de marcação que estrutura o conteúdo da Web...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+
+      <span class="p">&lt;</span><span class="nt">section</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">&quot;titulo-tags&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;titulo-tags&quot;</span><span class="p">&gt;</span>2.2 — Tags Essenciais<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>As tags essenciais constituem o vocabulário fundamental do HTML...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+        <span class="cm">&lt;!-- Figura com legenda semântica --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">figure</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">img</span>
+            <span class="na">src</span><span class="o">=</span><span class="s">&quot;assets/figures/estrutura-html.png&quot;</span>
+            <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Diagrama da estrutura hierárquica de um documento HTML&quot;</span>
+            <span class="na">width</span><span class="o">=</span><span class="s">&quot;600&quot;</span>
+            <span class="na">height</span><span class="o">=</span><span class="s">&quot;350&quot;</span>
+            <span class="na">loading</span><span class="o">=</span><span class="s">&quot;lazy&quot;</span>
+          <span class="p">/&gt;</span>
+          <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+            Figura 2 — Representação hierárquica da estrutura de um documento HTML5.
+          <span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+
+      <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+          Autoria: Prof. [Nome] —
+          <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/licenca&quot;</span><span class="p">&gt;</span>Licença Creative Commons BY-SA 4.0<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+
+    <span class="cm">&lt;!-- Conteúdo tangencial: relacionado mas não central --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">aside</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;Recursos complementares&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Recursos complementares<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://developer.mozilla.org/pt-BR/docs/Web/HTML&quot;</span><span class="p">&gt;</span>MDN Web Docs — HTML<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://html.spec.whatwg.org/&quot;</span><span class="p">&gt;</span>WHATWG — HTML Living Standard<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://validator.w3.org/&quot;</span><span class="p">&gt;</span>W3C Markup Validation Service<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">aside</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+
+  <span class="cm">&lt;!-- Rodapé global da página --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>© 2026 IFAL — Instituto Federal de Alagoas. Material didático de uso livre.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;Links institucionais&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/acessibilidade&quot;</span><span class="p">&gt;</span>Acessibilidade<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/contato&quot;</span><span class="p">&gt;</span>Contato<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/script.js&quot;</span> <span class="na">defer</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>Mapa visual da estrutura semântica</strong></p>
+<div class="highlight"><pre><span></span><code>&lt;body&gt;
+├── &lt;header&gt;          ← Cabeçalho global (logo, h1, nav principal)
+│   └── &lt;nav&gt;         ← Navegação principal
+├── &lt;main&gt;            ← Conteúdo principal (único por página)
+│   ├── &lt;article&gt;     ← Conteúdo autônomo (o capítulo em si)
+│   │   ├── &lt;header&gt;  ← Cabeçalho do artigo (h2, metadados)
+│   │   ├── &lt;section&gt; ← Seção 2.1
+│   │   ├── &lt;section&gt; ← Seção 2.2
+│   │   └── &lt;footer&gt;  ← Rodapé do artigo (autoria, licença)
+│   └── &lt;aside&gt;       ← Conteúdo tangencial (links relacionados)
+└── &lt;footer&gt;          ← Rodapé global (copyright, links inst.)
+</code></pre></div>
+<blockquote>
+<p><strong>Validação do documento HTML</strong></p>
+<p>O W3C disponibiliza o <strong>Markup Validation Service</strong>, uma ferramenta online que verifica a conformidade sintática de documentos HTML com a especificação. A validação regular do código é uma prática profissional essencial e deve ser incorporada ao fluxo de desenvolvimento desde as primeiras atividades.</p>
+<p><strong>Referência:</strong> <a href="https://validator.w3.org/">https://validator.w3.org/</a></p>
+</blockquote>
+<hr />
 <h4 id="chapters-02-html-fundamentos-atividades-secao-23"><strong>Atividades — Seção 2.3</strong><a class="headerlink" href="#chapters-02-html-fundamentos-atividades-secao-23" title="Permanent link">&para;</a></h4>
+<div class="quiz" data-answer="b">
+  <p><strong>1.</strong> Qual é a distinção semântica entre os elementos <code>&lt;article&gt;</code> e <code>&lt;section&gt;</code>?</p>
+
+  <button data-option="a">Não há distinção; ambos são contêineres genéricos equivalentes ao <code>&lt;div&gt;</code>.</button>
+  <button data-option="b"><code>&lt;article&gt;</code> representa conteúdo autônomo e independente que faria sentido isolado; <code>&lt;section&gt;</code> representa uma seção temática de um documento, geralmente não autocontida.</button>
+  <button data-option="c"><code>&lt;section&gt;</code> é utilizado para o conteúdo principal da página; <code>&lt;article&gt;</code> para conteúdo secundário.</button>
+  <button data-option="d"><code>&lt;article&gt;</code> é exclusivo para artigos jornalísticos; <code>&lt;section&gt;</code> pode ser utilizado em qualquer tipo de conteúdo.</button>
+
+  <p class="feedback"></p>
+</div>
+
+<div class="quiz" data-answer="c">
+  <p><strong>2.</strong> Por que o elemento <code>&lt;main&gt;</code> deve ocorrer apenas uma vez por página?</p>
+
+  <button data-option="a">Por ser um elemento HTML5 recente, navegadores antigos não suportam múltiplas instâncias.</button>
+  <button data-option="b">Para evitar conflitos de estilo com o CSS.</button>
+  <button data-option="c">Porque ele representa o conteúdo <strong>principal e único</strong> da página; múltiplas instâncias criariam ambiguidade sobre qual região contém o conteúdo central do documento.</button>
+  <button data-option="d">Porque o <code>&lt;main&gt;</code> só pode ser filho direto do <code>&lt;body&gt;</code>, que é único.</button>
+
+  <p class="feedback"></p>
+</div>
+
+<div class="quiz" data-answer="d">
+  <p><strong>3.</strong> Qual dos cenários a seguir justifica semanticamente o uso do elemento <code>&lt;aside&gt;</code>?</p>
+
+  <button data-option="a">Um bloco de código de exemplo dentro de um tutorial técnico.</button>
+  <button data-option="b">O menu de navegação principal do site.</button>
+  <button data-option="c">O conteúdo central de uma postagem de blog.</button>
+  <button data-option="d">Uma caixa lateral com links para artigos relacionados, tangencialmente vinculada ao conteúdo principal.</button>
+
+  <p class="feedback"></p>
+</div>
+
 <ul>
-<li><strong>Quiz:</strong> Estruturação de conteúdo <em>(link será adicionado)</em></li>
-<li><strong>GitHub Classroom:</strong> Criar layout simples com header, main e footer <em>(link será adicionado)</em></li>
+<li><strong>GitHub Classroom:</strong> Criar layout simples com <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code> e <code>&lt;footer&gt;</code> <em>(link será adicionado)</em></li>
 </ul>
-<hr /></section><section class="print-page" id="chapters-03-html-semantico" heading-number="5.4"><h1 id="chapters-03-html-semantico-capitulo-3-html-semantico">Capítulo 3 — HTML Semântico<a class="headerlink" href="#chapters-03-html-semantico-capitulo-3-html-semantico" title="Permanent link">&para;</a></h1>
+<hr />
+<p><a href="#chapters-01-introducao">:material-arrow-left: Voltar ao Capítulo 1 — Introdução à Web e Ferramentas</a>
+<a href="#chapters-03-html-semantico">:material-arrow-right: Ir ao Capítulo 3 — HTML Semântico e Acessibilidade</a></p></section><section class="print-page" id="chapters-03-html-semantico" heading-number="5.4"><h1 id="chapters-03-html-semantico-capitulo-3-html-semantico">Capítulo 3 — HTML Semântico<a class="headerlink" href="#chapters-03-html-semantico-capitulo-3-html-semantico" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Vídeo curto explicativo</strong><br />
 <em>(link será adicionado posteriormente)</em></p>
