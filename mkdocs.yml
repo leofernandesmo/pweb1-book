@@ -73,6 +73,8 @@ nav:
       - "1. Introdução a Web e Navegadores": chapters/01-introducao.md
       - "2. Fundamentos do HTML": chapters/02-html-fundamentos.md
       - "3. HTML Semântico": chapters/03-html-semantico.md
-      - "4. Acessibilidade e Boas Práticas com HTML": chapters/04-html-acessibilidade-e-boas-praticas.md      
+      - "4. Tabelas, Listas e Mídia": chapters/04-tabelas-listas-midia.md      
+      - "5. Formulários HTML": chapters/05-formularios.md      
+      - "6. Acessibilidade": chapters/06-acessibilidade.md 
       - "Appendix": chapters/99-appendix.md      
   - Back Cover: back-cover.md
