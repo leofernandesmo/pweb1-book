@@ -1,0 +1,2342 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Material do Curso de Programação Web 1 do curso de Técnico em Desenvolvimento de Sistemas do IFAL">
+      
+      
+      
+        <link rel="canonical" href="https://<github-username>.github.io/<book-repo-name>/chapters/05-formularios/">
+      
+      
+        <link rel="prev" href="../04-tabelas-listas-midia/">
+      
+      
+        <link rel="next" href="../06-acessibilidade/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>5. Formulários HTML - Programação Web 1</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
+      <link rel="stylesheet" href="../../assets/css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#capitulo-5-formularios-html" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Programação Web 1" class="md-header__button md-logo" aria-label="Programação Web 1" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programação Web 1
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5. Formulários HTML
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/leofernandesmo/pweb1-book/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cover/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Cover
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../title-page/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Title Page
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../preface/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Preface
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../00-how-to-use/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Chapters
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../back-cover/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Back Cover
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../print_page/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Print / Save PDF
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Programação Web 1" class="md-nav__button md-logo" aria-label="Programação Web 1" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Programação Web 1
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/leofernandesmo/pweb1-book/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cover/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cover
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../title-page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Title Page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-how-to-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0. Como User Este Material
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-introducao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introdução a Web e Navegadores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-html-fundamentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Fundamentos do HTML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-html-semantico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. HTML Semântico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-tabelas-listas-midia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Tabelas, Listas e Mídia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Formulários HTML
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Formulários HTML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-o-papel-dos-formularios-na-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 — O papel dos formulários na Web
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 — O papel dos formulários na Web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511-o-fluxo-completo-de-envio-de-um-formulario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.1 — O fluxo completo de envio de um formulário
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-estrutura-basica-form-action-e-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 — Estrutura básica: &lt;form&gt;, action e method
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 — Estrutura básica: &lt;form&gt;, action e method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#521-o-atributo-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2.1 — O atributo action
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#522-o-atributo-method-get-vs-post" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2.2 — O atributo method: GET vs POST
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#523-testando-o-envio-com-httpbinorg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2.3 — Testando o envio com httpbin.org
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-campos-de-entrada-input-e-seus-tipos-fundamentais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 — Campos de entrada: &lt;input&gt; e seus tipos fundamentais
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 — Campos de entrada: &lt;input&gt; e seus tipos fundamentais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#531-os-atributos-name-e-id-distincao-fundamental" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3.1 — Os atributos name e id: distinção fundamental
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#532-tipos-fundamentais-de-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3.2 — Tipos fundamentais de &lt;input&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-tipos-de-input-menos-conhecidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 — Tipos de input menos conhecidos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4 — Tipos de input menos conhecidos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#541-data-e-hora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4.1 — Data e hora
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#542-intervalo-numerico-typerange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4.2 — Intervalo numérico: type="range"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#543-cor-typecolor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4.3 — Cor: type="color"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#544-upload-de-arquivo-typefile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4.4 — Upload de arquivo: type="file"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#545-outros-tipos-uteis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4.5 — Outros tipos úteis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-elementos-de-formulario-complementares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 — Elementos de formulário complementares
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.5 — Elementos de formulário complementares">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#551-textarea-texto-multilinha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5.1 — &lt;textarea&gt;: texto multilinha
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#552-select-lista-de-opcoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5.2 — &lt;select&gt;: lista de opções
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#553-datalist-sugestoes-automaticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5.3 — &lt;datalist&gt;: sugestões automáticas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#56-formularios-acessiveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 — Formulários acessíveis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.6 — Formulários acessíveis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#561-label-associando-rotulos-a-campos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6.1 — &lt;label&gt;: associando rótulos a campos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#562-fieldset-e-legend-agrupando-campos-relacionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6.2 — &lt;fieldset&gt; e &lt;legend&gt;: agrupando campos relacionados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#563-aria-em-formularios-uso-avancado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6.3 — ARIA em formulários: uso avançado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#57-validacao-nativa-do-navegador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7 — Validação nativa do navegador
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.7 — Validação nativa do navegador">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#571-o-atributo-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7.1 — O atributo required
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#572-restricoes-de-comprimento-minlength-e-maxlength" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7.2 — Restrições de comprimento: minlength e maxlength
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#573-restricoes-numericas-min-max-e-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7.3 — Restrições numéricas: min, max e step
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#574-validacao-por-padrao-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7.4 — Validação por padrão: pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#575-validacao-implicita-por-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7.5 — Validação implícita por type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#576-desabilitando-a-validacao-nativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7.6 — Desabilitando a validação nativa
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#58-formulario-completo-exemplo-integrado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.8 — Formulário completo: exemplo integrado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#59-boas-praticas-em-formularios-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.9 — Boas práticas em formulários HTML
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.9 — Boas práticas em formulários HTML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atividades-capitulo-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atividades — Capítulo 5
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-acessibilidade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Acessibilidade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../99-appendix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../back-cover/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Back Cover
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../print_page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Print / Save PDF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/leofernandesmo/pweb1-book/edit/master/docs/chapters/05-formularios.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/leofernandesmo/pweb1-book/raw/master/docs/chapters/05-formularios.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="capitulo-5-formularios-html">Capítulo 5 — Formulários HTML<a class="headerlink" href="#capitulo-5-formularios-html" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
+</blockquote>
+<hr />
+<h2 id="51-o-papel-dos-formularios-na-web">5.1 — O papel dos formulários na Web<a class="headerlink" href="#51-o-papel-dos-formularios-na-web" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
+</blockquote>
+<p>Formulários são o principal mecanismo de <strong>comunicação bidirecional</strong> entre o usuário e um servidor na Web. Enquanto a maioria dos elementos HTML serve para <em>apresentar</em> informações ao usuário — textos, imagens, vídeos —, os formulários invertem essa direção: eles coletam dados inseridos pelo usuário e os transmitem para processamento.</p>
+<p>Essa distinção é fundamental para compreender o papel dos formulários no desenvolvimento web: <strong>o HTML apenas estrutura e envia os dados. Ele não os processa.</strong> O processamento — autenticar um login, salvar um cadastro em banco de dados, enviar um e-mail, processar um pagamento — é sempre responsabilidade do <strong>backend</strong>, um programa executado no servidor escrito em linguagens como Python, PHP, Node.js ou Java.</p>
+<h3 id="511-o-fluxo-completo-de-envio-de-um-formulario">5.1.1 — O fluxo completo de envio de um formulário<a class="headerlink" href="#511-o-fluxo-completo-de-envio-de-um-formulario" title="Permanent link">&para;</a></h3>
+<p>Quando um usuário preenche e envia um formulário, ocorre a seguinte sequência de eventos:</p>
+<div class="highlight"><pre><span></span><code>[1] Usuário preenche os campos e clica em &quot;Enviar&quot;
+        ↓
+[2] Navegador coleta os dados dos campos
+        ↓
+[3] Navegador monta uma requisição HTTP com os dados
+        ↓
+[4] Requisição é enviada ao servidor indicado no atributo action do &lt;form&gt;
+        ↓
+[5] Servidor recebe os dados, executa a lógica de negócio e gera uma resposta
+        ↓
+[6] Navegador recebe a resposta e exibe o resultado ao usuário
+</code></pre></div>
+<p>Este fluxo é idêntico ao ciclo de requisição-resposta HTTP estudado no Capítulo 1 — a diferença é que, em vez de simplesmente solicitar um recurso, o navegador está <em>enviando dados</em> junto com a requisição.</p>
+<blockquote>
+<p><strong>Ponto crítico:</strong> toda validação realizada no navegador via HTML (atributos <code>required</code>, <code>pattern</code>, etc.) ou via JavaScript pode ser <strong>contornada</strong> por um usuário técnico. Por essa razão, a validação no frontend é uma conveniência para o usuário — nunca uma medida de segurança. <strong>A validação definitiva sempre deve ocorrer no servidor (backend)</strong>. Este princípio será aprofundado nos capítulos de back-end e segurança.</p>
+</blockquote>
+<hr />
+<h2 id="52-estrutura-basica-form-action-e-method">5.2 — Estrutura básica: <code>&lt;form&gt;</code>, <code>action</code> e <code>method</code><a class="headerlink" href="#52-estrutura-basica-form-action-e-method" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
+</blockquote>
+<p>O elemento <code>&lt;form&gt;</code> é o contêiner que delimita um formulário HTML. Ele possui dois atributos fundamentais que determinam <em>para onde</em> e <em>como</em> os dados serão enviados:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/cadastro&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+  <span class="cm">&lt;!-- campos do formulário --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="521-o-atributo-action">5.2.1 — O atributo <code>action</code><a class="headerlink" href="#521-o-atributo-action" title="Permanent link">&para;</a></h3>
+<p>O atributo <code>action</code> especifica a <strong>URL de destino</strong> para a qual os dados do formulário serão enviados quando o usuário submeter o formulário. Pode ser uma URL absoluta ou relativa:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- URL relativa: envia para /login no mesmo servidor --&gt;</span>
+<span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/login&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- URL absoluta: envia para um servidor externo --&gt;</span>
+<span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;https://api.exemplo.com/contato&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- Sem action: envia para a própria página atual --&gt;</span>
+<span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;get&quot;</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Quando <code>action</code> é omitido, o formulário é enviado para a URL da página atual — comportamento útil em páginas que processam o próprio formulário no servidor.</p>
+<h3 id="522-o-atributo-method-get-vs-post">5.2.2 — O atributo <code>method</code>: GET vs POST<a class="headerlink" href="#522-o-atributo-method-get-vs-post" title="Permanent link">&para;</a></h3>
+<p>O atributo <code>method</code> define o <strong>método HTTP</strong> utilizado para enviar os dados. Os dois valores possíveis são <code>get</code> e <code>post</code>, e a escolha entre eles tem implicações técnicas, semânticas e de segurança significativas.</p>
+<p><strong><code>method="get"</code> — dados na URL</strong></p>
+<p>Com o método GET, os dados do formulário são codificados na <strong>query string</strong> da URL, visíveis na barra de endereços do navegador:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;https://httpbin.org/get&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;get&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;busca&quot;</span><span class="p">&gt;</span>Buscar:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;busca&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;q&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Buscar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Após o envio com o valor "HTML semântico", a URL resultante seria:</p>
+<div class="highlight"><pre><span></span><code>https://httpbin.org/get?q=HTML+sem%C3%A2ntico
+</code></pre></div>
+<p>Os dados aparecem após o <code>?</code> na forma de pares <code>nome=valor</code>, separados por <code>&amp;</code> quando há múltiplos campos.</p>
+<p><strong><code>method="post"</code> — dados no corpo da requisição</strong></p>
+<p>Com o método POST, os dados são enviados no <strong>corpo (<em>body</em>) da requisição HTTP</strong>, invisíveis na URL:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;https://httpbin.org/post&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;email&quot;</span><span class="p">&gt;</span>E-mail:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="p">/&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;senha&quot;</span><span class="p">&gt;</span>Senha:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;senha&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;senha&quot;</span> <span class="p">/&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Entrar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Após o envio, a URL permanece <code>https://httpbin.org/post</code> — sem nenhum dado exposto.</p>
+<p><strong>Comparativo GET vs POST</strong></p>
+<table>
+<thead>
+<tr>
+<th>Critério</th>
+<th>GET</th>
+<th>POST</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dados na URL</td>
+<td>✅ Sim</td>
+<td>❌ Não</td>
+</tr>
+<tr>
+<td>Histórico do navegador</td>
+<td>Dados ficam no histórico</td>
+<td>Dados não ficam no histórico</td>
+</tr>
+<tr>
+<td>Bookmarkável</td>
+<td>✅ Sim</td>
+<td>❌ Não</td>
+</tr>
+<tr>
+<td>Limite de dados</td>
+<td>~2.000 caracteres (varia por navegador/servidor)</td>
+<td>Sem limite prático</td>
+</tr>
+<tr>
+<td>Cache</td>
+<td>Pode ser cacheado</td>
+<td>Não é cacheado por padrão</td>
+</tr>
+<tr>
+<td>Idempotência</td>
+<td>Idempotente (repetir não muda estado)</td>
+<td>Não idempotente</td>
+</tr>
+<tr>
+<td>Uso adequado</td>
+<td>Buscas, filtros, navegação</td>
+<td>Login, cadastro, envio de arquivos, pagamentos</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⚠️ Alerta de segurança:</strong> nunca use <code>method="get"</code> para formulários que transmitem dados sensíveis — senhas, tokens, dados pessoais, informações financeiras. Com GET, esses dados aparecem na URL, ficam armazenados no histórico do navegador e nos logs do servidor, e podem ser expostos no cabeçalho HTTP <code>Referer</code> ao navegar para outra página.</p>
+</blockquote>
+<h3 id="523-testando-o-envio-com-httpbinorg">5.2.3 — Testando o envio com httpbin.org<a class="headerlink" href="#523-testando-o-envio-com-httpbinorg" title="Permanent link">&para;</a></h3>
+<p>O serviço <strong>httpbin.org</strong> é uma ferramenta gratuita que recebe requisições HTTP e retorna seus dados em formato JSON — ideal para inspecionar exatamente o que um formulário está enviando durante o desenvolvimento:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Teste com GET: observe os dados na URL e no JSON retornado --&gt;</span>
+<span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;https://httpbin.org/get&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;get&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;usuario&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Seu nome&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Seu e-mail&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Testar GET<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- Teste com POST: observe os dados no corpo JSON retornado --&gt;</span>
+<span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;https://httpbin.org/post&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;usuario&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Seu nome&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Seu e-mail&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Testar POST<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Ao submeter esses formulários, o httpbin retorna uma resposta JSON que exibe exatamente quais dados foram recebidos — incluindo cabeçalhos, método, IP de origem e os parâmetros enviados. É uma forma concreta de visualizar a diferença entre GET e POST sem necessidade de um backend próprio.</p>
+<blockquote>
+<p><strong>Acesse:</strong> <a href="https://httpbin.org">https://httpbin.org</a></p>
+</blockquote>
+<hr />
+<h2 id="53-campos-de-entrada-input-e-seus-tipos-fundamentais">5.3 — Campos de entrada: <code>&lt;input&gt;</code> e seus tipos fundamentais<a class="headerlink" href="#53-campos-de-entrada-input-e-seus-tipos-fundamentais" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
+</blockquote>
+<p>O elemento <code>&lt;input&gt;</code> é o componente mais versátil dos formulários HTML. Seu comportamento é inteiramente determinado pelo atributo <code>type</code> — que define não apenas a aparência do campo, mas também o teclado virtual exibido em dispositivos móveis, as restrições de entrada aceitas e o comportamento de validação nativa do navegador.</p>
+<h3 id="531-os-atributos-name-e-id-distincao-fundamental">5.3.1 — Os atributos <code>name</code> e <code>id</code>: distinção fundamental<a class="headerlink" href="#531-os-atributos-name-e-id-distincao-fundamental" title="Permanent link">&para;</a></h3>
+<p>Antes de explorar os tipos de <code>&lt;input&gt;</code>, é essencial compreender a diferença entre dois atributos que frequentemente causam confusão em iniciantes: <code>name</code> e <code>id</code>.</p>
+<p><strong><code>name</code> — identidade para envio de dados</strong></p>
+<p>O atributo <code>name</code> define o <strong>identificador do campo nos dados enviados ao servidor</strong>. Quando o formulário é submetido, o navegador monta pares <code>nome=valor</code> para cada campo — e o "nome" é exatamente o valor do atributo <code>name</code>.</p>
+<blockquote>
+<p><strong>⚠️ Erro muito comum:</strong> campos sem o atributo <code>name</code> <strong>não são enviados</strong> ao servidor. Um campo pode estar visível, preenchido e validado — mas se não tiver <code>name</code>, seus dados simplesmente não chegam ao backend. Este é um dos erros mais frequentes em formulários criados por iniciantes.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Este campo SERÁ enviado: tem name --&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;usuario&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;campo-usuario&quot;</span> <span class="p">/&gt;</span>
+
+<span class="cm">&lt;!-- Este campo NÃO será enviado: não tem name --&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;campo-teste&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+<p><strong><code>id</code> — identidade no documento HTML</strong></p>
+<p>O atributo <code>id</code> identifica o elemento de forma única no <strong>documento HTML</strong>. Ele é utilizado para: associar um <code>&lt;label&gt;</code> ao campo (via <code>for</code>), referenciar o campo via CSS (seletores <code>#id</code>) e manipular o campo via JavaScript (<code>document.getElementById</code>). O <code>id</code> não tem nenhuma influência sobre o envio de dados.</p>
+<p><strong>Resumo prático:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Para que serve</th>
+<th>Obrigatório para envio?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>Identificar o dado no servidor</td>
+<td>✅ Sim</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>Identificar o elemento no documento</td>
+<td>❌ Não (mas recomendado para acessibilidade)</td>
+</tr>
+</tbody>
+</table>
+<p>Na prática, ambos são geralmente declarados e, por convenção, recebem o mesmo valor — mas são conceitualmente independentes:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+<h3 id="532-tipos-fundamentais-de-input">5.3.2 — Tipos fundamentais de <code>&lt;input&gt;</code><a class="headerlink" href="#532-tipos-fundamentais-de-input" title="Permanent link">&para;</a></h3>
+<p><strong><code>type="text"</code> — texto livre</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;nome&quot;</span><span class="p">&gt;</span>Nome completo:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span>
+  <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span>
+  <span class="na">id</span><span class="o">=</span><span class="s">&quot;nome&quot;</span>
+  <span class="na">name</span><span class="o">=</span><span class="s">&quot;nome&quot;</span>
+  <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Ex.: Maria Silva&quot;</span>
+  <span class="na">autocomplete</span><span class="o">=</span><span class="s">&quot;name&quot;</span>
+<span class="p">/&gt;</span>
+</code></pre></div>
+<p><strong><code>type="email"</code> — endereço de e-mail</strong></p>
+<p>O navegador valida automaticamente o formato básico de e-mail (presença de <code>@</code> e domínio):</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;email&quot;</span><span class="p">&gt;</span>E-mail:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span>
+  <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span>
+  <span class="na">id</span><span class="o">=</span><span class="s">&quot;email&quot;</span>
+  <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span>
+  <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;usuario@dominio.com&quot;</span>
+  <span class="na">autocomplete</span><span class="o">=</span><span class="s">&quot;email&quot;</span>
+<span class="p">/&gt;</span>
+</code></pre></div>
+<p><strong><code>type="password"</code> — senha</strong></p>
+<p>O valor digitado é ocultado visualmente. O dado é enviado em texto simples pelo HTML — a criptografia da transmissão é responsabilidade do protocolo HTTPS, não do formulário:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;senha&quot;</span><span class="p">&gt;</span>Senha:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span>
+  <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span>
+  <span class="na">id</span><span class="o">=</span><span class="s">&quot;senha&quot;</span>
+  <span class="na">name</span><span class="o">=</span><span class="s">&quot;senha&quot;</span>
+  <span class="na">minlength</span><span class="o">=</span><span class="s">&quot;8&quot;</span>
+  <span class="na">autocomplete</span><span class="o">=</span><span class="s">&quot;current-password&quot;</span>
+<span class="p">/&gt;</span>
+</code></pre></div>
+<p><strong><code>type="number"</code> — valor numérico</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;idade&quot;</span><span class="p">&gt;</span>Idade:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span>
+  <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span>
+  <span class="na">id</span><span class="o">=</span><span class="s">&quot;idade&quot;</span>
+  <span class="na">name</span><span class="o">=</span><span class="s">&quot;idade&quot;</span>
+  <span class="na">min</span><span class="o">=</span><span class="s">&quot;18&quot;</span>
+  <span class="na">max</span><span class="o">=</span><span class="s">&quot;120&quot;</span>
+  <span class="na">step</span><span class="o">=</span><span class="s">&quot;1&quot;</span>
+<span class="p">/&gt;</span>
+</code></pre></div>
+<p><strong><code>type="checkbox"</code> — múltiplas escolhas independentes</strong></p>
+<p>Checkboxes representam opções <strong>independentes entre si</strong> — o usuário pode marcar zero, uma ou várias. Cada checkbox envia seu valor apenas quando marcado; quando desmarcado, o campo não é enviado.</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Cada checkbox tem name diferente: são dados independentes --&gt;</span>
+<span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Tecnologias que você conhece:<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;html&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;sim&quot;</span> <span class="p">/&gt;</span> HTML
+  <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;css&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;sim&quot;</span> <span class="p">/&gt;</span> CSS
+  <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;javascript&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;sim&quot;</span> <span class="p">/&gt;</span> JavaScript
+  <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Para enviar múltiplos valores sob o mesmo nome (como um array), todos os checkboxes de um grupo recebem o mesmo <code>name</code> com colchetes:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Todos com o mesmo name: enviados como array no backend --&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;tecnologias[]&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;html&quot;</span> <span class="p">/&gt;</span> HTML
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;tecnologias[]&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;css&quot;</span> <span class="p">/&gt;</span> CSS
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;tecnologias[]&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;js&quot;</span> <span class="p">/&gt;</span> JavaScript
+</code></pre></div>
+<p><strong><code>type="radio"</code> — escolha exclusiva</strong></p>
+<p>Radio buttons representam opções <strong>mutuamente exclusivas</strong> — o usuário deve escolher exatamente uma. O agrupamento é definido pelo atributo <code>name</code>: todos os radio buttons com o mesmo <code>name</code> pertencem ao mesmo grupo, e apenas um pode estar selecionado por vez.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Período de preferência:<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
+
+  <span class="cm">&lt;!-- Mesmo name = mesmo grupo = escolha exclusiva --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;periodo&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;manha&quot;</span> <span class="p">/&gt;</span> Manhã
+  <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;periodo&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;tarde&quot;</span> <span class="p">/&gt;</span> Tarde
+  <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;periodo&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;noite&quot;</span> <span class="p">/&gt;</span> Noite
+  <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>Diferença prática entre checkbox e radio:</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><code>checkbox</code></th>
+<th><code>radio</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quantas opções o usuário pode escolher</td>
+<td>Zero ou mais</td>
+<td>Exatamente uma</td>
+</tr>
+<tr>
+<td>Agrupamento</td>
+<td>Por convenção (mesmo <code>name[]</code>)</td>
+<td>Por <code>name</code> (obrigatório)</td>
+</tr>
+<tr>
+<td>Valor enviado quando não marcado</td>
+<td>Nenhum</td>
+<td>Nenhum</td>
+</tr>
+<tr>
+<td>Caso de uso</td>
+<td>"Quais linguagens você conhece?"</td>
+<td>"Qual seu período preferido?"</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>type="submit"</code> — botão de envio</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Enviar formulário&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+<p>Na prática, o elemento <code>&lt;button type="submit"&gt;</code> é mais flexível e preferível, pois aceita conteúdo HTML interno (como ícones):</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Enviar formulário<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><strong>⚠️ Alerta:</strong> um elemento <code>&lt;button&gt;</code> sem o atributo <code>type</code> explícito é tratado como <code>type="submit"</code> por padrão — e submeterá o formulário ao ser clicado, mesmo que o desenvolvedor não tenha essa intenção. Sempre declare o <code>type</code> explicitamente em botões dentro de formulários:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Enviar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>   <span class="cm">&lt;!-- envia o formulário --&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span><span class="p">&gt;</span>Cancelar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> <span class="cm">&lt;!-- não envia nada --&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;reset&quot;</span><span class="p">&gt;</span>Limpar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>    <span class="cm">&lt;!-- limpa os campos --&gt;</span>
+</code></pre></div>
+</blockquote>
+<hr />
+<h2 id="54-tipos-de-input-menos-conhecidos">5.4 — Tipos de input menos conhecidos<a class="headerlink" href="#54-tipos-de-input-menos-conhecidos" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
+</blockquote>
+<p>Além dos tipos fundamentais, o HTML5 introduziu uma série de tipos de <code>&lt;input&gt;</code> especializados que oferecem interfaces nativas do sistema operacional — seletores de data, sliders, paletas de cor — sem necessidade de JavaScript. A adoção desses tipos melhora significativamente a experiência do usuário, especialmente em dispositivos móveis, onde o navegador exibe teclados virtuais otimizados para cada tipo de dado.</p>
+<blockquote>
+<p><strong>⚠️ Compatibilidade:</strong> o suporte a tipos de input avançados varia entre navegadores e sistemas operacionais. Em navegadores que não reconhecem um <code>type</code> específico, o campo é renderizado como <code>type="text"</code> — o que garante degradação graceful (o campo ainda funciona, mas sem a interface especializada). Antes de usar esses tipos em produção, verifique o suporte atual em <a href="https://caniuse.com">https://caniuse.com</a>.</p>
+</blockquote>
+<h3 id="541-data-e-hora">5.4.1 — Data e hora<a class="headerlink" href="#541-data-e-hora" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Data (ano-mês-dia) --&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;nascimento&quot;</span><span class="p">&gt;</span>Data de nascimento:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span>
+  <span class="na">type</span><span class="o">=</span><span class="s">&quot;date&quot;</span>
+  <span class="na">id</span><span class="o">=</span><span class="s">&quot;nascimento&quot;</span>
+  <span class="na">name</span><span class="o">=</span><span class="s">&quot;nascimento&quot;</span>
+  <span class="na">min</span><span class="o">=</span><span class="s">&quot;1900-01-01&quot;</span>
+  <span class="na">max</span><span class="o">=</span><span class="s">&quot;2010-12-31&quot;</span>
+<span class="p">/&gt;</span>
+
+<span class="cm">&lt;!-- Hora (horas:minutos) --&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;horario&quot;</span><span class="p">&gt;</span>Horário preferido:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;time&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;horario&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;horario&quot;</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;08:00&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;22:00&quot;</span> <span class="p">/&gt;</span>
+
+<span class="cm">&lt;!-- Data e hora local (sem fuso horário) --&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;agendamento&quot;</span><span class="p">&gt;</span>Agendamento:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;datetime-local&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;agendamento&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;agendamento&quot;</span> <span class="p">/&gt;</span>
+
+<span class="cm">&lt;!-- Mês e ano --&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;competencia&quot;</span><span class="p">&gt;</span>Competência:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;month&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;competencia&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;competencia&quot;</span> <span class="p">/&gt;</span>
+
+<span class="cm">&lt;!-- Semana do ano --&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;semana&quot;</span><span class="p">&gt;</span>Semana de início:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;week&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;semana&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;semana&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+<p>O valor enviado ao servidor segue o formato <strong>ISO 8601</strong> (ex.: <code>2026-03-20</code> para datas, <code>14:30</code> para horas) — independentemente do formato visual exibido ao usuário, que varia conforme as configurações de locale do sistema operacional.</p>
+<blockquote>
+<p><strong>Nota de compatibilidade:</strong> <code>type="date"</code> tem suporte amplo em navegadores modernos, mas a aparência do seletor varia significativamente entre plataformas. Em Safari iOS, o seletor usa rodas giratórias; no Chrome Android, usa um calendário visual. Para projetos que exigem aparência consistente entre plataformas, bibliotecas JavaScript de date picker são frequentemente preferidas.</p>
+</blockquote>
+<h3 id="542-intervalo-numerico-typerange">5.4.2 — Intervalo numérico: <code>type="range"</code><a class="headerlink" href="#542-intervalo-numerico-typerange" title="Permanent link">&para;</a></h3>
+<p>Renderiza um controle deslizante (<em>slider</em>) para seleção de valores numéricos em um intervalo:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;volume&quot;</span><span class="p">&gt;</span>Volume: <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;valor-volume&quot;</span><span class="p">&gt;</span>50<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>%<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span>
+  <span class="na">type</span><span class="o">=</span><span class="s">&quot;range&quot;</span>
+  <span class="na">id</span><span class="o">=</span><span class="s">&quot;volume&quot;</span>
+  <span class="na">name</span><span class="o">=</span><span class="s">&quot;volume&quot;</span>
+  <span class="na">min</span><span class="o">=</span><span class="s">&quot;0&quot;</span>
+  <span class="na">max</span><span class="o">=</span><span class="s">&quot;100&quot;</span>
+  <span class="na">step</span><span class="o">=</span><span class="s">&quot;5&quot;</span>
+  <span class="na">value</span><span class="o">=</span><span class="s">&quot;50&quot;</span>
+<span class="p">/&gt;</span>
+</code></pre></div>
+<p>O <code>type="range"</code> não exibe o valor atual por padrão — é necessário JavaScript para atualizar um elemento de texto em tempo real. O valor enviado é numérico.</p>
+<h3 id="543-cor-typecolor">5.4.3 — Cor: <code>type="color"</code><a class="headerlink" href="#543-cor-typecolor" title="Permanent link">&para;</a></h3>
+<p>Abre o seletor de cores nativo do sistema operacional:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;cor-tema&quot;</span><span class="p">&gt;</span>Cor do tema:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span>
+  <span class="na">type</span><span class="o">=</span><span class="s">&quot;color&quot;</span>
+  <span class="na">id</span><span class="o">=</span><span class="s">&quot;cor-tema&quot;</span>
+  <span class="na">name</span><span class="o">=</span><span class="s">&quot;cor_tema&quot;</span>
+  <span class="na">value</span><span class="o">=</span><span class="s">&quot;#E8632A&quot;</span>
+<span class="p">/&gt;</span>
+</code></pre></div>
+<p>O valor enviado ao servidor é sempre um código hexadecimal de 6 dígitos em minúsculas (ex.: <code>#e8632a</code>).</p>
+<blockquote>
+<p><strong>Nota de compatibilidade:</strong> o seletor de cor nativo varia significativamente entre sistemas operacionais — macOS, Windows e Android exibem interfaces completamente diferentes. O atributo <code>value</code> deve ser sempre um código hexadecimal de 6 dígitos; valores como <code>rgb()</code> ou nomes de cor não são aceitos.</p>
+</blockquote>
+<h3 id="544-upload-de-arquivo-typefile">5.4.4 — Upload de arquivo: <code>type="file"</code><a class="headerlink" href="#544-upload-de-arquivo-typefile" title="Permanent link">&para;</a></h3>
+<p>Permite que o usuário selecione um ou mais arquivos do dispositivo para envio:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Arquivo único --&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;curriculo&quot;</span><span class="p">&gt;</span>Currículo (PDF):<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span>
+  <span class="na">type</span><span class="o">=</span><span class="s">&quot;file&quot;</span>
+  <span class="na">id</span><span class="o">=</span><span class="s">&quot;curriculo&quot;</span>
+  <span class="na">name</span><span class="o">=</span><span class="s">&quot;curriculo&quot;</span>
+  <span class="na">accept</span><span class="o">=</span><span class="s">&quot;.pdf&quot;</span>
+<span class="p">/&gt;</span>
+
+<span class="cm">&lt;!-- Múltiplos arquivos --&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;fotos&quot;</span><span class="p">&gt;</span>Fotos do projeto:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span>
+  <span class="na">type</span><span class="o">=</span><span class="s">&quot;file&quot;</span>
+  <span class="na">id</span><span class="o">=</span><span class="s">&quot;fotos&quot;</span>
+  <span class="na">name</span><span class="o">=</span><span class="s">&quot;fotos[]&quot;</span>
+  <span class="na">accept</span><span class="o">=</span><span class="s">&quot;image/jpeg, image/png, image/webp&quot;</span>
+  <span class="na">multiple</span>
+<span class="p">/&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><strong>⚠️ Atenção técnica:</strong> formulários com <code>type="file"</code> <strong>obrigatoriamente</strong> requerem <code>method="post"</code> e o atributo <code>enctype="multipart/form-data"</code> no elemento <code>&lt;form&gt;</code>. Sem essas configurações, o arquivo não é enviado corretamente — apenas o nome do arquivo é transmitido.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/upload&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">enctype</span><span class="o">=</span><span class="s">&quot;multipart/form-data&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;file&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;arquivo&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Enviar arquivo<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+</blockquote>
+<h3 id="545-outros-tipos-uteis">5.4.5 — Outros tipos úteis<a class="headerlink" href="#545-outros-tipos-uteis" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Busca: semântica de campo de pesquisa (pode exibir botão de limpar) --&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;search&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;q&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Buscar...&quot;</span> <span class="p">/&gt;</span>
+
+<span class="cm">&lt;!-- Telefone: exibe teclado numérico em dispositivos móveis --&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;tel&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;telefone&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;(82) 99999-9999&quot;</span> <span class="p">/&gt;</span>
+
+<span class="cm">&lt;!-- URL: valida formato de endereço web --&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;url&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;website&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;https://www.exemplo.com&quot;</span> <span class="p">/&gt;</span>
+
+<span class="cm">&lt;!-- Campo oculto: envia dados sem exibição ao usuário --&gt;</span>
+<span class="cm">&lt;!-- Uso comum: tokens CSRF, IDs de sessão, dados de contexto --&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;csrf_token&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;abc123xyz&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+<hr />
+<h2 id="55-elementos-de-formulario-complementares">5.5 — Elementos de formulário complementares<a class="headerlink" href="#55-elementos-de-formulario-complementares" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
+</blockquote>
+<h3 id="551-textarea-texto-multilinha">5.5.1 — <code>&lt;textarea&gt;</code>: texto multilinha<a class="headerlink" href="#551-textarea-texto-multilinha" title="Permanent link">&para;</a></h3>
+<p>O elemento <code>&lt;textarea&gt;</code> cria um campo de texto de múltiplas linhas, adequado para mensagens, descrições e comentários. Diferentemente de <code>&lt;input&gt;</code>, ele possui tag de abertura e fechamento, e seu valor padrão é definido pelo conteúdo entre as tags:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;mensagem&quot;</span><span class="p">&gt;</span>Mensagem:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">textarea</span>
+  <span class="na">id</span><span class="o">=</span><span class="s">&quot;mensagem&quot;</span>
+  <span class="na">name</span><span class="o">=</span><span class="s">&quot;mensagem&quot;</span>
+  <span class="na">rows</span><span class="o">=</span><span class="s">&quot;5&quot;</span>
+  <span class="na">cols</span><span class="o">=</span><span class="s">&quot;50&quot;</span>
+  <span class="na">maxlength</span><span class="o">=</span><span class="s">&quot;500&quot;</span>
+  <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Descreva sua dúvida com detalhes...&quot;</span>
+<span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Os atributos <code>rows</code> e <code>cols</code> definem o tamanho inicial em linhas e caracteres, respectivamente — mas o usuário pode redimensionar o campo em navegadores que o permitem. O controle preciso do tamanho deve ser feito via CSS (propriedade <code>resize</code>).</p>
+<h3 id="552-select-lista-de-opcoes">5.5.2 — <code>&lt;select&gt;</code>: lista de opções<a class="headerlink" href="#552-select-lista-de-opcoes" title="Permanent link">&para;</a></h3>
+<p>O elemento <code>&lt;select&gt;</code> cria uma lista suspensa (<em>dropdown</em>) de opções. Cada opção é definida por um elemento <code>&lt;option&gt;</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;curso&quot;</span><span class="p">&gt;</span>Curso:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">select</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;curso&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;curso&quot;</span><span class="p">&gt;</span>
+  <span class="cm">&lt;!-- O primeiro option como placeholder --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Selecione um curso...<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;si&quot;</span><span class="p">&gt;</span>Sistemas de Informação<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;cc&quot;</span><span class="p">&gt;</span>Ciência da Computação<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;ec&quot;</span><span class="p">&gt;</span>Engenharia da Computação<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Boa prática:</strong> sempre inclua um <code>&lt;option value=""&gt;</code> vazio como primeiro item, funcionando como placeholder. Isso evita que a primeira opção real seja selecionada por padrão sem que o usuário tenha feito uma escolha consciente.</p>
+</blockquote>
+<p>O atributo <code>value</code> do <code>&lt;option&gt;</code> define o dado enviado ao servidor — que pode ser diferente do texto exibido ao usuário. Se <code>value</code> for omitido, o texto exibido é enviado como valor.</p>
+<p><strong>Agrupando opções com <code>&lt;optgroup&gt;</code></strong></p>
+<p>Para listas longas, <code>&lt;optgroup&gt;</code> organiza as opções em grupos visuais rotulados:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;linguagem&quot;</span><span class="p">&gt;</span>Linguagem de programação:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">select</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;linguagem&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;linguagem&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Selecione...<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">optgroup</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Frontend&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;html&quot;</span><span class="p">&gt;</span>HTML<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;css&quot;</span><span class="p">&gt;</span>CSS<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;js&quot;</span><span class="p">&gt;</span>JavaScript<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">optgroup</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">optgroup</span> <span class="na">label</span><span class="o">=</span><span class="s">&quot;Backend&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;python&quot;</span><span class="p">&gt;</span>Python<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;nodejs&quot;</span><span class="p">&gt;</span>Node.js<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;php&quot;</span><span class="p">&gt;</span>PHP<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">optgroup</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>Seleção múltipla</strong></p>
+<p>O atributo <code>multiple</code> transforma o <code>&lt;select&gt;</code> em uma lista de seleção múltipla. O usuário deve usar <code>Ctrl</code> (ou <code>Cmd</code>) para selecionar mais de uma opção:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;interesses&quot;</span><span class="p">&gt;</span>Áreas de interesse (selecione uma ou mais):<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">select</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;interesses&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;interesses[]&quot;</span> <span class="na">multiple</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;4&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;web&quot;</span><span class="p">&gt;</span>Desenvolvimento Web<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;dados&quot;</span><span class="p">&gt;</span>Ciência de Dados<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;infra&quot;</span><span class="p">&gt;</span>Infraestrutura e DevOps<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;seguranca&quot;</span><span class="p">&gt;</span>Segurança da Informação<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="553-datalist-sugestoes-automaticas">5.5.3 — <code>&lt;datalist&gt;</code>: sugestões automáticas<a class="headerlink" href="#553-datalist-sugestoes-automaticas" title="Permanent link">&para;</a></h3>
+<p>O elemento <code>&lt;datalist&gt;</code> oferece uma lista de sugestões para um campo de texto, sem restringir o usuário a apenas essas opções — ao contrário do <code>&lt;select&gt;</code>, que limita as escolhas disponíveis:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;cidade&quot;</span><span class="p">&gt;</span>Cidade:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span>
+  <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span>
+  <span class="na">id</span><span class="o">=</span><span class="s">&quot;cidade&quot;</span>
+  <span class="na">name</span><span class="o">=</span><span class="s">&quot;cidade&quot;</span>
+  <span class="na">list</span><span class="o">=</span><span class="s">&quot;sugestoes-cidade&quot;</span>
+  <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Digite sua cidade...&quot;</span>
+<span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">datalist</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;sugestoes-cidade&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Maceió&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Arapiraca&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Palmeira dos Índios&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;União dos Palmares&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Penedo&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">datalist</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>A associação entre o <code>&lt;input&gt;</code> e o <code>&lt;datalist&gt;</code> é feita pelo atributo <code>list</code> do input, cujo valor deve corresponder ao <code>id</code> do <code>&lt;datalist&gt;</code>.</p>
+<hr />
+<h2 id="56-formularios-acessiveis">5.6 — Formulários acessíveis<a class="headerlink" href="#56-formularios-acessiveis" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
+</blockquote>
+<p>Formulários são componentes de interface que exigem atenção especial à acessibilidade: o usuário precisa compreender o que cada campo solicita, receber feedback quando comete erros e ser capaz de navegar pelo formulário inteiramente via teclado. As fundações da acessibilidade em formulários são alcançadas com elementos e atributos HTML nativos — sem necessidade de ARIA na maioria dos casos.</p>
+<h3 id="561-label-associando-rotulos-a-campos">5.6.1 — <code>&lt;label&gt;</code>: associando rótulos a campos<a class="headerlink" href="#561-label-associando-rotulos-a-campos" title="Permanent link">&para;</a></h3>
+<p>O elemento <code>&lt;label&gt;</code> é o mecanismo fundamental de acessibilidade em formulários. Ele associa um rótulo textual a um campo, tornando claro para o usuário — e para tecnologias assistivas — o que aquele campo solicita.</p>
+<p>Existem duas formas de associar um <code>&lt;label&gt;</code> a um campo:</p>
+<p><strong>Associação explícita (recomendada):</strong> via atributo <code>for</code> no <code>&lt;label&gt;</code> referenciando o <code>id</code> do campo:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;nome&quot;</span><span class="p">&gt;</span>Nome completo:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;nome&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nome&quot;</span> <span class="p">/&gt;</span>
+</code></pre></div>
+<p><strong>Associação implícita:</strong> envolvendo o campo dentro do <code>&lt;label&gt;</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+  Nome completo:
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nome&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Ambas as formas são válidas. A associação explícita é preferida quando o layout visual separa o rótulo do campo.</p>
+<p><strong>Por que <code>&lt;label&gt;</code> é indispensável:</strong></p>
+<ul>
+<li>Leitores de tela anunciam o rótulo ao focar o campo — sem ele, o usuário ouve apenas "campo de texto" sem saber o que preencher</li>
+<li>Clicar no <code>&lt;label&gt;</code> move o foco para o campo associado — ampliando a área clicável, o que beneficia usuários com dificuldades motoras</li>
+<li>O WCAG 2.1 exige que todos os campos de formulário tenham um rótulo programaticamente associado (critério 1.3.1, nível A)</li>
+</ul>
+<blockquote>
+<p><strong>⚠️ Erro comum:</strong> usar <code>placeholder</code> como substituto de <code>&lt;label&gt;</code>. O <code>placeholder</code> desaparece quando o usuário começa a digitar, o que dificulta a revisão do formulário preenchido. <code>placeholder</code> deve ser usado apenas como exemplo do formato esperado, nunca como rótulo principal do campo.</p>
+</blockquote>
+<h3 id="562-fieldset-e-legend-agrupando-campos-relacionados">5.6.2 — <code>&lt;fieldset&gt;</code> e <code>&lt;legend&gt;</code>: agrupando campos relacionados<a class="headerlink" href="#562-fieldset-e-legend-agrupando-campos-relacionados" title="Permanent link">&para;</a></h3>
+<p>O elemento <code>&lt;fieldset&gt;</code> agrupa semanticamente campos relacionados de um formulário, e <code>&lt;legend&gt;</code> fornece um título para esse grupo. São especialmente importantes para grupos de radio buttons e checkboxes, onde o <code>&lt;legend&gt;</code> fornece o contexto da pergunta:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/matricula&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Dados pessoais<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;nome&quot;</span><span class="p">&gt;</span>Nome completo:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;nome&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nome&quot;</span> <span class="na">required</span> <span class="p">/&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;cpf&quot;</span><span class="p">&gt;</span>CPF:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;cpf&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;cpf&quot;</span> <span class="na">pattern</span><span class="o">=</span><span class="s">&quot;\d{3}\.\d{3}\.\d{3}-\d{2}&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Período de preferência:<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;periodo&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;manha&quot;</span> <span class="p">/&gt;</span> Manhã
+    <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;periodo&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;tarde&quot;</span> <span class="p">/&gt;</span> Tarde
+    <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;periodo&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;noite&quot;</span> <span class="p">/&gt;</span> Noite
+    <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Enviar matrícula<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Quando um leitor de tela foca um radio button, ele anuncia: "Manhã, botão de opção, 1 de 3 — Período de preferência". O <code>&lt;legend&gt;</code> fornece o contexto "Período de preferência", sem o qual o usuário ouvia apenas "Manhã" sem saber a qual pergunta a opção pertence.</p>
+<h3 id="563-aria-em-formularios-uso-avancado">5.6.3 — ARIA em formulários: uso avançado<a class="headerlink" href="#563-aria-em-formularios-uso-avancado" title="Permanent link">&para;</a></h3>
+<p>Os atributos ARIA são utilizados em formulários para situações que os elementos HTML nativos não cobrem diretamente — como mensagens de erro dinâmicas, descrições adicionais e estados de validação. O princípio fundamental é: <strong>use elementos HTML nativos primeiro; recorra ao ARIA apenas quando não há elemento semântico adequado</strong>.</p>
+<p>Os atributos ARIA mais comuns em formulários:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- aria-required: indica campo obrigatório (equivalente semântico ao required) --&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nome&quot;</span> <span class="na">aria-required</span><span class="o">=</span><span class="s">&quot;true&quot;</span> <span class="p">/&gt;</span>
+
+<span class="cm">&lt;!-- aria-describedby: associa uma descrição adicional ao campo --&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;senha&quot;</span><span class="p">&gt;</span>Senha:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span>
+  <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span>
+  <span class="na">id</span><span class="o">=</span><span class="s">&quot;senha&quot;</span>
+  <span class="na">name</span><span class="o">=</span><span class="s">&quot;senha&quot;</span>
+  <span class="na">aria-describedby</span><span class="o">=</span><span class="s">&quot;dica-senha&quot;</span>
+<span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;dica-senha&quot;</span><span class="p">&gt;</span>A senha deve ter no mínimo 8 caracteres, incluindo letras e números.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- aria-invalid: indica que o campo contém um valor inválido</span>
+<span class="cm">     (normalmente definido via JavaScript após validação) --&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span>
+  <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span>
+  <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span>
+  <span class="na">aria-invalid</span><span class="o">=</span><span class="s">&quot;true&quot;</span>
+  <span class="na">aria-describedby</span><span class="o">=</span><span class="s">&quot;erro-email&quot;</span>
+<span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;erro-email&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;alert&quot;</span><span class="p">&gt;</span>Por favor, informe um e-mail válido.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Referência:</strong> <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Forms/Form_validation">MDN — Formulários HTML: Validação de dados de formulário</a></p>
+</blockquote>
+<hr />
+<h2 id="57-validacao-nativa-do-navegador">5.7 — Validação nativa do navegador<a class="headerlink" href="#57-validacao-nativa-do-navegador" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
+</blockquote>
+<p>O HTML5 introduziu um conjunto de atributos que habilitam a <strong>validação nativa do navegador</strong> — verificação dos dados diretamente no cliente, antes do envio ao servidor. Essa funcionalidade melhora a experiência do usuário ao fornecer feedback imediato, sem necessidade de JavaScript ou de uma viagem ao servidor.</p>
+<blockquote>
+<p><strong>⚠️ Princípio fundamental:</strong> a validação nativa do navegador é uma conveniência para o usuário — <strong>não é uma medida de segurança</strong>. Qualquer usuário com conhecimento técnico pode desabilitar a validação do navegador, modificar o HTML via DevTools ou enviar requisições HTTP diretamente sem usar o formulário. <strong>A validação definitiva deve sempre ser implementada no backend.</strong> Validações mais complexas no frontend (máscaras, verificação em tempo real, formatação automática) serão abordadas nos capítulos de JavaScript.</p>
+</blockquote>
+<h3 id="571-o-atributo-required">5.7.1 — O atributo <code>required</code><a class="headerlink" href="#571-o-atributo-required" title="Permanent link">&para;</a></h3>
+<p>Impede o envio do formulário quando o campo está vazio:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;nome&quot;</span><span class="p">&gt;</span>Nome completo: *<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;nome&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;nome&quot;</span> <span class="na">required</span> <span class="p">/&gt;</span>
+</code></pre></div>
+<h3 id="572-restricoes-de-comprimento-minlength-e-maxlength">5.7.2 — Restrições de comprimento: <code>minlength</code> e <code>maxlength</code><a class="headerlink" href="#572-restricoes-de-comprimento-minlength-e-maxlength" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;bio&quot;</span><span class="p">&gt;</span>Biografia:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">textarea</span>
+  <span class="na">id</span><span class="o">=</span><span class="s">&quot;bio&quot;</span>
+  <span class="na">name</span><span class="o">=</span><span class="s">&quot;bio&quot;</span>
+  <span class="na">minlength</span><span class="o">=</span><span class="s">&quot;50&quot;</span>
+  <span class="na">maxlength</span><span class="o">=</span><span class="s">&quot;500&quot;</span>
+  <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Escreva entre 50 e 500 caracteres...&quot;</span>
+<span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="573-restricoes-numericas-min-max-e-step">5.7.3 — Restrições numéricas: <code>min</code>, <code>max</code> e <code>step</code><a class="headerlink" href="#573-restricoes-numericas-min-max-e-step" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;nota&quot;</span><span class="p">&gt;</span>Nota (0 a 10):<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span>
+  <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span>
+  <span class="na">id</span><span class="o">=</span><span class="s">&quot;nota&quot;</span>
+  <span class="na">name</span><span class="o">=</span><span class="s">&quot;nota&quot;</span>
+  <span class="na">min</span><span class="o">=</span><span class="s">&quot;0&quot;</span>
+  <span class="na">max</span><span class="o">=</span><span class="s">&quot;10&quot;</span>
+  <span class="na">step</span><span class="o">=</span><span class="s">&quot;0.5&quot;</span>
+<span class="p">/&gt;</span>
+</code></pre></div>
+<h3 id="574-validacao-por-padrao-pattern">5.7.4 — Validação por padrão: <code>pattern</code><a class="headerlink" href="#574-validacao-por-padrao-pattern" title="Permanent link">&para;</a></h3>
+<p>O atributo <code>pattern</code> aceita uma <strong>expressão regular</strong> que o valor do campo deve satisfazer. É a forma mais poderosa de validação nativa, permitindo definir formatos específicos:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- CEP no formato 00000-000 --&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;cep&quot;</span><span class="p">&gt;</span>CEP:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span>
+  <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span>
+  <span class="na">id</span><span class="o">=</span><span class="s">&quot;cep&quot;</span>
+  <span class="na">name</span><span class="o">=</span><span class="s">&quot;cep&quot;</span>
+  <span class="na">pattern</span><span class="o">=</span><span class="s">&quot;\d{5}-\d{3}&quot;</span>
+  <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;00000-000&quot;</span>
+  <span class="na">title</span><span class="o">=</span><span class="s">&quot;CEP no formato 00000-000&quot;</span>
+<span class="p">/&gt;</span>
+
+<span class="cm">&lt;!-- Placa de veículo: formato antigo (ABC-1234) ou Mercosul (ABC1D23) --&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;placa&quot;</span><span class="p">&gt;</span>Placa do veículo:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span>
+  <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span>
+  <span class="na">id</span><span class="o">=</span><span class="s">&quot;placa&quot;</span>
+  <span class="na">name</span><span class="o">=</span><span class="s">&quot;placa&quot;</span>
+  <span class="na">pattern</span><span class="o">=</span><span class="s">&quot;[A-Z]{3}-?\d{4}|[A-Z]{3}\d[A-Z]\d{2}&quot;</span>
+  <span class="na">title</span><span class="o">=</span><span class="s">&quot;Placa no formato ABC-1234 ou ABC1D23&quot;</span>
+<span class="p">/&gt;</span>
+
+<span class="cm">&lt;!-- Senha: mínimo 8 caracteres, ao menos uma letra e um número --&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;nova-senha&quot;</span><span class="p">&gt;</span>Nova senha:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span>
+  <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span>
+  <span class="na">id</span><span class="o">=</span><span class="s">&quot;nova-senha&quot;</span>
+  <span class="na">name</span><span class="o">=</span><span class="s">&quot;nova_senha&quot;</span>
+  <span class="na">pattern</span><span class="o">=</span><span class="s">&quot;(?=.*[A-Za-z])(?=.*\d).{8,}&quot;</span>
+  <span class="na">title</span><span class="o">=</span><span class="s">&quot;Mínimo de 8 caracteres, incluindo ao menos uma letra e um número&quot;</span>
+<span class="p">/&gt;</span>
+</code></pre></div>
+<p>O atributo <code>title</code> fornece a mensagem de erro exibida pelo navegador quando o padrão não é satisfeito — tornando o feedback compreensível para o usuário.</p>
+<h3 id="575-validacao-implicita-por-type">5.7.5 — Validação implícita por <code>type</code><a class="headerlink" href="#575-validacao-implicita-por-type" title="Permanent link">&para;</a></h3>
+<p>Muitos tipos de <code>&lt;input&gt;</code> realizam validação implícita sem atributos adicionais:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Validação implícita</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>Verifica presença de <code>@</code> e formato básico</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>Verifica formato de URL (protocolo + domínio)</td>
+</tr>
+<tr>
+<td><code>number</code></td>
+<td>Aceita apenas valores numéricos</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>Aceita apenas datas válidas no formato do sistema</td>
+</tr>
+<tr>
+<td><code>tel</code></td>
+<td>Sem validação de formato (formatos variam por país)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="576-desabilitando-a-validacao-nativa">5.7.6 — Desabilitando a validação nativa<a class="headerlink" href="#576-desabilitando-a-validacao-nativa" title="Permanent link">&para;</a></h3>
+<p>Em alguns cenários — como quando se implementa validação customizada via JavaScript — pode ser necessário desabilitar a validação nativa com o atributo booleano <code>novalidate</code> no elemento <code>&lt;form&gt;</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/cadastro&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">novalidate</span><span class="p">&gt;</span>
+  <span class="cm">&lt;!-- Validação gerenciada inteiramente por JavaScript --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<hr />
+<h2 id="58-formulario-completo-exemplo-integrado">5.8 — Formulário completo: exemplo integrado<a class="headerlink" href="#58-formulario-completo-exemplo-integrado" title="Permanent link">&para;</a></h2>
+<p>A seguir, um formulário de contato que integra todos os conceitos abordados neste capítulo — estrutura semântica, acessibilidade, tipos de campos, validação nativa e boas práticas:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/contato&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">novalidate</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Dados de identificação<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;campo&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;nome&quot;</span><span class="p">&gt;</span>Nome completo: <span class="p">&lt;</span><span class="nt">span</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;</span>*<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span>
+        <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span>
+        <span class="na">id</span><span class="o">=</span><span class="s">&quot;nome&quot;</span>
+        <span class="na">name</span><span class="o">=</span><span class="s">&quot;nome&quot;</span>
+        <span class="na">required</span>
+        <span class="na">minlength</span><span class="o">=</span><span class="s">&quot;3&quot;</span>
+        <span class="na">maxlength</span><span class="o">=</span><span class="s">&quot;100&quot;</span>
+        <span class="na">autocomplete</span><span class="o">=</span><span class="s">&quot;name&quot;</span>
+        <span class="na">aria-required</span><span class="o">=</span><span class="s">&quot;true&quot;</span>
+      <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;campo&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;email&quot;</span><span class="p">&gt;</span>E-mail: <span class="p">&lt;</span><span class="nt">span</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;</span>*<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span>
+        <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span>
+        <span class="na">id</span><span class="o">=</span><span class="s">&quot;email&quot;</span>
+        <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span>
+        <span class="na">required</span>
+        <span class="na">autocomplete</span><span class="o">=</span><span class="s">&quot;email&quot;</span>
+        <span class="na">aria-required</span><span class="o">=</span><span class="s">&quot;true&quot;</span>
+        <span class="na">aria-describedby</span><span class="o">=</span><span class="s">&quot;dica-email&quot;</span>
+      <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">small</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;dica-email&quot;</span><span class="p">&gt;</span>Utilizaremos este e-mail apenas para responder sua mensagem.<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;campo&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;telefone&quot;</span><span class="p">&gt;</span>Telefone:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span>
+        <span class="na">type</span><span class="o">=</span><span class="s">&quot;tel&quot;</span>
+        <span class="na">id</span><span class="o">=</span><span class="s">&quot;telefone&quot;</span>
+        <span class="na">name</span><span class="o">=</span><span class="s">&quot;telefone&quot;</span>
+        <span class="na">pattern</span><span class="o">=</span><span class="s">&quot;\(\d{2}\)\s\d{4,5}-\d{4}&quot;</span>
+        <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;(82) 99999-9999&quot;</span>
+        <span class="na">title</span><span class="o">=</span><span class="s">&quot;Telefone no formato (DDD) NNNNN-NNNN&quot;</span>
+        <span class="na">autocomplete</span><span class="o">=</span><span class="s">&quot;tel&quot;</span>
+      <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Assunto da mensagem<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;campo&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;tipo&quot;</span><span class="p">&gt;</span>Tipo de solicitação: <span class="p">&lt;</span><span class="nt">span</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;</span>*<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">select</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;tipo&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;tipo&quot;</span> <span class="na">required</span> <span class="na">aria-required</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Selecione...<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;duvida&quot;</span><span class="p">&gt;</span>Dúvida sobre o curso<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;sugestao&quot;</span><span class="p">&gt;</span>Sugestão<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;problema&quot;</span><span class="p">&gt;</span>Relato de problema<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;outro&quot;</span><span class="p">&gt;</span>Outro assunto<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;campo&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;mensagem&quot;</span><span class="p">&gt;</span>Mensagem: <span class="p">&lt;</span><span class="nt">span</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;</span>*<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">textarea</span>
+        <span class="na">id</span><span class="o">=</span><span class="s">&quot;mensagem&quot;</span>
+        <span class="na">name</span><span class="o">=</span><span class="s">&quot;mensagem&quot;</span>
+        <span class="na">required</span>
+        <span class="na">minlength</span><span class="o">=</span><span class="s">&quot;20&quot;</span>
+        <span class="na">maxlength</span><span class="o">=</span><span class="s">&quot;1000&quot;</span>
+        <span class="na">rows</span><span class="o">=</span><span class="s">&quot;6&quot;</span>
+        <span class="na">aria-required</span><span class="o">=</span><span class="s">&quot;true&quot;</span>
+        <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Descreva sua solicitação com detalhes...&quot;</span>
+      <span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Como prefere ser contatado?<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;contato&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">checked</span> <span class="p">/&gt;</span>
+      Por e-mail
+    <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;contato&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;telefone&quot;</span> <span class="p">/&gt;</span>
+      Por telefone
+    <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;campo&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;aceite&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;sim&quot;</span> <span class="na">required</span> <span class="p">/&gt;</span>
+      Li e aceito os <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/termos&quot;</span><span class="p">&gt;</span>termos de uso<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+  <span class="cm">&lt;!-- Campo oculto: dado de contexto enviado automaticamente --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;origem&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;pagina-contato&quot;</span> <span class="p">/&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;acoes&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;reset&quot;</span><span class="p">&gt;</span>Limpar formulário<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Enviar mensagem<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<hr />
+<h2 id="59-boas-praticas-em-formularios-html">5.9 — Boas práticas em formulários HTML<a class="headerlink" href="#59-boas-praticas-em-formularios-html" title="Permanent link">&para;</a></h2>
+<p>Um formulário tecnicamente correto não é necessariamente um formulário bem projetado. As boas práticas a seguir reúnem os princípios de usabilidade, acessibilidade e integridade de dados mais relevantes para o desenvolvimento de formulários na Web:</p>
+<p><strong>Sempre declare <code>name</code> em campos que devem ser enviados.</strong> Campos sem <code>name</code> são silenciosamente ignorados pelo navegador — um dos erros mais difíceis de diagnosticar em formulários.</p>
+<p><strong>Sempre use <code>&lt;label&gt;</code> associado a cada campo.</strong> <code>placeholder</code> não é um substituto de <code>&lt;label&gt;</code> — ele desaparece quando o usuário começa a digitar e não é anunciado de forma consistente por leitores de tela.</p>
+<p><strong>Declare <code>type</code> explicitamente em todos os <code>&lt;button&gt;</code>.</strong> O padrão <code>type="submit"</code> de um <code>&lt;button&gt;</code> sem <code>type</code> causa envios acidentais de formulário com frequência.</p>
+<p><strong>Agrupe campos relacionados com <code>&lt;fieldset&gt;</code> e <code>&lt;legend&gt;</code>.</strong> Isso é especialmente importante para grupos de radio buttons e checkboxes, onde o <code>&lt;legend&gt;</code> fornece o contexto da pergunta.</p>
+<p><strong>Use o método HTTP correto.</strong> <code>GET</code> para buscas e filtros (os parâmetros na URL são desejáveis); <code>POST</code> para ações que modificam estado no servidor (cadastros, logins, envios de mensagem). Nunca use <code>GET</code> para dados sensíveis.</p>
+<p><strong>Informe o usuário sobre campos obrigatórios.</strong> A convenção <code>*</code> é amplamente reconhecida, mas deve ser acompanhada de uma nota como "* campos obrigatórios" no início ou no final do formulário.</p>
+<p><strong>Forneça mensagens de erro claras.</strong> O atributo <code>title</code> em conjunto com <code>pattern</code> melhora as mensagens de erro nativas do navegador. Mensagens genéricas como "Valor inválido" são inadequadas — informe o formato esperado.</p>
+<p><strong>Nunca confie apenas na validação do frontend.</strong> Toda validação HTML e JavaScript pode ser contornada. A validação definitiva ocorre no servidor.</p>
+<p><strong>Prefira <code>autocomplete</code> adequado.</strong> O atributo <code>autocomplete</code> com valores semânticos corretos (<code>name</code>, <code>email</code>, <code>tel</code>, <code>current-password</code>, etc.) melhora a experiência do usuário e é reconhecido por gerenciadores de senha.</p>
+<p><strong>Referências:</strong>
+- <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Forms">MDN — Guia de formulários HTML</a>
+- <a href="https://webaim.org/techniques/forms/">WebAIM — Creating Accessible Forms</a>
+- <a href="https://www.w3.org/WAI/tutorials/forms/">W3C — Web Accessibility Tutorials: Forms</a>
+- <a href="https://html.spec.whatwg.org/multipage/forms.html">WHATWG — The form element</a></p>
+<hr />
+<h4 id="atividades-capitulo-5"><strong>Atividades — Capítulo 5</strong><a class="headerlink" href="#atividades-capitulo-5" title="Permanent link">&para;</a></h4>
+<div class="quiz" data-answer="b">
+  <p><strong>1.</strong> Um formulário tem um campo <code>&lt;input type="text" id="usuario"&gt;</code> sem o atributo <code>name</code>. O que ocorre quando o formulário é enviado?</p>
+  <button data-option="a">O navegador usa o valor do <code>id</code> como <code>name</code> automaticamente.</button>
+  <button data-option="b">O campo é ignorado — seus dados não são incluídos na requisição enviada ao servidor.</button>
+  <button data-option="c">O navegador exibe um erro de validação impedindo o envio.</button>
+  <button data-option="d">O campo é enviado com o valor <code>name=""</code>.</button>
+  <p class="feedback"></p>
+</div>
+
+<div class="quiz" data-answer="c">
+  <p><strong>2.</strong> Qual é a diferença fundamental entre <code>type="checkbox"</code> e <code>type="radio"</code>?</p>
+  <button data-option="a">Checkboxes enviam valores booleanos; radio buttons enviam strings.</button>
+  <button data-option="b">Radio buttons permitem múltiplas seleções; checkboxes permitem apenas uma.</button>
+  <button data-option="c">Checkboxes permitem zero ou mais seleções independentes; radio buttons com o mesmo <code>name</code> formam um grupo de escolha exclusiva — apenas um pode estar selecionado.</button>
+  <button data-option="d">Não há diferença funcional; a escolha é apenas estética.</button>
+  <p class="feedback"></p>
+</div>
+
+<div class="quiz" data-answer="d">
+  <p><strong>3.</strong> Por que a validação nativa do navegador (atributos <code>required</code>, <code>pattern</code>, etc.) não substitui a validação no servidor?</p>
+  <button data-option="a">Porque a validação do navegador só funciona em Chrome e Firefox.</button>
+  <button data-option="b">Porque o HTML5 não suporta expressões regulares complexas no atributo <code>pattern</code>.</button>
+  <button data-option="c">Porque a validação do navegador só é executada quando o usuário está online.</button>
+  <button data-option="d">Porque qualquer usuário técnico pode desabilitar a validação do navegador, modificar o HTML via DevTools ou enviar requisições HTTP diretamente — contornando inteiramente o formulário.</button>
+  <p class="feedback"></p>
+</div>
+
+<div class="quiz" data-answer="a">
+  <p><strong>4.</strong> Um <code>&lt;button&gt;</code> sem o atributo <code>type</code> está dentro de um <code>&lt;form&gt;</code>. O que acontece quando ele é clicado?</p>
+  <button data-option="a">O formulário é submetido, pois o valor padrão de <code>type</code> em um <code>&lt;button&gt;</code> dentro de um formulário é <code>submit</code>.</button>
+  <button data-option="b">Nada acontece, pois sem <code>type</code> o botão não tem comportamento definido.</button>
+  <button data-option="c">O formulário é limpo, como se fosse <code>type="reset"</code>.</button>
+  <button data-option="d">O navegador exibe um aviso solicitando a declaração explícita do <code>type</code>.</button>
+  <p class="feedback"></p>
+</div>
+
+<ul>
+<li><strong>GitHub Classroom:</strong> Construir um formulário de matrícula com: <code>&lt;fieldset&gt;</code> e <code>&lt;legend&gt;</code> para agrupamento, ao menos um campo de cada tipo (<code>text</code>, <code>email</code>, <code>select</code>, <code>radio</code>, <code>checkbox</code>, <code>textarea</code>), todos com <code>name</code>, <code>id</code> e <code>&lt;label&gt;</code> associado, validação nativa com <code>required</code> e <code>pattern</code>, e envio para <code>https://httpbin.org/post</code> para inspeção da requisição. <em>(link será adicionado)</em></li>
+</ul>
+<hr />
+<p><a href="../04-tabelas-listas-midia/">:material-arrow-left: Voltar ao Capítulo 4 — Tabelas, Listas e Mídia</a>
+<a href="../06-acessibilidade/">:material-arrow-right: Ir ao Capítulo 6 — Introdução à Acessibilidade Web</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/<your-github-username>" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "content.code.copy", "content.action.edit", "content.action.view", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
+      
+        <script src="../../assets/js/quiz.js"></script>
+      
+        <script src="../../assets/js/code-runner.js"></script>
+      
+    
+  </body>
+</html>
