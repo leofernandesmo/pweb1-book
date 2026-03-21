@@ -843,5 +843,5 @@ Este fluxo não substitui o teste com leitores de tela reais (como NVDA, JAWS ou
 
 ---
 
-[:material-arrow-left: Voltar ao Capítulo 2 — Fundamentos do HTML](02-fundamentos-html.md)
+[:material-arrow-left: Voltar ao Capítulo 2 — Fundamentos do HTML](02-html-fundamentos.md)
 [:material-arrow-right: Ir ao Capítulo 4 — Tabelas, Listas e Mídia](04-tabelas-listas-midia.md)
