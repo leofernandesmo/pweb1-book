@@ -1044,4 +1044,4 @@ Utilize bancos de mídia gratuitos:
 ---
 
 [:material-arrow-left: Voltar ao Capítulo 3 — HTML Semântico](03-html-semantico.md)
-[:material-arrow-right: Ir ao Capítulo 5 — Formulários HTML](05-formularios-html.md)
+[:material-arrow-right: Ir ao Capítulo 5 — Formulários HTML](05-formularios.md)
