@@ -10,13 +10,30 @@
 > **Vídeo curto explicativo**
 > *(link será adicionado posteriormente)*
 
+Uma tabela HTML é utilizada para representar **dados organizados em linhas e colunas**.
+
 As tabelas constituem um dos mecanismos mais antigos e ao mesmo tempo mais mal utilizados do HTML. Introduzidas desde as primeiras versões da linguagem, foram durante anos empregadas indevidamente como ferramenta de layout de página — prática que o advento do CSS tornou obsoleta e que a especificação do HTML5 condena explicitamente. Compreender o propósito correto das tabelas, sua estrutura semântica e suas implicações de acessibilidade é essencial para qualquer desenvolvedor que precise apresentar dados tabulares de forma adequada.
+
+Os principais elementos são:
+
+- `<table>` — define a tabela  
+- `<tr>` — define uma linha  
+- `<td>` — define uma célula de dado  
+- `<th>` — define uma célula de cabeçalho  
+
+> 💡 **Importante:**  
+> Neste momento do curso, estamos focando apenas na **estrutura (HTML)**.  
+> A aparência visual (cores, bordas, espaçamento) será estudada no próximo bimestre com **CSS**.
+
 
 ### 4.1.1 — Quando usar tabelas (e quando não usar)
 
-A especificação do WHATWG define tabelas como o elemento adequado para representar **dados tabulares** — isto é, informações que possuem uma relação lógica de duas dimensões, organizadas em linhas e colunas onde a intersecção de cada par (linha, coluna) tem um significado preciso. Exemplos canônicos: horários de aulas, tabelas de preços, resultados de comparações, estatísticas esportivas, calendários de eventos.
+Tabelas devem ser usadas exclusivamente para **dados tabulares**, ou seja, informações organizadas em linhas e colunas com relação lógica.
 
 O critério de uso é objetivo: se o conteúdo pode ser descrito por uma grade onde cada célula representa a intersecção entre uma categoria de linha e uma categoria de coluna, uma tabela é o elemento correto. Se o conteúdo é apenas uma lista de itens que se beneficiaria de um layout em múltiplas colunas por razões puramente visuais, a solução correta é CSS — não uma tabela.
+
+> ⚠️ **Erro comum:** usar tabelas para layout de página  
+> Isso torna o código semanticamente incorreto e prejudica a acessibilidade.
 
 **Usos incorretos que devem ser evitados:**
 
@@ -41,6 +58,8 @@ O critério de uso é objetivo: se o conteúdo pode ser descrito por uma grade o
 ```
 
 O uso de tabelas para layout, além de semanticamente incorreto, produz documentos inacessíveis: leitores de tela anunciam o início e o fim de cada tabela, o número de linhas e colunas, e navegam célula a célula — comportamento adequado para dados tabulares, mas completamente inadequado para estrutura de página.
+
+
 
 > **Referência:** [WHATWG — The table element](https://html.spec.whatwg.org/multipage/tables.html#the-table-element)
 
@@ -73,6 +92,9 @@ A estrutura mínima de uma tabela HTML é composta por três elementos obrigató
 </table>
 ```
 
+> ✔️ **Boa prática:**  
+> Use `<th>` para cabeçalhos — isso melhora a acessibilidade e a compreensão da tabela.
+
 A distinção entre `<th>` e `<td>` não é apenas visual (o `<th>` é renderizado em negrito e centralizado por padrão): ela é **semântica**. O elemento `<th>` comunica que aquela célula é um **rótulo** para as demais células da linha ou coluna, estabelecendo uma relação de cabeçalho que tecnologias assistivas utilizam para contextualizar os dados. Quando um leitor de tela navega por uma tabela, ele anuncia o cabeçalho da coluna ou linha ao ler cada célula de dado — mas apenas se `<th>` for utilizado corretamente.
 
 ### 4.1.3 — Estrutura semântica: `<thead>`, `<tbody>`, `<tfoot>` e `<caption>`
@@ -86,7 +108,7 @@ Para tabelas de qualquer complexidade real, o HTML oferece elementos de agrupame
 
 ```html
 <table>
-  <caption>Horário semanal — Sistemas de Informação, 3º Período (2026.1)</caption>
+  <caption><strong>Horário semanal — Sistemas de Informação, 3º Período (2026.1)</strong></caption>
 
   <thead>
     <tr>
@@ -969,6 +991,17 @@ O elemento `<figure>` — introduzido no Capítulo 3 no contexto semântico gera
 ```
 
 A combinação de `<figure>` com `<figcaption>` é especialmente importante para vídeos e áudios em materiais educacionais: ela fornece contexto imediato sobre o conteúdo da mídia, cita a fonte quando necessário, e oferece um ponto de ancoragem para links à transcrição ou aos recursos adicionais.
+
+
+#### 🔎 Direitos autorais
+
+> ⚠️ **Importante:**  
+> Nem toda imagem, vídeo ou áudio disponível na internet pode ser utilizado livremente.
+
+Utilize bancos de mídia gratuitos:
+- Unsplash  
+- Pexels  
+- Pixabay  
 
 **Referências gerais desta seção:**
 - [MDN — Multimídia e incorporação](https://developer.mozilla.org/pt-BR/docs/Learn/HTML/Multimedia_and_embedding)
