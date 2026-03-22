@@ -76,5 +76,17 @@ nav:
       - "4. Tabelas, Listas e Mídia": chapters/04-tabelas-listas-midia.md      
       - "5. Formulários HTML": chapters/05-formularios.md      
       - "6. Acessibilidade": chapters/06-acessibilidade.md 
+      - "7. ": chapters/07-css-fundamentos.md 
+      - "8. ": chapters/08-flexbox.md 
+      - "9. ": chapters/09-grid.md 
+      - "10. ": chapters/10-responsivo.md 
+      - "11. ": chapters/11-design-system.md 
+      - "12. ": chapters/12-tailwind.md 
+      - "13. ": chapters/13-javascript-essencial.md 
+      - "14. ": chapters/14-dom.md 
+      - "15. ": chapters/15-validacao-forms.md 
+      - "16. ": chapters/16-apis.md 
+      - "17. ": chapters/17-frontend-api.md 
+      - "18. ": chapters/18-projeto-final.md       
       - "Appendix": chapters/99-appendix.md      
   - Back Cover: back-cover.md
