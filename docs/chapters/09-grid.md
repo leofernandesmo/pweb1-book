@@ -1028,4 +1028,4 @@ A reordenação por media queries com `grid-template-areas` é geralmente segura
 ---
 
 [:material-arrow-left: Voltar ao Capítulo 8 — Layout com Flexbox](08-flexbox.md)
-[:material-arrow-right: Ir ao Capítulo 10 — Design Responsivo](10-responsividade.md)
+[:material-arrow-right: Ir ao Capítulo 10 — Design Responsivo](10-responsivo.md)
