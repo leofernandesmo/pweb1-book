@@ -546,5 +546,5 @@ Este capítulo oferece uma visão panorâmica da acessibilidade web. Para aprofu
 
 ---
 
-[:material-arrow-left: Voltar ao Capítulo 5 — Formulários HTML](05-formularios-html.md)
-[:material-arrow-right: Ir ao Capítulo 7 — Fundamentos do CSS](07-fundamentos-css.md)
+[:material-arrow-left: Voltar ao Capítulo 5 — Formulários HTML](05-formularios.md)
+[:material-arrow-right: Ir ao Capítulo 7 — Fundamentos do CSS](07-css-fundamentos.md)
