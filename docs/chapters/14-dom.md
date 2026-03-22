@@ -1353,4 +1353,4 @@ Os três jogos deste capítulo introduzem os fundamentos do desenvolvimento de j
 ---
 
 [:material-arrow-left: Voltar ao Capítulo 13 — JavaScript Essencial](13-javascript-essencial.md)
-[:material-arrow-right: Ir ao Capítulo 15 — Eventos e Formulários com JavaScript](15-eventos-formularios.md)
+[:material-arrow-right: Ir ao Capítulo 15 — Eventos e Formulários com JavaScript](15-validacao-forms.md)
