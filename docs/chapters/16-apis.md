@@ -1297,5 +1297,5 @@ async function carregarDashboard() {
 
 ---
 
-[:material-arrow-left: Voltar ao Capítulo 15 — Eventos e Formulários](15-eventos-formularios.md)
-[:material-arrow-right: Ir ao Capítulo 17 — Integração Frontend + API](17-integracao-frontend-api.md)
+[:material-arrow-left: Voltar ao Capítulo 15 — Eventos e Formulários](15-validacao-forms.md)
+[:material-arrow-right: Ir ao Capítulo 17 — Integração Frontend + API](17-frontend-api.md)
