@@ -858,5 +858,5 @@ A regra é direta: **se a ordem visual importa para a compreensão do conteúdo,
 
 ---
 
-[:material-arrow-left: Voltar ao Capítulo 7 — Fundamentos do CSS](07-fundamentos-css.md)
+[:material-arrow-left: Voltar ao Capítulo 7 — Fundamentos do CSS](07-css-fundamentos.md)
 [:material-arrow-right: Ir ao Capítulo 9 — Layout com Grid](09-grid.md)
