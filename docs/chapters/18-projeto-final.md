@@ -891,7 +891,7 @@ Não há quiz neste capítulo — o projeto final **é** a atividade avaliativa.
 
 ---
 
-[:material-arrow-left: Voltar ao Capítulo 17 — Integração Frontend + API](17-integracao-frontend-api.md)
+[:material-arrow-left: Voltar ao Capítulo 17 — Integração Frontend + API](17-frontend-api.md)
 
 ---
 
