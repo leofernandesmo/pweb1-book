@@ -1409,5 +1409,5 @@ Para projetos acadêmicos e portfólios, uma documentação em formato HTML est�
 
 ---
 
-[:material-arrow-left: Voltar ao Capítulo 10 — Design Responsivo](10-responsividade.md)
+[:material-arrow-left: Voltar ao Capítulo 10 — Design Responsivo](10-responsivo.md)
 [:material-arrow-right: Ir ao Capítulo 12 — Framework CSS: Tailwind](12-tailwind.md)
