@@ -1482,5 +1482,5 @@ O código escrito neste capítulo **não é descartado** ao aprender um framewor
 
 ---
 
-[:material-arrow-left: Voltar ao Capítulo 16 — Consumo de APIs](16-consumo-apis.md)
+[:material-arrow-left: Voltar ao Capítulo 16 — Consumo de APIs](16-apis.md)
 [:material-arrow-right: Ir ao Capítulo 18 — Projeto Final](18-projeto-final.md)
