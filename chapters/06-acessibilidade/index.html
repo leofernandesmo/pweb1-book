@@ -16,7 +16,7 @@
         <link rel="prev" href="../05-formularios/">
       
       
-        <link rel="next" href="../99-appendix/">
+        <link rel="next" href="../07-css-fundamentos/">
       
       
         
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#em-construcao" class="md-skip">
+        <a href="#capitulo-6-introducao-a-acessibilidade-web" class="md-skip">
           Skip to content
         </a>
       
@@ -541,6 +541,30 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -773,6 +797,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Acessibilidade
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -790,6 +832,672 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61-o-que-e-acessibilidade-web-e-por-que-importa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 — O que é acessibilidade web e por que importa
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1 — O que é acessibilidade web e por que importa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#611-quem-se-beneficia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.1 — Quem se beneficia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#612-contexto-legal-a-obrigacao-juridica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.2 — Contexto legal: a obrigação jurídica
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-os-quatro-principios-wcag-o-modelo-pour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 — Os quatro princípios WCAG: o modelo POUR
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 — Os quatro princípios WCAG: o modelo POUR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#621-perceptivel-perceivable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.1 — Perceptível (Perceivable)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#622-operavel-operable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.2 — Operável (Operable)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#623-compreensivel-understandable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.3 — Compreensível (Understandable)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#624-robusto-robust" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.4 — Robusto (Robust)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-aria-basico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 — ARIA básico
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.3 — ARIA básico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#631-quando-usar-e-quando-nao-usar-aria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3.1 — Quando usar (e quando não usar) ARIA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#632-os-tres-pilares-do-aria-roles-states-e-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3.2 — Os três pilares do ARIA: roles, states e properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#633-atributos-aria-mais-utilizados-na-pratica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3.3 — Atributos ARIA mais utilizados na prática
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-boas-praticas-imediatas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 — Boas práticas imediatas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.4 — Boas práticas imediatas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#641-hierarquia-de-titulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.1 — Hierarquia de títulos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#642-textos-alternativos-para-imagens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.2 — Textos alternativos para imagens
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#643-contraste-de-cores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.3 — Contraste de cores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#644-navegacao-por-teclado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.4 — Navegação por teclado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#645-links-descritivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.5 — Links descritivos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#646-formularios-acessiveis-revisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.6 — Formulários acessíveis: revisão
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-ferramentas-e-proximos-passos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 — Ferramentas e próximos passos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.5 — Ferramentas e próximos passos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#651-ferramentas-de-diagnostico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5.1 — Ferramentas de diagnóstico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#652-o-fluxo-de-diagnostico-recomendado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5.2 — O fluxo de diagnóstico recomendado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#653-acessibilidade-no-contexto-profissional-de-si" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5.3 — Acessibilidade no contexto profissional de SI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#654-para-aprofundamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5.4 — Para aprofundamento
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.5.4 — Para aprofundamento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atividades-capitulo-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atividades — Capítulo 6
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-css-fundamentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-flexbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-grid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-responsivo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-design-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-tailwind/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-javascript-essencial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-dom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-validacao-forms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-frontend-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-projeto-final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -917,7 +1625,575 @@
   
 
 
-<h1 id="em-construcao">Em Construção<a class="headerlink" href="#em-construcao" title="Permanent link">&para;</a></h1>
+<h1 id="capitulo-6-introducao-a-acessibilidade-web">Capítulo 6 — Introdução à Acessibilidade Web<a class="headerlink" href="#capitulo-6-introducao-a-acessibilidade-web" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
+</blockquote>
+<hr />
+<h2 id="61-o-que-e-acessibilidade-web-e-por-que-importa">6.1 — O que é acessibilidade web e por que importa<a class="headerlink" href="#61-o-que-e-acessibilidade-web-e-por-que-importa" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
+</blockquote>
+<p>A <strong>acessibilidade web</strong> é a prática de projetar e desenvolver páginas e aplicações que possam ser percebidas, compreendidas, navegadas e utilizadas por <strong>todas as pessoas</strong> — independentemente de suas capacidades físicas, sensoriais, cognitivas ou tecnológicas. Isso inclui pessoas com deficiência visual, auditiva, motora ou cognitiva, mas também pessoas em situações temporárias (um braço imobilizado, um ambiente com muito ruído) ou contextuais (conexão lenta, tela pequena, luz solar intensa).</p>
+<p>Uma forma precisa de compreender acessibilidade é pela definição do <strong>W3C</strong> (<em>World Wide Web Consortium</em>): a Web acessível é aquela em que pessoas com deficiência podem perceber, compreender, navegar, interagir e contribuir de forma equivalente às demais.</p>
+<p>O termo <strong>equivalente</strong> é deliberado. Acessibilidade não significa oferecer uma experiência inferior ou simplificada para determinados grupos — significa garantir que a experiência seja funcionalmente equivalente para todos, ainda que os meios de acesso sejam diferentes.</p>
+<h3 id="611-quem-se-beneficia">6.1.1 — Quem se beneficia<a class="headerlink" href="#611-quem-se-beneficia" title="Permanent link">&para;</a></h3>
+<p>É tentador imaginar acessibilidade como um conjunto de medidas destinadas a uma minoria específica. Essa percepção é equivocada por dois motivos.</p>
+<p>Primeiro, o universo de pessoas beneficiadas é muito maior do que intuitivamente se imagina. Segundo dados da <strong>Organização Mundial da Saúde (OMS)</strong>, aproximadamente <strong>1,3 bilhão de pessoas</strong> — cerca de 16% da população mundial — vivem com alguma forma de deficiência significativa. No Brasil, o <strong>Censo IBGE 2022</strong> identificou que mais de <strong>18,6 milhões de pessoas</strong> declararam ter deficiência, o que representa aproximadamente 8,9% da população.</p>
+<p>Segundo, muitos recursos desenvolvidos para acessibilidade beneficiam diretamente toda a população. Legendas em vídeos foram criadas para pessoas surdas, mas são amplamente utilizadas em ambientes barulhentos ou por pessoas aprendendo um idioma. O contraste elevado entre texto e fundo foi criado para pessoas com baixa visão, mas melhora a legibilidade para qualquer pessoa em condições de iluminação adversa. A navegação por teclado foi criada para pessoas com limitações motoras, mas é amplamente utilizada por desenvolvedores e usuários avançados. Este fenômeno é conhecido como <strong>curb-cut effect</strong> — uma analogia às rampas nas calçadas, criadas para cadeirantes mas utilizadas por ciclistas, pais com carrinhos de bebê e idosos.</p>
+<h3 id="612-contexto-legal-a-obrigacao-juridica">6.1.2 — Contexto legal: a obrigação jurídica<a class="headerlink" href="#612-contexto-legal-a-obrigacao-juridica" title="Permanent link">&para;</a></h3>
+<p>No Brasil, a acessibilidade digital não é apenas uma boa prática — é uma <strong>obrigação legal</strong> para um conjunto crescente de organizações.</p>
+<p>A <strong>Lei Brasileira de Inclusão da Pessoa com Deficiência</strong> (Lei nº 13.146/2015), conhecida como <strong>Estatuto da Pessoa com Deficiência</strong>, estabelece em seu artigo 63 que:</p>
+<blockquote>
+<p>"É obrigatória a acessibilidade nos sítios da internet mantidos por empresas com sede ou representação comercial no País ou por órgãos de governo, para uso da pessoa com deficiência."</p>
+</blockquote>
+<p>O <strong>Decreto nº 5.296/2004</strong> e as normas da <strong>ABNT NBR 15599</strong> e <strong>NBR 9050</strong> regulamentam aspectos técnicos da acessibilidade em diferentes contextos, incluindo o digital.</p>
+<p>Para órgãos públicos federais, o <strong>e-MAG</strong> (<em>Modelo de Acessibilidade em Governo Eletrônico</em>) define diretrizes específicas baseadas nas WCAG para portais governamentais brasileiros.</p>
+<p>No cenário internacional, a <strong>Seção 508</strong> da legislação norte-americana e a <strong>Diretiva de Acessibilidade Web da União Europeia (2016/2102)</strong> estabelecem obrigações similares em seus respectivos contextos.</p>
+<p><strong>Referências:</strong>
+- <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm">Lei nº 13.146/2015 — Estatuto da Pessoa com Deficiência</a>
+- <a href="https://emag.governoeletronico.gov.br/">e-MAG — Modelo de Acessibilidade em Governo Eletrônico</a>
+- <a href="https://www.who.int/news-room/fact-sheets/detail/disability-and-health">OMS — Disability and health</a></p>
+<hr />
+<h2 id="62-os-quatro-principios-wcag-o-modelo-pour">6.2 — Os quatro princípios WCAG: o modelo POUR<a class="headerlink" href="#62-os-quatro-principios-wcag-o-modelo-pour" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
+</blockquote>
+<p>As <strong>WCAG</strong> (<em>Web Content Accessibility Guidelines</em>) são as diretrizes internacionais de acessibilidade para conteúdo web, publicadas e mantidas pelo W3C. A versão atual em uso amplo é a <strong>WCAG 2.1</strong>, publicada em 2018, com a <strong>WCAG 2.2</strong> publicada em 2023 introduzindo refinamentos adicionais.</p>
+<p>As WCAG organizam seus critérios em torno de quatro princípios fundamentais, conhecidos pelo acrônimo <strong>POUR</strong>:</p>
+<h3 id="621-perceptivel-perceivable">6.2.1 — Perceptível (<em>Perceivable</em>)<a class="headerlink" href="#621-perceptivel-perceivable" title="Permanent link">&para;</a></h3>
+<p>O conteúdo deve ser apresentado de forma que <strong>todos os usuários possam percebê-lo</strong> — independentemente do sentido utilizado. Informações que existem apenas em uma modalidade sensorial (apenas visual ou apenas auditiva) excluem automaticamente usuários que não têm acesso a essa modalidade.</p>
+<p><strong>Exemplos práticos:</strong></p>
+<ul>
+<li>Imagens informativas devem ter texto alternativo (<code>alt</code>) descritivo — pessoas cegas usam leitores de tela que convertem o <code>alt</code> em áudio ou Braille</li>
+<li>Vídeos devem ter legendas — pessoas surdas dependem do texto para acessar o conteúdo auditivo</li>
+<li>O conteúdo não deve depender exclusivamente de cor para transmitir informação — pessoas com daltonismo podem não distinguir vermelho de verde</li>
+<li>O contraste entre texto e fundo deve ser suficiente — a WCAG 2.1 nível AA exige razão de contraste mínima de <strong>4,5:1</strong> para texto normal e <strong>3:1</strong> para texto grande</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Perceptível: imagem informativa com alt descritivo --&gt;</span>
+<span class="p">&lt;</span><span class="nt">img</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;grafico-vendas-2026.png&quot;</span>
+  <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Gráfico de barras mostrando crescimento de 40% nas vendas</span>
+<span class="s">       do 1º semestre de 2026 em relação ao mesmo período de 2025&quot;</span>
+<span class="p">/&gt;</span>
+
+<span class="cm">&lt;!-- Perceptível: não dependendo apenas de cor para transmitir erro --&gt;</span>
+<span class="cm">&lt;!-- INCORRETO: apenas vermelho indica o erro --&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;border: 2px solid red;&quot;</span> <span class="p">/&gt;</span>
+
+<span class="cm">&lt;!-- CORRETO: cor + ícone + texto comunicam o erro --&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">aria-invalid</span><span class="o">=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-describedby</span><span class="o">=</span><span class="s">&quot;erro-campo&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;erro-campo&quot;</span><span class="p">&gt;</span>⚠ Campo obrigatório — por favor, preencha este campo.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="622-operavel-operable">6.2.2 — Operável (<em>Operable</em>)<a class="headerlink" href="#622-operavel-operable" title="Permanent link">&para;</a></h3>
+<p>A interface deve ser <strong>operável por todos os usuários</strong>, independentemente do dispositivo de entrada utilizado. Pessoas com limitações motoras podem não usar mouse — elas navegam com teclado, switches, rastreadores oculares ou voz.</p>
+<p><strong>Exemplos práticos:</strong></p>
+<ul>
+<li>Toda funcionalidade deve ser acessível via teclado — navegação por <code>Tab</code>, ativação por <code>Enter</code>/<code>Espaço</code>, fechamento de modais por <code>Esc</code></li>
+<li>O foco do teclado deve ser sempre visível — nunca remover o outline do foco via CSS sem fornecer uma alternativa visual</li>
+<li>Links e botões devem ter área clicável adequada — a WCAG 2.2 recomenda área mínima de 24×24 pixels</li>
+<li>Conteúdos com movimento ou animação automática devem ter mecanismo de pausa</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Operável: botão com foco visível e navegável por teclado --&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn-primario&quot;</span><span class="p">&gt;</span>
+  Salvar alterações
+<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- CSS: nunca faça isso --&gt;</span>
+/* INCORRETO: remove completamente o indicador de foco */
+button:focus { outline: none; }
+
+/* CORRETO: substitui pelo indicador customizado com contraste adequado */
+button:focus-visible {
+  outline: 3px solid #0057B8;
+  outline-offset: 2px;
+}
+</code></pre></div>
+<h3 id="623-compreensivel-understandable">6.2.3 — Compreensível (<em>Understandable</em>)<a class="headerlink" href="#623-compreensivel-understandable" title="Permanent link">&para;</a></h3>
+<p>O conteúdo e a operação da interface devem ser <strong>compreensíveis</strong> — tanto o texto quanto o comportamento da página devem ser previsíveis e inteligíveis.</p>
+<p><strong>Exemplos práticos:</strong></p>
+<ul>
+<li>O idioma da página deve ser declarado no atributo <code>lang</code> do <code>&lt;html&gt;</code> — leitores de tela utilizam essa informação para selecionar o sintetizador de voz correto</li>
+<li>Mudanças de idioma dentro do documento devem ser marcadas com <code>lang</code> no elemento correspondente</li>
+<li>Mensagens de erro em formulários devem identificar o campo problemático e sugerir como corrigi-lo</li>
+<li>A navegação deve ser consistente entre páginas — elementos repetidos (menu, rodapé) devem aparecer sempre na mesma posição relativa</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Compreensível: idioma declarado --&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;pt-BR&quot;</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- Compreensível: trecho em outro idioma --&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>O princípio <span class="p">&lt;</span><span class="nt">span</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;la&quot;</span><span class="p">&gt;</span>ad hoc<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> é amplamente aplicado.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- Compreensível: mensagem de erro descritiva --&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;cep&quot;</span><span class="p">&gt;</span>CEP:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span>
+  <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span>
+  <span class="na">id</span><span class="o">=</span><span class="s">&quot;cep&quot;</span>
+  <span class="na">name</span><span class="o">=</span><span class="s">&quot;cep&quot;</span>
+  <span class="na">aria-describedby</span><span class="o">=</span><span class="s">&quot;cep-erro&quot;</span>
+  <span class="na">aria-invalid</span><span class="o">=</span><span class="s">&quot;true&quot;</span>
+<span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;cep-erro&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;alert&quot;</span><span class="p">&gt;</span>
+  CEP inválido. Informe o CEP no formato 00000-000.
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="624-robusto-robust">6.2.4 — Robusto (<em>Robust</em>)<a class="headerlink" href="#624-robusto-robust" title="Permanent link">&para;</a></h3>
+<p>O conteúdo deve ser <strong>robusto o suficiente</strong> para ser interpretado de forma confiável por uma ampla variedade de agentes de usuário — navegadores atuais, navegadores antigos, leitores de tela, motores de indexação e tecnologias assistivas em geral.</p>
+<p>Na prática, robustez significa essencialmente duas coisas: usar <strong>HTML semântico correto</strong> (conforme estudado nos capítulos anteriores) e garantir que o código seja <strong>válido e bem formado</strong>. Tecnologias assistivas dependem da estrutura semântica do documento para construir sua representação da página — um documento com erros estruturais produz comportamentos imprevisíveis.</p>
+<p><strong>Exemplos práticos:</strong></p>
+<ul>
+<li>Usar elementos HTML semânticos nativos em vez de recriar comportamentos com <code>&lt;div&gt;</code> e ARIA</li>
+<li>Manter atributos ARIA consistentes com o estado real do componente</li>
+<li>Validar o documento regularmente com o W3C Validator</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Robusto: botão nativo — comportamento previsível em todos os contextos --&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span><span class="p">&gt;</span>Abrir menu<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- Frágil: div tentando se comportar como botão —</span>
+<span class="cm">     requer ARIA, JavaScript e tratamento de teclado manual --&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">&gt;</span>Abrir menu<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>A regra fundamental de robustez pode ser resumida assim: <strong>a primeira regra de ARIA é não usar ARIA</strong>. Se existe um elemento HTML nativo que expressa a semântica necessária, use-o. ARIA é um complemento para situações que o HTML nativo não cobre — não um substituto para HTML semântico.</p>
+</blockquote>
+<p><strong>Referências:</strong>
+- <a href="https://www.w3.org/TR/WCAG21/">W3C — WCAG 2.1</a>
+- <a href="https://www.w3.org/TR/WCAG22/">W3C — WCAG 2.2</a>
+- <a href="https://developer.mozilla.org/pt-BR/docs/Web/Accessibility">MDN — Accessibility</a></p>
+<hr />
+<h2 id="63-aria-basico">6.3 — ARIA básico<a class="headerlink" href="#63-aria-basico" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
+</blockquote>
+<p><strong>ARIA</strong> (<em>Accessible Rich Internet Applications</em>) é uma especificação do W3C que define um conjunto de atributos HTML capazes de complementar a semântica nativa dos elementos — comunicando funções, estados e propriedades de componentes de interface a tecnologias assistivas quando o HTML sozinho não é suficiente.</p>
+<p>É importante compreender o escopo correto do ARIA: ele <strong>não adiciona funcionalidade</strong>, não muda a aparência visual e não afeta o comportamento do elemento para usuários sem tecnologia assistiva. ARIA comunica <em>significado</em> para a camada de acessibilidade do navegador — a <strong>Accessibility Tree</strong> — que por sua vez informa os leitores de tela e outros agentes.</p>
+<h3 id="631-quando-usar-e-quando-nao-usar-aria">6.3.1 — Quando usar (e quando não usar) ARIA<a class="headerlink" href="#631-quando-usar-e-quando-nao-usar-aria" title="Permanent link">&para;</a></h3>
+<p>A especificação WAI-ARIA do W3C estabelece cinco regras de uso, das quais a mais importante é a primeira:</p>
+<blockquote>
+<p><strong>Primeira regra do ARIA:</strong> se você pode usar um elemento HTML nativo ou atributo com a semântica e o comportamento que você precisa, use-o em vez de redefinir um elemento e adicionar ARIA.</p>
+</blockquote>
+<p>Isso significa que <code>&lt;button&gt;</code> é sempre preferível a <code>&lt;div role="button"&gt;</code>, que <code>&lt;nav&gt;</code> é sempre preferível a <code>&lt;div role="navigation"&gt;</code>, e que <code>&lt;h2&gt;</code> é sempre preferível a <code>&lt;div role="heading" aria-level="2"&gt;</code>.</p>
+<p>ARIA é necessário em situações genuínas: componentes de interface personalizados sem equivalente HTML nativo (como abas, accordions, sliders customizados), estados dinâmicos que mudam via JavaScript, e regiões de conteúdo que precisam de rótulos adicionais.</p>
+<h3 id="632-os-tres-pilares-do-aria-roles-states-e-properties">6.3.2 — Os três pilares do ARIA: roles, states e properties<a class="headerlink" href="#632-os-tres-pilares-do-aria-roles-states-e-properties" title="Permanent link">&para;</a></h3>
+<p><strong>Roles (funções)</strong></p>
+<p>O atributo <code>role</code> define a <em>função</em> semântica de um elemento — o que ele <em>é</em> na interface:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Quando um elemento não-semântico precisa comunicar sua função --&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;alert&quot;</span><span class="p">&gt;</span>
+  Sua sessão expirará em 5 minutos.
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;tablist&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;tab&quot;</span> <span class="na">aria-selected</span><span class="o">=</span><span class="s">&quot;true&quot;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&quot;painel-1&quot;</span><span class="p">&gt;</span>Aba 1<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;tab&quot;</span> <span class="na">aria-selected</span><span class="o">=</span><span class="s">&quot;false&quot;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&quot;painel-2&quot;</span><span class="p">&gt;</span>Aba 2<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;tabpanel&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;painel-1&quot;</span><span class="p">&gt;</span>Conteúdo da Aba 1<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>States (estados)</strong></p>
+<p>Atributos ARIA de estado comunicam a <em>condição atual</em> de um elemento — informações que mudam dinamicamente conforme o usuário interage:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- aria-expanded: indica se um elemento colapsável está aberto ou fechado --&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">aria-expanded</span><span class="o">=</span><span class="s">&quot;false&quot;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&quot;menu-dropdown&quot;</span><span class="p">&gt;</span>
+  Menu
+<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;menu-dropdown&quot;</span> <span class="na">hidden</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/inicio&quot;</span><span class="p">&gt;</span>Início<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/sobre&quot;</span><span class="p">&gt;</span>Sobre<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- aria-selected: indica item selecionado em uma lista --&gt;</span>
+<span class="p">&lt;</span><span class="nt">li</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;option&quot;</span> <span class="na">aria-selected</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;</span>JavaScript<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- aria-checked: estado de checkbox customizado --&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">aria-checked</span><span class="o">=</span><span class="s">&quot;false&quot;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">&gt;</span>
+  Aceitar termos
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>Properties (propriedades)</strong></p>
+<p>Atributos ARIA de propriedade fornecem informações descritivas sobre um elemento — geralmente estáticas ou raramente alteradas:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- aria-label: rótulo para elementos sem texto visível --&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;Fechar modal&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span><span class="p">&gt;</span>✕<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- aria-labelledby: referencia outro elemento como rótulo --&gt;</span>
+<span class="p">&lt;</span><span class="nt">h2</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;titulo-secao&quot;</span><span class="p">&gt;</span>Configurações de conta<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">section</span> <span class="na">aria-labelledby</span><span class="o">=</span><span class="s">&quot;titulo-secao&quot;</span><span class="p">&gt;</span>
+  ...
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- aria-describedby: associa descrição adicional a um elemento --&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span>
+  <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span>
+  <span class="na">aria-describedby</span><span class="o">=</span><span class="s">&quot;requisitos-senha&quot;</span>
+<span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;requisitos-senha&quot;</span><span class="p">&gt;</span>
+  Mínimo de 8 caracteres, incluindo letras maiúsculas, minúsculas e números.
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- aria-hidden: oculta elemento da árvore de acessibilidade --&gt;</span>
+<span class="cm">&lt;!-- Útil para ícones decorativos que não devem ser anunciados --&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">svg</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">&quot;true&quot;</span> <span class="na">focusable</span><span class="o">=</span><span class="s">&quot;false&quot;</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
+  Salvar documento
+<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- aria-live: anuncia atualizações dinâmicas de conteúdo --&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">aria-live</span><span class="o">=</span><span class="s">&quot;polite&quot;</span> <span class="na">aria-atomic</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">&gt;</span>
+  <span class="cm">&lt;!-- Conteúdo atualizado via JavaScript será anunciado pelo leitor de tela --&gt;</span>
+  3 resultados encontrados
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="633-atributos-aria-mais-utilizados-na-pratica">6.3.3 — Atributos ARIA mais utilizados na prática<a class="headerlink" href="#633-atributos-aria-mais-utilizados-na-pratica" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Uso principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>role</code></td>
+<td>role</td>
+<td>Define a função semântica do elemento</td>
+</tr>
+<tr>
+<td><code>aria-label</code></td>
+<td>property</td>
+<td>Rótulo para elementos sem texto visível</td>
+</tr>
+<tr>
+<td><code>aria-labelledby</code></td>
+<td>property</td>
+<td>Referencia outro elemento como rótulo</td>
+</tr>
+<tr>
+<td><code>aria-describedby</code></td>
+<td>property</td>
+<td>Associa descrição adicional</td>
+</tr>
+<tr>
+<td><code>aria-hidden</code></td>
+<td>state</td>
+<td>Oculta da árvore de acessibilidade</td>
+</tr>
+<tr>
+<td><code>aria-expanded</code></td>
+<td>state</td>
+<td>Estado de expansão (aberto/fechado)</td>
+</tr>
+<tr>
+<td><code>aria-selected</code></td>
+<td>state</td>
+<td>Item selecionado em lista ou abas</td>
+</tr>
+<tr>
+<td><code>aria-checked</code></td>
+<td>state</td>
+<td>Estado de marcação</td>
+</tr>
+<tr>
+<td><code>aria-disabled</code></td>
+<td>state</td>
+<td>Elemento desabilitado</td>
+</tr>
+<tr>
+<td><code>aria-required</code></td>
+<td>property</td>
+<td>Campo obrigatório em formulários</td>
+</tr>
+<tr>
+<td><code>aria-invalid</code></td>
+<td>state</td>
+<td>Campo com valor inválido</td>
+</tr>
+<tr>
+<td><code>aria-live</code></td>
+<td>property</td>
+<td>Anuncia atualizações dinâmicas</td>
+</tr>
+<tr>
+<td><code>aria-current</code></td>
+<td>state</td>
+<td>Item atual (página, passo, localização)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Referências:</strong>
+- <a href="https://www.w3.org/TR/wai-aria-1.2/">W3C — WAI-ARIA 1.2</a>
+- <a href="https://developer.mozilla.org/pt-BR/docs/Web/Accessibility/ARIA">MDN — ARIA</a>
+- <a href="https://www.w3.org/WAI/ARIA/apg/">W3C — ARIA Authoring Practices Guide</a></p>
+<hr />
+<h2 id="64-boas-praticas-imediatas">6.4 — Boas práticas imediatas<a class="headerlink" href="#64-boas-praticas-imediatas" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
+</blockquote>
+<p>Acessibilidade pode parecer um tema vasto e complexo, mas a maior parte dos problemas mais frequentes é resolvida por um conjunto relativamente pequeno de boas práticas que qualquer desenvolvedor pode aplicar imediatamente — sem conhecimento avançado de ARIA ou tecnologias assistivas.</p>
+<h3 id="641-hierarquia-de-titulos">6.4.1 — Hierarquia de títulos<a class="headerlink" href="#641-hierarquia-de-titulos" title="Permanent link">&para;</a></h3>
+<p>A hierarquia de títulos (<code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code>) é o principal mecanismo de navegação de usuários de leitores de tela. Segundo pesquisas da WebAIM, <strong>67,7% dos usuários de leitores de tela</strong> navegam páginas web primeiramente pela lista de títulos.</p>
+<p>A regra é direta: os títulos devem refletir a estrutura lógica do documento, sem saltar níveis. Uma página deve ter exatamente um <code>&lt;h1&gt;</code>, e os demais títulos devem seguir uma hierarquia coerente.</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- INCORRETO: salto de h1 para h3 --&gt;</span>
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Programação Web 1<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Capítulo 2<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>  <span class="cm">&lt;!-- deveria ser h2 --&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>Introdução<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- CORRETO: hierarquia sem saltos --&gt;</span>
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Programação Web 1<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Capítulo 2 — Fundamentos do HTML<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>2.1 — Introdução ao HTML<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>2.2 — Tags Essenciais<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Capítulo 3 — HTML Semântico<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="642-textos-alternativos-para-imagens">6.4.2 — Textos alternativos para imagens<a class="headerlink" href="#642-textos-alternativos-para-imagens" title="Permanent link">&para;</a></h3>
+<p>O atributo <code>alt</code> é obrigatório em todos os elementos <code>&lt;img&gt;</code>. A qualidade do texto alternativo, porém, varia enormemente na prática. Algumas orientações:</p>
+<ul>
+<li><strong>Imagens informativas:</strong> descreva o conteúdo e a função da imagem — não apenas o que ela mostra, mas o que ela comunica no contexto</li>
+<li><strong>Imagens decorativas:</strong> use <code>alt=""</code> (vazio) — o leitor de tela ignorará a imagem</li>
+<li><strong>Imagens de texto:</strong> transcreva o texto exato contido na imagem</li>
+<li><strong>Gráficos e infográficos:</strong> descreva a conclusão ou tendência principal, não os dados brutos</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Informativa: descreve conteúdo e contexto --&gt;</span>
+<span class="p">&lt;</span><span class="nt">img</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;grafico-crescimento.png&quot;</span>
+  <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Gráfico de linha mostrando crescimento de 127% no número</span>
+<span class="s">       de matrículas em cursos de TI entre 2020 e 2025&quot;</span>
+<span class="p">/&gt;</span>
+
+<span class="cm">&lt;!-- Decorativa: alt vazio --&gt;</span>
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;divider-ornamental.svg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="p">/&gt;</span>
+
+<span class="cm">&lt;!-- Imagem de texto: transcrição exata --&gt;</span>
+<span class="p">&lt;</span><span class="nt">img</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">&quot;citacao-berners-lee.jpg&quot;</span>
+  <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Citação de Tim Berners-Lee: &#39;The Web is more a social</span>
+<span class="s">       creation than a technical one.&#39;&quot;</span>
+<span class="p">/&gt;</span>
+</code></pre></div>
+<h3 id="643-contraste-de-cores">6.4.3 — Contraste de cores<a class="headerlink" href="#643-contraste-de-cores" title="Permanent link">&para;</a></h3>
+<p>O contraste insuficiente entre texto e fundo é um dos problemas de acessibilidade mais comuns e mais fáceis de verificar. As WCAG 2.1 definem os seguintes requisitos mínimos de contraste:</p>
+<table>
+<thead>
+<tr>
+<th>Nível</th>
+<th>Texto normal (&lt; 18pt)</th>
+<th>Texto grande (≥ 18pt ou ≥ 14pt negrito)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AA (mínimo)</td>
+<td>4,5:1</td>
+<td>3:1</td>
+</tr>
+<tr>
+<td>AAA (aprimorado)</td>
+<td>7:1</td>
+<td>4,5:1</td>
+</tr>
+</tbody>
+</table>
+<p>Ferramentas para verificar contraste:
+- <strong>WebAIM Contrast Checker:</strong> <a href="https://webaim.org/resources/contrastchecker/">https://webaim.org/resources/contrastchecker/</a>
+- <strong>Colour Contrast Analyser</strong> (aplicativo desktop gratuito)
+- <strong>DevTools:</strong> aba Elements → inspecionar propriedade <code>color</code> → o Chrome exibe a razão de contraste automaticamente</p>
+<blockquote>
+<p><strong>Imagem sugerida:</strong> captura do Chrome DevTools mostrando o painel de cor com a razão de contraste exibida ao inspecionar um elemento de texto — destacando a diferença entre uma razão abaixo de 4,5:1 (reprovada) e uma acima (aprovada).</p>
+<p><em>(imagem será adicionada posteriormente)</em></p>
+</blockquote>
+<h3 id="644-navegacao-por-teclado">6.4.4 — Navegação por teclado<a class="headerlink" href="#644-navegacao-por-teclado" title="Permanent link">&para;</a></h3>
+<p>Toda a funcionalidade de uma página deve ser acessível sem o uso do mouse. O fluxo de navegação por teclado segue esta sequência:</p>
+<ul>
+<li><code>Tab</code> — avança para o próximo elemento focável</li>
+<li><code>Shift+Tab</code> — retorna ao elemento focável anterior</li>
+<li><code>Enter</code> — ativa links e botões</li>
+<li><code>Espaço</code> — ativa botões e checkboxes</li>
+<li><code>Setas</code> — navega entre itens de radio buttons e menus</li>
+</ul>
+<p>Para garantir navegação por teclado adequada:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Elementos interativos nativos são focáveis automaticamente --&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/pagina&quot;</span><span class="p">&gt;</span>Link<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Botão<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">select</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- tabindex=&quot;0&quot;: torna qualquer elemento focável na ordem natural --&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;button&quot;</span><span class="p">&gt;</span>Elemento customizado focável<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- tabindex=&quot;-1&quot;: torna elemento programaticamente focável</span>
+<span class="cm">     (via JavaScript), mas não na navegação por Tab --&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&quot;-1&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;conteudo-modal&quot;</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- NUNCA use tabindex positivo (tabindex=&quot;1&quot;, &quot;2&quot;, etc.)</span>
+<span class="cm">     — cria uma ordem de foco artificial e confusa --&gt;</span>
+</code></pre></div>
+<p><strong>Nunca remova o indicador de foco sem fornecer uma alternativa:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c">/* INCORRETO: remove completamente o foco visível */</span>
+<span class="o">*</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">outline</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="c">/* CORRETO: customiza o foco com contraste adequado */</span>
+<span class="p">:</span><span class="nd">focus-visible</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">outline</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#0057B8</span><span class="p">;</span>
+<span class="w">  </span><span class="k">outline-offset</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="645-links-descritivos">6.4.5 — Links descritivos<a class="headerlink" href="#645-links-descritivos" title="Permanent link">&para;</a></h3>
+<p>O texto de um link deve fazer sentido fora de contexto — pois usuários de leitores de tela frequentemente navegam pela lista de links da página sem ler o texto ao redor.</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- INCORRETO: texto não descritivo --&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/relatorio-2026.pdf&quot;</span><span class="p">&gt;</span>Clique aqui<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/sobre&quot;</span><span class="p">&gt;</span>Saiba mais<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- CORRETO: texto descritivo --&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/relatorio-2026.pdf&quot;</span><span class="p">&gt;</span>Relatório anual 2026 (PDF, 2,4 MB)<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/sobre&quot;</span><span class="p">&gt;</span>Saiba mais sobre o IFAL Arapiraca<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+
+<span class="cm">&lt;!-- Quando o texto visível for inevitavelmente curto,</span>
+<span class="cm">     use aria-label para complementar --&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/relatorio-2026.pdf&quot;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;Baixar relatório anual 2026 em PDF&quot;</span><span class="p">&gt;</span>
+  Baixar
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="646-formularios-acessiveis-revisao">6.4.6 — Formulários acessíveis: revisão<a class="headerlink" href="#646-formularios-acessiveis-revisao" title="Permanent link">&para;</a></h3>
+<p>Os princípios de acessibilidade em formulários foram abordados em profundidade no Capítulo 5. Como revisão, os pontos essenciais são:</p>
+<ul>
+<li>Todo campo deve ter um <code>&lt;label&gt;</code> associado programaticamente — nunca depender apenas de <code>placeholder</code></li>
+<li>Grupos de campos relacionados devem ser envolvidos por <code>&lt;fieldset&gt;</code> com <code>&lt;legend&gt;</code></li>
+<li>Mensagens de erro devem ser associadas ao campo via <code>aria-describedby</code> e anunciadas dinamicamente via <code>role="alert"</code> ou <code>aria-live</code></li>
+<li>O <code>&lt;button&gt;</code> dentro de formulários deve sempre ter <code>type</code> declarado explicitamente</li>
+</ul>
+<hr />
+<h2 id="65-ferramentas-e-proximos-passos">6.5 — Ferramentas e próximos passos<a class="headerlink" href="#65-ferramentas-e-proximos-passos" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
+</blockquote>
+<h3 id="651-ferramentas-de-diagnostico">6.5.1 — Ferramentas de diagnóstico<a class="headerlink" href="#651-ferramentas-de-diagnostico" title="Permanent link">&para;</a></h3>
+<p>As ferramentas de diagnóstico de acessibilidade foram apresentadas no Capítulo 3 (seção 3.5). Como referência consolidada para este capítulo:</p>
+<table>
+<thead>
+<tr>
+<th>Ferramenta</th>
+<th>Tipo</th>
+<th>O que verifica</th>
+<th>Acesso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>W3C Validator</strong></td>
+<td>Online</td>
+<td>Validade sintática do HTML</td>
+<td><a href="https://validator.w3.org">validator.w3.org</a></td>
+</tr>
+<tr>
+<td><strong>WAVE</strong></td>
+<td>Online / extensão</td>
+<td>Acessibilidade geral (erros, alertas, estrutura)</td>
+<td><a href="https://wave.webaim.org">wave.webaim.org</a></td>
+</tr>
+<tr>
+<td><strong>Lighthouse</strong></td>
+<td>DevTools</td>
+<td>Pontuação de acessibilidade + lista priorizada</td>
+<td><code>F12</code> → Lighthouse</td>
+</tr>
+<tr>
+<td><strong>Accessibility Tree</strong></td>
+<td>DevTools</td>
+<td>Árvore de acessibilidade, roles, nomes</td>
+<td><code>F12</code> → Elements → Accessibility</td>
+</tr>
+<tr>
+<td><strong>Contrast Checker</strong></td>
+<td>Online</td>
+<td>Razão de contraste entre texto e fundo</td>
+<td><a href="https://webaim.org/resources/contrastchecker">webaim.org/resources/contrastchecker</a></td>
+</tr>
+<tr>
+<td><strong>NVDA</strong></td>
+<td>Leitor de tela</td>
+<td>Teste real com tecnologia assistiva</td>
+<td><a href="https://www.nvaccess.org/download/">nvaccess.org</a></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>No DevTools:</strong> para inspecionar a árvore de acessibilidade completa de uma página, abra o DevTools (<code>F12</code>), vá até a aba <strong>Elements</strong>, selecione qualquer elemento e expanda o painel <strong>Accessibility</strong> no lado direito. Ative a opção <strong>"Enable full-page accessibility tree"</strong> para visualizar toda a hierarquia de elementos acessíveis da página em formato de árvore, paralela à árvore DOM.</p>
+</blockquote>
+<h3 id="652-o-fluxo-de-diagnostico-recomendado">6.5.2 — O fluxo de diagnóstico recomendado<a class="headerlink" href="#652-o-fluxo-de-diagnostico-recomendado" title="Permanent link">&para;</a></h3>
+<p>Para os projetos desta disciplina, o fluxo de diagnóstico recomendado é o apresentado no Capítulo 3, seção 3.5.4 — resumido aqui como referência:</p>
+<ol>
+<li><strong>W3C Validator</strong> — garantir ausência de erros sintáticos</li>
+<li><strong>DevTools → Accessibility Tree</strong> — verificar roles e nomes acessíveis dos elementos principais</li>
+<li><strong>WAVE</strong> — auditoria completa de acessibilidade da página</li>
+<li><strong>Lighthouse</strong> — pontuação geral e lista priorizada de problemas</li>
+</ol>
+<h3 id="653-acessibilidade-no-contexto-profissional-de-si">6.5.3 — Acessibilidade no contexto profissional de SI<a class="headerlink" href="#653-acessibilidade-no-contexto-profissional-de-si" title="Permanent link">&para;</a></h3>
+<p>Para estudantes de Sistemas de Informação, acessibilidade não é apenas uma questão de front-end. Ela atravessa múltiplas dimensões do desenvolvimento de software:</p>
+<p><strong>No backend:</strong> APIs que retornam mensagens de erro claras e estruturadas permitem que o frontend construa feedback acessível para o usuário. A estrutura dos dados influencia como o frontend pode apresentá-los de forma acessível.</p>
+<p><strong>No banco de dados:</strong> textos alternativos, transcrições e metadados de acessibilidade frequentemente precisam ser armazenados e gerenciados como dados de primeira classe.</p>
+<p><strong>Em sistemas de informação:</strong> relatórios, dashboards e interfaces administrativas — os produtos mais comuns de projetos de SI — são frequentemente acessados por uma ampla variedade de usuários, incluindo pessoas com deficiência visual que usam leitores de tela para navegar por tabelas de dados.</p>
+<p><strong>Na gestão de projetos:</strong> requisitos de acessibilidade devem ser incluídos desde a fase de levantamento de requisitos, não tratados como ajustes finais. Incorporar acessibilidade tardiamente é significativamente mais custoso do que projetá-la desde o início.</p>
+<h3 id="654-para-aprofundamento">6.5.4 — Para aprofundamento<a class="headerlink" href="#654-para-aprofundamento" title="Permanent link">&para;</a></h3>
+<p>Este capítulo oferece uma visão panorâmica da acessibilidade web. Para aprofundamento progressivo, recomenda-se a seguinte sequência de recursos:</p>
+<p><strong>Nível introdutório:</strong>
+- <a href="https://webaim.org/intro/">WebAIM — Introduction to Web Accessibility</a> — leitura inicial recomendada
+- <a href="https://www.udacity.com/course/web-accessibility--ud891">Google — Web Accessibility (curso gratuito no Udacity)</a></p>
+<p><strong>Nível intermediário:</strong>
+- <a href="https://www.w3.org/WAI/tutorials/">W3C — WAI Tutorials</a> — tutoriais práticos por componente (menus, formulários, tabelas, imagens)
+- <a href="https://developer.mozilla.org/pt-BR/docs/Web/Accessibility">MDN — Accessibility</a></p>
+<p><strong>Referência técnica:</strong>
+- <a href="https://www.w3.org/TR/WCAG21/">WCAG 2.1 — Especificação completa</a>
+- <a href="https://www.w3.org/TR/WCAG22/">WCAG 2.2 — Especificação completa</a>
+- <a href="https://www.w3.org/WAI/ARIA/apg/">ARIA Authoring Practices Guide</a> — padrões de implementação de componentes interativos acessíveis</p>
+<hr />
+<h4 id="atividades-capitulo-6"><strong>Atividades — Capítulo 6</strong><a class="headerlink" href="#atividades-capitulo-6" title="Permanent link">&para;</a></h4>
+<div class="quiz" data-answer="c">
+  <p><strong>1.</strong> O que significa dizer que a acessibilidade web visa uma experiência "equivalente" para todos os usuários?</p>
+  <button data-option="a">Que todos os usuários devem ver exatamente a mesma interface visual.</button>
+  <button data-option="b">Que usuários com deficiência devem receber uma versão simplificada da página.</button>
+  <button data-option="c">Que a experiência deve ser funcionalmente equivalente para todos, ainda que os meios de acesso sejam diferentes — como teclado em vez de mouse, ou leitor de tela em vez de visão.</button>
+  <button data-option="d">Que a página deve funcionar igualmente em todos os navegadores.</button>
+  <p class="feedback"></p>
+</div>
+
+<div class="quiz" data-answer="b">
+  <p><strong>2.</strong> Qual dos quatro princípios WCAG (POUR) está sendo violado quando uma mensagem de erro é comunicada apenas pela cor vermelha de um campo, sem texto ou ícone adicional?</p>
+  <button data-option="a">Operável — o usuário não consegue interagir com o campo.</button>
+  <button data-option="b">Perceptível — a informação do erro depende exclusivamente de percepção visual de cor, excluindo usuários daltônicos ou com baixa visão.</button>
+  <button data-option="c">Compreensível — o usuário não entende o significado da cor.</button>
+  <button data-option="d">Robusto — o código não é interpretado corretamente por leitores de tela.</button>
+  <p class="feedback"></p>
+</div>
+
+<div class="quiz" data-answer="d">
+  <p><strong>3.</strong> Qual é a "primeira regra do ARIA"?</p>
+  <button data-option="a">Sempre adicionar atributos ARIA a todos os elementos interativos.</button>
+  <button data-option="b">ARIA deve ser usado apenas em formulários.</button>
+  <button data-option="c">Nunca usar ARIA — ele é obsoleto no HTML5.</button>
+  <button data-option="d">Se existe um elemento HTML nativo com a semântica necessária, usá-lo em vez de adicionar ARIA a um elemento genérico.</button>
+  <p class="feedback"></p>
+</div>
+
+<div class="quiz" data-answer="a">
+  <p><strong>4.</strong> Por que nunca se deve remover o <code>outline</code> de foco via CSS sem fornecer uma alternativa visual?</p>
+  <button data-option="a">Porque o indicador de foco é o único mecanismo visual que permite a usuários que navegam por teclado saber qual elemento está atualmente ativo — sua remoção torna a navegação por teclado inoperável.</button>
+  <button data-option="b">Porque o CSS não tem permissão de sobrescrever estilos nativos do navegador.</button>
+  <button data-option="c">Porque o outline afeta o cálculo do box model e pode quebrar o layout.</button>
+  <button data-option="d">Porque navegadores modernos ignoram a propriedade <code>outline: none</code>.</button>
+  <p class="feedback"></p>
+</div>
+
+<ul>
+<li><strong>GitHub Classroom:</strong> Auditar a página construída nas atividades anteriores utilizando WAVE e Lighthouse, documentar os problemas encontrados em um arquivo <code>acessibilidade.md</code> com: lista de erros identificados, descrição do impacto de cada erro para o usuário afetado, e as correções aplicadas no HTML. <em>(link será adicionado)</em></li>
+</ul>
+<hr />
+<p><a href="../05-formularios/">:material-arrow-left: Voltar ao Capítulo 5 — Formulários HTML</a>
+<a href="../07-css-fundamentos/">:material-arrow-right: Ir ao Capítulo 7 — Fundamentos do CSS</a></p>
 
 
 

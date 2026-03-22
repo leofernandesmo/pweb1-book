@@ -1,0 +1,2612 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Material do Curso de Programação Web 1 do curso de Técnico em Desenvolvimento de Sistemas do IFAL">
+      
+      
+      
+        <link rel="canonical" href="https://<github-username>.github.io/<book-repo-name>/chapters/18-projeto-final/">
+      
+      
+        <link rel="prev" href="../17-frontend-api/">
+      
+      
+        <link rel="next" href="../99-appendix/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>18. - Programação Web 1</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
+      <link rel="stylesheet" href="../../assets/css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#capitulo-18-projeto-final" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Programação Web 1" class="md-header__button md-logo" aria-label="Programação Web 1" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programação Web 1
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              18. 
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/leofernandesmo/pweb1-book/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cover/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Cover
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../title-page/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Title Page
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../preface/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Preface
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../00-how-to-use/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Chapters
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../back-cover/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Back Cover
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../print_page/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Print / Save PDF
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Programação Web 1" class="md-nav__button md-logo" aria-label="Programação Web 1" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Programação Web 1
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/leofernandesmo/pweb1-book/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cover/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cover
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../title-page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Title Page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-how-to-use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0. Como User Este Material
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-introducao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introdução a Web e Navegadores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-html-fundamentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Fundamentos do HTML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-html-semantico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. HTML Semântico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-tabelas-listas-midia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Tabelas, Listas e Mídia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-formularios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Formulários HTML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-acessibilidade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Acessibilidade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-css-fundamentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-flexbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-grid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-responsivo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-design-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-tailwind/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-javascript-essencial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-dom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-validacao-forms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-frontend-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. 
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#181-especificacao-e-planejamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.1 — Especificação e planejamento
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18.1 — Especificação e planejamento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1811-escopo-do-projeto-o-que-deve-ser-entregue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.1.1 — Escopo do projeto: o que deve ser entregue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1812-requisitos-tecnicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.1.2 — Requisitos técnicos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1813-escolha-da-api-publica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.1.3 — Escolha da API pública
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1814-prototipacao-wireframes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.1.4 — Prototipação: wireframes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1815-estrutura-de-arquivos-e-setup-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.1.5 — Estrutura de arquivos e setup inicial
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#182-sprint-1-estrutura-html-e-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.2 — Sprint 1: estrutura HTML e dados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18.2 — Sprint 1: estrutura HTML e dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1821-checklist-sprint-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.2.1 — Checklist Sprint 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1822-template-de-servico-ponto-de-partida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.2.2 — Template de serviço (ponto de partida)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1823-checkpoint-sprint-1-revisao-de-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.2.3 — Checkpoint Sprint 1: revisão de código
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#183-sprint-2-css-e-responsividade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.3 — Sprint 2: CSS e responsividade
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18.3 — Sprint 2: CSS e responsividade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1831-checklist-sprint-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.3.1 — Checklist Sprint 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1832-template-de-tokens-ponto-de-partida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.3.2 — Template de tokens (ponto de partida)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1833-checkpoint-sprint-2-revisao-de-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.3.3 — Checkpoint Sprint 2: revisão de código
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#184-sprint-3-javascript-e-integracao-completa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.4 — Sprint 3: JavaScript e integração completa
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18.4 — Sprint 3: JavaScript e integração completa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1841-checklist-sprint-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.4.1 — Checklist Sprint 3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1842-implementando-favoritos-com-localstorage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.4.2 — Implementando favoritos com localStorage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1843-toggle-de-tema-com-persistencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.4.3 — Toggle de tema com persistência
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1844-revisao-final-de-acessibilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.4.4 — Revisão final de acessibilidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1845-checkpoint-sprint-3-revisao-de-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.4.5 — Checkpoint Sprint 3: revisão de código
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#185-entrega-e-apresentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.5 — Entrega e apresentação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18.5 — Entrega e apresentação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1851-checklist-de-entrega" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.5.1 — Checklist de entrega
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1852-deploy-no-github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.5.2 — Deploy no GitHub Pages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1853-criterios-de-avaliacao-detalhados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.5.3 — Critérios de avaliação detalhados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1854-roteiro-de-apresentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.5.4 — Roteiro de apresentação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1855-retrospectiva-o-que-aprendemos-no-ano-letivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.5.5 — Retrospectiva: o que aprendemos no ano letivo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18.5.5 — Retrospectiva: o que aprendemos no ano letivo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atividades-capitulo-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atividades — Capítulo 18
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../99-appendix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../back-cover/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Back Cover
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../print_page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Print / Save PDF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/leofernandesmo/pweb1-book/edit/master/docs/chapters/18-projeto-final.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/leofernandesmo/pweb1-book/raw/master/docs/chapters/18-projeto-final.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="capitulo-18-projeto-final">Capítulo 18 — Projeto Final<a class="headerlink" href="#capitulo-18-projeto-final" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
+</blockquote>
+<hr />
+<h2 id="181-especificacao-e-planejamento">18.1 — Especificação e planejamento<a class="headerlink" href="#181-especificacao-e-planejamento" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
+</blockquote>
+<p>O Projeto Final é a síntese de tudo que foi estudado ao longo do ano letivo. Ele não é um exercício isolado — é a demonstração de que o estudante é capaz de <strong>integrar</strong> HTML semântico, CSS moderno, JavaScript e consumo de APIs em uma aplicação front-end coesa, funcional e acessível.</p>
+<p>O projeto é desenvolvido em três sprints ao longo das semanas 37 a 40, com checkpoints de revisão ao final de cada sprint. Esta estrutura simula o desenvolvimento iterativo usado em equipes de software reais.</p>
+<h3 id="1811-escopo-do-projeto-o-que-deve-ser-entregue">18.1.1 — Escopo do projeto: o que deve ser entregue<a class="headerlink" href="#1811-escopo-do-projeto-o-que-deve-ser-entregue" title="Permanent link">&para;</a></h3>
+<p>A aplicação final deve ser uma <strong>SPA (Single Page Application)</strong> que consome pelo menos uma API pública e oferece ao usuário as seguintes funcionalidades:</p>
+<p><strong>Funcionalidades obrigatórias:</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Funcionalidade</th>
+<th>Conceitos envolvidos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Listagem de dados da API com filtro e busca</td>
+<td>Fetch, renderização dinâmica, debounce</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Tela de detalhe de um item</td>
+<td>Roteamento por hash, parâmetros de URL</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Formulário com validação JavaScript completa</td>
+<td>Validação de múltiplos tipos de campos</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Navegação entre telas sem recarregar a página</td>
+<td>Hash routing</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Estados de UI: carregando, sucesso, erro, vazio</td>
+<td>Gestão de estados assíncronos</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Design responsivo (mobile-first)</td>
+<td>Flexbox, Grid, media queries</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Acessibilidade mínima</td>
+<td>ARIA, navegação por teclado, contraste</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Persistência local de pelo menos um dado</td>
+<td>localStorage</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Funcionalidades opcionais (bônus):</strong></p>
+<ul>
+<li>Tema claro/escuro com toggle e persistência</li>
+<li>Paginação na listagem</li>
+<li>Busca com AbortController (sem race condition)</li>
+<li>Animações e transições com CSS</li>
+<li>Componentes reutilizáveis com <code>@apply</code> do Tailwind ou CSS customizado</li>
+<li>Deploy no GitHub Pages</li>
+</ul>
+<h3 id="1812-requisitos-tecnicos">18.1.2 — Requisitos técnicos<a class="headerlink" href="#1812-requisitos-tecnicos" title="Permanent link">&para;</a></h3>
+<p><strong>HTML:</strong>
+- Marcação semântica com os elementos corretos (<code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>)
+- Meta tag <code>viewport</code> e <code>charset</code>
+- Atributos <code>alt</code> em todas as imagens
+- <code>&lt;title&gt;</code> descritivo
+- Formulários com <code>&lt;label&gt;</code> associados a todos os campos</p>
+<p><strong>CSS:</strong>
+- Sistema de variáveis CSS com tokens de design (cores, tipografia, espaçamento)
+- Layout responsivo mobile-first com pelo menos dois breakpoints
+- Reset com <code>box-sizing: border-box</code>
+- Sem uso de <code>!important</code> indiscriminado
+- Organização em seções comentadas</p>
+<p><strong>JavaScript:</strong>
+- Código organizado em módulos ES6 (<code>import</code>/<code>export</code>)
+- Camada de serviços separada da camada de UI
+- Tratamento de erros em todas as operações assíncronas
+- Sem uso de <code>var</code>; uso consciente de <code>const</code> e <code>let</code>
+- Sem manipulação de DOM dentro de serviços
+- Nenhuma chave de API sensível exposta no código versionado</p>
+<p><strong>Acessibilidade:</strong>
+- Score ≥ 80 no Lighthouse
+- Navegação completa por teclado
+- Contraste mínimo 4,5:1 para texto normal
+- Atributos ARIA nos componentes interativos (modal, accordion, abas)</p>
+<h3 id="1813-escolha-da-api-publica">18.1.3 — Escolha da API pública<a class="headerlink" href="#1813-escolha-da-api-publica" title="Permanent link">&para;</a></h3>
+<p>A escolha da API define o domínio da aplicação. Critérios a considerar:</p>
+<div class="highlight"><pre><span></span><code>✅ APIs recomendadas para o projeto:
+
+API             Domínio         Auth    Docs
+─────────────────────────────────────────────────
+OMDb            Filmes/séries   Key*    omdbapi.com
+Open Library    Livros          Não     openlibrary.org/developers
+PokéAPI         Pokémon         Não     pokeapi.co
+Rick and Morty  Série animada   Não     rickandmortyapi.com
+GitHub          Repositórios    Não**   docs.github.com/rest
+OpenWeather     Clima           Key*    openweathermap.org/api
+TheMealDB       Receitas        Não     themealdb.com/api.php
+NewsAPI         Notícias        Key*    newsapi.org
+IBGE + ViaCEP   Dados BR        Não     (combinação)
+
+* Key gratuita com cadastro simples
+** Sem autenticação para leitura básica (limite de req/h)
+</code></pre></div>
+<blockquote>
+<p><strong>Imagem sugerida:</strong> capturas de tela das documentações das APIs recomendadas, mostrando o endpoint de listagem e um exemplo de resposta JSON — para que os alunos possam comparar o formato dos dados antes de escolher.</p>
+<p><em>(imagem será adicionada posteriormente)</em></p>
+</blockquote>
+<h3 id="1814-prototipacao-wireframes">18.1.4 — Prototipação: wireframes<a class="headerlink" href="#1814-prototipacao-wireframes" title="Permanent link">&para;</a></h3>
+<p>Antes de escrever uma linha de código, o projeto deve ser prototipado. Wireframes evitam retrabalho e forçam decisões de layout antes que elas sejam caras de mudar.</p>
+<p><strong>Telas mínimas a prototipar:</strong></p>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────┐   ┌─────────────────────────────┐
+│  Tela 1: Listagem           │   │  Tela 2: Detalhe            │
+│                             │   │                             │
+│  [Header/Nav]               │   │  [← Voltar]                 │
+│                             │   │                             │
+│  [Busca] [Filtros]          │   │  [Imagem grande]            │
+│                             │   │  [Título]                   │
+│  [Card] [Card] [Card]       │   │  [Descrição]                │
+│  [Card] [Card] [Card]       │   │  [Detalhes]                 │
+│                             │   │  [Ação]                     │
+│  [Paginação]                │   │                             │
+│                             │   │                             │
+│  [Footer]                   │   │  [Footer]                   │
+└─────────────────────────────┘   └─────────────────────────────┘
+
+┌─────────────────────────────┐
+│  Tela 3: Formulário         │
+│                             │
+│  [Campo 1]                  │
+│  [Campo 2]                  │
+│  [Campo 3 — select]         │
+│  [Checkbox]                 │
+│  [Botão Enviar]             │
+│                             │
+└─────────────────────────────┘
+</code></pre></div>
+<p>Ferramentas gratuitas para wireframes: papel e caneta, <a href="https://excalidraw.com">Excalidraw</a>, <a href="https://figma.com">Figma</a> (plano gratuito), <a href="https://draw.io">draw.io</a>.</p>
+<h3 id="1815-estrutura-de-arquivos-e-setup-inicial">18.1.5 — Estrutura de arquivos e setup inicial<a class="headerlink" href="#1815-estrutura-de-arquivos-e-setup-inicial" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>projeto-final/
+├── index.html
+├── README.md
+├── .gitignore
+├── config.example.js     ← modelo de configuração (sem chaves reais)
+│
+├── css/
+│   ├── tokens.css        ← variáveis CSS (cores, tipografia, espaçamento)
+│   ├── reset.css         ← reset + base
+│   ├── components.css    ← componentes reutilizáveis
+│   ├── pages.css         ← estilos específicos de páginas
+│   └── utilities.css     ← classes utilitárias
+│
+└── js/
+    ├── app.js            ← entrada + inicialização do router
+    ├── router.js         ← roteamento por hash
+    ├── store.js          ← estado global (opcional)
+    ├── utils.js          ← funções utilitárias (debounce, formatadores, etc.)
+    │
+    ├── services/
+    │   ├── api.js        ← cliente HTTP genérico
+    │   └── [dominio].js  ← serviço específico (filmes.js, livros.js...)
+    │
+    ├── components/
+    │   ├── modal.js
+    │   ├── paginacao.js
+    │   └── notificacao.js
+    │
+    └── pages/
+        ├── listagem.js
+        ├── detalhe.js
+        └── formulario.js
+</code></pre></div>
+<p><strong>Setup inicial — <code>index.html</code>:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;pt-BR&quot;</span> <span class="na">data-tema</span><span class="o">=</span><span class="s">&quot;claro&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;description&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Descrição da sua aplicação&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Nome do Projeto — Programação Web 1<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;preconnect&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://fonts.googleapis.com&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;preconnect&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://fonts.gstatic.com&quot;</span> <span class="na">crossorigin</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap&quot;</span>
+        <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="p">/&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/tokens.css&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/reset.css&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/components.css&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/pages.css&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/utilities.css&quot;</span> <span class="p">/&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/app.js&quot;</span> <span class="na">defer</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+  <span class="cm">&lt;!-- Navegação principal --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">header</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;site-header&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;banner&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;navbar&quot;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;Navegação principal&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#/&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;navbar__logo&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>🎬 Nome do Projeto<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;navbar__links&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;list&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#/&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;navbar__link&quot;</span><span class="p">&gt;</span>Início<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#/favoritos&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;navbar__link&quot;</span><span class="p">&gt;</span>Favoritos<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#/sobre&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;navbar__link&quot;</span><span class="p">&gt;</span>Sobre<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;btn-tema&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn-icone&quot;</span>
+              <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;Alternar tema&quot;</span><span class="p">&gt;</span>🌙<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+
+  <span class="cm">&lt;!-- Conteúdo principal — atualizado pelo router --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">main</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span> <span class="na">tabindex</span><span class="o">=</span><span class="s">&quot;-1&quot;</span><span class="p">&gt;</span>
+    <span class="cm">&lt;!-- Conteúdo dinâmico renderizado aqui --&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">footer</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;site-footer&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;contentinfo&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Projeto Final — Programação Web 1 — IFAL © 2026<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<hr />
+<h2 id="182-sprint-1-estrutura-html-e-dados">18.2 — Sprint 1: estrutura HTML e dados<a class="headerlink" href="#182-sprint-1-estrutura-html-e-dados" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
+</blockquote>
+<p><strong>Objetivo do Sprint 1:</strong> ter a aplicação funcionando com dados reais da API, sem preocupação com CSS detalhado.</p>
+<p><strong>Entregável:</strong> página com listagem de dados da API renderizados no DOM, navegação entre listagem e detalhe funcionando via hash routing.</p>
+<h3 id="1821-checklist-sprint-1">18.2.1 — Checklist Sprint 1<a class="headerlink" href="#1821-checklist-sprint-1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>HTML:
+□ index.html com estrutura semântica completa
+□ Meta tags: charset, viewport, description, title
+□ &lt;header&gt; com &lt;nav&gt; acessível
+□ &lt;main id=&quot;app&quot;&gt; como container do conteúdo dinâmico
+□ &lt;footer&gt; com informações do projeto
+□ Links de navegação apontando para rotas hash (#/, #/detalhe/:id)
+
+JavaScript — Serviços:
+□ services/api.js com função buscarDados() e construirUrl()
+□ services/[dominio].js com funções listar() e buscarPorId()
+□ Normalização dos dados da API para o formato interno
+□ Tratamento de erros com classificação (rede vs HTTP)
+
+JavaScript — Roteamento:
+□ router.js implementado com on(), notFound() e inicializar()
+□ Rotas configuradas em app.js: /, /[recurso], /[recurso]/:id
+□ Navegação funcional entre listagem e detalhe
+
+JavaScript — Páginas:
+□ pages/listagem.js: renderiza lista de itens da API
+□ pages/detalhe.js: renderiza detalhe de um item pelo ID
+□ Estados de UI: carregando e erro implementados
+□ Estado vazio tratado
+</code></pre></div>
+<h3 id="1822-template-de-servico-ponto-de-partida">18.2.2 — Template de serviço (ponto de partida)<a class="headerlink" href="#1822-template-de-servico-ponto-de-partida" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// services/filmes.js — adapte para sua API escolhida</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">buscarDados</span><span class="p">,</span><span class="w"> </span><span class="nx">construirUrl</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./api.js&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">BASE_URL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;https://www.omdbapi.com&#39;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">API_KEY</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;SUA_CHAVE&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// mover para config.js em produção</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">FilmesService</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="nx">listar</span><span class="p">({</span><span class="w"> </span><span class="nx">busca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Matrix&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">tipo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">pagina</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">construirUrl</span><span class="p">(</span><span class="nx">BASE_URL</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">apikey</span><span class="o">:</span><span class="w"> </span><span class="nx">API_KEY</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">s</span><span class="o">:</span><span class="w">    </span><span class="nx">busca</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;Matrix&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">tipo</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="kc">undefined</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">page</span><span class="o">:</span><span class="w"> </span><span class="nx">pagina</span><span class="p">,</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">dados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">buscarDados</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">dados</span><span class="p">.</span><span class="nx">Response</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;False&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">dados</span><span class="p">.</span><span class="ne">Error</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;Movie not found!&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">dados</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="nx">total</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">};</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="nx">dados</span><span class="p">.</span><span class="ne">Error</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">dados</span><span class="o">:</span><span class="w">     </span><span class="nx">dados</span><span class="p">.</span><span class="nx">Search</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">normalizarFilme</span><span class="p">),</span>
+<span class="w">      </span><span class="nx">total</span><span class="o">:</span><span class="w">     </span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">dados</span><span class="p">.</span><span class="nx">totalResults</span><span class="p">),</span>
+<span class="w">      </span><span class="nx">porPagina</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">pagina</span><span class="p">,</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="nx">buscarPorId</span><span class="p">(</span><span class="nx">imdbId</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">construirUrl</span><span class="p">(</span><span class="nx">BASE_URL</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">apikey</span><span class="o">:</span><span class="w"> </span><span class="nx">API_KEY</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">i</span><span class="o">:</span><span class="w">    </span><span class="nx">imdbId</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">plot</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;full&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">dados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">buscarDados</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">dados</span><span class="p">.</span><span class="nx">Response</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;False&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span>
+<span class="w">      </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="nx">dados</span><span class="p">.</span><span class="ne">Error</span><span class="p">),</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="mf">404</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">normalizarFilmeDetalhe</span><span class="p">(</span><span class="nx">dados</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Normalização — listagem</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">normalizarFilme</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w">     </span><span class="nx">f</span><span class="p">.</span><span class="nx">imdbID</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">titulo</span><span class="o">:</span><span class="w"> </span><span class="nx">f</span><span class="p">.</span><span class="nx">Title</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">ano</span><span class="o">:</span><span class="w">    </span><span class="nx">f</span><span class="p">.</span><span class="nx">Year</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">tipo</span><span class="o">:</span><span class="w">   </span><span class="nx">f</span><span class="p">.</span><span class="nx">Type</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">poster</span><span class="o">:</span><span class="w"> </span><span class="nx">f</span><span class="p">.</span><span class="nx">Poster</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s1">&#39;N/A&#39;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">f</span><span class="p">.</span><span class="nx">Poster</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="p">};</span>
+<span class="p">}</span>
+
+<span class="c1">// Normalização — detalhe (mais campos)</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">normalizarFilmeDetalhe</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span><span class="nx">normalizarFilme</span><span class="p">(</span><span class="nx">f</span><span class="p">),</span>
+<span class="w">    </span><span class="nx">diretor</span><span class="o">:</span><span class="w">    </span><span class="nx">f</span><span class="p">.</span><span class="nx">Director</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">elenco</span><span class="o">:</span><span class="w">     </span><span class="nx">f</span><span class="p">.</span><span class="nx">Actors</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">genero</span><span class="o">:</span><span class="w">     </span><span class="nx">f</span><span class="p">.</span><span class="nx">Genre</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">sinopse</span><span class="o">:</span><span class="w">    </span><span class="nx">f</span><span class="p">.</span><span class="nx">Plot</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">avaliacao</span><span class="o">:</span><span class="w">  </span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">f</span><span class="p">.</span><span class="nx">imdbRating</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">duracao</span><span class="o">:</span><span class="w">    </span><span class="nx">f</span><span class="p">.</span><span class="nx">Runtime</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">idioma</span><span class="o">:</span><span class="w">     </span><span class="nx">f</span><span class="p">.</span><span class="nx">Language</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">premiacao</span><span class="o">:</span><span class="w">  </span><span class="nx">f</span><span class="p">.</span><span class="nx">Awards</span><span class="p">,</span>
+<span class="w">  </span><span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="1823-checkpoint-sprint-1-revisao-de-codigo">18.2.3 — Checkpoint Sprint 1: revisão de código<a class="headerlink" href="#1823-checkpoint-sprint-1-revisao-de-codigo" title="Permanent link">&para;</a></h3>
+<p>Ao final do Sprint 1, o professor realizará uma revisão de código verificando:</p>
+<ul>
+<li>A API está sendo consumida corretamente?</li>
+<li>Os dados estão sendo normalizados antes de chegar na UI?</li>
+<li>O tratamento de erros está presente em todas as funções assíncronas?</li>
+<li>A navegação entre telas funciona?</li>
+<li>O código está organizado em módulos separados?</li>
+</ul>
+<hr />
+<h2 id="183-sprint-2-css-e-responsividade">18.3 — Sprint 2: CSS e responsividade<a class="headerlink" href="#183-sprint-2-css-e-responsividade" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
+</blockquote>
+<p><strong>Objetivo do Sprint 2:</strong> aplicar o Design System e tornar a aplicação visualmente refinada e responsiva em todos os dispositivos.</p>
+<p><strong>Entregável:</strong> aplicação com visual completo, responsiva em mobile (375px), tablet (768px) e desktop (1024px+).</p>
+<h3 id="1831-checklist-sprint-2">18.3.1 — Checklist Sprint 2<a class="headerlink" href="#1831-checklist-sprint-2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>CSS — Tokens e base:
+□ tokens.css: variáveis de cor (primária, secundária, feedback, superfície, texto)
+□ tokens.css: escala tipográfica com clamp() nos títulos
+□ tokens.css: escala de espaçamento (--espaco-1 a --espaco-16)
+□ tokens.css: tokens de borda, sombra e transição
+□ reset.css: box-sizing border-box universal
+□ reset.css: reset de margens e paddings
+□ reset.css: imagens responsivas (max-width: 100%)
+
+CSS — Componentes:
+□ Navbar: logo à esquerda, links à direita, responsiva (hamburguer em mobile)
+□ Cards: imagem, corpo, rodapé; hover state; layout responsivo
+□ Botões: pelo menos duas variantes com estados hover, focus-visible, disabled
+□ Formulário: campos com labels, estados de erro e sucesso
+□ Estados de UI: carregando (skeleton), erro, vazio
+□ Modal (se implementado): overlay, caixa, animação de entrada
+
+CSS — Layout responsivo:
+□ Layout de listagem: 1 coluna mobile → 2 colunas tablet → 3+ desktop
+□ Layout de detalhe: empilhado mobile → lado a lado desktop
+□ Navbar: empilhada mobile → linha desktop
+□ Imagens com object-fit: cover em containers de dimensão fixa
+□ Pelo menos dois breakpoints com @media (min-width: ...)
+
+CSS — Tema escuro (opcional):
+□ @media (prefers-color-scheme: dark) com redefinição dos tokens semânticos
+□ Toggle manual com [data-tema=&quot;escuro&quot;] e persistência em localStorage
+</code></pre></div>
+<h3 id="1832-template-de-tokens-ponto-de-partida">18.3.2 — Template de tokens (ponto de partida)<a class="headerlink" href="#1832-template-de-tokens-ponto-de-partida" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c">/* css/tokens.css */</span>
+
+<span class="c">/* ── Primitivos ─────────────────────────────────── */</span>
+<span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c">/* Escala de azul */</span>
+<span class="w">  </span><span class="nv">--azul-50</span><span class="p">:</span><span class="w">  </span><span class="mh">#eff6ff</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--azul-100</span><span class="p">:</span><span class="w"> </span><span class="mh">#dbeafe</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--azul-500</span><span class="p">:</span><span class="w"> </span><span class="mh">#3b82f6</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--azul-700</span><span class="p">:</span><span class="w"> </span><span class="mh">#1d4ed8</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--azul-900</span><span class="p">:</span><span class="w"> </span><span class="mh">#1e3a8a</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c">/* Escala de cinza */</span>
+<span class="w">  </span><span class="nv">--cinza-50</span><span class="p">:</span><span class="w">  </span><span class="mh">#f9fafb</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--cinza-100</span><span class="p">:</span><span class="w"> </span><span class="mh">#f3f4f6</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--cinza-200</span><span class="p">:</span><span class="w"> </span><span class="mh">#e5e7eb</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--cinza-500</span><span class="p">:</span><span class="w"> </span><span class="mh">#6b7280</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--cinza-700</span><span class="p">:</span><span class="w"> </span><span class="mh">#374151</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--cinza-900</span><span class="p">:</span><span class="w"> </span><span class="mh">#111827</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c">/* Feedback */</span>
+<span class="w">  </span><span class="nv">--verde-600</span><span class="p">:</span><span class="w"> </span><span class="mh">#16a34a</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--verde-50</span><span class="p">:</span><span class="w">  </span><span class="mh">#f0fdf4</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--vermelho-600</span><span class="p">:</span><span class="w"> </span><span class="mh">#dc2626</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--vermelho-50</span><span class="p">:</span><span class="w">  </span><span class="mh">#fef2f2</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--amarelo-600</span><span class="p">:</span><span class="w"> </span><span class="mh">#d97706</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--amarelo-50</span><span class="p">:</span><span class="w">  </span><span class="mh">#fffbeb</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* ── Semânticos — Tema Claro ────────────────────── */</span>
+<span class="p">:</span><span class="nd">root</span><span class="o">,</span>
+<span class="o">[</span><span class="nt">data-tema</span><span class="o">=</span><span class="s2">&quot;claro&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nv">--cor-primaria</span><span class="p">:</span><span class="w">        </span><span class="nf">var</span><span class="p">(</span><span class="nv">--azul-</span><span class="mi">700</span><span class="p">);</span>
+<span class="w">  </span><span class="nv">--cor-primaria-hover</span><span class="p">:</span><span class="w">  </span><span class="nf">var</span><span class="p">(</span><span class="nv">--azul-</span><span class="mi">900</span><span class="p">);</span>
+<span class="w">  </span><span class="nv">--cor-primaria-suave</span><span class="p">:</span><span class="w">  </span><span class="nf">var</span><span class="p">(</span><span class="nv">--azul-</span><span class="mi">50</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nv">--cor-fundo</span><span class="p">:</span><span class="w">           </span><span class="nf">var</span><span class="p">(</span><span class="nv">--cinza-</span><span class="mi">50</span><span class="p">);</span>
+<span class="w">  </span><span class="nv">--cor-fundo-card</span><span class="p">:</span><span class="w">      </span><span class="mh">#ffffff</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--cor-fundo-sutil</span><span class="p">:</span><span class="w">     </span><span class="nf">var</span><span class="p">(</span><span class="nv">--cinza-</span><span class="mi">100</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nv">--cor-texto</span><span class="p">:</span><span class="w">           </span><span class="nf">var</span><span class="p">(</span><span class="nv">--cinza-</span><span class="mi">900</span><span class="p">);</span>
+<span class="w">  </span><span class="nv">--cor-texto-2</span><span class="p">:</span><span class="w">         </span><span class="nf">var</span><span class="p">(</span><span class="nv">--cinza-</span><span class="mi">500</span><span class="p">);</span>
+<span class="w">  </span><span class="nv">--cor-texto-inverso</span><span class="p">:</span><span class="w">   </span><span class="mh">#ffffff</span><span class="p">;</span>
+
+<span class="w">  </span><span class="nv">--cor-borda</span><span class="p">:</span><span class="w">           </span><span class="nf">var</span><span class="p">(</span><span class="nv">--cinza-</span><span class="mi">200</span><span class="p">);</span>
+<span class="w">  </span><span class="nv">--cor-borda-foco</span><span class="p">:</span><span class="w">      </span><span class="nf">var</span><span class="p">(</span><span class="nv">--azul-</span><span class="mi">500</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nv">--cor-sucesso</span><span class="p">:</span><span class="w">         </span><span class="nf">var</span><span class="p">(</span><span class="nv">--verde-</span><span class="mi">600</span><span class="p">);</span>
+<span class="w">  </span><span class="nv">--cor-sucesso-fundo</span><span class="p">:</span><span class="w">   </span><span class="nf">var</span><span class="p">(</span><span class="nv">--verde-</span><span class="mi">50</span><span class="p">);</span>
+<span class="w">  </span><span class="nv">--cor-erro</span><span class="p">:</span><span class="w">            </span><span class="nf">var</span><span class="p">(</span><span class="nv">--vermelho-</span><span class="mi">600</span><span class="p">);</span>
+<span class="w">  </span><span class="nv">--cor-erro-fundo</span><span class="p">:</span><span class="w">      </span><span class="nf">var</span><span class="p">(</span><span class="nv">--vermelho-</span><span class="mi">50</span><span class="p">);</span>
+<span class="w">  </span><span class="nv">--cor-aviso</span><span class="p">:</span><span class="w">           </span><span class="nf">var</span><span class="p">(</span><span class="nv">--amarelo-</span><span class="mi">600</span><span class="p">);</span>
+<span class="w">  </span><span class="nv">--cor-aviso-fundo</span><span class="p">:</span><span class="w">     </span><span class="nf">var</span><span class="p">(</span><span class="nv">--amarelo-</span><span class="mi">50</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nv">--sombra-sm</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">0.1</span><span class="p">);</span>
+<span class="w">  </span><span class="nv">--sombra-md</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="mi">6</span><span class="kt">px</span><span class="w"> </span><span class="mi">-1</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">0.1</span><span class="p">);</span>
+<span class="w">  </span><span class="nv">--sombra-lg</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="w"> </span><span class="mi">-3</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">0.1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* ── Semânticos — Tema Escuro ───────────────────── */</span>
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="o">(</span><span class="nt">prefers-color-scheme</span><span class="o">:</span><span class="w"> </span><span class="nt">dark</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">:</span><span class="nd">root</span><span class="p">:</span><span class="nd">not</span><span class="o">([</span><span class="nt">data-tema</span><span class="o">=</span><span class="s2">&quot;claro&quot;</span><span class="o">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">--cor-primaria</span><span class="p">:</span><span class="w">       </span><span class="nf">var</span><span class="p">(</span><span class="nv">--azul-</span><span class="mi">500</span><span class="p">);</span>
+<span class="w">    </span><span class="nv">--cor-primaria-hover</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--azul-</span><span class="mi">100</span><span class="p">);</span>
+<span class="w">    </span><span class="nv">--cor-primaria-suave</span><span class="p">:</span><span class="w"> </span><span class="mh">#1e3a8a</span><span class="mi">33</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nv">--cor-fundo</span><span class="p">:</span><span class="w">          </span><span class="mh">#0f172a</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--cor-fundo-card</span><span class="p">:</span><span class="w">     </span><span class="mh">#1e293b</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--cor-fundo-sutil</span><span class="p">:</span><span class="w">    </span><span class="mh">#1e293b</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nv">--cor-texto</span><span class="p">:</span><span class="w">          </span><span class="mh">#f1f5f9</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--cor-texto-2</span><span class="p">:</span><span class="w">        </span><span class="mh">#94a3b8</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--cor-texto-inverso</span><span class="p">:</span><span class="w">  </span><span class="mh">#0f172a</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nv">--cor-borda</span><span class="p">:</span><span class="w">          </span><span class="mh">#334155</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--cor-borda-foco</span><span class="p">:</span><span class="w">     </span><span class="nf">var</span><span class="p">(</span><span class="nv">--azul-</span><span class="mi">500</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nv">--sombra-sm</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">0.4</span><span class="p">);</span>
+<span class="w">    </span><span class="nv">--sombra-md</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="mi">6</span><span class="kt">px</span><span class="w"> </span><span class="mi">-1</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span>
+<span class="w">    </span><span class="nv">--sombra-lg</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="w"> </span><span class="mi">-3</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">0.6</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">[</span><span class="nt">data-tema</span><span class="o">=</span><span class="s2">&quot;escuro&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nv">--cor-primaria</span><span class="p">:</span><span class="w">       </span><span class="nf">var</span><span class="p">(</span><span class="nv">--azul-</span><span class="mi">500</span><span class="p">);</span>
+<span class="w">  </span><span class="c">/* ... mesmo que o @media acima ... */</span>
+<span class="p">}</span>
+
+<span class="c">/* ── Tipografia ─────────────────────────────────── */</span>
+<span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nv">--fonte-sans</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Inter&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">system-ui</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--fonte-mono</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Fira Code&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">Consolas</span><span class="p">,</span><span class="w"> </span><span class="kc">monospace</span><span class="p">;</span>
+
+<span class="w">  </span><span class="nv">--texto-xs</span><span class="p">:</span><span class="w">   </span><span class="nf">clamp</span><span class="p">(</span><span class="mf">0.75</span><span class="kt">rem</span><span class="p">,</span><span class="w">  </span><span class="mf">0.7</span><span class="kt">rem</span><span class="w">  </span><span class="o">+</span><span class="w"> </span><span class="mf">0.25</span><span class="kt">vw</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="kt">rem</span><span class="p">);</span>
+<span class="w">  </span><span class="nv">--texto-sm</span><span class="p">:</span><span class="w">   </span><span class="nf">clamp</span><span class="p">(</span><span class="mf">0.875</span><span class="kt">rem</span><span class="p">,</span><span class="w"> </span><span class="mf">0.82</span><span class="kt">rem</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.25</span><span class="kt">vw</span><span class="p">,</span><span class="w"> </span><span class="mf">0.95</span><span class="kt">rem</span><span class="p">);</span>
+<span class="w">  </span><span class="nv">--texto-base</span><span class="p">:</span><span class="w"> </span><span class="nf">clamp</span><span class="p">(</span><span class="mi">1</span><span class="kt">rem</span><span class="p">,</span><span class="w">     </span><span class="mf">0.95</span><span class="kt">rem</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.25</span><span class="kt">vw</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0625</span><span class="kt">rem</span><span class="p">);</span>
+<span class="w">  </span><span class="nv">--texto-lg</span><span class="p">:</span><span class="w">   </span><span class="nf">clamp</span><span class="p">(</span><span class="mf">1.125</span><span class="kt">rem</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="w">    </span><span class="o">+</span><span class="w"> </span><span class="mf">0.5</span><span class="kt">vw</span><span class="p">,</span><span class="w">  </span><span class="mf">1.25</span><span class="kt">rem</span><span class="p">);</span>
+<span class="w">  </span><span class="nv">--texto-xl</span><span class="p">:</span><span class="w">   </span><span class="nf">clamp</span><span class="p">(</span><span class="mf">1.25</span><span class="kt">rem</span><span class="p">,</span><span class="w">  </span><span class="mi">1</span><span class="kt">rem</span><span class="w">    </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="kt">vw</span><span class="p">,</span><span class="w">    </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">);</span>
+<span class="w">  </span><span class="nv">--texto-2xl</span><span class="p">:</span><span class="w">  </span><span class="nf">clamp</span><span class="p">(</span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">,</span><span class="w">   </span><span class="mi">1</span><span class="kt">rem</span><span class="w">    </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="kt">vw</span><span class="p">,</span><span class="w">    </span><span class="mi">2</span><span class="kt">rem</span><span class="p">);</span>
+<span class="w">  </span><span class="nv">--texto-3xl</span><span class="p">:</span><span class="w">  </span><span class="nf">clamp</span><span class="p">(</span><span class="mf">1.875</span><span class="kt">rem</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="kt">rem</span><span class="w">    </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="kt">vw</span><span class="p">,</span><span class="w">    </span><span class="mf">2.5</span><span class="kt">rem</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* ── Espaçamento ────────────────────────────────── */</span>
+<span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nv">--espaco-1</span><span class="p">:</span><span class="w">  </span><span class="mf">0.25</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--espaco-2</span><span class="p">:</span><span class="w">  </span><span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--espaco-3</span><span class="p">:</span><span class="w">  </span><span class="mf">0.75</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--espaco-4</span><span class="p">:</span><span class="w">  </span><span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--espaco-6</span><span class="p">:</span><span class="w">  </span><span class="mf">1.5</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--espaco-8</span><span class="p">:</span><span class="w">  </span><span class="mi">2</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--espaco-12</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--espaco-16</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="kt">rem</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* ── Bordas e raios ─────────────────────────────── */</span>
+<span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nv">--raio-sm</span><span class="p">:</span><span class="w">     </span><span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--raio-md</span><span class="p">:</span><span class="w">     </span><span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--raio-lg</span><span class="p">:</span><span class="w">     </span><span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--raio-xl</span><span class="p">:</span><span class="w">     </span><span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--raio-full</span><span class="p">:</span><span class="w">   </span><span class="mi">9999</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="nv">--transicao</span><span class="p">:</span><span class="w">   </span><span class="mi">200</span><span class="kt">ms</span><span class="w"> </span><span class="kc">ease</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="1833-checkpoint-sprint-2-revisao-de-codigo">18.3.3 — Checkpoint Sprint 2: revisão de código<a class="headerlink" href="#1833-checkpoint-sprint-2-revisao-de-codigo" title="Permanent link">&para;</a></h3>
+<p>Ao final do Sprint 2, verificar:</p>
+<ul>
+<li>Os tokens CSS estão sendo usados de forma consistente (sem valores hardcoded em <code>components.css</code>)?</li>
+<li>O layout é responsivo? Testar em 375px, 768px, 1024px e 1440px.</li>
+<li>As imagens não transbordam seus containers?</li>
+<li>Os estados de foco são visíveis em todos os elementos interativos?</li>
+<li>O contraste mínimo de 4,5:1 está sendo respeitado? (Verificar com DevTools)</li>
+</ul>
+<hr />
+<h2 id="184-sprint-3-javascript-e-integracao-completa">18.4 — Sprint 3: JavaScript e integração completa<a class="headerlink" href="#184-sprint-3-javascript-e-integracao-completa" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
+</blockquote>
+<p><strong>Objetivo do Sprint 3:</strong> completar toda a interatividade, validação, acessibilidade e persistência de dados.</p>
+<p><strong>Entregável:</strong> aplicação completa e funcional, pronta para deploy e apresentação.</p>
+<h3 id="1841-checklist-sprint-3">18.4.1 — Checklist Sprint 3<a class="headerlink" href="#1841-checklist-sprint-3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>JavaScript — Interatividade:
+□ Busca dinâmica com debounce (≥ 300ms)
+□ Filtros que atualizam a listagem em tempo real
+□ Paginação funcional (via URL hash ou estado)
+□ AbortController na busca (sem race condition)
+□ Formulário com validação de todos os campos obrigatórios
+□ Modal de confirmação (se aplicável) com gestão de foco
+□ Toggle de tema (claro/escuro) com persistência em localStorage
+□ Pelo menos um item persistido em localStorage (favoritos, histórico, etc.)
+
+JavaScript — Qualidade:
+□ Todos os fetchs têm tratamento de erro com try/catch
+□ Nenhum console.error ignorado sem feedback ao usuário
+□ Sem referências a variáveis inexistentes (verificar DevTools → Console)
+□ Código organizado em módulos ES6
+□ Nenhuma lógica de negócio em event listeners (delegar para funções nomeadas)
+
+Acessibilidade:
+□ Lighthouse Accessibility ≥ 80
+□ WAVE sem erros críticos (vermelho)
+□ Todas as imagens têm alt descritivo ou alt=&quot;&quot; (decorativas)
+□ Todos os botões e links têm textos descritivos ou aria-label
+□ Foco visível em todos os elementos interativos
+□ Formulário com labels associados a todos os campos
+□ Estados de loading anunciados com aria-live ou role=&quot;status&quot;
+□ Modal com gestão de foco (se implementado)
+□ Navegação completa por Tab sem armadilhas de foco
+</code></pre></div>
+<h3 id="1842-implementando-favoritos-com-localstorage">18.4.2 — Implementando favoritos com localStorage<a class="headerlink" href="#1842-implementando-favoritos-com-localstorage" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// Funcionalidade de favoritos — persistência local</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">Favoritos</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="n">#CHAVE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;app-favoritos&#39;</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="nx">listar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">#CHAVE</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;[]&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="nx">adicionar</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">lista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">listar</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">lista</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">f</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">f</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">lista</span><span class="p">.</span><span class="nx">unshift</span><span class="p">({</span><span class="w"> </span><span class="p">...</span><span class="nx">item</span><span class="p">,</span><span class="w"> </span><span class="nx">adicionadoEm</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">().</span><span class="nx">toISOString</span><span class="p">()</span><span class="w"> </span><span class="p">});</span>
+<span class="w">      </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">#CHAVE</span><span class="p">,</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">lista</span><span class="p">));</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="n">#notificar</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="nx">remover</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">lista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">listar</span><span class="p">().</span><span class="nx">filter</span><span class="p">(</span><span class="nx">f</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">f</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">id</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">#CHAVE</span><span class="p">,</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">lista</span><span class="p">));</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="n">#notificar</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="nx">ehFavorito</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">listar</span><span class="p">().</span><span class="nx">some</span><span class="p">(</span><span class="nx">f</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">f</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">id</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="nx">toggle</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">ehFavorito</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">remover</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">adicionar</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">ehFavorito</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="n">#notificar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nb">window</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">CustomEvent</span><span class="p">(</span><span class="s1">&#39;favoritos-atualizados&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">detail</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">total</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">listar</span><span class="p">().</span><span class="nx">length</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}));</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Botão de favoritar em cards e detalhe</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">criarBotaoFavorito</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">btn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">btn</span><span class="p">.</span><span class="nx">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;button&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">btn</span><span class="p">.</span><span class="nx">className</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;btn-favorito&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">isFav</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Favoritos</span><span class="p">.</span><span class="nx">ehFavorito</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nx">btn</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">isFav</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;❤️&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;🤍&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">btn</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;aria-label&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">isFav</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="sb">`Remover </span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">titulo</span><span class="si">}</span><span class="sb"> dos favoritos`</span>
+<span class="w">           </span><span class="o">:</span><span class="w"> </span><span class="sb">`Adicionar </span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">titulo</span><span class="si">}</span><span class="sb"> aos favoritos`</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="w">  </span><span class="nx">btn</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;aria-pressed&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">isFav</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;false&#39;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nx">btn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">e</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span><span class="w"> </span><span class="c1">// evita navegar para o detalhe ao clicar</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">novoEstado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Favoritos</span><span class="p">.</span><span class="nx">toggle</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">btn</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">novoEstado</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;❤️&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;🤍&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">btn</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;aria-pressed&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">novoEstado</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;false&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">btn</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;aria-label&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">novoEstado</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="sb">`Remover </span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">titulo</span><span class="si">}</span><span class="sb"> dos favoritos`</span>
+<span class="w">                 </span><span class="o">:</span><span class="w"> </span><span class="sb">`Adicionar </span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">titulo</span><span class="si">}</span><span class="sb"> aos favoritos`</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">btn</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Atualizar badge de favoritos na navbar</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;favoritos-atualizados&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">badge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#badge-favoritos&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">badge</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">badge</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="nx">total</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">badge</span><span class="p">.</span><span class="nx">hidden</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">detail</span><span class="p">.</span><span class="nx">total</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<h3 id="1843-toggle-de-tema-com-persistencia">18.4.3 — Toggle de tema com persistência<a class="headerlink" href="#1843-toggle-de-tema-com-persistencia" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// js/app.js — inicializar tema ao carregar</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">inicializarTema</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">temaSalvo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;tema&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">prefereEscuro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span><span class="p">(</span><span class="s1">&#39;(prefers-color-scheme: dark)&#39;</span><span class="p">).</span><span class="nx">matches</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">temaInicial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">temaSalvo</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="nx">prefereEscuro</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;escuro&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;claro&#39;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">tema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">temaInicial</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">atualizarBotaoTema</span><span class="p">(</span><span class="nx">temaInicial</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">atualizarBotaoTema</span><span class="p">(</span><span class="nx">tema</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">btn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;btn-tema&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">btn</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">btn</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tema</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;escuro&#39;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;☀️&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;🌙&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">btn</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;aria-label&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">tema</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;escuro&#39;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;Mudar para tema claro&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Mudar para tema escuro&#39;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="w">  </span><span class="nx">btn</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;aria-pressed&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">tema</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;escuro&#39;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;false&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">alternarTema</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">temaAtual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">tema</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">novoTema</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nx">temaAtual</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;escuro&#39;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;claro&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;escuro&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">tema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">novoTema</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;tema&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">novoTema</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">atualizarBotaoTema</span><span class="p">(</span><span class="nx">novoTema</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Inicializar na carga</span>
+<span class="nx">inicializarTema</span><span class="p">();</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;btn-tema&#39;</span><span class="p">)</span><span class="o">?</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">alternarTema</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="1844-revisao-final-de-acessibilidade">18.4.4 — Revisão final de acessibilidade<a class="headerlink" href="#1844-revisao-final-de-acessibilidade" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// Checklist de acessibilidade para executar antes da entrega</span>
+
+<span class="c1">// 1. Executar no console do DevTools para encontrar imagens sem alt</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">imgsSemAlt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;img:not([alt])&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Imagens sem alt: </span><span class="si">${</span><span class="nx">imgsSemAlt</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span><span class="w"> </span><span class="nx">imgsSemAlt</span><span class="p">);</span>
+
+<span class="c1">// 2. Verificar botões sem texto acessível</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">botoesVazios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">)]</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">!</span><span class="nx">b</span><span class="p">.</span><span class="nx">textContent</span><span class="p">.</span><span class="nx">trim</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="nx">b</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;aria-label&#39;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Botões sem texto acessível: </span><span class="si">${</span><span class="nx">botoesVazios</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span><span class="w"> </span><span class="nx">botoesVazios</span><span class="p">);</span>
+
+<span class="c1">// 3. Verificar campos sem label</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">camposSemLabel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;input, select, textarea&#39;</span><span class="p">)]</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">campo</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">campo</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">!</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="sb">`label[for=&quot;</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb">&quot;]`</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">           </span><span class="o">!</span><span class="nx">campo</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;aria-label&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">           </span><span class="o">!</span><span class="nx">campo</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;aria-labelledby&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Campos sem label: </span><span class="si">${</span><span class="nx">camposSemLabel</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span><span class="w"> </span><span class="nx">camposSemLabel</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="1845-checkpoint-sprint-3-revisao-de-codigo">18.4.5 — Checkpoint Sprint 3: revisão de código<a class="headerlink" href="#1845-checkpoint-sprint-3-revisao-de-codigo" title="Permanent link">&para;</a></h3>
+<p>Ao final do Sprint 3, verificar:</p>
+<ul>
+<li>O formulário valida todos os tipos de campos implementados?</li>
+<li>A busca tem debounce e AbortController?</li>
+<li>Os favoritos persistem entre recarregamentos da página?</li>
+<li>O Lighthouse Accessibility está ≥ 80?</li>
+<li>O console do DevTools está limpo de erros?</li>
+<li>O código funciona sem conexão com a API (erro tratado graciosamente)?</li>
+</ul>
+<hr />
+<h2 id="185-entrega-e-apresentacao">18.5 — Entrega e apresentação<a class="headerlink" href="#185-entrega-e-apresentacao" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Vídeo curto explicativo</strong>
+<em>(link será adicionado posteriormente)</em></p>
+</blockquote>
+<h3 id="1851-checklist-de-entrega">18.5.1 — Checklist de entrega<a class="headerlink" href="#1851-checklist-de-entrega" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Repositório Git:
+□ Repositório público no GitHub com nome descritivo
+□ README.md com: descrição do projeto, API usada,
+  instruções de configuração, screenshots e link do deploy
+□ .gitignore incluindo config.js, node_modules, .env
+□ Pelo menos 10 commits com mensagens descritivas
+□ Último commit não quebra a aplicação
+
+Código:
+□ Nenhum console.log de debug no código final
+□ Nenhuma chave de API exposta no código versionado
+□ Código formatado consistentemente (recomendado: Prettier)
+□ Todos os arquivos com encoding UTF-8
+
+Funcionalidades:
+□ Todas as funcionalidades obrigatórias implementadas e testadas
+□ A aplicação funciona nos navegadores Chrome, Firefox e Edge
+□ A aplicação funciona em viewport de 375px (iPhone SE)
+□ Nenhum erro JavaScript no console em uso normal
+
+Acessibilidade:
+□ Lighthouse Accessibility ≥ 80 (print da pontuação no README)
+□ WAVE sem erros críticos (vermelho)
+□ Navegação por teclado funcional na listagem e detalhe
+</code></pre></div>
+<h3 id="1852-deploy-no-github-pages">18.5.2 — Deploy no GitHub Pages<a class="headerlink" href="#1852-deploy-no-github-pages" title="Permanent link">&para;</a></h3>
+<p>O GitHub Pages permite publicar a aplicação gratuitamente diretamente do repositório:</p>
+<p><strong>Passo 1 — Preparar para deploy:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Verificar que não há caminhos absolutos no código</span>
+<span class="c1"># Substituir &#39;/api/&#39; por caminhos relativos se necessário</span>
+<span class="c1"># Verificar que os imports de módulos usam extensão .js explícita</span>
+</code></pre></div></p>
+<p><strong>Passo 2 — Configurar GitHub Pages:</strong>
+1. Acesse o repositório no GitHub
+2. Vá em <strong>Settings → Pages</strong>
+3. Em <strong>Source</strong>, selecione <strong>Deploy from a branch</strong>
+4. Selecione a branch <code>main</code> e a pasta <code>/ (root)</code>
+5. Clique em <strong>Save</strong></p>
+<p><strong>Passo 3 — Verificar o deploy:</strong>
+- Aguarde 2–5 minutos
+- Acesse <code>https://seuusuario.github.io/nome-do-repositorio</code>
+- Verifique se a aplicação carrega corretamente
+- Teste a navegação entre telas</p>
+<p><strong>Problema comum:</strong> módulos ES6 (<code>type="module"</code>) funcionam com <code>http://</code> ou <code>https://</code>, mas não com <code>file://</code>. No GitHub Pages isso não é um problema — o servidor serve os arquivos via HTTPS.</p>
+<p><strong>Outro problema comum:</strong> se o repositório não estiver na raiz do GitHub Pages (ex.: <code>usuario.github.io/projeto/</code>), os caminhos de <code>import</code> precisam ser relativos:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// ✅ Correto — caminho relativo</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Router</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./router.js&#39;</span><span class="p">;</span>
+
+<span class="c1">// ❌ Pode quebrar no deploy</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Router</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;/js/router.js&#39;</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="1853-criterios-de-avaliacao-detalhados">18.5.3 — Critérios de avaliação detalhados<a class="headerlink" href="#1853-criterios-de-avaliacao-detalhados" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Critério</th>
+<th>Peso</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HTML semântico</strong></td>
+<td>10%</td>
+<td>Uso correto dos elementos semânticos, formulário com labels, atributos de acessibilidade</td>
+</tr>
+<tr>
+<td><strong>CSS e responsividade</strong></td>
+<td>20%</td>
+<td>Tokens CSS, design coerente, responsivo em 3 viewports, tema escuro</td>
+</tr>
+<tr>
+<td><strong>JavaScript e qualidade</strong></td>
+<td>25%</td>
+<td>Módulos, tratamento de erros, código limpo, sem var</td>
+</tr>
+<tr>
+<td><strong>Consumo de API</strong></td>
+<td>20%</td>
+<td>Fetch correto, normalização, estados de UI completos, debounce</td>
+</tr>
+<tr>
+<td><strong>Funcionalidades</strong></td>
+<td>15%</td>
+<td>Listagem, detalhe, formulário, roteamento, favoritos/localStorage</td>
+</tr>
+<tr>
+<td><strong>Acessibilidade</strong></td>
+<td>10%</td>
+<td>Lighthouse ≥ 80, navegação por teclado, ARIA</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Bônus (até +2 pontos):</strong>
+- Deploy no GitHub Pages funcionando: +0,5
+- Tema escuro implementado corretamente: +0,5
+- AbortController na busca: +0,5
+- Componentes reutilizáveis bem documentados: +0,5</p>
+<h3 id="1854-roteiro-de-apresentacao">18.5.4 — Roteiro de apresentação<a class="headerlink" href="#1854-roteiro-de-apresentacao" title="Permanent link">&para;</a></h3>
+<p>A apresentação tem duração de <strong>5 minutos</strong> e deve cobrir:</p>
+<div class="highlight"><pre><span></span><code>[0:00 – 0:30] Introdução
+  → Nome, qual API foi escolhida e por quê
+  → Qual o &quot;problema&quot; que a aplicação resolve para o usuário
+
+[0:30 – 2:30] Demonstração ao vivo
+  → Mostrar a listagem com dados reais da API
+  → Executar uma busca ou filtro
+  → Navegar para o detalhe de um item
+  → Demonstrar o formulário com validação (incluir um erro propositalmente)
+  → Mostrar os favoritos sendo adicionados e persistindo
+
+[2:30 – 3:30] Aspectos técnicos
+  → Mostrar a estrutura de arquivos no VS Code
+  → Mostrar um trecho de código que você considera bem resolvido
+  → Mostrar o score do Lighthouse
+
+[3:30 – 4:30] Desafios e aprendizados
+  → Qual foi a parte mais difícil de implementar?
+  → O que você faria diferente com mais tempo?
+
+[4:30 – 5:00] Perguntas
+</code></pre></div>
+<h3 id="1855-retrospectiva-o-que-aprendemos-no-ano-letivo">18.5.5 — Retrospectiva: o que aprendemos no ano letivo<a class="headerlink" href="#1855-retrospectiva-o-que-aprendemos-no-ano-letivo" title="Permanent link">&para;</a></h3>
+<p>Ao longo de 40 semanas e 18 capítulos, percorremos uma jornada completa pelo desenvolvimento front-end moderno:</p>
+<p><strong>1º Bimestre — A fundação:</strong>
+Partimos dos fundamentos da Web — como um navegador interpreta HTML, o papel do HTTP, o conceito de DOM — e construímos páginas estruturadas com HTML semântico, acessível e bem formado. Aprendemos que a qualidade do HTML determina a qualidade de tudo que vem depois: CSS, JavaScript e acessibilidade dependem de uma marcação bem estruturada.</p>
+<p><strong>2º Bimestre — A apresentação:</strong>
+Com CSS moderno, Flexbox, Grid e design responsivo, aprendemos a criar interfaces que funcionam em qualquer dispositivo. O Design System nos ensinou que consistência visual não é um acidente — é resultado de decisões sistemáticas sobre cores, tipografia e espaçamento. O Tailwind CSS mostrou como um framework pode acelerar o desenvolvimento sem sacrificar o controle.</p>
+<p><strong>3º Bimestre — O comportamento:</strong>
+JavaScript trouxe vida às páginas. Aprendemos a linguagem em profundidade — closures, promises, async/await — e aplicamos esses conceitos na manipulação do DOM, no tratamento de eventos e na construção de componentes interativos. Os jogos mostraram que os mesmos conceitos de lógica, estado e renderização se aplicam em contextos bem diferentes.</p>
+<p><strong>4º Bimestre — A integração:</strong>
+APIs tornaram as aplicações dinâmicas e conectadas ao mundo real. Módulos ES6 organizaram o código em camadas. Roteamento, estado global e persistência com localStorage deram à SPA a sensação de uma aplicação completa. O Projeto Final sintetizou tudo isso em algo que pode ser mostrado, usado e evoluído.</p>
+<p><strong>O que aprendemos que transcende as tecnologias:</strong>
+- Separação de responsabilidades é um investimento que se paga a cada mudança futura
+- Acessibilidade não é opcional — ela é parte da qualidade do software
+- Código legível é mais valioso do que código "inteligente"
+- Todo comportamento visual inesperado tem uma explicação técnica precisa
+- A melhor forma de aprender é construir</p>
+<p>A jornada do front-end não termina aqui. Frameworks como React, Vue e Angular, TypeScript, testes automatizados, performance e segurança web são capítulos futuros. Mas todos eles serão mais fáceis de compreender porque você entende o que acontece por baixo.</p>
+<hr />
+<p><strong>Referências finais e recursos para continuar:</strong>
+- <a href="https://developer.mozilla.org/pt-BR/">MDN Web Docs</a> — referência técnica definitiva
+- <a href="https://web.dev">web.dev</a> — boas práticas de performance e acessibilidade (Google)
+- <a href="https://javascript.info">javascript.info</a> — JavaScript em profundidade
+- <a href="https://css-tricks.com">CSS Tricks</a> — técnicas avançadas de CSS
+- <a href="https://www.a11yproject.com">A11y Project</a> — acessibilidade web
+- <a href="https://education.github.com/pack">GitHub Student Developer Pack</a> — ferramentas gratuitas para estudantes</p>
+<hr />
+<h4 id="atividades-capitulo-18"><strong>Atividades — Capítulo 18</strong><a class="headerlink" href="#atividades-capitulo-18" title="Permanent link">&para;</a></h4>
+<p>Não há quiz neste capítulo — o projeto final <strong>é</strong> a atividade avaliativa.</p>
+<ul>
+<li>
+<p><strong>Entrega principal:</strong> repositório GitHub com o projeto completo, README com screenshots e link do deploy no GitHub Pages. <em>(data definida pelo professor)</em></p>
+</li>
+<li>
+<p><strong>Apresentação:</strong> demonstração ao vivo de 5 minutos seguindo o roteiro da seção 18.5.4. <em>(data definida pelo professor)</em></p>
+</li>
+</ul>
+<hr />
+<p><a href="../17-frontend-api/">:material-arrow-left: Voltar ao Capítulo 17 — Integração Frontend + API</a></p>
+<hr />
+<blockquote>
+<p><em>Programação Web 1 — IFAL — Bacharelado em Sistemas de Informação</em>
+<em>Material didático desenvolvido para o ano letivo 2026</em></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/<your-github-username>" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "content.code.copy", "content.action.edit", "content.action.view", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
+      
+        <script src="../../assets/js/quiz.js"></script>
+      
+        <script src="../../assets/js/code-runner.js"></script>
+      
+    
+  </body>
+</html>

@@ -2,66 +2,114 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/</loc>
-         <lastmod>2026-03-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/back-cover/</loc>
-         <lastmod>2026-03-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/cover/</loc>
-         <lastmod>2026-03-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/preface/</loc>
-         <lastmod>2026-03-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/title-page/</loc>
-         <lastmod>2026-03-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/00-how-to-use/</loc>
-         <lastmod>2026-03-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/01-introducao/</loc>
-         <lastmod>2026-03-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/01-introduction/</loc>
-         <lastmod>2026-03-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/02-first-steps/</loc>
-         <lastmod>2026-03-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/02-html-fundamentos/</loc>
-         <lastmod>2026-03-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/03-html-semantico/</loc>
-         <lastmod>2026-03-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/04-tabelas-listas-midia/</loc>
-         <lastmod>2026-03-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/05-formularios/</loc>
-         <lastmod>2026-03-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/06-acessibilidade/</loc>
-         <lastmod>2026-03-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/07-css-fundamentos/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/08-flexbox/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/09-grid/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/10-responsivo/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/11-design-system/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/12-tailwind/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/13-javascript-essencial/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/14-dom/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/15-validacao-forms/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/16-apis/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/17-frontend-api/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/18-projeto-final/</loc>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/98-glossario/</loc>
-         <lastmod>2026-03-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://&lt;github-username&gt;.github.io/&lt;book-repo-name&gt;/chapters/99-appendix/</loc>
-         <lastmod>2026-03-21</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
 </urlset>
