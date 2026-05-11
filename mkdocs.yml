@@ -76,12 +76,12 @@ nav:
       - "4. Tabelas, Listas e Mídia": chapters/04-tabelas-listas-midia.md      
       - "5. Formulários HTML": chapters/05-formularios.md      
       - "6. Acessibilidade": chapters/06-acessibilidade.md 
-      - "7. Em Construção": chapters/07-css-fundamentos.md 
-      - "8. Em Construção": chapters/08-flexbox.md 
-      - "9. Em Construção": chapters/09-grid.md 
-      - "10. Em Construção": chapters/10-responsivo.md 
-      - "11. Em Construção": chapters/11-design-system.md 
-      - "12. Em Construção": chapters/12-tailwind.md 
+      - "7. Fundamentos do CSS": chapters/07-css-fundamentos.md 
+      - "8. Layout com Flexbox": chapters/08-flexbox.md 
+      - "9. Layout com Grid": chapters/09-grid.md 
+      - "10. Design Responsivo": chapters/10-responsivo.md 
+      - "11. Variáveis CSS e Design System": chapters/11-design-system.md 
+      - "12. Framework CSS: Tailwind CSS": chapters/12-tailwind.md 
       - "13. Em Construção": chapters/13-javascript-essencial.md 
       - "14. Em Construção": chapters/14-dom.md 
       - "15. Em Construção": chapters/15-validacao-forms.md 
