@@ -82,8 +82,8 @@ nav:
       - "10. Design Responsivo": chapters/10-responsivo.md 
       - "11. Variáveis CSS e Design System": chapters/11-design-system.md 
       - "12. Framework CSS: Tailwind CSS": chapters/12-tailwind.md 
-      - "13. Em Construção": chapters/13-javascript-essencial.md 
-      - "14. Em Construção": chapters/14-dom.md 
+      - "13. Capítulo 13: JavaScript Essencial": chapters/13-javascript-essencial.md 
+      - "14. Capítulo 14: Manipulação do DOM": chapters/14-dom.md 
       - "15. Em Construção": chapters/15-validacao-forms.md 
       - "16. Em Construção": chapters/16-apis.md 
       - "17. Em Construção": chapters/17-frontend-api.md 
