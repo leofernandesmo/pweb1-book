@@ -1102,8 +1102,14 @@ body {
 
 ## 7.7 — Box Model
 
-> **Vídeo curto explicativo**
-> *(link será adicionado posteriormente)*
+> **Vídeo:O Box-Model CSS**  
+> <iframe width="100%" height="400"
+    src="https://www.youtube-nocookie.com/embed/YNqrNqpq6-E?rel=0&modestbranding=1"
+    title="EO Box-Model CSS"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    loading="lazy">
+</iframe>
 
 O **Box Model** (modelo de caixa) é o fundamento do layout em CSS. Todo elemento HTML é representado como uma caixa retangular composta por quatro camadas concêntricas, da mais interna para a mais externa:
 
