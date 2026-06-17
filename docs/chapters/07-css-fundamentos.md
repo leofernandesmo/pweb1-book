@@ -548,8 +548,15 @@ A função `clamp(mínimo, preferido, máximo)` permite definir valores que esca
 
 ## 7.5 — Seletores CSS
 
-> **Vídeo curto explicativo**
-> *(link será adicionado posteriormente)*
+> **Vídeo:Seletores CSS**  
+> <iframe width="100%" height="400"
+    src="https://www.youtube-nocookie.com/embed/ZMfNFAPlcpo?rel=0&modestbranding=1"
+    title="Seletores CSS"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    loading="lazy">
+</iframe>
+
 
 Os seletores são o mecanismo pelo qual o CSS identifica quais elementos HTML devem receber determinados estilos. Compreender a hierarquia e o poder expressivo dos seletores é fundamental para escrever CSS eficiente, manutenível e previsível. Esta é a seção em que o documento de referência da Seção 7.1.3 se torna mais útil: cada seletor abaixo é exibido junto do trecho de HTML que ele alcança.
 
