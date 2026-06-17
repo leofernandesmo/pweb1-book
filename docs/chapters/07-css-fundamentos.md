@@ -2162,8 +2162,16 @@ Após essa chamada, todo elemento que usa `var(--cor-destaque)` — como o `.btn
 
 ## 7.13 — Organização e Boas Práticas
 
-> **Vídeo curto explicativo**
-> *(link será adicionado posteriormente)*
+> **Vídeo: Aprenda a usar o DevTools**  
+> <iframe width="100%" height="400"
+    src="https://www.youtube-nocookie.com/embed/7KvBSpGLQa0-E?rel=0&modestbranding=1"
+    title="Aprenda a usar o Devtools"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    loading="lazy">
+</iframe>
+
+
 
 CSS sem organização cresce rapidamente em um arquivo difícil de manter, com conflitos de especificidade e regras redundantes. Boas práticas de organização são especialmente relevantes para projetos de sistemas de informação, onde o código é mantido por equipes ao longo do tempo.
 
