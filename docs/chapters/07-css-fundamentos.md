@@ -925,8 +925,14 @@ input::placeholder {
 
 ## 7.6 — Especificidade e Cascata
 
-> **Vídeo curto explicativo**
-> *(link será adicionado posteriormente)*
+> **Vídeo:Especificidade e Cascata CSS**  
+> <iframe width="100%" height="400"
+    src="https://www.youtube-nocookie.com/embed/AHsuA7OV_5U?rel=0&modestbranding=1"
+    title="Especificidade e Cascata CSS"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    loading="lazy">
+</iframe>
 
 A **especificidade** e a **cascata** são os dois mecanismos que o CSS utiliza para resolver conflitos quando múltiplas regras se aplicam ao mesmo elemento. Compreendê-los é essencial para evitar o uso indiscriminado de `!important` e para escrever CSS previsível e manutenível.
 
