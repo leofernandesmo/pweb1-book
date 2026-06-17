@@ -323,12 +323,14 @@ A regra de `body` acima define a tipografia herdada por todo o conteúdo do docu
 
 ## 7.4 — Unidades de medida
 
-> **Vídeo curto explicativo**
-[![O guia de medidas CSS](https://www.youtube.com/watch?v=HvjvPMVSVtw)](https://www.youtube.com/watch?v=HvjvPMVSVtw)
-
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=HvjvPMVSVtw" frameborder="0" allowfullscreen></iframe>
-
-
+> **Vídeo:O guia de medidas CSS**  
+> <iframe width="100%" height="400"
+    src="https://www.youtube-nocookie.com/embed/HvjvPMVSVtw?rel=0&modestbranding=1"
+    title="O guia de medidas CSS"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    loading="lazy">
+</iframe>
 
 A escolha da unidade de medida em CSS tem impacto direto na responsividade, na acessibilidade e na manutenibilidade do código. Compreender as diferenças entre unidades absolutas, relativas e de viewport é fundamental para construir layouts que se adaptam corretamente a diferentes contextos.
 
