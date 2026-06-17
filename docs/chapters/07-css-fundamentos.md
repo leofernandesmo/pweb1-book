@@ -324,7 +324,9 @@ A regra de `body` acima define a tipografia herdada por todo o conteúdo do docu
 ## 7.4 — Unidades de medida
 
 > **Vídeo curto explicativo**
-> <iframe width="560" height="315" src="[https://youtube.com](https://www.youtube.com/watch?v=HvjvPMVSVtw)" frameborder="0" allowfullscreen></iframe>
+[![O guia de medidas CSS](https://www.youtube.com/watch?v=HvjvPMVSVtw)](https://www.youtube.com/watch?v=HvjvPMVSVtw)
+
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=HvjvPMVSVtw" frameborder="0" allowfullscreen></iframe>
 
 
 
