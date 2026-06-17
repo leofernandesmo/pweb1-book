@@ -58,6 +58,107 @@ Este pipeline tem implicações práticas importantes. CSS que bloqueia a render
 
 > **No DevTools:** a aba **Performance** do Chrome DevTools permite gravar e inspecionar o pipeline de renderização quadro a quadro, identificando gargalos de layout e pintura. Para inspeção estática, a aba **Elements** exibe os estilos computados de qualquer elemento selecionado no painel **Computed**, mostrando o valor final de cada propriedade CSS após cascata, herança e especificidade.
 
+### 7.1.3 — O documento HTML de referência deste capítulo
+
+Para que a relação entre o seletor CSS e o elemento HTML estilizado fique sempre explícita, todo o capítulo se apoia em **um único documento HTML de referência**. Ele foi construído deliberadamente para conter os principais tipos de elementos que os seletores CSS precisam alcançar: elementos com `class` e com `id`, elementos aninhados, listas, tabela, formulário com campos diversos, links com atributos variados e a estrutura semântica de uma página completa (`header`, `nav`, `main`, `section`, `article`, `footer`).
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portal de Cursos — Demonstração de CSS</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header id="cabecalho-principal">
+    <h1>Portal de Cursos</h1>
+    <nav>
+      <ul class="menu">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#cursos">Cursos</a></li>
+        <li><a href="https://exemplo.org" target="_blank">Parceiros</a></li>
+        <li><a href="documentos/manual.pdf">Manual (PDF)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="conteudo-principal">
+
+    <section id="cursos">
+      <h2>Nossos cursos</h2>
+
+      <p class="texto destaque">
+        Conheça a <strong>grade completa</strong> dos nossos cursos de tecnologia.
+      </p>
+      <p class="texto">
+        Todos os cursos seguem metodologia prática e materiais atualizados.
+      </p>
+
+      <blockquote class="citacao">
+        O bom design é o mínimo de design possível.
+      </blockquote>
+
+      <article class="card card--destaque">
+        <h3 class="card__titulo">Programação Web</h3>
+        <p class="card__texto">Aprenda HTML, CSS e JavaScript do zero.</p>
+        <a class="card__link" href="#detalhes">Ver detalhes</a>
+      </article>
+
+      <ul class="lista-itens">
+        <li>HTML semântico</li>
+        <li>CSS moderno</li>
+        <li class="ativo">JavaScript</li>
+      </ul>
+
+      <table class="tabela-cursos">
+        <thead>
+          <tr><th>Curso</th><th>Carga horária</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Frontend</td><td>80h</td></tr>
+          <tr><td>Backend</td><td>80h</td></tr>
+          <tr><td>Banco de Dados</td><td>60h</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="inscricao">
+      <h2>Inscreva-se</h2>
+
+      <form class="formulario">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required />
+
+        <label for="email">E-mail</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="voce@exemplo.com"
+          required
+        />
+
+        <input type="checkbox" id="termos" name="termos" />
+        <label for="termos">Aceito os termos de uso</label>
+
+        <button type="submit" class="btn btn--primario">Enviar inscrição</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p>&copy; 2026 Portal de Cursos. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
+```
+
+> **Como ler os exemplos a partir daqui:** ao longo de todo o capítulo, cada bloco de CSS é acompanhado, logo em seguida, do **trecho de HTML correspondente** — em geral extraído do documento acima. O objetivo é que você associe, a cada regra, *qual elemento* está sendo estilizado e *por quê* aquele seletor o alcança. Quando um exemplo introduzir uma classe ainda não presente no documento de referência (por tratar de um caso isolado), o trecho de HTML mínimo necessário será mostrado junto.
+
 ---
 
 ## 7.2 — Inclusão de CSS no documento
@@ -78,6 +179,8 @@ A forma preferencial e mais comum: um arquivo `.css` separado, vinculado ao HTML
   <link rel="stylesheet" href="css/style.css" />
 </head>
 ```
+
+No documento de referência deste capítulo, é exatamente essa a forma de inclusão utilizada — observe o `<link>` no `<head>` apontando para `css/style.css`. Todo o CSS apresentado nas próximas seções é entendido como residente nesse arquivo externo.
 
 **Vantagens:**
 
@@ -113,13 +216,15 @@ Declarado dentro de um elemento `<style>` no `<head>` do documento:
 </head>
 ```
 
+Neste caso, o estilo do `body` e do `h1` se aplica diretamente aos elementos `<body>` e `<h1>` do documento — incluindo o `<h1>Portal de Cursos</h1>` do nosso cabeçalho de referência.
+
 **Quando usar:** prototipação rápida, e-mails HTML (que não suportam CSS externo de forma confiável), páginas únicas que não compartilham estilos com outras páginas.
 
 **Desvantagem:** os estilos não são cacheados separadamente e não são reutilizáveis entre páginas.
 
 ### 7.2.3 — CSS inline
 
-Declarado diretamente no atributo `style` de um elemento HTML:
+Declarado diretamente no atributo `style` de um elemento HTML — aqui, o CSS e o HTML aparecem necessariamente juntos, no mesmo elemento:
 
 ```html
 <p style="color: #E8632A; font-weight: bold; margin-top: 1rem;">
@@ -160,6 +265,15 @@ h1 {
 }
 ```
 
+O seletor `h1` da regra acima alcança o título principal do documento de referência:
+
+```html
+<header id="cabecalho-principal">
+  <h1>Portal de Cursos</h1>
+  ...
+</header>
+```
+
 Cada linha dentro do bloco é uma **declaração**, composta por uma **propriedade** e um **valor**, separados por dois-pontos e terminados com ponto e vírgula. O ponto e vírgula na última declaração do bloco é tecnicamente opcional, mas é uma boa prática incluí-lo para evitar erros ao adicionar novas declarações.
 
 **Múltiplos seletores para a mesma regra** são separados por vírgula:
@@ -172,6 +286,16 @@ h3 {
   font-family: Georgia, serif;
   color: #12243A;
 }
+```
+
+Esses três seletores incidem, simultaneamente, sobre os títulos de diferentes níveis presentes no documento:
+
+```html
+<h1>Portal de Cursos</h1>
+<!-- ... -->
+<h2>Nossos cursos</h2>
+<!-- ... -->
+<h3 class="card__titulo">Programação Web</h3>
 ```
 
 ### 7.3.2 — Comentários
@@ -193,7 +317,7 @@ body {
 }
 ```
 
-Comentários são removidos pelo navegador antes do processamento e não afetam o comportamento do CSS.
+A regra de `body` acima define a tipografia herdada por todo o conteúdo do documento — do `<header>` ao `<footer>`. Comentários são removidos pelo navegador antes do processamento e não afetam o comportamento do CSS.
 
 ---
 
@@ -210,12 +334,22 @@ Unidades absolutas possuem tamanho fixo, independente do contexto. Na Web, **`px
 
 ```css
 /* px: pixel CSS — unidade absoluta mais comum na web */
-.elemento {
+.card {
   width: 300px;
   height: 200px;
   border: 2px solid #ccc;
   font-size: 16px;
 }
+```
+
+A regra incide sobre o cartão de curso do documento de referência:
+
+```html
+<article class="card card--destaque">
+  <h3 class="card__titulo">Programação Web</h3>
+  <p class="card__texto">Aprenda HTML, CSS e JavaScript do zero.</p>
+  <a class="card__link" href="#detalhes">Ver detalhes</a>
+</article>
 ```
 
 **Quando usar `px`:** bordas, sombras, valores que não devem escalar com o texto do usuário (como espessuras de linha), e como valor base para cálculos. Evitar para `font-size` de elementos de texto — impede que a página respeite as preferências de tamanho de fonte do usuário no navegador.
@@ -229,19 +363,31 @@ Unidades relativas calculam seu valor em relação a outro valor de referência 
 **`em` — relativo ao `font-size` do elemento pai**
 
 ```css
-.container {
+.conteudo-principal {
   font-size: 16px;
 }
 
-.container p {
-  font-size: 1em;    /* 16px (igual ao pai) */
+.conteudo-principal p {
+  font-size: 1em;       /* 16px (igual ao pai) */
   margin-bottom: 1.5em; /* 24px (1.5 × 16px) */
-  padding: 0.75em;   /* 12px (0.75 × 16px) */
+  padding: 0.75em;      /* 12px (0.75 × 16px) */
 }
 
-.container h2 {
-  font-size: 2em;    /* 32px (2 × 16px) */
+.conteudo-principal h2 {
+  font-size: 2em;       /* 32px (2 × 16px) */
 }
+```
+
+Os seletores acima alcançam os parágrafos e o `<h2>` contidos no `<main class="conteudo-principal">`:
+
+```html
+<main class="conteudo-principal">
+  <section id="cursos">
+    <h2>Nossos cursos</h2>
+    <p class="texto destaque">Conheça a <strong>grade completa</strong>...</p>
+    <p class="texto">Todos os cursos seguem metodologia prática...</p>
+  </section>
+</main>
 ```
 
 **Atenção ao aninhamento:** `em` se multiplica em elementos aninhados, o que pode produzir resultados inesperados:
@@ -250,6 +396,13 @@ Unidades relativas calculam seu valor em relação a outro valor de referência 
 /* Se o body tem font-size: 16px */
 .pai   { font-size: 1.5em; } /* 24px */
 .filho { font-size: 1.5em; } /* 36px (1.5 × 24px, não 1.5 × 16px) */
+```
+
+```html
+<div class="pai">
+  Texto do pai (24px)
+  <div class="filho">Texto do filho (36px, não 24px)</div>
+</div>
 ```
 
 **`rem` — relativo ao `font-size` do elemento raiz (`<html>`)**
@@ -265,7 +418,14 @@ h1 { font-size: 2rem;    } /* 32px — sempre, independente do contexto */
 h2 { font-size: 1.5rem;  } /* 24px */
 p  { font-size: 1rem;    } /* 16px */
 
-.pequeno { font-size: 0.875rem; } /* 14px */
+.card__texto { font-size: 0.875rem; } /* 14px */
+```
+
+```html
+<h1>Portal de Cursos</h1>          <!-- 32px -->
+<h2>Nossos cursos</h2>             <!-- 24px -->
+<p class="texto">Parágrafo...</p>  <!-- 16px -->
+<p class="card__texto">...</p>     <!-- 14px -->
 ```
 
 > **Boa prática:** use `rem` para `font-size` e espaçamentos globais (margens, paddings entre seções). Use `em` para valores que devem escalar proporcionalmente ao tamanho de fonte local (padding interno de botões, por exemplo). Evite `px` para `font-size` — ele impede que o usuário ajuste o tamanho do texto nas preferências do navegador, uma falha de acessibilidade.
@@ -273,14 +433,22 @@ p  { font-size: 1rem;    } /* 16px */
 **`%` — relativo ao elemento pai**
 
 ```css
-.container {
+.conteudo-principal {
   width: 800px;
 }
 
-.coluna {
+.card {
   width: 50%;      /* 400px — metade do container */
   padding: 2%;     /* 16px — 2% de 800px */
 }
+```
+
+```html
+<main class="conteudo-principal">   <!-- 800px -->
+  <article class="card card--destaque">  <!-- 400px -->
+    ...
+  </article>
+</main>
 ```
 
 Para `width` e `height`, `%` é calculado em relação à dimensão correspondente do elemento pai. Para `padding` e `margin`, `%` é sempre calculado em relação à **largura** do elemento pai (mesmo para padding vertical).
@@ -300,17 +468,30 @@ Unidades de viewport são relativas às dimensões da janela visível do navegad
 
 ```css
 /* Seção que ocupa toda a altura da janela */
-.hero {
+#cursos {
   height: 100vh;
   width: 100%;
 }
 
-/* Tipografia que escala com a largura da janela */
-.titulo-fluido {
+/* Título que escala com a largura da janela */
+h1 {
   font-size: 5vw; /* Em viewport de 1200px → 60px; em 600px → 30px */
 }
+```
 
-/* Overlay que cobre toda a tela */
+```html
+<header id="cabecalho-principal">
+  <h1>Portal de Cursos</h1>   <!-- font-size proporcional à largura -->
+</header>
+
+<section id="cursos">         <!-- ocupa 100% da altura da janela -->
+  <h2>Nossos cursos</h2>
+</section>
+```
+
+Um caso recorrente é o de um overlay que cobre toda a tela, posicionado em relação ao viewport:
+
+```css
 .modal-overlay {
   position: fixed;
   width: 100vw;
@@ -318,6 +499,10 @@ Unidades de viewport são relativas às dimensões da janela visível do navegad
   top: 0;
   left: 0;
 }
+```
+
+```html
+<div class="modal-overlay"></div>
 ```
 
 > **Nota sobre `vh` em mobile:** em navegadores móveis, `100vh` inclui a área coberta pelas barras de navegação do browser, produzindo scroll indesejado. As unidades `svh` e `dvh`, introduzidas mais recentemente, resolvem esse problema. Para projetos que precisam suportar navegadores mais antigos, soluções via JavaScript ainda são necessárias.
@@ -328,7 +513,7 @@ A função `clamp(mínimo, preferido, máximo)` permite definir valores que esca
 
 ```css
 /* font-size entre 16px e 24px, escalando com a largura do viewport */
-p {
+.texto {
   font-size: clamp(1rem, 2.5vw, 1.5rem);
 }
 
@@ -338,9 +523,17 @@ p {
 }
 
 /* Espaçamento fluido */
-.secao {
+#cursos {
   padding: clamp(1.5rem, 5vw, 4rem);
 }
+```
+
+```html
+<section id="cursos">
+  <h2>Nossos cursos</h2>
+  <p class="texto destaque">...</p>
+  <article class="card card--destaque">...</article>
+</section>
 ```
 
 `clamp()` é especialmente poderoso para tipografia fluida — o texto escala suavemente com o viewport, sem os saltos abruptos das media queries. Será aprofundado no Capítulo 10 (Design Responsivo).
@@ -352,7 +545,7 @@ p {
 > **Vídeo curto explicativo**
 > *(link será adicionado posteriormente)*
 
-Os seletores são o mecanismo pelo qual o CSS identifica quais elementos HTML devem receber determinados estilos. Compreender a hierarquia e o poder expressivo dos seletores é fundamental para escrever CSS eficiente, manutenível e previsível.
+Os seletores são o mecanismo pelo qual o CSS identifica quais elementos HTML devem receber determinados estilos. Compreender a hierarquia e o poder expressivo dos seletores é fundamental para escrever CSS eficiente, manutenível e previsível. Esta é a seção em que o documento de referência da Seção 7.1.3 se torna mais útil: cada seletor abaixo é exibido junto do trecho de HTML que ele alcança.
 
 ### 7.5.1 — Seletores básicos
 
@@ -374,6 +567,16 @@ a {
 }
 ```
 
+Esses seletores alcançam todos os `<p>` e todos os `<a>` do documento, sem distinção:
+
+```html
+<p class="texto destaque">Conheça a <strong>grade completa</strong>...</p>
+<p class="texto">Todos os cursos seguem metodologia prática...</p>
+<!-- ... -->
+<a href="#inicio">Início</a>
+<a class="card__link" href="#detalhes">Ver detalhes</a>
+```
+
 **Seletor de classe**
 
 Seleciona elementos com uma determinada classe. É o seletor mais utilizado no desenvolvimento web moderno, por oferecer reutilização sem o alto peso de especificidade do seletor de ID:
@@ -385,11 +588,24 @@ Seleciona elementos com uma determinada classe. É o seletor mais utilizado no d
   border-left: 4px solid #E8632A;
   padding: 1rem;
 }
+```
 
-/* Um elemento pode ter múltiplas classes */
-/* <p class="texto grande destaque"> */
+```html
+<p class="texto destaque">
+  Conheça a <strong>grade completa</strong> dos nossos cursos de tecnologia.
+</p>
+```
+
+Um elemento pode ter múltiplas classes — note que o parágrafo acima tem `texto` e `destaque`. Cada classe é estilizada por uma regra independente:
+
+```css
 .texto  { font-family: Georgia, serif; }
-.grande { font-size: 1.25rem; }
+.destaque { background-color: #FFF3CD; }
+```
+
+```html
+<p class="texto destaque">...</p>  <!-- recebe ambas as regras -->
+<p class="texto">...</p>           <!-- recebe apenas .texto -->
 ```
 
 **Seletor de ID**
@@ -404,7 +620,14 @@ Seleciona o elemento com um determinado ID único. Tem especificidade muito mais
 }
 ```
 
-> **Boa prática:** reserve seletores de ID para JavaScript (`document.getElementById`) e âncoras de navegação (`href="#secao"`). Para estilização, prefira classes — elas são reutilizáveis e têm especificidade mais baixa, facilitando sobrescrições futuras.
+```html
+<header id="cabecalho-principal">
+  <h1>Portal de Cursos</h1>
+  <nav> ... </nav>
+</header>
+```
+
+> **Boa prática:** reserve seletores de ID para JavaScript (`document.getElementById`) e âncoras de navegação (`href="#secao"`). Para estilização, prefira classes — elas são reutilizáveis e têm especificidade mais baixa, facilitando sobrescrições futuras. No documento de referência, os `id` (`#cabecalho-principal`, `#cursos`, `#inscricao`) servem justamente como alvos de âncora dos links do menu.
 
 **Seletor universal**
 
@@ -418,6 +641,8 @@ Seleciona todos os elementos. Usado principalmente em resets e para aplicar `box
   box-sizing: border-box;
 }
 ```
+
+Por alcançar *todos* os elementos, este seletor incide sobre o documento inteiro — do `<html>` ao último `<input>` do formulário. Por isso não há um trecho específico: ele se aplica a cada caixa da página.
 
 ### 7.5.2 — Seletores compostos (combinadores)
 
@@ -433,6 +658,15 @@ nav a {
 }
 ```
 
+```html
+<nav>
+  <ul class="menu">
+    <li><a href="#inicio">Início</a></li>   <!-- alcançado -->
+    <li><a href="#cursos">Cursos</a></li>   <!-- alcançado -->
+  </ul>
+</nav>
+```
+
 **Filho direto (`>`)** — seleciona apenas filhos diretos, não descendentes mais profundos:
 
 ```css
@@ -441,6 +675,13 @@ nav a {
   display: inline-block;
   margin-right: 1rem;
 }
+```
+
+```html
+<ul class="menu">
+  <li><a href="#inicio">Início</a></li>   <!-- filho direto: alcançado -->
+  <li><a href="#cursos">Cursos</a></li>   <!-- filho direto: alcançado -->
+</ul>
 ```
 
 **Irmão adjacente (`+`)** — seleciona o elemento imediatamente após outro:
@@ -453,6 +694,12 @@ h2 + p {
 }
 ```
 
+```html
+<h2>Nossos cursos</h2>
+<p class="texto destaque">...</p>  <!-- imediatamente após o h2: alcançado -->
+<p class="texto">...</p>           <!-- NÃO é adjacente ao h2: não alcançado -->
+```
+
 **Irmãos gerais (`~`)** — seleciona todos os irmãos após um elemento:
 
 ```css
@@ -460,6 +707,12 @@ h2 + p {
 h2 ~ p {
   margin-left: 1rem;
 }
+```
+
+```html
+<h2>Nossos cursos</h2>
+<p class="texto destaque">...</p>  <!-- alcançado -->
+<p class="texto">...</p>           <!-- alcançado -->
 ```
 
 **Agrupamento (`,`)** — aplica a mesma regra a múltiplos seletores:
@@ -472,9 +725,15 @@ h1, h2, h3, h4 {
 }
 ```
 
+```html
+<h1>Portal de Cursos</h1>
+<h2>Nossos cursos</h2>
+<h3 class="card__titulo">Programação Web</h3>
+```
+
 ### 7.5.3 — Seletores de atributo
 
-Selecionam elementos com base na presença ou valor de atributos HTML:
+Selecionam elementos com base na presença ou valor de atributos HTML. Os links e o formulário do documento de referência foram desenhados para exercitar todos eles:
 
 ```css
 /* Elementos com o atributo target */
@@ -492,35 +751,38 @@ a[href^="https"] { color: green; }
 /* href que termina com ".pdf" */
 a[href$=".pdf"] { color: red; }
 
-/* class que contém a palavra "btn" */
-[class*="btn"] { cursor: pointer; }
-
 /* input com type="email" */
 input[type="email"] {
   border: 2px solid #0057B8;
 }
 ```
 
+```html
+<!-- Link com target e href https → atende a[target], a[target="_blank"], a[href^="https"] -->
+<a href="https://exemplo.org" target="_blank">Parceiros</a>
+
+<!-- Link para PDF → atende a[href$=".pdf"] -->
+<a href="documentos/manual.pdf">Manual (PDF)</a>
+
+<!-- Campo de e-mail → atende input[type="email"] -->
+<input type="email" id="email" name="email"
+       placeholder="voce@exemplo.com" required />
+```
+
 ### 7.5.4 — Pseudo-classes
 
-Pseudo-classes selecionam elementos com base em seu **estado** ou **posição** na estrutura do documento:
+Pseudo-classes selecionam elementos com base em seu **estado** ou **posição** na estrutura do documento.
 
 **Estados de interação:**
 
 ```css
-/* Link não visitado */
-a:link    { color: #0057B8; }
+/* Estados de um link */
+a:link    { color: #0057B8; }  /* não visitado */
+a:visited { color: #6B21A8; }  /* visitado */
+a:hover   { text-decoration: underline; } /* mouse sobre */
+a:active  { color: #E8632A; }  /* sendo clicado */
 
-/* Link visitado */
-a:visited { color: #6B21A8; }
-
-/* Mouse sobre o elemento */
-a:hover   { text-decoration: underline; }
-
-/* Elemento ativo (sendo clicado) */
-a:active  { color: #E8632A; }
-
-/* Elemento com foco (teclado ou clique) */
+/* Campo com foco (teclado ou clique) */
 input:focus {
   outline: 3px solid #0057B8;
   outline-offset: 2px;
@@ -531,12 +793,12 @@ button:focus-visible {
   outline: 3px solid #0057B8;
 }
 
-/* Checkbox marcado */
+/* Checkbox marcado → estiliza o label seguinte */
 input[type="checkbox"]:checked + label {
   font-weight: bold;
 }
 
-/* Campo de formulário desabilitado */
+/* Campo desabilitado */
 input:disabled {
   background-color: #e9ecef;
   cursor: not-allowed;
@@ -547,43 +809,58 @@ input:required {
   border-left: 3px solid #E8632A;
 }
 
-/* Campo com valor válido */
+/* Validação */
 input:valid   { border-color: green; }
-
-/* Campo com valor inválido (após interação) */
 input:invalid { border-color: red; }
+```
+
+Esses seletores agem sobre os links do menu e sobre os campos do formulário:
+
+```html
+<a href="#inicio">Início</a>   <!-- :link, :hover, :active, :visited -->
+
+<form class="formulario">
+  <input type="text" id="nome" name="nome" required />          <!-- :required, :focus -->
+  <input type="email" id="email" name="email" required />       <!-- :valid / :invalid -->
+  <input type="checkbox" id="termos" name="termos" />           <!-- :checked + label -->
+  <label for="termos">Aceito os termos de uso</label>
+  <button type="submit" class="btn btn--primario">Enviar</button> <!-- :focus-visible -->
+</form>
 ```
 
 **Posição estrutural:**
 
 ```css
-/* Primeiro filho */
-li:first-child { font-weight: bold; }
+/* Primeiro e último item da lista */
+.lista-itens li:first-child { font-weight: bold; }
+.lista-itens li:last-child  { border-bottom: none; }
 
-/* Último filho */
-li:last-child  { border-bottom: none; }
+/* Linhas pares e ímpares da tabela (efeito "zebra") */
+.tabela-cursos tbody tr:nth-child(even) { background-color: #f8f9fa; }
+.tabela-cursos tbody tr:nth-child(odd)  { background-color: white; }
+.tabela-cursos tbody tr:nth-child(3)    { background-color: #fff3cd; }
 
-/* Enésimo filho */
-tr:nth-child(even) { background-color: #f8f9fa; } /* linhas pares */
-tr:nth-child(odd)  { background-color: white; }   /* linhas ímpares */
-tr:nth-child(3)    { background-color: #fff3cd; } /* terceira linha */
-
-/* Fórmula: nth-child(An+B) */
-li:nth-child(3n)   { color: red; }   /* a cada 3 elementos */
-li:nth-child(3n+1) { color: blue; }  /* 1º, 4º, 7º... */
-
-/* Primeiro de um tipo específico */
-p:first-of-type { font-size: 1.125rem; }
-
-/* Elemento único de seu tipo */
-p:only-child { text-align: center; }
-
-/* Elementos que NÃO correspondem ao seletor */
-li:not(.ativo)          { opacity: 0.6; }
-input:not([type="submit"]) { border: 1px solid #ccc; }
+/* Itens que NÃO têm a classe .ativo */
+.lista-itens li:not(.ativo) { opacity: 0.6; }
 
 /* Pseudo-classe :is() — simplifica agrupamentos complexos */
 :is(h1, h2, h3) + p { margin-top: 0; }
+```
+
+```html
+<ul class="lista-itens">
+  <li>HTML semântico</li>        <!-- :first-child / :not(.ativo) -->
+  <li>CSS moderno</li>           <!-- :not(.ativo) -->
+  <li class="ativo">JavaScript</li> <!-- :last-child -->
+</ul>
+
+<table class="tabela-cursos">
+  <tbody>
+    <tr><td>Frontend</td><td>80h</td></tr>        <!-- nth-child(odd) -->
+    <tr><td>Backend</td><td>80h</td></tr>         <!-- nth-child(even) -->
+    <tr><td>Banco de Dados</td><td>60h</td></tr>  <!-- nth-child(3) -->
+  </tbody>
+</table>
 ```
 
 ### 7.5.5 — Pseudo-elementos
@@ -591,8 +868,8 @@ input:not([type="submit"]) { border: 1px solid #ccc; }
 Pseudo-elementos permitem estilizar **partes específicas** de um elemento ou **inserir conteúdo** antes ou depois dele:
 
 ```css
-/* Primeira letra de um parágrafo */
-p::first-letter {
+/* Primeira letra do parágrafo de destaque (capitular) */
+.destaque::first-letter {
   font-size: 3em;
   font-weight: bold;
   float: left;
@@ -600,36 +877,35 @@ p::first-letter {
   margin-right: 0.1em;
 }
 
-/* Primeira linha de um parágrafo */
-p::first-line {
-  font-variant: small-caps;
-}
-
-/* Conteúdo antes do elemento */
+/* Aspas decorativas antes da citação */
 .citacao::before {
   content: "\201C"; /* aspas abertas " */
   font-size: 3em;
   color: #E8632A;
 }
 
-/* Conteúdo depois do elemento */
-.obrigatorio::after {
-  content: " *";
-  color: red;
-  aria-hidden: true;
-}
-
-/* Texto selecionado pelo usuário */
+/* Texto selecionado pelo usuário (documento inteiro) */
 ::selection {
   background-color: #E8632A;
   color: white;
 }
 
-/* Placeholder de inputs */
+/* Placeholder dos inputs */
 input::placeholder {
   color: #9CA3AF;
   font-style: italic;
 }
+```
+
+```html
+<p class="texto destaque">Conheça a grade completa...</p> <!-- ::first-letter -->
+
+<blockquote class="citacao">
+  O bom design é o mínimo de design possível.
+</blockquote>                                              <!-- ::before -->
+
+<input type="email" id="email" name="email"
+       placeholder="voce@exemplo.com" required />          <!-- ::placeholder -->
 ```
 
 ---
@@ -664,10 +940,18 @@ p { color: red; }
 p.texto { color: green; }
 
 /* Especificidade: (1, 0, 0) = 100 pontos */
-#titulo { color: orange; }
+#cabecalho-principal { color: orange; }
 
 /* Especificidade: (1, 1, 1) = 111 pontos */
-#titulo p.texto { color: purple; }
+#cursos p.texto { color: purple; }
+```
+
+Considere o mesmo parágrafo do documento de referência sendo disputado por essas regras — a de maior especificidade vence, e o texto fica **roxo**:
+
+```html
+<section id="cursos">
+  <p class="texto destaque">Conheça a grade completa...</p>
+</section>
 ```
 
 Quando dois seletores têm a mesma especificidade, a **ordem de declaração** decide: a última regra declarada prevalece.
@@ -680,13 +964,24 @@ Quando dois seletores têm a mesma especificidade, a **ordem de declaração** d
 
 **CSS inline** (declarado no atributo `style`) tem especificidade equivalente a `(1, 0, 0, 0)` — superior a qualquer seletor CSS externo ou interno.
 
+```html
+<!-- Esta cor inline vence qualquer regra de #cursos p.texto no CSS externo -->
+<p class="texto" style="color: black;">Texto sempre preto.</p>
+```
+
 **`!important`** sobrescreve qualquer regra, independente da especificidade:
 
 ```css
 /* Esta regra prevalece sobre qualquer outra, incluindo CSS inline */
-.elemento {
+.texto {
   color: red !important;
 }
+```
+
+```html
+<p class="texto" style="color: black;">
+  Agora o texto fica VERMELHO — o !important supera até o inline.
+</p>
 ```
 
 > **⚠️ Alerta:** `!important` deve ser tratado como último recurso, não como ferramenta padrão. Seu uso indiscriminado cria um "braço de ferro" de especificidade que torna o CSS impossível de manter. Em projetos reais, a necessidade frequente de `!important` indica que a arquitetura de seletores precisa ser revisada.
@@ -719,6 +1014,16 @@ h1 {
 }
 ```
 
+```html
+<header id="cabecalho-principal">
+  <h1>Portal de Cursos</h1>   <!-- fora de .conteudo-principal: 2.5rem -->
+</header>
+
+<main class="conteudo-principal">
+  <h1>Título interno</h1>     <!-- dentro de .conteudo-principal: 3rem -->
+</main>
+```
+
 ### 7.6.4 — Herança
 
 A **herança** é o mecanismo pelo qual certas propriedades CSS se propagam automaticamente de um elemento pai para seus descendentes. Isso permite definir propriedades tipográficas no `body` e tê-las aplicadas a todos os elementos da página sem repetição:
@@ -734,6 +1039,17 @@ body {
    a menos que as sobrescrevam explicitamente */
 ```
 
+```html
+<body>
+  <header id="cabecalho-principal">
+    <h1>Portal de Cursos</h1>   <!-- herda font-family e color do body -->
+  </header>
+  <main class="conteudo-principal">
+    <p class="texto">Herdo a tipografia definida no body.</p>
+  </main>
+</body>
+```
+
 **Propriedades tipicamente herdáveis:** `color`, `font-family`, `font-size`, `font-weight`, `font-style`, `line-height`, `text-align`, `letter-spacing`, `visibility`, `cursor`.
 
 **Propriedades tipicamente não herdáveis:** `width`, `height`, `margin`, `padding`, `border`, `background`, `display`, `position`, `top`, `left`.
@@ -741,7 +1057,7 @@ body {
 **Controlando herança explicitamente:**
 
 ```css
-.elemento {
+.card__texto {
   /* Força a herança do valor do pai */
   color: inherit;
 
@@ -755,6 +1071,12 @@ body {
      initial se não for */
   border: unset;
 }
+```
+
+```html
+<article class="card card--destaque">
+  <p class="card__texto">Texto que herda a cor do cartão pai.</p>
+</article>
 ```
 
 ---
@@ -779,6 +1101,16 @@ O **Box Model** (modelo de caixa) é o fundamento do layout em CSS. Todo element
 │  │  └─────────────────────────┘  │  │
 │  └───────────────────────────────┘  │
 └─────────────────────────────────────┘
+```
+
+Tomaremos como alvo, nesta seção, o cartão de curso do documento de referência:
+
+```html
+<article class="card card--destaque">
+  <h3 class="card__titulo">Programação Web</h3>
+  <p class="card__texto">Aprenda HTML, CSS e JavaScript do zero.</p>
+  <a class="card__link" href="#detalhes">Ver detalhes</a>
+</article>
 ```
 
 ### 7.7.1 — As quatro camadas
@@ -806,12 +1138,16 @@ Espaço entre o conteúdo e a borda. É parte do elemento visualmente — herda 
 }
 ```
 
+```html
+<article class="card card--destaque">...</article>
+```
+
 **Border (borda)**
 
 A linha que envolve o padding e o conteúdo:
 
 ```css
-.elemento {
+.card {
   border: 2px solid #ccc;          /* shorthand: largura estilo cor */
   border: 1px dashed #E8632A;
   border: 3px double #12243A;
@@ -832,16 +1168,26 @@ A linha que envolve o padding e o conteúdo:
 }
 ```
 
+```html
+<article class="card card--destaque">...</article>
+```
+
 **Margin (margem externa)**
 
 Espaço externo ao elemento — separa o elemento de seus vizinhos. A margem é sempre transparente (não herda background):
 
 ```css
-.paragrafo {
+.card__texto {
   margin: 1rem 0;       /* 1rem top/bottom, 0 left/right */
   margin-bottom: 1.5rem;
   margin: 0 auto;       /* centraliza horizontalmente (em elementos block) */
 }
+```
+
+```html
+<article class="card card--destaque">
+  <p class="card__texto">Aprenda HTML, CSS e JavaScript do zero.</p>
+</article>
 ```
 
 **Outline**
@@ -855,13 +1201,17 @@ button:focus-visible {
 }
 ```
 
+```html
+<button type="submit" class="btn btn--primario">Enviar inscrição</button>
+```
+
 ### 7.7.2 — `box-sizing`: o comportamento que você realmente quer
 
 Por padrão, o CSS calcula `width` e `height` como as dimensões do **content** apenas. Isso significa que padding e border são adicionados por fora, aumentando o tamanho total do elemento:
 
 ```css
 /* box-sizing: content-box (padrão) */
-.elemento {
+.card {
   width: 300px;
   padding: 20px;
   border: 5px solid #ccc;
@@ -869,17 +1219,25 @@ Por padrão, o CSS calcula `width` e `height` como as dimensões do **content** 
 /* Largura total real: 300 + 20 + 20 + 5 + 5 = 350px */
 ```
 
+```html
+<article class="card card--destaque">...</article> <!-- ocupa 350px de largura -->
+```
+
 Este comportamento é contraintuitivo — quando você define `width: 300px`, espera que o elemento ocupe 300px, não 350px. A propriedade `box-sizing: border-box` corrige isso, fazendo com que `width` e `height` incluam padding e border:
 
 ```css
 /* box-sizing: border-box */
-.elemento {
+.card {
   box-sizing: border-box;
   width: 300px;
   padding: 20px;
   border: 5px solid #ccc;
 }
 /* Largura total real: 300px — padding e border são subtraídos do content */
+```
+
+```html
+<article class="card card--destaque">...</article> <!-- ocupa exatamente 300px -->
 ```
 
 A convenção universalmente adotada no desenvolvimento web moderno é aplicar `border-box` globalmente:
@@ -900,10 +1258,16 @@ A convenção universalmente adotada no desenvolvimento web moderno é aplicar `
 O **colapso de margens** (*margin collapsing*) é um comportamento do CSS que funde as margens verticais adjacentes de dois elementos em uma única margem — igual à maior das duas, não à soma:
 
 ```css
-.paragrafo-1 { margin-bottom: 2rem; }
-.paragrafo-2 { margin-top: 1rem; }
+.texto         { margin-bottom: 2rem; }
+.card__texto   { margin-top: 1rem; }
 
 /* Resultado: espaço entre os parágrafos = 2rem (não 3rem) */
+```
+
+```html
+<p class="texto">Parágrafo com 2rem de margem inferior.</p>
+<p class="card__texto">Parágrafo com 1rem de margem superior.</p>
+<!-- O espaço entre eles é 2rem, não 3rem -->
 ```
 
 O colapso ocorre em três situações:
@@ -916,17 +1280,23 @@ O colapso **não** ocorre em elementos `flex`, `grid`, `inline-block`, ou quando
 
 ```css
 /* Prevenindo colapso com padding ou border no pai */
-.container {
+.conteudo-principal {
   padding-top: 1px;  /* evita colapso com o primeiro filho */
   /* ou */
   overflow: hidden;  /* também previne colapso */
 }
 ```
 
+```html
+<main class="conteudo-principal">
+  <section id="cursos">...</section>
+</main>
+```
+
 ### 7.7.4 — Dimensionamento: `width`, `height`, `min-*` e `max-*`
 
 ```css
-.elemento {
+.conteudo-principal {
   /* Valores fixos */
   width: 400px;
   height: 200px;
@@ -946,6 +1316,13 @@ O colapso **não** ocorre em elementos `flex`, `grid`, `inline-block`, ou quando
   max-width: 1200px;
   margin: 0 auto; /* centraliza */
 }
+```
+
+```html
+<main class="conteudo-principal">
+  <!-- fluido até 1200px, depois centralizado -->
+  ...
+</main>
 ```
 
 **`width: auto` vs `width: 100%`:**
@@ -977,10 +1354,14 @@ body {
 h1, h2, h3 {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+```
 
-code, pre {
-  font-family: 'Fira Code', 'Cascadia Code', Consolas, monospace;
-}
+```html
+<body>
+  <h1>Portal de Cursos</h1>   <!-- Georgia/serif -->
+  <h2>Nossos cursos</h2>      <!-- Georgia/serif -->
+  <p class="texto">Texto corrido em Trebuchet MS.</p>
+</body>
 ```
 
 As categorias genéricas (`serif`, `sans-serif`, `monospace`, `cursive`, `fantasy`) devem sempre ser o último item do stack, garantindo que o navegador use alguma fonte adequada mesmo quando todas as anteriores falharem.
@@ -994,7 +1375,14 @@ body   { font-size: 1rem;     } /* 16px */
 h1     { font-size: 2.5rem;   } /* 40px */
 h2     { font-size: 2rem;     } /* 32px */
 h3     { font-size: 1.5rem;   } /* 24px */
-small  { font-size: 0.875rem; } /* 14px */
+.card__texto { font-size: 0.875rem; } /* 14px */
+```
+
+```html
+<h1>Portal de Cursos</h1>                 <!-- 40px -->
+<h2>Nossos cursos</h2>                    <!-- 32px -->
+<h3 class="card__titulo">Programação Web</h3> <!-- 24px -->
+<p class="card__texto">...</p>            <!-- 14px -->
 ```
 
 **`font-weight` — peso (espessura)**
@@ -1002,20 +1390,24 @@ small  { font-size: 0.875rem; } /* 14px */
 ```css
 p       { font-weight: 400; }  /* normal */
 strong  { font-weight: 700; }  /* bold */
-.leve   { font-weight: 300; }  /* light */
-.titulo { font-weight: 900; }  /* black/heavy */
+.card__titulo { font-weight: 900; }  /* black/heavy */
+```
 
-/* Palavras-chave equivalentes */
-.normal { font-weight: normal; } /* = 400 */
-.negrito { font-weight: bold; }  /* = 700 */
+```html
+<p class="texto">
+  Conheça a <strong>grade completa</strong> dos nossos cursos.
+</p>
+<h3 class="card__titulo">Programação Web</h3>
 ```
 
 **`font-style` — estilo**
 
 ```css
-em     { font-style: italic; }
-.obliquo { font-style: oblique; }
-.normal  { font-style: normal; }
+.citacao { font-style: italic; }
+```
+
+```html
+<blockquote class="citacao">O bom design é o mínimo de design possível.</blockquote>
 ```
 
 **`line-height` — altura da linha**
@@ -1030,52 +1422,46 @@ body {
 h1 {
   line-height: 1.2;  /* Títulos grandes ficam melhor com line-height menor */
 }
+```
 
-.codigo {
-  line-height: 1.5;
-}
+```html
+<h1>Portal de Cursos</h1>                 <!-- line-height 1.2 -->
+<p class="texto">Texto corrido com line-height 1.6.</p>
 ```
 
 ### 7.8.2 — Estilização de texto
 
 ```css
 /* Alinhamento */
-.centro    { text-align: center; }
-.direita   { text-align: right; }
-.justificado { text-align: justify; }
+.rodape    { text-align: center; }
 
 /* Decoração */
 a          { text-decoration: underline; }
 a:hover    { text-decoration: none; }
-del        { text-decoration: line-through; }
-.sublinhado-personalizado {
-  text-decoration: underline dotted #E8632A;
-}
 
 /* Transformação */
-.maiusculo  { text-transform: uppercase; }
-.minusculo  { text-transform: lowercase; }
-.capitalizado { text-transform: capitalize; }
+.card__titulo { text-transform: uppercase; }
 
-/* Espaçamento de letras e palavras */
-.espacado   { letter-spacing: 0.1em; }
-.titulo-caixa-alta {
+/* Espaçamento de letras */
+.card__titulo {
   text-transform: uppercase;
   letter-spacing: 0.15em;
 }
-.palavra-espaco { word-spacing: 0.25em; }
 
-/* Indentação */
-p { text-indent: 1.5em; }
-
-/* Controle de quebra de linha */
-.sem-quebra  { white-space: nowrap; }
-.pre-formato { white-space: pre; }
-.truncado {
+/* Controle de quebra de linha — truncar com reticências */
+.card__titulo {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; /* "..." no final */
 }
+```
+
+```html
+<h3 class="card__titulo">Programação Web</h3>   <!-- caixa alta, espaçada, truncável -->
+<a class="card__link" href="#detalhes">Ver detalhes</a> <!-- sublinhado / hover -->
+<footer class="rodape">
+  <p>&copy; 2026 Portal de Cursos.</p>          <!-- centralizado -->
+</footer>
 ```
 
 ### 7.8.3 — Web Fonts: Google Fonts e `@font-face`
@@ -1103,6 +1489,8 @@ h1, h2, h3 {
   font-family: 'Merriweather', serif;
 }
 ```
+
+Uma vez importadas no `<head>` do documento de referência (ao lado do `<link>` para `css/style.css`), essas fontes passam a valer para todo o `<body>` e seus títulos.
 
 **`@font-face` (fontes auto-hospedadas):**
 
@@ -1143,31 +1531,45 @@ body {
 
 ### 7.9.1 — Sistemas de cores
 
-O CSS suporta múltiplos sistemas de representação de cores, cada um com características distintas:
+O CSS suporta múltiplos sistemas de representação de cores, cada um com características distintas. Aplicaremos cada sistema ao cabeçalho e ao botão do documento de referência.
 
 **Hexadecimal (HEX)**
 
 ```css
-.elemento {
-  color: #12243A;        /* 6 dígitos: #RRGGBB */
-  color: #E8632A;
-  color: #fff;           /* 3 dígitos (shorthand): #RGB */
-  color: #0057B8CC;      /* 8 dígitos: #RRGGBBAA (com alpha) */
+#cabecalho-principal {
+  color: #fff;             /* 3 dígitos (shorthand): #RGB */
+  background-color: #12243A; /* 6 dígitos: #RRGGBB */
 }
+
+.btn--primario {
+  background-color: #E8632A;
+  color: #0057B8CC;        /* 8 dígitos: #RRGGBBAA (com alpha) */
+}
+```
+
+```html
+<header id="cabecalho-principal">
+  <h1>Portal de Cursos</h1>
+</header>
+<!-- ... -->
+<button type="submit" class="btn btn--primario">Enviar inscrição</button>
 ```
 
 **RGB e RGBA**
 
 ```css
-.elemento {
-  color: rgb(18, 36, 58);              /* Valores 0–255 */
-  color: rgb(232, 99, 42);
-  background-color: rgba(18, 36, 58, 0.8); /* Com opacidade 0–1 */
+#cabecalho-principal {
+  color: rgb(255, 255, 255);                   /* Valores 0–255 */
+  background-color: rgba(18, 36, 58, 0.8);     /* Com opacidade 0–1 */
 
   /* Sintaxe moderna (CSS Color Level 4) */
-  color: rgb(18 36 58);                /* sem vírgulas */
-  color: rgb(18 36 58 / 0.8);          /* com alpha */
+  background-color: rgb(18 36 58);             /* sem vírgulas */
+  background-color: rgb(18 36 58 / 0.8);       /* com alpha */
 }
+```
+
+```html
+<header id="cabecalho-principal">...</header>
 ```
 
 **HSL e HSLA** (Hue, Saturation, Lightness)
@@ -1175,14 +1577,15 @@ O CSS suporta múltiplos sistemas de representação de cores, cada um com carac
 HSL é o sistema mais intuitivo para criar paletas de cores — modificar a luminosidade `L` mantendo `H` e `S` cria variações consistentes:
 
 ```css
-.elemento {
+.btn--primario {
   /* hsl(matiz 0-360°, saturação 0-100%, luminosidade 0-100%) */
-  color: hsl(210, 53%, 15%);          /* azul escuro */
-  color: hsl(20, 78%, 54%);           /* laranja */
-  color: hsl(210, 53%, 15%, 0.8);    /* com opacidade */
+  background-color: hsl(20, 78%, 54%);  /* laranja */
+  color: hsl(0, 0%, 100%);              /* branco */
+}
 
-  /* Criar variações de uma cor mantendo identidade visual */
-  --cor-base: 210 53%;               /* matiz + saturação fixos */
+/* Criar variações de uma cor mantendo identidade visual */
+:root {
+  --cor-base: 210 53%;                  /* matiz + saturação fixos */
   --cor-900: hsl(var(--cor-base) 10%);
   --cor-700: hsl(var(--cor-base) 25%);
   --cor-500: hsl(var(--cor-base) 45%);
@@ -1191,36 +1594,38 @@ HSL é o sistema mais intuitivo para criar paletas de cores — modificar a lumi
 }
 ```
 
+```html
+<button type="submit" class="btn btn--primario">Enviar inscrição</button>
+```
+
 ### 7.9.2 — Propriedades de background
 
 ```css
-.elemento {
+#cabecalho-principal {
   /* Cor de fundo */
-  background-color: #f8f9fa;
+  background-color: #12243A;
 
   /* Imagem de fundo */
-  background-image: url('../images/pattern.png');
   background-image: url('../images/hero.jpg');
 
   /* Repetição */
-  background-repeat: no-repeat;   /* não repete */
-  background-repeat: repeat-x;    /* repete horizontalmente */
-  background-repeat: repeat;      /* repete em ambos os eixos */
+  background-repeat: no-repeat;
 
   /* Posicionamento */
   background-position: center;
-  background-position: top right;
-  background-position: 50% 30%;
 
   /* Tamanho */
   background-size: cover;    /* cobre toda a área, pode cortar */
-  background-size: contain;  /* cabe inteira, pode deixar espaços */
-  background-size: 200px 150px;
-  background-size: 100% auto;
 
   /* Shorthand */
   background: url('../images/hero.jpg') center/cover no-repeat;
 }
+```
+
+```html
+<header id="cabecalho-principal">
+  <h1>Portal de Cursos</h1>
+</header>
 ```
 
 **`background-size: cover` vs `contain`:**
@@ -1231,58 +1636,59 @@ HSL é o sistema mais intuitivo para criar paletas de cores — modificar a lumi
 ### 7.9.3 — Gradientes
 
 ```css
-/* Gradiente linear */
-.hero {
+/* Gradiente linear no cabeçalho */
+#cabecalho-principal {
   background-image: linear-gradient(135deg, #12243A, #1C3A52);
-  background-image: linear-gradient(to right, #E8632A, #12243A);
-  background-image: linear-gradient(
-    to bottom,
-    rgba(18, 36, 58, 0) 0%,
-    rgba(18, 36, 58, 0.9) 100%
-  );
 }
 
-/* Gradiente radial */
-.circulo {
+/* Gradiente com transparência sobre uma imagem */
+#cabecalho-principal {
+  background-image:
+    linear-gradient(rgba(18,36,58,0.5), rgba(18,36,58,0.5)),
+    url('../images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+}
+```
+
+```html
+<header id="cabecalho-principal">
+  <h1>Portal de Cursos</h1>
+</header>
+```
+
+Outros tipos de gradiente — radial e cônico — seguem a mesma lógica:
+
+```css
+.card--destaque {
   background-image: radial-gradient(circle, #E8632A, #12243A);
-  background-image: radial-gradient(
-    ellipse at top left,
-    #1C3A52 0%,
-    #12243A 100%
-  );
 }
+```
 
-/* Gradiente cônico */
-.pizza {
-  background-image: conic-gradient(
-    #E8632A 0% 25%,
-    #12243A 25% 50%,
-    #1C7293 50% 75%,
-    #F7F5F2 75% 100%
-  );
-}
-
-/* Múltiplos backgrounds */
-.elemento {
-  background:
-    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url('../images/hero.jpg') center/cover no-repeat;
-}
+```html
+<article class="card card--destaque">...</article>
 ```
 
 ### 7.9.4 — Opacidade e transparência
 
 ```css
 /* opacity: afeta o elemento inteiro, incluindo conteúdo */
-.overlay {
+.modal-overlay {
   opacity: 0.8; /* 0 = transparente, 1 = opaco */
 }
 
 /* rgba/hsla: afeta apenas a propriedade específica */
-.fundo-semi-transparente {
+#cabecalho-principal {
   background-color: rgba(18, 36, 58, 0.8); /* apenas o fundo é transparente */
   color: white; /* texto permanece opaco */
 }
+```
+
+```html
+<div class="modal-overlay"></div>           <!-- elemento todo a 80% -->
+<header id="cabecalho-principal">           <!-- só o fundo translúcido -->
+  <h1>Portal de Cursos</h1>
+</header>
 ```
 
 ---
@@ -1302,42 +1708,67 @@ O **fluxo normal** é o comportamento padrão de layout quando nenhuma proprieda
 
 **Elementos inline:** ocupam apenas o espaço de seu conteúdo, fluem horizontalmente no texto, não quebram linha. Exemplos: `<span>`, `<a>`, `<strong>`, `<em>`, `<img>`.
 
+No documento de referência, `<section>`, `<article>` e `<p>` são blocos; já `<strong>` e `<a>` (dentro do parágrafo) fluem inline:
+
+```html
+<section id="cursos">                       <!-- block -->
+  <p class="texto">                          <!-- block -->
+    Conheça a <strong>grade completa</strong> <!-- inline -->
+    dos nossos cursos.
+  </p>
+</section>
+```
+
 ### 7.10.2 — Valores de `display`
 
 ```css
-/* block: elemento de bloco — ocupa toda a largura, quebra linha */
-.elemento { display: block; }
+/* block: ocupa toda a largura, quebra linha */
+.card__titulo { display: block; }
 
 /* inline: flui com o texto, ignora width/height e margens verticais */
-.elemento { display: inline; }
+.card__link { display: inline; }
 
 /* inline-block: flui com o texto MAS aceita width, height e margens */
-.badge {
+.menu > li {
   display: inline-block;
   padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  background: #E8632A;
-  color: white;
 }
 
 /* none: remove o elemento do layout E da acessibilidade */
-.oculto { display: none; }
+.modal-overlay { display: none; }
 
 /* flex: ativa Flexbox no container (Capítulo 8) */
-.container { display: flex; }
+.menu { display: flex; }
 
 /* grid: ativa Grid Layout no container (Capítulo 9) */
-.grade { display: grid; }
+.tabela-cursos { display: grid; }
+```
+
+```html
+<ul class="menu">
+  <li><a href="#inicio">Início</a></li>   <!-- inline-block -->
+  <li><a href="#cursos">Cursos</a></li>
+</ul>
+
+<article class="card card--destaque">
+  <h3 class="card__titulo">Programação Web</h3>  <!-- block -->
+  <a class="card__link" href="#detalhes">Ver detalhes</a> <!-- inline -->
+</article>
 ```
 
 **`display: none` vs `visibility: hidden`:**
 
 ```css
 /* none: elemento não existe no layout — não ocupa espaço */
-.removido { display: none; }
+.modal-overlay { display: none; }
 
 /* hidden: elemento é invisível, mas MANTÉM seu espaço no layout */
-.invisivel { visibility: hidden; }
+.card__link { visibility: hidden; }
+```
+
+```html
+<div class="modal-overlay"></div>                       <!-- some por completo -->
+<a class="card__link" href="#detalhes">Ver detalhes</a> <!-- invisível, mas ocupa espaço -->
 ```
 
 ### 7.10.3 — Overflow
@@ -1345,7 +1776,7 @@ O **fluxo normal** é o comportamento padrão de layout quando nenhuma proprieda
 A propriedade `overflow` controla o que acontece quando o conteúdo de um elemento ultrapassa suas dimensões definidas:
 
 ```css
-.elemento {
+.card {
   overflow: visible; /* padrão: conteúdo transborda para fora */
   overflow: hidden;  /* conteúdo cortado na borda do elemento */
   overflow: scroll;  /* sempre exibe barras de rolagem */
@@ -1356,19 +1787,24 @@ A propriedade `overflow` controla o que acontece quando o conteúdo de um elemen
   overflow-y: auto;
 }
 
-/* Caso de uso comum: container com conteúdo previsível */
-.tabela-responsiva {
-  overflow-x: auto;   /* scroll horizontal em telas pequenas */
+/* Caso de uso comum: tabela com scroll horizontal em telas pequenas */
+.tabela-cursos {
+  overflow-x: auto;
   max-width: 100%;
 }
 
 /* Texto com reticências */
-.titulo-truncado {
+.card__titulo {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 200px;
 }
+```
+
+```html
+<table class="tabela-cursos">...</table>        <!-- scroll horizontal -->
+<h3 class="card__titulo">Programação Web</h3>    <!-- truncado com "..." -->
 ```
 
 ---
@@ -1385,9 +1821,13 @@ A propriedade `position` controla como um elemento é posicionado em relação a
 O valor padrão. O elemento segue o fluxo normal do documento. As propriedades `top`, `right`, `bottom` e `left` não têm efeito:
 
 ```css
-.normal {
+.conteudo-principal {
   position: static; /* comportamento padrão */
 }
+```
+
+```html
+<main class="conteudo-principal">...</main>
 ```
 
 ### 7.11.2 — `position: relative`
@@ -1395,19 +1835,30 @@ O valor padrão. O elemento segue o fluxo normal do documento. As propriedades `
 O elemento permanece no fluxo normal, mas pode ser **deslocado** em relação à sua posição original usando `top`, `right`, `bottom` e `left`. O espaço original do elemento é **preservado** no layout:
 
 ```css
-.deslocado {
+.card__titulo {
   position: relative;
   top: 10px;   /* desloca 10px para baixo */
   left: 20px;  /* desloca 20px para a direita */
 }
 ```
 
+```html
+<h3 class="card__titulo">Programação Web</h3>
+```
+
 **Uso mais importante:** criar um **contexto de posicionamento** para elementos filhos com `position: absolute`:
 
 ```css
-.container {
-  position: relative; /* contexto de posicionamento */
+.card {
+  position: relative; /* contexto de posicionamento para filhos absolutos */
 }
+```
+
+```html
+<article class="card card--destaque">
+  <h3 class="card__titulo">Programação Web</h3>
+  <!-- um filho com position: absolute se posicionará em relação a este article -->
+</article>
 ```
 
 ### 7.11.3 — `position: absolute`
@@ -1415,22 +1866,28 @@ O elemento permanece no fluxo normal, mas pode ser **deslocado** em relação à
 O elemento é **removido do fluxo normal** — não ocupa espaço no layout. É posicionado em relação ao **ancestral mais próximo com position diferente de static**. Se nenhum ancestral for posicionado, é relativo ao `<html>`:
 
 ```css
-.pai {
+.card {
   position: relative; /* contexto de posicionamento */
-  width: 300px;
-  height: 200px;
 }
 
-.filho-absoluto {
+.card__link {
   position: absolute;
   top: 0;
-  right: 0;      /* canto superior direito do pai */
-  width: 80px;
-  height: 30px;
+  right: 0;      /* canto superior direito do cartão */
 }
+```
 
-/* Centralizar com absolute */
-.centralizado {
+```html
+<article class="card card--destaque">       <!-- contexto (relative) -->
+  <h3 class="card__titulo">Programação Web</h3>
+  <a class="card__link" href="#detalhes">Ver detalhes</a> <!-- absoluto: canto sup. dir. -->
+</article>
+```
+
+Para centralizar um elemento absoluto dentro do contexto:
+
+```css
+.card__titulo {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1438,13 +1895,19 @@ O elemento é **removido do fluxo normal** — não ocupa espaço no layout. É 
 }
 ```
 
+```html
+<article class="card card--destaque">
+  <h3 class="card__titulo">Programação Web</h3> <!-- centralizado no cartão -->
+</article>
+```
+
 ### 7.11.4 — `position: fixed`
 
 O elemento é **removido do fluxo normal** e posicionado em relação ao **viewport** — permanece na mesma posição mesmo com rolagem da página:
 
 ```css
-/* Barra de navegação fixa no topo */
-.navbar-fixa {
+/* Cabeçalho fixo no topo */
+#cabecalho-principal {
   position: fixed;
   top: 0;
   left: 0;
@@ -1452,8 +1915,18 @@ O elemento é **removido do fluxo normal** e posicionado em relação ao **viewp
   z-index: 1000;
   background-color: #12243A;
 }
+```
 
-/* Botão "voltar ao topo" */
+```html
+<header id="cabecalho-principal">   <!-- permanece no topo ao rolar -->
+  <h1>Portal de Cursos</h1>
+  <nav> ... </nav>
+</header>
+```
+
+Outro caso típico é um botão "voltar ao topo":
+
+```css
 .btn-topo {
   position: fixed;
   bottom: 2rem;
@@ -1461,26 +1934,32 @@ O elemento é **removido do fluxo normal** e posicionado em relação ao **viewp
 }
 ```
 
+```html
+<button class="btn-topo">↑ Topo</button>
+```
+
 ### 7.11.5 — `position: sticky`
 
 Comportamento híbrido: o elemento segue o fluxo normal **até** atingir um threshold definido, quando "gruda" na posição especificada:
 
 ```css
-/* Cabeçalho de tabela que gruda no topo ao rolar */
-thead th {
+/* Cabeçalho da tabela que gruda no topo ao rolar */
+.tabela-cursos thead th {
   position: sticky;
   top: 0;
   background-color: #12243A;
   color: white;
   z-index: 1;
 }
+```
 
-/* Navegação lateral que gruda ao rolar */
-.nav-lateral {
-  position: sticky;
-  top: 2rem;       /* gruda a 2rem do topo */
-  height: fit-content;
-}
+```html
+<table class="tabela-cursos">
+  <thead>
+    <tr><th>Curso</th><th>Carga horária</th></tr> <!-- gruda no topo ao rolar -->
+  </thead>
+  <tbody> ... </tbody>
+</table>
 ```
 
 **Requisito:** o elemento pai deve ter altura suficiente para que o `sticky` funcione, e `overflow` do pai não pode ser `hidden` ou `auto`.
@@ -1495,15 +1974,15 @@ A propriedade `z-index` controla a **ordem de empilhamento** de elementos posici
   z-index: 1000;
 }
 
-.modal {
-  position: fixed;
-  z-index: 1001; /* acima do overlay */
+.card {
+  position: relative;
+  z-index: 100;   /* fica acima de elementos com z-index menor */
 }
+```
 
-.tooltip {
-  position: absolute;
-  z-index: 100;
-}
+```html
+<div class="modal-overlay"></div>            <!-- z-index 1000 -->
+<article class="card card--destaque">...</article> <!-- z-index 100 -->
 ```
 
 > **Contexto de empilhamento:** `z-index` funciona dentro de **contextos de empilhamento**. Um elemento com `opacity < 1`, `transform`, `filter` ou `will-change` cria um novo contexto de empilhamento — `z-index` de seus filhos é relativo a esse contexto, não ao documento global. Este é um dos comportamentos mais frequentemente mal compreendidos do CSS.
@@ -1558,7 +2037,7 @@ Variáveis CSS são definidas com o prefixo `--` e referenciadas com a função 
 }
 
 /* Uso em qualquer regra */
-.btn-primario {
+.btn--primario {
   background-color: var(--cor-destaque);
   color: white;
   font-family: var(--fonte-base);
@@ -1573,6 +2052,16 @@ Variáveis CSS são definidas com o prefixo `--` e referenciadas com a função 
   box-shadow: var(--sombra-md);
   padding: var(--espaco-lg);
 }
+```
+
+```html
+<article class="card card--destaque">
+  <h3 class="card__titulo">Programação Web</h3>
+  <p class="card__texto">Aprenda HTML, CSS e JavaScript do zero.</p>
+  <a class="card__link" href="#detalhes">Ver detalhes</a>
+</article>
+<!-- ... -->
+<button type="submit" class="btn btn--primario">Enviar inscrição</button>
 ```
 
 ### 7.12.2 — Escopo e herança
@@ -1593,9 +2082,16 @@ Variáveis CSS respeitam o escopo do seletor onde são definidas e são herdadas
 }
 
 /* Todos os elementos dentro de .tema-escuro usam as variáveis locais */
-.tema-escuro .btn {
+.tema-escuro .btn--primario {
   background-color: var(--cor-destaque); /* usa #FF8C55 */
 }
+```
+
+```html
+<body class="tema-escuro">
+  <button type="submit" class="btn btn--primario">Enviar inscrição</button>
+  <!-- o botão usa o laranja mais claro definido em .tema-escuro -->
+</body>
 ```
 
 ### 7.12.3 — Valor de fallback
@@ -1603,13 +2099,17 @@ Variáveis CSS respeitam o escopo do seletor onde são definidas e são herdadas
 A função `var()` aceita um segundo argumento como valor de fallback:
 
 ```css
-.elemento {
-  /* Se --cor-primaria não estiver definida, usa #12243A */
-  color: var(--cor-primaria, #12243A);
+.card {
+  /* Se --cor-fundo não estiver definida, usa #F7F5F2 */
+  background-color: var(--cor-fundo, #F7F5F2);
 
   /* Fallback pode referenciar outra variável */
-  background: var(--cor-fundo, var(--cor-secundaria, white));
+  border-color: var(--cor-borda, var(--cor-secundaria, #ccc));
 }
+```
+
+```html
+<article class="card card--destaque">...</article>
 ```
 
 ### 7.12.4 — Variáveis CSS vs pré-processadores
@@ -1630,6 +2130,8 @@ A capacidade de modificar variáveis CSS via JavaScript as torna especialmente p
 // Modificando uma variável CSS via JavaScript
 document.documentElement.style.setProperty('--cor-destaque', '#1C7293');
 ```
+
+Após essa chamada, todo elemento que usa `var(--cor-destaque)` — como o `.btn--primario` do documento de referência — passa a exibir a nova cor, sem qualquer alteração no HTML.
 
 ---
 
@@ -1681,20 +2183,22 @@ h1, h2, h3 { ... }
 
 /* ─── 4. Layout ─────────────────────────────────── */
 
-.container { ... }
-.grid { ... }
+.conteudo-principal { ... }
+.menu { ... }
 
 /* ─── 5. Componentes ────────────────────────────── */
 
 .card { ... }
 .btn { ... }
-.nav { ... }
+.formulario { ... }
 
 /* ─── 6. Utilitários ────────────────────────────── */
 
 .oculto { display: none; }
 .centralizado { text-align: center; }
 ```
+
+Essa organização mapeia diretamente os elementos do documento de referência: a seção *Layout* estiliza `.conteudo-principal` e `.menu`; a seção *Componentes* estiliza `.card`, `.btn` e `.formulario`.
 
 ### 7.13.2 — Nomeação de classes
 
@@ -1706,8 +2210,8 @@ A nomeação consistente de classes é essencial para legibilidade e manutençã
 
 /* Elemento: parte do bloco, separado por __ */
 .card__titulo { }
-.card__imagem { }
-.card__rodape { }
+.card__texto { }
+.card__link { }
 
 /* Modificador: variação do bloco ou elemento, separado por -- */
 .card--destaque { }
@@ -1715,14 +2219,13 @@ A nomeação consistente de classes é essencial para legibilidade e manutençã
 .card__titulo--grande { }
 ```
 
+O cartão do documento de referência já segue essa convenção:
+
 ```html
 <article class="card card--destaque">
-  <img class="card__imagem" src="..." alt="..." />
-  <div class="card__corpo">
-    <h2 class="card__titulo card__titulo--grande">Título</h2>
-    <p class="card__texto">Conteúdo...</p>
-  </div>
-  <footer class="card__rodape">Rodapé</footer>
+  <h3 class="card__titulo">Programação Web</h3>
+  <p class="card__texto">Aprenda HTML, CSS e JavaScript do zero.</p>
+  <a class="card__link" href="#detalhes">Ver detalhes</a>
 </article>
 ```
 
@@ -1742,6 +2245,11 @@ header nav ul li a.ativo { color: red; }
 
 /* MELHOR: classe simples, fácil de sobrescrever */
 .nav-link--ativo { color: var(--cor-destaque); }
+```
+
+```html
+<!-- A versão recomendada aplica uma única classe ao link ativo -->
+<a href="#cursos" class="nav-link--ativo">Cursos</a>
 ```
 
 ### 7.13.4 — Reset e normalização
@@ -1791,6 +2299,16 @@ p,
 h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
+```
+
+Esse reset afeta o documento inteiro: a regra para `input, button, textarea, select`, por exemplo, garante que os campos do formulário de referência herdem a tipografia do `body`:
+
+```html
+<form class="formulario">
+  <input type="text" id="nome" name="nome" required />
+  <input type="email" id="email" name="email" required />
+  <button type="submit" class="btn btn--primario">Enviar inscrição</button>
+</form>
 ```
 
 **Referências:**
