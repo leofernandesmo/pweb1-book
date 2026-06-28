@@ -84,8 +84,8 @@ nav:
       - "12. Framework CSS: Tailwind CSS": chapters/12-tailwind.md 
       - "13. Capítulo 13: JavaScript Essencial": chapters/13-javascript-essencial.md 
       - "14. Capítulo 14: Manipulação do DOM": chapters/14-dom.md 
-      - "15. Em Construção": chapters/15-validacao-forms.md 
-      - "16. Em Construção": chapters/16-apis.md 
+      - "15. Capítulo 15 — Eventos e Formulários com JavaScript": chapters/15-validacao-forms.md 
+      - "16. Capítulo 16 — Consumo de APIs": chapters/16-apis.md 
       - "17. Em Construção": chapters/17-frontend-api.md 
       - "18. Em Construção": chapters/18-projeto-final.md       
       - "Appendix": chapters/99-appendix.md      
