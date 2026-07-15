@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slides | Programação Web 1</title>
+  <style>
+    :root {
+      --bg:#16172E; --bg-dark:#0E0F22; --bg-light:#23244A;
+      --indigo:#5C6BC0; --lavanda:#A5B4FC; --ambar:#FBBF24;
+      --paper:#F5F6FF; --muted:#9AA0C4;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh;
+      font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: var(--bg-dark); color: var(--paper);
+      display: flex; flex-direction: column; align-items: center;
+      padding: 3rem 1.2rem;
+    }
+    header { text-align: center; max-width: 720px; margin-bottom: 2.5rem; }
+    header h1 { font-size: 2rem; margin: 0 0 .4rem; }
+    header p { color: var(--lavanda); margin: .2rem 0; }
+    header .rodape { color: var(--muted); font-size: .85rem; margin-top: .8rem; }
+    .grade {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem; width: 100%; max-width: 900px;
+    }
+    a.card {
+      display: block; text-decoration: none; color: var(--paper);
+      background: var(--bg); border: 1px solid var(--bg-light);
+      border-left: 4px solid var(--ambar);
+      border-radius: 10px; padding: 1.1rem 1.2rem; transition: .15s;
+    }
+    a.card:hover { border-color: var(--indigo); background: var(--bg-light); transform: translateY(-2px); }
+    a.card .num { font-family: "JetBrains Mono", monospace; color: var(--ambar); font-size: .8rem; }
+    a.card h2 { font-size: 1.05rem; margin: .25rem 0 .3rem; }
+    a.card p { color: var(--muted); font-size: .82rem; margin: 0; }
+    a.card.pendente { opacity: .5; border-left-color: var(--bg-light); pointer-events: none; }
+    a.card.pendente .num { color: var(--muted); }
+    footer { margin-top: 2.5rem; color: var(--muted); font-size: .8rem; text-align: center; }
+    footer a { color: var(--lavanda); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Slides &mdash; Programação Web 1</h1>
+    <p>Técnico em Desenvolvimento de Sistemas &middot; IFAL</p>
+    <p class="rodape">Prof. Leo Fernandes, PhD</p>
+  </header>
+
+  <main class="grade">
+    <a class="card" href="unidade-0/index.html">
+      <span class="num">Unidade 0</span>
+      <h2>Fundamentos da Web</h2>
+      <p>Como a Web funciona (cliente-servidor, HTTP, DNS), ferramentas do curso e o modelo de aprendizagem.</p>
+    </a>
+    <a class="card pendente" href="unidade-1/index.html">
+      <span class="num">Unidade 1</span>
+      <h2>HTML</h2>
+      <p>Fundamentos, semântica, tabelas, listas, mídia, formulários e acessibilidade. <em>(em breve)</em></p>
+    </a>
+    <a class="card pendente" href="unidade-2/index.html">
+      <span class="num">Unidade 2</span>
+      <h2>CSS</h2>
+      <p>Fundamentos, Flexbox, Grid, design responsivo, variáveis/design system e Tailwind. <em>(em breve)</em></p>
+    </a>
+    <a class="card pendente" href="unidade-3/index.html">
+      <span class="num">Unidade 3</span>
+      <h2>JavaScript</h2>
+      <p>Linguagem essencial, manipulação do DOM, eventos, validação de formulários e consumo de APIs. <em>(em breve)</em></p>
+    </a>
+    <a class="card pendente" href="unidade-4/index.html">
+      <span class="num">Unidade 4</span>
+      <h2>Integração e Projeto</h2>
+      <p>Front-end consumindo API e o projeto final da disciplina. <em>(em breve)</em></p>
+    </a>
+  </main>
+
+  <footer>
+    Apresente com as setas do teclado &middot; <strong>S</strong> = modo apresentador &middot;
+    <strong>Esc</strong> = visão geral &middot; <strong>F</strong> = tela cheia<br>
+    Material completo: veja o <a href="../">site do livro</a>.
+  </footer>
+</body>
+</html>

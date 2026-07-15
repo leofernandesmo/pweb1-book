@@ -70,7 +70,7 @@ nav:
   - Preface: preface.md
   - Chapters:
       - "0. Como User Este Material": chapters/00-how-to-use.md
-      - "1. Introdução a Web e Navegadores": chapters/01-introducao.md
+      - "1. Introdução à Web e Ferramentas": chapters/01-introducao.md
       - "2. Fundamentos do HTML": chapters/02-html-fundamentos.md
       - "3. HTML Semântico": chapters/03-html-semantico.md
       - "4. Tabelas, Listas e Mídia": chapters/04-tabelas-listas-midia.md      
