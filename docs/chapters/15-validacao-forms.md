@@ -2953,7 +2953,7 @@ Para praticar de forma autônoma, experimente estender o plataformer com:
 
 ---
 
-#### **Atividades — Capítulo 15**
+### Atividades — Capítulo 15
 
 <div class="quiz" data-answer="c">
   <p><strong>1.</strong> Qual é a ordem correta das fases de propagação de eventos no DOM?</p>

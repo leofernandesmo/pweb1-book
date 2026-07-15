@@ -1264,7 +1264,7 @@ async function carregarDashboard() {
 
 ---
 
-#### **Atividades — Capítulo 16**
+### Atividades — Capítulo 16
 
 <div class="quiz" data-answer="c">
   <p><strong>1.</strong> Por que <code>fetch()</code> não lança um erro quando o servidor retorna status 404 ou 500?</p>
