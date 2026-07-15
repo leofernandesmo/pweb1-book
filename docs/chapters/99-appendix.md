@@ -9,6 +9,3 @@ Use this section for:
 
 (Write your actual reference material here.)
 
----
-
-[:material-arrow-left: Back to Chapter 2](02-first-steps.md)

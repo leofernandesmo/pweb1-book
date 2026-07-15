@@ -1,6 +1,6 @@
 site_name: "Programação Web 1"
 site_description: "Material do Curso de Programação Web 1 do curso de Técnico em Desenvolvimento de Sistemas do IFAL"
-site_url: "https://<github-username>.github.io/<book-repo-name>/"
+site_url: "https://leofernandesmo.github.io/pweb1-book/"
 repo_url: "https://github.com/leofernandesmo/pweb1-book/"
 repo_name: "GitHub"
 
@@ -30,7 +30,7 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: "https://github.com/<your-github-username>"
+      link: "https://github.com/leofernandesmo"
 
 markdown_extensions:
   - admonition
@@ -87,6 +87,7 @@ nav:
       - "15. Capítulo 15 — Eventos e Formulários com JavaScript": chapters/15-validacao-forms.md 
       - "16. Capítulo 16 — Consumo de APIs": chapters/16-apis.md 
       - "17. Em Construção": chapters/17-frontend-api.md 
-      - "18. Em Construção": chapters/18-projeto-final.md       
-      - "Appendix": chapters/99-appendix.md      
+      - "18. Em Construção": chapters/18-projeto-final.md
+      - "Glossário": chapters/98-glossario.md
+      - "Apêndice": chapters/99-appendix.md
   - Back Cover: back-cover.md
