@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unidade 2 — CSS | Programação Web 1</title>
+
+  <link rel="stylesheet" href="../assets/reveal/dist/reset.css">
+  <link rel="stylesheet" href="../assets/reveal/dist/reveal.css">
+  <link rel="stylesheet" href="../assets/reveal/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="../assets/reveal/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../assets/css/course-theme.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Capa -->
+      <section class="titulo" data-background-color="#0E0F22">
+        <h1>CSS</h1>
+        <p class="subtitulo">Unidade 2 &mdash; Estilo, layout e design</p>
+        <p class="rodape">
+          Programação Web 1 &middot; Técnico em Desenvolvimento de Sistemas &middot; IFAL<br>
+          Prof. Leo Fernandes, PhD
+        </p>
+        <aside class="notes">
+          A unidade mais longa (caps. 7–12). Do primeiro seletor ao Tailwind. Fio condutor:
+          o CSS decide a aparência — e há um modelo por trás de cada decisão.
+        </aside>
+      </section>
+
+      <!-- Objetivos -->
+      <section data-background-color="#16172E">
+        <h2>Nesta unidade</h2>
+        <ul>
+          <li>Escrever regras, <strong>seletores</strong> e entender especificidade.</li>
+          <li>Dominar o <strong>box model</strong> e as unidades certas.</li>
+          <li>Construir layouts com <strong>Flexbox</strong> e <strong>Grid</strong>.</li>
+          <li>Fazer páginas <strong>responsivas</strong> (mobile-first).</li>
+          <li>Criar um <strong>Design System</strong> e usar <strong>Tailwind</strong>.</li>
+        </ul>
+        <p class="nota">Capítulos 7 a 12.</p>
+      </section>
+
+      <!-- Frase-âncora -->
+      <section class="frase" data-background-color="#0E0F22">
+        <p>HTML é o esqueleto. CSS é a pele.</p>
+        <span class="fonte">Separar estrutura de apresentação.</span>
+      </section>
+
+      <!-- Incluir CSS -->
+      <section data-background-color="#16172E">
+        <h2>Três formas — uma recomendada</h2>
+        <pre><code class="language-html" data-trim data-noescape>&lt;link rel="stylesheet" href="css/style.css"&gt;  &lt;!-- ✔️ externo --&gt;
+
+&lt;style&gt; h1 { color: navy } &lt;/style&gt;        &lt;!-- interno --&gt;
+
+&lt;p style="color: navy"&gt;                     &lt;!-- inline (evite) --&gt;</code></pre>
+        <p class="nota">Externo = cacheável, reutilizável, separação de responsabilidades.</p>
+      </section>
+
+      <!-- Anatomia da regra -->
+      <section data-background-color="#16172E">
+        <h2>Anatomia de uma regra</h2>
+        <pre><code class="language-css" data-trim data-noescape>seletor {
+  propriedade: valor;
+}
+
+h1 {
+  color: #12243A;
+  font-size: 2rem;
+}</code></pre>
+        <p class="nota">Seletor escolhe <em>quem</em>; declarações dizem <em>como</em>.</p>
+      </section>
+
+      <!-- Seletores + especificidade -->
+      <section data-background-color="#16172E">
+        <section>
+          <h2>Seletores</h2>
+          <table>
+            <thead><tr><th>Seletor</th><th>Alvo</th></tr></thead>
+            <tbody>
+              <tr><td><code>p</code></td><td>tipo (todos os &lt;p&gt;)</td></tr>
+              <tr><td><code>.card</code></td><td>classe</td></tr>
+              <tr><td><code>#topo</code></td><td>id (único)</td></tr>
+              <tr><td><code>nav a</code></td><td>descendente</td></tr>
+            </tbody>
+          </table>
+          <aside class="notes">
+            Classe é o cavalo de batalha. id é único e "pesado". Combine com descendência.
+          </aside>
+        </section>
+        <section>
+          <h3>Quem vence? Especificidade</h3>
+          <div class="pipeline">
+            <span class="etapa">inline</span><span class="seta">&gt;</span>
+            <span class="etapa">#id</span><span class="seta">&gt;</span>
+            <span class="etapa">.classe</span><span class="seta">&gt;</span>
+            <span class="etapa">tipo</span>
+          </div>
+          <div class="caixa ambar">
+            Empate? Vence a <strong>última</strong> regra (cascata). Fuja do <code>!important</code>.
+          </div>
+        </section>
+      </section>
+
+      <!-- Box model -->
+      <section data-background-color="#16172E">
+        <h2>Tudo é uma caixa</h2>
+        <pre><code class="language-text" data-trim>┌─────────── margin ───────────┐
+│  ┌──────── border ────────┐   │
+│  │  ┌───── padding ─────┐  │   │
+│  │  │     content       │  │   │
+│  │  └───────────────────┘  │   │
+│  └─────────────────────────┘   │
+└────────────────────────────────┘</code></pre>
+        <div class="caixa">
+          <code>box-sizing: border-box</code> faz <code>width</code> incluir padding e border —
+          <strong>sempre use</strong>.
+        </div>
+        <aside class="notes">
+          O reset universal *{box-sizing:border-box} economiza horas de frustração. Explique
+          por que 300px + padding "estoura" sem ele.
+        </aside>
+      </section>
+
+      <!-- Unidades -->
+      <section data-background-color="#16172E">
+        <h2>Unidade certa, no lugar certo</h2>
+        <ul>
+          <li><code>rem</code> — fontes e espaçamentos globais (respeita o usuário)</li>
+          <li><code>em</code> — proporcional ao contexto local</li>
+          <li><code>%</code> / <code>fr</code> — larguras fluidas</li>
+          <li><code>vw</code>/<code>vh</code> — relativo à janela</li>
+        </ul>
+        <p class="nota">Evite <code>px</code> em <code>font-size</code>: quebra o zoom de acessibilidade.</p>
+      </section>
+
+      <!-- Frase-âncora layout -->
+      <section class="frase" data-background-color="#0E0F22">
+        <p>Pare de lutar com <code>float</code>.</p>
+        <span class="fonte">Flexbox e Grid resolvem layout de verdade.</span>
+      </section>
+
+      <!-- Flexbox -->
+      <section data-background-color="#16172E">
+        <section>
+          <h2>Flexbox: uma dimensão</h2>
+          <pre><code class="language-css" data-trim data-noescape>.container {
+  display: flex;
+  justify-content: center;  /* eixo principal */
+  align-items: center;      /* eixo cruzado */
+  gap: 1rem;
+}</code></pre>
+          <p class="nota">Dois eixos: principal (direção do flex) e cruzado (perpendicular).</p>
+          <aside class="notes">
+            flex-direction troca qual eixo é o principal — é a fonte de toda confusão. gap
+            substitui margens entre itens.
+          </aside>
+        </section>
+        <section>
+          <h3>O centralizar que todo mundo procura</h3>
+          <div class="caixa ambar">
+            <code>display:flex; justify-content:center; align-items:center</code> — centro
+            perfeito, horizontal e vertical.
+          </div>
+        </section>
+      </section>
+
+      <!-- Grid -->
+      <section data-background-color="#16172E">
+        <section>
+          <h2>Grid: duas dimensões</h2>
+          <pre><code class="language-css" data-trim data-noescape>.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}</code></pre>
+          <p class="nota"><code>fr</code> = fração do espaço livre. <code>repeat()</code> evita repetição.</p>
+          <aside class="notes">
+            Grid é para as duas dimensões ao mesmo tempo. fr distribui o que sobra.
+          </aside>
+        </section>
+        <section>
+          <h3>Áreas nomeadas: layout como desenho</h3>
+          <pre><code class="language-css" data-trim data-noescape>grid-template-areas:
+  "cabecalho cabecalho"
+  "menu      conteudo"
+  "rodape    rodape";</code></pre>
+          <p class="nota">O código <em>é</em> o wireframe.</p>
+        </section>
+        <section>
+          <h3>Responsivo sem media query</h3>
+          <pre><code class="language-css" data-trim data-noescape>grid-template-columns:
+  repeat(auto-fit, minmax(220px, 1fr));</code></pre>
+          <p class="nota">Os cards se reorganizam sozinhos (padrão RAM).</p>
+        </section>
+      </section>
+
+      <!-- Flex vs Grid -->
+      <section data-background-color="#16172E">
+        <h2>Flexbox ou Grid?</h2>
+        <div class="colunas">
+          <div>
+            <h3>Flexbox</h3>
+            <p class="nota">Uma dimensão: uma linha <em>ou</em> uma coluna. Menu, barra, lista de tags.</p>
+          </div>
+          <div>
+            <h3>Grid</h3>
+            <p class="nota">Duas dimensões: linhas <em>e</em> colunas. Layout de página, galeria.</p>
+          </div>
+        </div>
+        <div class="caixa">Não competem — <strong>combine</strong>: Grid no macro, Flex no micro.</div>
+      </section>
+
+      <!-- Frase-âncora responsivo -->
+      <section class="frase" data-background-color="#0E0F22">
+        <p>Uma página, todas as telas.</p>
+        <span class="fonte">Mobile-first.</span>
+      </section>
+
+      <!-- Media queries -->
+      <section data-background-color="#16172E">
+        <h2>Responsivo = mobile-first</h2>
+        <pre><code class="language-css" data-trim data-noescape>/* base: mobile */
+.grid { grid-template-columns: 1fr; }
+
+/* a partir de 768px: sobe para 3 colunas */
+@media (min-width: 768px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}</code></pre>
+        <div class="caixa ambar">
+          Sem <code>&lt;meta name="viewport"&gt;</code> no HTML, <strong>nada</strong> é responsivo.
+        </div>
+        <aside class="notes">
+          Breakpoint segue onde o layout quebra, não a largura de um iPhone específico.
+        </aside>
+      </section>
+
+      <!-- clamp -->
+      <section data-background-color="#16172E">
+        <h2>Tipografia fluida</h2>
+        <pre><code class="language-css" data-trim data-noescape>h1 { font-size: clamp(1.75rem, 4vw, 3rem); }
+/*              mínimo    ideal  máximo */</code></pre>
+        <p class="nota">Escala suave entre dois limites — <strong>sem</strong> breakpoint.</p>
+      </section>
+
+      <!-- Design System -->
+      <section data-background-color="#16172E">
+        <section>
+          <h2>Design System: decisões, não acasos</h2>
+          <pre><code class="language-css" data-trim data-noescape>:root {
+  --azul-600: #2563eb;              /* primitivo */
+  --cor-interativa: var(--azul-600); /* semântico */
+}
+.btn { background: var(--cor-interativa); }</code></pre>
+          <p class="nota">Token primitivo → token semântico → componente.</p>
+          <aside class="notes">
+            Muda a cor interativa em UM lugar e o site inteiro acompanha. É o coração do
+            Design System.
+          </aside>
+        </section>
+        <section>
+          <h3>Dark mode = trocar tokens</h3>
+          <pre><code class="language-css" data-trim data-noescape>:root            { --bg: white; --texto: #111; }
+[data-theme=dark]{ --bg: #111;  --texto: #eee; }</code></pre>
+          <p class="nota">Um seletor troca o tema inteiro. Nenhum componente muda.</p>
+        </section>
+      </section>
+
+      <!-- Tailwind -->
+      <section data-background-color="#16172E">
+        <section>
+          <h2>Tailwind: utility-first</h2>
+          <div class="colunas">
+            <div>
+              <p class="nota">CSS tradicional</p>
+              <pre><code class="language-html" data-trim>&lt;button class="btn"&gt;
+  OK
+&lt;/button&gt;
+/* + regra .btn no CSS */</code></pre>
+            </div>
+            <div>
+              <p class="nota">Tailwind</p>
+              <pre><code class="language-html" data-trim>&lt;button class="px-4 py-2
+  bg-blue-600 text-white
+  rounded"&gt;OK&lt;/button&gt;</code></pre>
+            </div>
+          </div>
+          <p class="nota">Classes utilitárias = tokens de um Design System prontos.</p>
+          <aside class="notes">
+            É o cap. 11 automatizado: a escala do Tailwind é um Design System. Trade-off:
+            HTML "verboso" vs. zero troca de contexto e consistência por convenção.
+          </aside>
+        </section>
+        <section>
+          <h3>Responsivo e estados por prefixo</h3>
+          <pre><code class="language-html" data-trim data-noescape>&lt;div class="flex-col md:flex-row hover:bg-blue-700"&gt;</code></pre>
+          <p class="nota"><code>md:</code> = a partir do breakpoint; <code>hover:</code> = no estado.</p>
+        </section>
+      </section>
+
+      <!-- Resumo -->
+      <section class="titulo" data-background-color="#0E0F22">
+        <h2 style="border:none">Resumo</h2>
+        <ul style="display:inline-block; text-align:left">
+          <li>Seletor + especificidade + <strong>cascata</strong> decidem o estilo.</li>
+          <li>Tudo é uma <strong>caixa</strong> (use <code>border-box</code>).</li>
+          <li><strong>Flexbox</strong> (1D) e <strong>Grid</strong> (2D) fazem o layout.</li>
+          <li>Responsivo é <strong>mobile-first</strong> + <code>clamp()</code>.</li>
+          <li><strong>Tokens</strong> e <strong>Tailwind</strong> escalam o design.</li>
+        </ul>
+        <p class="rodape">Livro: capítulos 7 a 12 &middot; Próximo: Unidade 3 — JavaScript</p>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="../assets/reveal/dist/reveal.js"></script>
+  <script src="../assets/reveal/plugin/notes/notes.js"></script>
+  <script src="../assets/reveal/plugin/highlight/highlight.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: "c/t",
+      transition: "slide",
+      controls: true,
+      progress: true,
+      plugins: [ RevealHighlight, RevealNotes ]
+    });
+  </script>
+</body>
+</html>

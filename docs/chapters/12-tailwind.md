@@ -1496,7 +1496,7 @@ Esta integração fecha o arco entre os Capítulos 11 e 12: o Design System defi
 
 ---
 
-#### **Atividades — Capítulo 12**
+### Atividades — Capítulo 12
 
 <div class="quiz" data-answer="c">
   <p><strong>1.</strong> Qual é a diferença fundamental entre um framework utility-first como Tailwind e um framework component-based como Bootstrap?</p>

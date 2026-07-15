@@ -1376,7 +1376,7 @@ Para projetos acadêmicos e portfólios, uma documentação em formato HTML est�
 
 ---
 
-#### **Atividades — Capítulo 11**
+### Atividades — Capítulo 11
 
 <div class="quiz" data-answer="c">
   <p><strong>1.</strong> Qual é a diferença entre um token primitivo e um token semântico em um Design System?</p>

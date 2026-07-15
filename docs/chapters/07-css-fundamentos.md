@@ -2354,7 +2354,7 @@ Esse reset afeta o documento inteiro: a regra para `input, button, textarea, sel
 
 ---
 
-#### **Atividades — Capítulo 7**
+### Atividades — Capítulo 7
 
 <div class="quiz" data-answer="c">
   <p><strong>1.</strong> Qual é a especificidade do seletor <code>#nav .menu > li:hover</code>?</p>
