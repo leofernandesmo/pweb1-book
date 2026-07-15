@@ -702,5 +702,5 @@ Essas práticas são simples, mas têm impacto direto: reduzem erros ao mover ar
 
 ---
 
-[:material-arrow-left: Back to Preface](../preface.md)
-[:material-arrow-right: Go to Chapter 2 – First Steps](02-first-steps.md)
+[:material-arrow-left: Voltar ao Prefácio](../preface.md)
+[:material-arrow-right: Ir para o Capítulo 2 – Fundamentos do HTML](02-html-fundamentos.md)

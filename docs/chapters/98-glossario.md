@@ -1,7 +1,4 @@
-
----
-
-### Glossário Técnico
+# Glossário Técnico
 
 * **Arquitetura Cliente-Servidor:** Modelo de arquitetura distribuída onde as tarefas são divididas entre fornecedores de recursos ou serviços (servidores) e requisitantes de serviços (clientes).
 * **CSS (Cascading Style Sheets):** Linguagem de folhas de estilo utilizada para definir a apresentação (cores, fontes, layout) de documentos escritos em linguagens de marcação como o HTML.
