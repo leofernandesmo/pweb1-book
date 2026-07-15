@@ -151,7 +151,7 @@ A compreensão do DOM é essencial não apenas para o JavaScript, mas também pa
 
 ---
 
-#### **Atividades — Seção 2.1**
+### Atividades — Seção 2.1
 
 <div class="quiz" data-answer="b">
   <p><strong>1.</strong> Qual é a função principal do elemento <code>&lt;head&gt;</code> em um documento HTML?</p>
@@ -532,7 +532,7 @@ Listas podem ser aninhadas para representar hierarquias:
 
 ---
 
-#### **Atividades — Seção 2.2**
+### Atividades — Seção 2.2
 
 <div class="quiz" data-answer="b">
   <p><strong>1.</strong> Qual é a diferença semântica entre os elementos <code>&lt;strong&gt;</code> e <code>&lt;b&gt;</code>?</p>
@@ -826,7 +826,7 @@ O exemplo a seguir ilustra a composição de uma página típica utilizando todo
 
 ---
 
-#### **Atividades — Seção 2.3**
+### Atividades — Seção 2.3
 
 <div class="quiz" data-answer="b">
   <p><strong>1.</strong> Qual é a distinção semântica entre os elementos <code>&lt;article&gt;</code> e <code>&lt;section&gt;</code>?</p>
@@ -866,4 +866,4 @@ O exemplo a seguir ilustra a composição de uma página típica utilizando todo
 ---
 
 [:material-arrow-left: Voltar ao Capítulo 1 — Introdução à Web e Ferramentas](01-introducao.md)
-[:material-arrow-right: Ir ao Capítulo 3 — HTML Semântico e Acessibilidade](03-html-semantico.md)
+[:material-arrow-right: Ir ao Capítulo 3 — HTML Semântico](03-html-semantico.md)

@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unidade 1 — HTML | Programação Web 1</title>
+
+  <link rel="stylesheet" href="../assets/reveal/dist/reset.css">
+  <link rel="stylesheet" href="../assets/reveal/dist/reveal.css">
+  <link rel="stylesheet" href="../assets/reveal/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="../assets/reveal/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../assets/css/course-theme.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Capa -->
+      <section class="titulo" data-background-color="#0E0F22">
+        <h1>HTML</h1>
+        <p class="subtitulo">Unidade 1 &mdash; Estrutura, semântica e formulários</p>
+        <p class="rodape">
+          Programação Web 1 &middot; Técnico em Desenvolvimento de Sistemas &middot; IFAL<br>
+          Prof. Leo Fernandes, PhD
+        </p>
+        <aside class="notes">
+          Segunda unidade. Aqui escrevemos a primeira linha de HTML. O fio condutor:
+          HTML descreve <em>significado</em>, não aparência.
+        </aside>
+      </section>
+
+      <!-- Objetivos -->
+      <section data-background-color="#16172E">
+        <h2>Nesta unidade</h2>
+        <ul>
+          <li>Estruturar um documento HTML e usar <strong>tags, atributos e elementos</strong>.</li>
+          <li>Escolher elementos por <strong>significado</strong> (HTML semântico).</li>
+          <li>Marcar <strong>tabelas, listas e mídia</strong> corretamente.</li>
+          <li>Construir <strong>formulários</strong> que enviam e validam dados.</li>
+          <li>Aplicar <strong>acessibilidade</strong> desde o primeiro projeto.</li>
+        </ul>
+        <p class="nota">Capítulos 2 a 6 do livro.</p>
+      </section>
+
+      <!-- Frase-âncora -->
+      <section class="frase" data-background-color="#0E0F22">
+        <p>HTML descreve o <em>quê</em>, não o <em>como</em>.</p>
+        <span class="fonte">Estrutura e significado — a aparência é do CSS.</span>
+        <aside class="notes">
+          O erro-raiz que a unidade combate: escolher tag pelo tamanho visual. Título é título
+          porque é título — não porque "ficou grande".
+        </aside>
+      </section>
+
+      <!-- Estrutura do documento -->
+      <section data-background-color="#16172E">
+        <h2>Todo documento começa assim</h2>
+        <pre><code class="language-html" data-trim data-noescape>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;title&gt;Título da aba&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;Conteúdo visível.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <div class="caixa">
+          <code>lang</code> e <code>charset="UTF-8"</code> são <strong>obrigatórios na prática</strong>:
+          impactam acessibilidade e acentuação.
+        </div>
+        <aside class="notes">
+          DOCTYPE liga o standards mode. head = metadados (não aparece). body = o que se vê.
+        </aside>
+      </section>
+
+      <!-- Tag x elemento x atributo -->
+      <section data-background-color="#16172E">
+        <section>
+          <h2>Tag, elemento e atributo</h2>
+          <pre><code class="language-html" data-trim data-noescape>&lt;a href="https://ifal.edu.br"&gt;Site do IFAL&lt;/a&gt;</code></pre>
+          <ul>
+            <li><strong>Tag</strong> — o delimitador: <code>&lt;a&gt;</code> … <code>&lt;/a&gt;</code></li>
+            <li><strong>Elemento</strong> — tag de abertura + conteúdo + fechamento</li>
+            <li><strong>Atributo</strong> — <code>href="..."</code>, informação extra</li>
+          </ul>
+          <aside class="notes">
+            Vocabulário preciso evita confusão na documentação. Void elements (img, br) não
+            têm fechamento.
+          </aside>
+        </section>
+        <section>
+          <h3>O navegador constrói o DOM</h3>
+          <pre><code class="language-text" data-trim>document
+└── html
+    ├── head → title → "..."
+    └── body → p → "Conteúdo"</code></pre>
+          <p class="nota">Árvore de nós em memória — é o que o CSS e o JS enxergam.</p>
+        </section>
+      </section>
+
+      <!-- Texto semântico -->
+      <section data-background-color="#16172E">
+        <h2>Significado &gt; aparência</h2>
+        <table>
+          <thead><tr><th>Semântico</th><th>Só visual</th></tr></thead>
+          <tbody>
+            <tr><td><code>&lt;strong&gt;</code> importância</td><td><code>&lt;b&gt;</code> negrito</td></tr>
+            <tr><td><code>&lt;em&gt;</code> ênfase</td><td><code>&lt;i&gt;</code> voz alternativa</td></tr>
+          </tbody>
+        </table>
+        <div class="caixa">
+          Leitores de tela mudam a entonação em <code>&lt;strong&gt;</code>/<code>&lt;em&gt;</code> —
+          mas não em <code>&lt;b&gt;</code>/<code>&lt;i&gt;</code>.
+        </div>
+        <aside class="notes">
+          "É <strong>obrigatório</strong> fazer backup" vs. só deixar em negrito: o primeiro
+          comunica urgência à tecnologia assistiva.
+        </aside>
+      </section>
+
+      <!-- Links -->
+      <section data-background-color="#16172E">
+        <h2>Links: o coração da Web</h2>
+        <pre><code class="language-html" data-trim data-noescape>&lt;a href="https://externo.com"
+   target="_blank"
+   rel="noopener noreferrer"&gt;Texto descritivo&lt;/a&gt;</code></pre>
+        <ul>
+          <li><code>target="_blank"</code> exige <strong>rel="noopener"</strong> (segurança).</li>
+          <li>Texto do link deve fazer sentido <strong>fora de contexto</strong> — nunca "clique aqui".</li>
+        </ul>
+        <aside class="notes">
+          Usuários de leitor de tela navegam por uma lista de links. "Clique aqui" repetido 10×
+          é inútil.
+        </aside>
+      </section>
+
+      <!-- Imagens -->
+      <section data-background-color="#16172E">
+        <h2>Imagem sem <code>alt</code> é bug</h2>
+        <pre><code class="language-html" data-trim data-noescape>&lt;img src="grafico.png"
+     alt="Vendas cresceram 40% no 2º semestre"&gt;
+
+&lt;img src="ornamento.svg" alt=""&gt;  &lt;!-- decorativa --&gt;</code></pre>
+        <p class="nota"><code>alt</code> descreve <strong>função</strong>, não é legenda. Decorativa: <code>alt=""</code> (vazio, não ausente).</p>
+        <div class="caixa ambar">
+          Legenda visível? Use <code>&lt;figure&gt;</code> + <code>&lt;figcaption&gt;</code>.
+        </div>
+      </section>
+
+      <!-- Listas -->
+      <section data-background-color="#16172E">
+        <h2>Três listas, três sentidos</h2>
+        <div class="colunas">
+          <div><h3><code>&lt;ul&gt;</code></h3><p class="nota">ordem irrelevante</p></div>
+          <div><h3><code>&lt;ol&gt;</code></h3><p class="nota">ordem importa (passos, ranking)</p></div>
+          <div><h3><code>&lt;dl&gt;</code></h3><p class="nota">termo → descrição</p></div>
+        </div>
+        <p class="nota">Aninhar sempre dentro de <code>&lt;li&gt;</code> — nunca <code>&lt;ul&gt;</code> direto dentro de <code>&lt;ul&gt;</code>.</p>
+      </section>
+
+      <!-- Frase-âncora semântico -->
+      <section class="frase" data-background-color="#0E0F22">
+        <p>Chega de <code>&lt;div&gt;</code> para tudo.</p>
+        <span class="fonte">"divitis" — o anti-padrão nº 1.</span>
+      </section>
+
+      <!-- Elementos semânticos -->
+      <section data-background-color="#16172E">
+        <section>
+          <h2>O mapa semântico</h2>
+          <pre><code class="language-text" data-trim>&lt;body&gt;
+├── &lt;header&gt;   cabeçalho + &lt;nav&gt;
+├── &lt;main&gt;     conteúdo único da página
+│   ├── &lt;article&gt;  autônomo
+│   │   └── &lt;section&gt; tema
+│   └── &lt;aside&gt;    tangencial
+└── &lt;footer&gt;   rodapé</code></pre>
+          <p class="nota">Sem efeito visual automático — só significado. O CSS cuida do layout.</p>
+          <aside class="notes">
+            Cada região comunica sua função ao navegador, ao Google e ao leitor de tela.
+            main é único por página.
+          </aside>
+        </section>
+        <section>
+          <h3><code>article</code> × <code>section</code> × <code>div</code></h3>
+          <ul>
+            <li><strong>article</strong> — faz sentido <em>sozinho</em> (post, comentário)</li>
+            <li><strong>section</strong> — parte de um todo, tem título</li>
+            <li><strong>div</strong> — só agrupamento visual, sem semântica</li>
+          </ul>
+        </section>
+      </section>
+
+      <!-- Refatoração antes/depois -->
+      <section data-background-color="#16172E">
+        <section>
+          <h2>Antes → depois</h2>
+          <div class="colunas">
+            <div>
+              <p class="nota">❌ div-soup</p>
+              <pre><code class="language-html" data-trim>&lt;div class="cabecalho"&gt;
+ &lt;div class="titulo"&gt;Blog&lt;/div&gt;
+ &lt;div class="menu"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="post"&gt;...&lt;/div&gt;</code></pre>
+            </div>
+            <div>
+              <p class="nota">✔️ semântico</p>
+              <pre><code class="language-html" data-trim>&lt;header&gt;
+ &lt;h1&gt;Blog&lt;/h1&gt;
+ &lt;nav&gt;...&lt;/nav&gt;
+&lt;/header&gt;
+&lt;article&gt;...&lt;/article&gt;</code></pre>
+            </div>
+          </div>
+          <p class="nota">Mesmo visual. Estrutura radicalmente melhor.</p>
+          <aside class="notes">
+            Refatorar não muda o visual — muda o significado. Cada troca tem um critério.
+          </aside>
+        </section>
+        <section>
+          <h3>Mito: "algoritmo de outline"</h3>
+          <div class="caixa ambar">
+            <strong>Nenhum navegador</strong> implementou a geração automática de outline por
+            <code>&lt;section&gt;</code>. A hierarquia vem <strong>direto dos níveis</strong>
+            <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code>. Defina o nível você mesmo; prefira <strong>um <code>&lt;h1&gt;</code> por página</strong>.
+          </div>
+        </section>
+      </section>
+
+      <!-- Tabelas -->
+      <section data-background-color="#16172E">
+        <section>
+          <h2>Tabela = dados, não layout</h2>
+          <pre><code class="language-html" data-trim data-noescape>&lt;table&gt;
+  &lt;caption&gt;Horário&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;&lt;th scope="col"&gt;Disciplina&lt;/th&gt;&lt;th scope="col"&gt;Dia&lt;/th&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;PWeb 1&lt;/td&gt;&lt;td&gt;Sexta&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+          <p class="nota"><code>caption</code>, <code>th scope</code>, <code>thead/tbody</code> = tabela acessível.</p>
+          <aside class="notes">
+            Nunca use tabela para posicionar a página — leitor de tela anuncia "tabela, N linhas"
+            e a navegação vira um inferno.
+          </aside>
+        </section>
+        <section>
+          <h3>Layout é do CSS</h3>
+          <p>Se não é uma grade de <em>dados</em>, não é tabela. Use <code>&lt;div&gt;</code> + CSS
+          (Flexbox/Grid — Unidade 2).</p>
+        </section>
+      </section>
+
+      <!-- Mídia -->
+      <section data-background-color="#16172E">
+        <section>
+          <h2>Imagens responsivas</h2>
+          <ul>
+            <li><code>srcset</code> — várias resoluções, o navegador escolhe</li>
+            <li><code>sizes</code> — quanto a imagem ocupa por viewport</li>
+            <li><code>&lt;picture&gt;</code> — <strong>trocar</strong> a imagem (formato/enquadramento)</li>
+          </ul>
+          <aside class="notes">
+            srcset/sizes = mesma imagem em tamanhos; picture = imagem diferente (AVIF/WebP com
+            fallback, ou art direction).
+          </aside>
+        </section>
+        <section>
+          <h3><code>video</code>, <code>iframe</code> e acessibilidade</h3>
+          <ul>
+            <li><code>&lt;track&gt;</code> — legendas WebVTT (obrigatório p/ WCAG)</li>
+            <li><code>&lt;iframe&gt;</code> — <strong>title obrigatório</strong> + <code>loading="lazy"</code></li>
+            <li>Prefira <code>youtube-nocookie.com</code> em material educacional</li>
+          </ul>
+        </section>
+      </section>
+
+      <!-- Frase-âncora formulários -->
+      <section class="frase" data-background-color="#0E0F22">
+        <p>Formulários coletam dados. Não os processam.</p>
+        <span class="fonte">Quem processa é o backend.</span>
+      </section>
+
+      <!-- form action/method -->
+      <section data-background-color="#16172E">
+        <section>
+          <h2><code>&lt;form&gt;</code>: para onde e como</h2>
+          <pre><code class="language-html" data-trim data-noescape>&lt;form action="/cadastro" method="post"&gt; ... &lt;/form&gt;</code></pre>
+          <table>
+            <thead><tr><th></th><th>GET</th><th>POST</th></tr></thead>
+            <tbody>
+              <tr><td>Dados</td><td>na URL</td><td>no corpo</td></tr>
+              <tr><td>Uso</td><td>busca, filtro</td><td>login, cadastro</td></tr>
+            </tbody>
+          </table>
+          <p class="nota">Dados sensíveis? <strong>Nunca</strong> GET.</p>
+          <aside class="notes">
+            httpbin.org é o laboratório: envie e veja o JSON do que chegou.
+          </aside>
+        </section>
+        <section>
+          <h3><code>name</code> × <code>id</code></h3>
+          <div class="caixa ambar">
+            Sem <code>name</code>, o campo <strong>não é enviado</strong> — mesmo preenchido e válido.
+            É o bug mais comum de iniciante.
+          </div>
+          <p class="nota"><code>id</code> = identidade no documento (label, CSS, JS). <code>name</code> = identidade no envio.</p>
+        </section>
+      </section>
+
+      <!-- inputs -->
+      <section data-background-color="#16172E">
+        <h2>O <code>type</code> muda tudo</h2>
+        <div class="pipeline">
+          <span class="etapa">text</span><span class="etapa">email</span>
+          <span class="etapa">password</span><span class="etapa">number</span>
+          <span class="etapa">date</span><span class="etapa">range</span>
+          <span class="etapa">file</span><span class="etapa">checkbox</span>
+          <span class="etapa">radio</span>
+        </div>
+        <p class="nota">Um atributo define teclado móvel, validação e interface nativa.</p>
+        <div class="caixa">
+          <strong>radio</strong> (mesmo <code>name</code>) = escolha única; <strong>checkbox</strong> = zero ou várias.
+        </div>
+      </section>
+
+      <!-- form acessível -->
+      <section data-background-color="#16172E">
+        <h2>Formulário acessível</h2>
+        <pre><code class="language-html" data-trim data-noescape>&lt;fieldset&gt;
+  &lt;legend&gt;Dados pessoais&lt;/legend&gt;
+  &lt;label for="nome"&gt;Nome&lt;/label&gt;
+  &lt;input id="nome" name="nome" required&gt;
+&lt;/fieldset&gt;</code></pre>
+        <ul>
+          <li><code>&lt;label for&gt;</code> em <strong>todo</strong> campo — <code>placeholder</code> não substitui.</li>
+          <li><code>&lt;fieldset&gt;</code>+<code>&lt;legend&gt;</code> agrupam (essencial p/ radio).</li>
+        </ul>
+      </section>
+
+      <!-- validação -->
+      <section class="frase" data-background-color="#0E0F22">
+        <p>Validação no navegador não é segurança.</p>
+        <span class="fonte">É conveniência. A definitiva é no servidor.</span>
+        <aside class="notes">
+          required/pattern melhoram a UX, mas o DevTools contorna tudo. Repita isso à exaustão.
+        </aside>
+      </section>
+
+      <!-- Acessibilidade -->
+      <section data-background-color="#16172E">
+        <section>
+          <h2>Acessibilidade beneficia todos</h2>
+          <p><strong>1,3 bilhão</strong> de pessoas (OMS) com deficiência. E o resto também ganha:</p>
+          <p class="nota">Legenda no barulho, contraste no sol, teclado por velocidade — o <em>curb-cut effect</em>.</p>
+          <aside class="notes">
+            Rampa de calçada foi feita p/ cadeirante e virou útil p/ carrinho, bike, mala. Acessibilidade
+            é assim. No Brasil ainda é lei (LBI 13.146/2015).
+          </aside>
+        </section>
+        <section>
+          <h3>POUR — os 4 princípios</h3>
+          <ul>
+            <li><strong>P</strong>erceptível — dá pra perceber (alt, legenda, contraste 4,5:1)</li>
+            <li><strong>O</strong>perável — dá pra usar só com teclado</li>
+            <li><strong>U</strong>nderstandable — compreensível (lang, erros claros)</li>
+            <li><strong>R</strong>obusto — HTML válido e semântico</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Primeira regra do ARIA</h3>
+          <div class="caixa ambar">
+            <strong>Não use ARIA</strong> se existe elemento nativo. <code>&lt;button&gt;</code> &gt;
+            <code>&lt;div role="button"&gt;</code>. ARIA complementa — não substitui HTML semântico.
+          </div>
+        </section>
+      </section>
+
+      <!-- Checklist -->
+      <section data-background-color="#16172E">
+        <h2>Checklist de toda entrega</h2>
+        <div class="colunas">
+          <ul>
+            <li><code>lang</code> no <code>&lt;html&gt;</code></li>
+            <li>Um <code>&lt;h1&gt;</code>, sem pular níveis</li>
+            <li><code>alt</code> em toda imagem</li>
+          </ul>
+          <ul>
+            <li>Contraste ≥ 4,5:1</li>
+            <li>Navegável por teclado</li>
+            <li><code>&lt;label&gt;</code> em todo campo</li>
+          </ul>
+        </div>
+        <p class="nota">Ferramentas: W3C Validator → DevTools Accessibility → WAVE → Lighthouse.</p>
+      </section>
+
+      <!-- Resumo -->
+      <section class="titulo" data-background-color="#0E0F22">
+        <h2 style="border:none">Resumo</h2>
+        <ul style="display:inline-block; text-align:left">
+          <li>HTML = <strong>estrutura e significado</strong>.</li>
+          <li>Escolha o elemento pelo <strong>sentido</strong>, não pelo visual.</li>
+          <li>Tabela = dados; layout é do CSS.</li>
+          <li>Formulário coleta; <strong>backend</strong> processa e valida.</li>
+          <li>Acessibilidade <strong>desde o início</strong> (POUR).</li>
+        </ul>
+        <p class="rodape">Livro: capítulos 2 a 6 &middot; Próximo: Unidade 2 — CSS</p>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="../assets/reveal/dist/reveal.js"></script>
+  <script src="../assets/reveal/plugin/notes/notes.js"></script>
+  <script src="../assets/reveal/plugin/highlight/highlight.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: "c/t",
+      transition: "slide",
+      controls: true,
+      progress: true,
+      plugins: [ RevealHighlight, RevealNotes ]
+    });
+  </script>
+</body>
+</html>

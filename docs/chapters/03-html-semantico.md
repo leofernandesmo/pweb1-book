@@ -357,6 +357,8 @@ O outline resultante desse documento seria:
 
 Este outline é o que um leitor de tela apresenta ao usuário quando ele solicita a lista de títulos da página — o mecanismo mais comum de navegação rápida em tecnologias assistivas. Se a hierarquia de títulos estiver incorreta (por exemplo, saltar de `<h1>` para `<h3>` sem um `<h2>` intermediário), o outline gerado será incoerente, prejudicando a experiência de quem depende desse mecanismo.
 
+> **Atenção — o "algoritmo de outline" nunca foi implementado:** embora tenha sido descrito em versões anteriores da especificação, **nenhum navegador ou leitor de tela** chegou a implementar a geração automática de outline a partir dos elementos de seção. Na prática, a hierarquia percebida por tecnologias assistivas vem **diretamente dos níveis dos títulos** (`<h1>`–`<h6>`). Por isso, não confie em `<section>` ou `<article>` para "rebaixar" um `<h1>` automaticamente: defina você mesmo o nível correto de cada título e prefira **um único `<h1>` por página**. O WHATWG removeu o algoritmo de outline da especificação justamente por nunca ter tido suporte real.
+
 **A regra prática mais importante:** nunca salte níveis de título. A sequência `<h1>` → `<h2>` → `<h3>` deve ser respeitada como uma hierarquia lógica, não visual.
 
 > **Imagem sugerida:** captura lado a lado da aba **Accessibility** do Chrome DevTools mostrando o outline de uma página com hierarquia de títulos correta versus uma página com títulos fora de ordem — ilustrando visualmente como a estrutura é percebida por leitores de tela.
@@ -801,7 +803,7 @@ Este fluxo não substitui o teste com leitores de tela reais (como NVDA, JAWS ou
 
 ---
 
-#### **Atividades — Capítulo 3**
+### Atividades — Capítulo 3
 
 <div class="quiz" data-answer="c">
   <p><strong>1.</strong> Um desenvolvedor precisa marcar um bloco de conteúdo que contém uma lista de links para outras páginas do site (menu principal). Qual elemento é semanticamente mais apropriado?</p>
