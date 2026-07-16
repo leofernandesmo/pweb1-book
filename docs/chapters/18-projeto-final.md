@@ -881,7 +881,7 @@ A jornada do front-end não termina aqui. Frameworks como React, Vue e Angular, 
 
 ---
 
-#### **Atividades — Capítulo 18**
+### Atividades — Capítulo 18
 
 Não há quiz neste capítulo — o projeto final **é** a atividade avaliativa.
 

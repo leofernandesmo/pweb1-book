@@ -86,8 +86,8 @@ nav:
       - "14. Capítulo 14: Manipulação do DOM": chapters/14-dom.md 
       - "15. Capítulo 15 — Eventos e Formulários com JavaScript": chapters/15-validacao-forms.md 
       - "16. Capítulo 16 — Consumo de APIs": chapters/16-apis.md 
-      - "17. Em Construção": chapters/17-frontend-api.md 
-      - "18. Em Construção": chapters/18-projeto-final.md
+      - "17. Integração Frontend + API": chapters/17-frontend-api.md
+      - "18. Projeto Final": chapters/18-projeto-final.md
       - "Glossário": chapters/98-glossario.md
       - "Apêndice": chapters/99-appendix.md
   - Back Cover: back-cover.md
