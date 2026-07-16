@@ -1317,7 +1317,7 @@ Os três jogos deste capítulo introduzem os fundamentos do desenvolvimento de j
 
 ---
 
-#### **Atividades — Capítulo 14**
+### Atividades — Capítulo 14
 
 <div class="quiz" data-answer="b">
   <p><strong>1.</strong> Qual é a diferença entre <code>textContent</code> e <code>innerHTML</code> ao modificar o conteúdo de um elemento?</p>

@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unidade 3 — JavaScript | Programação Web 1</title>
+
+  <link rel="stylesheet" href="../assets/reveal/dist/reset.css">
+  <link rel="stylesheet" href="../assets/reveal/dist/reveal.css">
+  <link rel="stylesheet" href="../assets/reveal/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="../assets/reveal/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../assets/css/course-theme.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Capa -->
+      <section class="titulo" data-background-color="#0E0F22">
+        <h1>JavaScript</h1>
+        <p class="subtitulo">Unidade 3 &mdash; Comportamento, DOM e APIs</p>
+        <p class="rodape">
+          Programação Web 1 &middot; Técnico em Desenvolvimento de Sistemas &middot; IFAL<br>
+          Prof. Leo Fernandes, PhD
+        </p>
+        <aside class="notes">
+          A terceira camada: HTML estrutura, CSS apresenta, JS dá comportamento. Aqui a página
+          passa a reagir e a conversar com servidores.
+        </aside>
+      </section>
+
+      <!-- Objetivos -->
+      <section data-background-color="#16172E">
+        <h2>Nesta unidade</h2>
+        <ul>
+          <li>Programar em <strong>JavaScript</strong>: tipos, funções, arrays.</li>
+          <li>Entender <strong>assincronia</strong> (callbacks, Promises, async/await).</li>
+          <li>Manipular a página com o <strong>DOM</strong> e reagir a <strong>eventos</strong>.</li>
+          <li><strong>Validar formulários</strong> e criar componentes interativos.</li>
+          <li><strong>Consumir APIs</strong> com <code>fetch</code> e tratar erros.</li>
+        </ul>
+        <p class="nota">Capítulos 13 a 16.</p>
+      </section>
+
+      <!-- Frase-âncora -->
+      <section class="frase" data-background-color="#0E0F22">
+        <p>HTML estrutura. CSS veste. <em>JS age.</em></p>
+        <span class="fonte">A camada do comportamento.</span>
+      </section>
+
+      <!-- JS no navegador -->
+      <section data-background-color="#16172E">
+        <h2>JS roda em uma única thread</h2>
+        <pre><code class="language-javascript" data-trim data-noescape>console.log('1 — antes');
+setTimeout(() => console.log('3 — depois de 1s'), 1000);
+console.log('2 — depois');
+// 1 → 2 → 3</code></pre>
+        <div class="caixa">
+          Operações lentas <strong>não bloqueiam</strong> a página: o JS agenda e continua.
+        </div>
+        <aside class="notes">
+          Single-thread + event loop. Se você travar a thread, a interface congela. Por isso
+          quase tudo que espera é assíncrono.
+        </aside>
+      </section>
+
+      <!-- Variáveis e tipos -->
+      <section data-background-color="#16172E">
+        <h2>Tipos e comparação</h2>
+        <pre><code class="language-javascript" data-trim data-noescape>const nome = 'Ana';   // string   (não reatribui)
+let idade = 20;       // number   (reatribui)
+const ativo = true;   // boolean
+
+0 == '0'    // true  😱  (coerção)
+0 === '0'   // false ✔️  (compara tipo também)</code></pre>
+        <div class="caixa ambar">Use sempre <code>===</code>. Prefira <code>const</code>; <code>let</code> só quando reatribuir.</div>
+      </section>
+
+      <!-- Funções + map/filter/reduce -->
+      <section data-background-color="#16172E">
+        <section>
+          <h2>Funções</h2>
+          <pre><code class="language-javascript" data-trim data-noescape>function soma(a, b) { return a + b; }
+
+const dobro = n =&gt; n * 2;   // arrow function</code></pre>
+          <p class="nota">Funções são valores: podem ser passadas e retornadas.</p>
+        </section>
+        <section>
+          <h3>O trio que abre a cabeça</h3>
+          <pre><code class="language-javascript" data-trim data-noescape>const nums = [1, 2, 3, 4];
+
+nums.map(n =&gt; n * 2);        // [2, 4, 6, 8]
+nums.filter(n =&gt; n % 2 === 0); // [2, 4]
+nums.reduce((a, n) =&gt; a + n, 0); // 10</code></pre>
+          <p class="nota"><strong>map</strong> transforma, <strong>filter</strong> seleciona, <strong>reduce</strong> acumula.</p>
+          <aside class="notes">
+            Substituem a maioria dos loops for. É o salto para pensar de forma declarativa.
+          </aside>
+        </section>
+      </section>
+
+      <!-- Frase-âncora assincronia -->
+      <section class="frase" data-background-color="#0E0F22">
+        <p>Não trave a página esperando.</p>
+        <span class="fonte">Assincronia.</span>
+      </section>
+
+      <!-- Callback → Promise → async/await -->
+      <section data-background-color="#16172E">
+        <section>
+          <h2>Da callback à Promise</h2>
+          <pre><code class="language-javascript" data-trim data-noescape>// callback hell 😖
+buscarUsuario(id, (e, u) =&gt; {
+  buscarPedidos(u.id, (e, p) =&gt; {
+    buscarItens(p[0], (e, i) =&gt; { /* ... */ });
+  });
+});</code></pre>
+          <p class="nota">Aninhamento profundo → ilegível. As Promises resolvem isso.</p>
+          <aside class="notes">
+            Promise tem 3 estados: pending, fulfilled, rejected. .then encadeia, .catch trata.
+          </aside>
+        </section>
+        <section>
+          <h3>async/await: assíncrono que lê como síncrono</h3>
+          <pre><code class="language-javascript" data-trim data-noescape>async function carregar() {
+  try {
+    const u = await buscarUsuario(id);
+    const p = await buscarPedidos(u.id);
+    return p;
+  } catch (e) {
+    console.error(e);
+  }
+}</code></pre>
+        </section>
+      </section>
+
+      <!-- Frase-âncora DOM -->
+      <section class="frase" data-background-color="#0E0F22">
+        <p>A página é uma árvore viva.</p>
+        <span class="fonte">DOM.</span>
+      </section>
+
+      <!-- DOM: selecionar e alterar -->
+      <section data-background-color="#16172E">
+        <section>
+          <h2>Selecionar com o CSS que você já sabe</h2>
+          <pre><code class="language-javascript" data-trim data-noescape>const titulo = document.querySelector('h1');
+const itens  = document.querySelectorAll('.item');</code></pre>
+          <p class="nota">O mesmo seletor do CSS — nada novo para aprender.</p>
+        </section>
+        <section>
+          <h3>Alterar (com cuidado)</h3>
+          <pre><code class="language-javascript" data-trim data-noescape>titulo.textContent = 'Olá';      // ✔️ seguro
+caixa.innerHTML = dadosDoUsuario; // ⚠️ risco de XSS</code></pre>
+          <div class="caixa ambar">
+            <code>innerHTML</code> com dado não confiável = <strong>XSS</strong>. Prefira <code>textContent</code>.
+          </div>
+        </section>
+      </section>
+
+      <!-- Eventos -->
+      <section data-background-color="#16172E">
+        <section>
+          <h2>Reagir a eventos</h2>
+          <pre><code class="language-javascript" data-trim data-noescape>botao.addEventListener('click', () =&gt; {
+  contador++;
+  placar.textContent = contador;
+});</code></pre>
+          <p class="nota">O ciclo: <strong>selecionar → alterar → ouvir</strong>.</p>
+        </section>
+        <section>
+          <h3>Propagação e delegação</h3>
+          <div class="pipeline">
+            <span class="etapa">captura ↓</span><span class="seta">→</span>
+            <span class="etapa">alvo</span><span class="seta">→</span>
+            <span class="etapa">bubbling ↑</span>
+          </div>
+          <div class="caixa">
+            <strong>Delegação:</strong> um listener no pai atende muitos filhos — inclusive os criados depois.
+          </div>
+          <aside class="notes">
+            Em vez de N listeners, um só no container e checa event.target. Essencial para
+            listas dinâmicas.
+          </aside>
+        </section>
+      </section>
+
+      <!-- Validação -->
+      <section data-background-color="#16172E">
+        <h2>Validação com JavaScript</h2>
+        <pre><code class="language-javascript" data-trim data-noescape>if (!email.validity.valid) {
+  email.setCustomValidity('E-mail inválido');
+}</code></pre>
+        <p class="nota">Constraint Validation API: valida em tempo real, com feedback claro.</p>
+        <div class="caixa ambar">
+          Continua valendo: validação no cliente é <strong>UX</strong>, não segurança. A definitiva é no servidor.
+        </div>
+      </section>
+
+      <!-- Frase-âncora APIs -->
+      <section class="frase" data-background-color="#0E0F22">
+        <p>Conversar com o mundo.</p>
+        <span class="fonte">APIs.</span>
+      </section>
+
+      <!-- REST + JSON -->
+      <section data-background-color="#16172E">
+        <h2>REST + JSON</h2>
+        <div class="colunas">
+          <div>
+            <p class="nota">Método = intenção</p>
+            <ul class="nota">
+              <li><code>GET</code> ler</li>
+              <li><code>POST</code> criar</li>
+              <li><code>PUT/PATCH</code> atualizar</li>
+              <li><code>DELETE</code> remover</li>
+            </ul>
+          </div>
+          <div>
+            <pre><code class="language-json" data-trim>{
+  "cep": "57072-970",
+  "cidade": "Maceió"
+}</code></pre>
+          </div>
+        </div>
+        <p class="nota">JSON é a língua franca entre front-end e servidor.</p>
+      </section>
+
+      <!-- Fetch -->
+      <section data-background-color="#16172E">
+        <section>
+          <h2>O padrão fetch robusto</h2>
+          <pre><code class="language-javascript" data-trim data-noescape>async function buscar(url) {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  return r.json();
+}</code></pre>
+          <p class="nota"><code>await fetch</code> → checa <code>ok</code> → <code>await json()</code>.</p>
+        </section>
+        <section>
+          <h3>⚠️ A pegadinha nº 1</h3>
+          <div class="caixa ambar">
+            <code>fetch</code> <strong>não rejeita</strong> em erro HTTP (404, 500)! Só falha em erro de
+            <em>rede</em>. Por isso <strong>sempre</strong> cheque <code>resposta.ok</code>.
+          </div>
+          <aside class="notes">
+            Bug clássico: fazer .then(r => r.json()) direto e nunca detectar o 404. O 404 chega
+            como Response normal.
+          </aside>
+        </section>
+      </section>
+
+      <!-- Estados de UX -->
+      <section data-background-color="#16172E">
+        <h2>Toda tela que carrega tem 4 estados</h2>
+        <div class="pipeline">
+          <span class="etapa">carregando</span><span class="seta">→</span>
+          <span class="etapa">sucesso</span>
+        </div>
+        <div class="pipeline" style="margin-top:.4em">
+          <span class="etapa">vazio</span><span class="seta">·</span>
+          <span class="etapa">erro</span>
+        </div>
+        <p class="nota">Trate todos — não deixe o usuário olhando uma tela em branco.</p>
+      </section>
+
+      <!-- Resumo -->
+      <section class="titulo" data-background-color="#0E0F22">
+        <h2 style="border:none">Resumo</h2>
+        <ul style="display:inline-block; text-align:left">
+          <li>JS dá <strong>comportamento</strong> (single-thread + assíncrono).</li>
+          <li><code>map</code>/<code>filter</code>/<code>reduce</code> e <code>async/await</code>.</li>
+          <li>DOM: <strong>selecionar → alterar → ouvir</strong> (cuidado com XSS).</li>
+          <li>Validação no cliente é UX; a real é no servidor.</li>
+          <li><code>fetch</code> + <code>ok</code> + estados de UX consomem APIs.</li>
+        </ul>
+        <p class="rodape">Livro: capítulos 13 a 16 &middot; Próximo: Unidade 4 — Integração e Projeto</p>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="../assets/reveal/dist/reveal.js"></script>
+  <script src="../assets/reveal/plugin/notes/notes.js"></script>
+  <script src="../assets/reveal/plugin/highlight/highlight.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: "c/t",
+      transition: "slide",
+      controls: true,
+      progress: true,
+      plugins: [ RevealHighlight, RevealNotes ]
+    });
+  </script>
+</body>
+</html>

@@ -302,7 +302,7 @@ O uso de `headers` é reservado para tabelas de alta complexidade. Para a maiori
 
 ---
 
-#### **Atividade — Seção 4.1**
+### Atividade — Seção 4.1
 
 <div class="quiz" data-answer="c">
   <p><strong>1.</strong> Por que o uso de tabelas HTML para criar layouts de página é considerado uma prática incorreta?</p>
@@ -576,7 +576,7 @@ A especificação não impõe limite técnico para a profundidade de aninhamento
 
 ---
 
-#### **Atividade — Seção 4.2**
+### Atividade — Seção 4.2
 
 <div class="quiz" data-answer="a">
   <p><strong>1.</strong> Em uma lista <code>&lt;ol reversed start="10"&gt;</code> com quatro itens, quais serão os números exibidos?</p>
@@ -993,7 +993,7 @@ O elemento `<figure>` — introduzido no Capítulo 3 no contexto semântico gera
 A combinação de `<figure>` com `<figcaption>` é especialmente importante para vídeos e áudios em materiais educacionais: ela fornece contexto imediato sobre o conteúdo da mídia, cita a fonte quando necessário, e oferece um ponto de ancoragem para links à transcrição ou aos recursos adicionais.
 
 
-#### 🔎 Direitos autorais
+### 🔎 Direitos autorais
 
 > ⚠️ **Importante:**  
 > Nem toda imagem, vídeo ou áudio disponível na internet pode ser utilizado livremente.
@@ -1010,7 +1010,7 @@ Utilize bancos de mídia gratuitos:
 
 ---
 
-#### **Atividade — Seção 4.3**
+### Atividade — Seção 4.3
 
 <div class="quiz" data-answer="b">
   <p><strong>1.</strong> Qual é a diferença funcional entre o atributo <code>srcset</code> no elemento <code>&lt;img&gt;</code> e o elemento <code>&lt;picture&gt;</code>?</p>
@@ -1039,7 +1039,7 @@ Utilize bancos de mídia gratuitos:
   <p class="feedback"></p>
 </div>
 
-- **GitHub Classroom:** Construir uma página multimídia que contenha: um elemento `<video>` com múltiplas fontes, um `<track>` de legendas e um `<poster>`; um elemento `<audio>` com fallback; um `<iframe>` incorporando um vídeo do YouTube com `title` e `loading="lazy"`; todos envolvidos por `<figure>` com `<figcaption>` adequados. *(link será adicionado)*
+- **GitHub Classroom:** Construir uma página multimídia que contenha: um elemento `<video>` com múltiplas fontes, um `<track>` de legendas e o atributo `poster`; um elemento `<audio>` com fallback; um `<iframe>` incorporando um vídeo do YouTube com `title` e `loading="lazy"`; todos envolvidos por `<figure>` com `<figcaption>` adequados. *(link será adicionado)*
 
 ---
 

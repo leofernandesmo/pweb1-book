@@ -934,7 +934,7 @@ Um formulário tecnicamente correto não é necessariamente um formulário bem p
 
 ---
 
-#### **Atividades — Capítulo 5**
+### Atividades — Capítulo 5
 
 <div class="quiz" data-answer="b">
   <p><strong>1.</strong> Um formulário tem um campo <code>&lt;input type="text" id="usuario"&gt;</code> sem o atributo <code>name</code>. O que ocorre quando o formulário é enviado?</p>

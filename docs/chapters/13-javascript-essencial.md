@@ -1258,7 +1258,7 @@ async function salvar(dados) {
 
 ---
 
-#### **Atividades — Capítulo 13**
+### Atividades — Capítulo 13
 
 <div class="quiz" data-answer="b">
   <p><strong>1.</strong> Por que é recomendado usar <code>===</code> em vez de <code>==</code> para comparações em JavaScript?</p>

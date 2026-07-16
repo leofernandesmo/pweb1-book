@@ -825,7 +825,7 @@ A regra é direta: **se a ordem visual importa para a compreensão do conteúdo,
 
 ---
 
-#### **Atividades — Capítulo 8**
+### Atividades — Capítulo 8
 
 <div class="quiz" data-answer="b">
   <p><strong>1.</strong> Em um flex container com <code>flex-direction: column</code>, qual propriedade controla o alinhamento horizontal dos itens?</p>

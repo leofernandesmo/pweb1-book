@@ -985,7 +985,7 @@ A reordenação por media queries com `grid-template-areas` é geralmente segura
 
 ---
 
-#### **Atividades — Capítulo 9**
+### Atividades — Capítulo 9
 
 <div class="quiz" data-answer="c">
   <p><strong>1.</strong> Uma grade tem <code>grid-template-columns: repeat(3, 1fr)</code> em um container de 900px com <code>gap: 30px</code>. Qual é a largura de cada coluna?</p>

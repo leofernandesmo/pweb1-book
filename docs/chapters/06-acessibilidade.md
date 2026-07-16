@@ -504,7 +504,7 @@ Este capítulo oferece uma visão panorâmica da acessibilidade web. Para aprofu
 
 ---
 
-#### **Atividades — Capítulo 6**
+### Atividades — Capítulo 6
 
 <div class="quiz" data-answer="c">
   <p><strong>1.</strong> O que significa dizer que a acessibilidade web visa uma experiência "equivalente" para todos os usuários?</p>

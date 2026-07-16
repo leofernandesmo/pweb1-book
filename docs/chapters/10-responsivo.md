@@ -923,7 +923,7 @@ Na grade principal (container largo), o card usa layout horizontal com imagem gr
 
 ---
 
-#### **Atividades — Capítulo 10**
+### Atividades — Capítulo 10
 
 <div class="quiz" data-answer="b">
   <p><strong>1.</strong> Por que a meta tag <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> é obrigatória em páginas responsivas?</p>
