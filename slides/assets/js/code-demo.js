@@ -60,7 +60,9 @@
     const iframe = document.createElement("iframe");
     iframe.className = "demo-frame";
     iframe.style.height = altura;
-    iframe.setAttribute("loading", "lazy");
+    // Carregamento imediato (não "lazy"): os srcdoc são minúsculos e, em subslides
+    // verticais fora da viewport, o lazy-load pode deixar o iframe em branco até a
+    // navegação forçar o carregamento.
     // allow-scripts (sem allow-same-origin) basta para a demo manipular o próprio DOM,
     // e mantém o iframe isolado. Sem scripts, sandbox vazio bloqueia qualquer JS.
     iframe.setAttribute("sandbox", permiteScripts ? "allow-scripts" : "");

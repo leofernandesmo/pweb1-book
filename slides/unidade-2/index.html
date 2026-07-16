@@ -73,6 +73,49 @@ h1 {
         <p class="nota">Seletor escolhe <em>quem</em>; declarações dizem <em>como</em>.</p>
       </section>
 
+      <!-- Demo ao vivo: cor e fonte -->
+      <section data-background-color="#16172E">
+        <h2>Cor e fonte</h2>
+        <div class="demo" data-lang="html" data-altura="220px">
+          <script type="text/plain">
+            <style>
+              .titulo {
+                color: #5C6BC0;
+                font-family: Georgia, serif;
+                font-size: 26px;
+                font-weight: bold;
+              }
+            </style>
+            <p>Texto no estilo padrão do navegador.</p>
+            <p class="titulo">Texto com cor, fonte e tamanho.</p>
+          </script>
+        </div>
+        <aside class="notes">Cada declaração muda um aspecto visual do mesmo parágrafo.</aside>
+      </section>
+
+      <!-- Demo ao vivo: borda, padding e margin -->
+      <section data-background-color="#16172E">
+        <h2>Borda, padding e margin</h2>
+        <div class="demo" data-lang="html" data-altura="260px">
+          <script type="text/plain">
+            <style>
+              .caixa {
+                border: 3px solid #5C6BC0;
+                padding: 14px;
+                margin: 12px;
+                background: #eef2ff;
+              }
+            </style>
+            <div class="caixa">Caixa A — padding afasta o texto da borda</div>
+            <div class="caixa">Caixa B — margin separa as duas caixas</div>
+          </script>
+        </div>
+        <aside class="notes">
+          Padding = espaço interno (dentro da borda); margin = espaço externo (entre caixas).
+          O fundo azul mostra até onde vai o padding.
+        </aside>
+      </section>
+
       <!-- Seletores + especificidade -->
       <section data-background-color="#16172E">
         <section>
@@ -101,6 +144,106 @@ h1 {
           <div class="caixa ambar">
             Empate? Vence a <strong>última</strong> regra (cascata). Fuja do <code>!important</code>.
           </div>
+        </section>
+      </section>
+
+      <!-- Demos ao vivo: seletores CSS (pilha vertical) -->
+      <section data-background-color="#16172E">
+        <section>
+          <h2>Como os seletores alcançam os elementos</h2>
+          <p>O mesmo HTML, seletores diferentes. Desça (↓) para cada tipo.</p>
+          <div class="pipeline">
+            <span class="etapa">tipo</span><span class="etapa">.classe</span>
+            <span class="etapa">#id</span><span class="etapa">descendente</span>
+            <span class="etapa">pseudo-classe</span><span class="etapa">[atributo]</span>
+          </div>
+          <aside class="notes">
+            Cada subslide mostra o seletor, o HTML e exatamente o que ele pinta. Ótimo para
+            a turma prever "quem vai ficar colorido?" antes de mostrar o resultado.
+          </aside>
+        </section>
+
+        <section>
+          <h3>Seletor de tipo</h3>
+          <div class="demo" data-lang="html" data-altura="200px">
+            <script type="text/plain">
+              <style> p { color: #5C6BC0; font-weight: bold } </style>
+              <h4>Um título (h4)</h4>
+              <p>Primeiro parágrafo</p>
+              <p>Segundo parágrafo</p>
+            </script>
+          </div>
+          <p class="nota"><code>p</code> alcança <strong>todos</strong> os &lt;p&gt; — o título não.</p>
+        </section>
+
+        <section>
+          <h3>Seletor de classe</h3>
+          <div class="demo" data-lang="html" data-altura="200px">
+            <script type="text/plain">
+              <style> .destaque { background: #ffe8a3; padding: 2px 6px } </style>
+              <p>Parágrafo normal</p>
+              <p class="destaque">Parágrafo com class="destaque"</p>
+              <p>Outro normal</p>
+            </script>
+          </div>
+          <p class="nota"><code>.destaque</code> alcança só quem tem a classe.</p>
+        </section>
+
+        <section>
+          <h3>Seletor de id</h3>
+          <div class="demo" data-lang="html" data-altura="200px">
+            <script type="text/plain">
+              <style> #principal { border: 2px solid #5C6BC0; padding: 4px } </style>
+              <p>Parágrafo normal</p>
+              <p id="principal">Único, com id="principal"</p>
+            </script>
+          </div>
+          <p class="nota"><code>#principal</code> alcança um único elemento (o id é único na página).</p>
+        </section>
+
+        <section>
+          <h3>Seletor descendente</h3>
+          <div class="demo" data-lang="html" data-altura="200px">
+            <script type="text/plain">
+              <style> nav a { color: #e53935; font-weight: bold } </style>
+              <nav><a href="#">Link dentro do nav</a></nav>
+              <p><a href="#">Link fora do nav</a></p>
+            </script>
+          </div>
+          <p class="nota"><code>nav a</code> = links <em>dentro</em> de &lt;nav&gt; (só o primeiro).</p>
+        </section>
+
+        <section>
+          <h3>Pseudo-classe (interativo)</h3>
+          <div class="demo" data-lang="html" data-altura="220px">
+            <script type="text/plain">
+              <style>
+                li { padding: 6px; font-family: system-ui; cursor: pointer }
+                li:nth-child(odd) { background: #eef2ff }
+                li:hover { background: #5C6BC0; color: #fff }
+              </style>
+              <ul>
+                <li>Item 1</li><li>Item 2</li>
+                <li>Item 3</li><li>Item 4</li>
+              </ul>
+            </script>
+          </div>
+          <p class="nota"><code>:nth-child(odd)</code> pinta as ímpares; passe o mouse para ver o <code>:hover</code>.</p>
+        </section>
+
+        <section>
+          <h3>Seletor de atributo</h3>
+          <div class="demo" data-lang="html" data-altura="200px">
+            <script type="text/plain">
+              <style>
+                a[target="_blank"] { color: #5C6BC0; font-weight: bold }
+                a[target="_blank"]::after { content: " ↗" }
+              </style>
+              <p><a href="#">Link comum</a></p>
+              <p><a href="#" target="_blank">Abre em nova aba</a></p>
+            </script>
+          </div>
+          <p class="nota"><code>a[target="_blank"]</code> alcança só os links com esse atributo.</p>
         </section>
       </section>
 
