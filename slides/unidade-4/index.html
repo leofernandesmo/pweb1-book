@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unidade 4 — Integração e Projeto | Programação Web 1</title>
+
+  <link rel="stylesheet" href="../assets/reveal/dist/reset.css">
+  <link rel="stylesheet" href="../assets/reveal/dist/reveal.css">
+  <link rel="stylesheet" href="../assets/reveal/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="../assets/reveal/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="../assets/css/course-theme.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Capa -->
+      <section class="titulo" data-background-color="#0E0F22">
+        <h1>Integração e Projeto</h1>
+        <p class="subtitulo">Unidade 4 &mdash; Juntando tudo em uma SPA</p>
+        <p class="rodape">
+          Programação Web 1 &middot; Técnico em Desenvolvimento de Sistemas &middot; IFAL<br>
+          Prof. Leo Fernandes, PhD
+        </p>
+        <aside class="notes">
+          A unidade final. Aqui HTML + CSS + JS + API deixam de ser tópicos separados e viram
+          uma aplicação real, organizada e publicada.
+        </aside>
+      </section>
+
+      <!-- Objetivos -->
+      <section data-background-color="#16172E">
+        <h2>Nesta unidade</h2>
+        <ul>
+          <li>Estruturar uma <strong>SPA</strong> sem framework, com módulos ES6.</li>
+          <li>Separar o código em <strong>camadas</strong> (UI, estado, serviços).</li>
+          <li>Renderizar dados de API e navegar sem recarregar.</li>
+          <li>Planejar e entregar o <strong>Projeto Final</strong> em sprints.</li>
+        </ul>
+        <p class="nota">Capítulos 17 e 18.</p>
+      </section>
+
+      <!-- Frase-âncora -->
+      <section class="frase" data-background-color="#0E0F22">
+        <p>Agora, tudo junto.</p>
+        <span class="fonte">HTML + CSS + JS + API em uma aplicação.</span>
+      </section>
+
+      <!-- MPA vs SPA -->
+      <section data-background-color="#16172E">
+        <h2>MPA × SPA</h2>
+        <div class="colunas">
+          <div>
+            <h3>MPA</h3>
+            <p class="nota">Cada navegação = novo request e recarga da página inteira.</p>
+          </div>
+          <div>
+            <h3>SPA</h3>
+            <p class="nota">Um HTML; o JS troca o conteúdo com base na URL, sem recarregar.</p>
+          </div>
+        </div>
+        <div class="caixa">
+          SPA = navegação fluida e estado preservado. Custo: SEO e carga inicial exigem atenção.
+        </div>
+        <aside class="notes">
+          Sem React/Vue — só JavaScript moderno. O objetivo é entender o que os frameworks
+          automatizam.
+        </aside>
+      </section>
+
+      <!-- Camadas -->
+      <section data-background-color="#16172E">
+        <section>
+          <h2>Separe em camadas</h2>
+          <pre><code class="language-text" data-trim>┌─── UI ────────── pages/, components/ (DOM, eventos)
+│        ↓ chama
+├─── State ─────── store.js (estado + notifica a UI)
+│        ↓ chama
+└─── Service ───── services/ (fetch, cache, erros)</code></pre>
+          <div class="caixa ambar">
+            Regra de ouro: a <strong>UI nunca faz <code>fetch</code></strong>; o
+            <strong>Service nunca toca no DOM</strong>.
+          </div>
+          <aside class="notes">
+            Essa separação deixa cada camada testável e substituível. É o hábito que separa
+            script de projeto.
+          </aside>
+        </section>
+        <section>
+          <h3>Módulos ES6</h3>
+          <pre><code class="language-javascript" data-trim data-noescape>// services/api.js
+export async function buscar(url) { /* ... */ }
+
+// app.js
+import { buscar } from './services/api.js';</code></pre>
+          <p class="nota">Cada arquivo tem escopo próprio e exporta só o que é público.</p>
+        </section>
+      </section>
+
+      <!-- Fluxo SPA -->
+      <section data-background-color="#16172E">
+        <h2>O fluxo de uma SPA</h2>
+        <div class="pipeline">
+          <span class="etapa">URL (#/produtos)</span><span class="seta">→</span>
+          <span class="etapa">router</span><span class="seta">→</span>
+          <span class="etapa">service</span><span class="seta">→</span>
+          <span class="etapa">render no DOM</span>
+        </div>
+        <p class="nota">Hash routing (<code>#/</code>) — simples e perfeito para GitHub Pages.</p>
+      </section>
+
+      <!-- Frase-âncora projeto -->
+      <section class="frase" data-background-color="#0E0F22">
+        <p>O projeto final.</p>
+        <span class="fonte">A síntese do curso.</span>
+      </section>
+
+      <!-- Escopo -->
+      <section data-background-color="#16172E">
+        <h2>Uma SPA que consome uma API pública</h2>
+        <div class="colunas">
+          <ul class="nota">
+            <li>Listagem com filtro e busca</li>
+            <li>Tela de detalhe</li>
+            <li>Formulário validado</li>
+            <li>Navegação sem recarregar</li>
+          </ul>
+          <ul class="nota">
+            <li>Estados: carregando/erro/vazio</li>
+            <li>Responsivo mobile-first</li>
+            <li>Acessibilidade mínima</li>
+            <li>Persistência (localStorage)</li>
+          </ul>
+        </div>
+        <p class="nota">8 funcionalidades obrigatórias — tudo que você aprendeu, em um app.</p>
+      </section>
+
+      <!-- Sprints -->
+      <section data-background-color="#16172E">
+        <h2>Três sprints</h2>
+        <div class="pipeline">
+          <span class="etapa">1 · HTML + dados</span><span class="seta">→</span>
+          <span class="etapa">2 · CSS + responsivo</span><span class="seta">→</span>
+          <span class="etapa">3 · JS + integração</span>
+        </div>
+        <p class="nota">Desenvolvimento iterativo, com checkpoint ao fim de cada sprint.</p>
+        <aside class="notes">
+          Simula o ritmo de uma equipe real. Entregar algo funcional a cada sprint, não tudo
+          no fim.
+        </aside>
+      </section>
+
+      <!-- Checklist -->
+      <section data-background-color="#16172E">
+        <h2>Checklist de entrega</h2>
+        <div class="colunas">
+          <ul class="nota">
+            <li>HTML semântico + <code>alt</code></li>
+            <li>Tokens CSS + mobile-first</li>
+            <li>Módulos ES6, camadas separadas</li>
+          </ul>
+          <ul class="nota">
+            <li>Todo <code>fetch</code> com try/catch</li>
+            <li>Navegável por teclado</li>
+            <li>Lighthouse a11y ≥ 80</li>
+          </ul>
+        </div>
+        <div class="caixa ambar">Nenhuma chave de API sensível versionada.</div>
+      </section>
+
+      <!-- Fechamento -->
+      <section class="titulo" data-background-color="#0E0F22">
+        <h2 style="border:none">Você chegou ao fim</h2>
+        <ul style="display:inline-block; text-align:left">
+          <li><strong>HTML</strong> — estrutura e significado.</li>
+          <li><strong>CSS</strong> — layout, responsivo e design.</li>
+          <li><strong>JavaScript</strong> — comportamento e DOM.</li>
+          <li><strong>APIs</strong> — dados do mundo real.</li>
+          <li><strong>Integração</strong> — uma SPA de verdade, no ar.</li>
+        </ul>
+        <p class="rodape">Livro: capítulos 17 e 18 &middot; Parabéns — agora é construir o portfólio!</p>
+        <aside class="notes">
+          Feche celebrando: eles saem capazes de construir e publicar uma aplicação front-end
+          completa. O próximo passo é o backend.
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="../assets/reveal/dist/reveal.js"></script>
+  <script src="../assets/reveal/plugin/notes/notes.js"></script>
+  <script src="../assets/reveal/plugin/highlight/highlight.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: "c/t",
+      transition: "slide",
+      controls: true,
+      progress: true,
+      plugins: [ RevealHighlight, RevealNotes ]
+    });
+  </script>
+</body>
+</html>

@@ -1449,7 +1449,7 @@ O código escrito neste capítulo **não é descartado** ao aprender um framewor
 
 ---
 
-#### **Atividades — Capítulo 17**
+### Atividades — Capítulo 17
 
 <div class="quiz" data-answer="c">
   <p><strong>1.</strong> Por que é importante separar a camada de serviços da camada de UI?</p>
