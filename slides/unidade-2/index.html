@@ -124,6 +124,30 @@ h1 {
         </aside>
       </section>
 
+      <!-- Demo ao vivo: box model -->
+      <section data-background-color="#16172E">
+        <h2>Veja o box model</h2>
+        <div class="demo" data-lang="html" data-altura="300px">
+          <script type="text/plain">
+            <style>
+              .caixa {
+                width: 180px;
+                padding: 20px;
+                border: 6px solid #5C6BC0;
+                margin: 16px;
+                background: #eef2ff;
+                box-sizing: border-box;
+              }
+            </style>
+            <div class="caixa">width 180px já inclui padding e borda</div>
+          </script>
+        </div>
+        <aside class="notes">
+          O resultado é renderizado pelo próprio código à esquerda. Troque box-sizing para
+          content-box e a caixa "estoura" (largura passa a somar padding + borda).
+        </aside>
+      </section>
+
       <!-- Unidades -->
       <section data-background-color="#16172E">
         <h2>Unidade certa, no lugar certo</h2>
@@ -167,6 +191,33 @@ h1 {
         </section>
       </section>
 
+      <!-- Demo ao vivo: centralizar com Flexbox -->
+      <section data-background-color="#16172E">
+        <h2>Centralizar de verdade</h2>
+        <div class="demo" data-lang="html" data-altura="240px">
+          <script type="text/plain">
+            <style>
+              .caixa {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 180px;
+                background: #eef2ff;
+                border-radius: 8px;
+              }
+              .btn {
+                padding: .6em 1.2em; background: #5C6BC0;
+                color: #fff; border: 0; border-radius: 6px;
+              }
+            </style>
+            <div class="caixa">
+              <button class="btn">No centro</button>
+            </div>
+          </script>
+        </div>
+        <aside class="notes">O resultado à direita é renderizado pelo próprio código à esquerda.</aside>
+      </section>
+
       <!-- Grid -->
       <section data-background-color="#16172E">
         <section>
@@ -195,6 +246,35 @@ h1 {
   repeat(auto-fit, minmax(220px, 1fr));</code></pre>
           <p class="nota">Os cards se reorganizam sozinhos (padrão RAM).</p>
         </section>
+      </section>
+
+      <!-- Demo ao vivo: galeria com Grid -->
+      <section data-background-color="#16172E">
+        <h2>Uma galeria com Grid</h2>
+        <div class="demo" data-lang="html" data-altura="260px">
+          <script type="text/plain">
+            <style>
+              .galeria {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+              }
+              .galeria div {
+                background: #5C6BC0; color: #fff;
+                padding: 24px 0; text-align: center;
+                border-radius: 6px;
+              }
+            </style>
+            <div class="galeria">
+              <div>1</div><div>2</div><div>3</div>
+              <div>4</div><div>5</div><div>6</div>
+            </div>
+          </script>
+        </div>
+        <aside class="notes">
+          Troque para repeat(auto-fit, minmax(80px, 1fr)) e redimensione a janela para ver
+          os itens se reorganizarem sozinhos (padrão RAM).
+        </aside>
       </section>
 
       <!-- Flex vs Grid -->
@@ -268,6 +348,40 @@ h1 {
         </section>
       </section>
 
+      <!-- Demo ao vivo: componente com tokens -->
+      <section data-background-color="#16172E">
+        <h2>Um componente com tokens</h2>
+        <div class="demo" data-lang="html" data-altura="300px">
+          <script type="text/plain">
+            <style>
+              :root { --cor: #5C6BC0; --raio: 10px; }
+              .card {
+                max-width: 220px;
+                border: 1px solid #e2e2ef;
+                border-radius: var(--raio);
+                padding: 16px;
+                transition: box-shadow .2s;
+              }
+              .card:hover { box-shadow: 0 8px 24px #5c6bc055; }
+              .card h3 { margin: 0 0 6px; color: var(--cor); }
+              .card button {
+                background: var(--cor); color: #fff;
+                border: 0; border-radius: 6px; padding: .5em 1em;
+              }
+            </style>
+            <div class="card">
+              <h3>Programação Web</h3>
+              <p>HTML, CSS e JavaScript do zero.</p>
+              <button>Ver detalhes</button>
+            </div>
+          </script>
+        </div>
+        <aside class="notes">
+          Passe o mouse no card durante a apresentação — o iframe é interativo e a sombra do
+          :hover aparece de verdade. Note as variáveis (tokens) --cor e --raio em uso.
+        </aside>
+      </section>
+
       <!-- Tailwind -->
       <section data-background-color="#16172E">
         <section>
@@ -319,6 +433,8 @@ h1 {
   <script src="../assets/reveal/dist/reveal.js"></script>
   <script src="../assets/reveal/plugin/notes/notes.js"></script>
   <script src="../assets/reveal/plugin/highlight/highlight.js"></script>
+  <!-- Gera as demos "código + resultado" antes de inicializar (para o realce de sintaxe) -->
+  <script src="../assets/js/code-demo.js"></script>
   <script>
     Reveal.initialize({
       hash: true,

@@ -185,6 +185,64 @@ caixa.innerHTML = dadosDoUsuario; // ⚠️ risco de XSS</code></pre>
         </section>
       </section>
 
+      <!-- Demo interativa: contador de cliques -->
+      <section data-background-color="#16172E">
+        <h2>Clique de verdade</h2>
+        <div class="demo" data-lang="html" data-scripts data-altura="240px">
+          <script type="text/plain">
+            <style>
+              .box { text-align: center; font-family: system-ui }
+              #n { font-size: 44px; font-weight: 700; color: #5C6BC0 }
+              button { padding: .5em 1.2em; font-size: 16px }
+            </style>
+            <div class="box">
+              <div id="n">0</div>
+              <button id="add">Cliquei!</button>
+            </div>
+            <script>
+              let cont = 0;
+              const n = document.querySelector('#n');
+              document.querySelector('#add')
+                .addEventListener('click', () => n.textContent = ++cont);
+            <\/script>
+          </script>
+        </div>
+        <aside class="notes">
+          Clique no botão à direita durante a apresentação — o número muda ao vivo. É o ciclo
+          selecionar → ouvir evento → alterar, funcionando de verdade no iframe.
+        </aside>
+      </section>
+
+      <!-- Demo interativa: delegação de eventos -->
+      <section data-background-color="#16172E">
+        <h2>Delegação: um listener, muitos itens</h2>
+        <div class="demo" data-lang="html" data-scripts data-altura="240px">
+          <script type="text/plain">
+            <style>
+              ul { list-style: none; padding: 0; font-family: system-ui }
+              li { padding: 8px 12px; border: 1px solid #ddd;
+                   border-radius: 6px; margin: 4px 0; cursor: pointer }
+              li.ativo { background: #5C6BC0; color: #fff }
+            </style>
+            <ul id="lista">
+              <li>HTML</li><li>CSS</li><li>JavaScript</li>
+            </ul>
+            <script>
+              // um único listener no <ul> atende todos os <li>
+              document.querySelector('#lista')
+                .addEventListener('click', e => {
+                  if (e.target.tagName === 'LI')
+                    e.target.classList.toggle('ativo');
+                });
+            <\/script>
+          </script>
+        </div>
+        <aside class="notes">
+          Clique nos itens — cada um alterna o destaque, mas há só UM listener no &lt;ul&gt;.
+          Funcionaria até para itens adicionados depois.
+        </aside>
+      </section>
+
       <!-- Validação -->
       <section data-background-color="#16172E">
         <h2>Validação com JavaScript</h2>
@@ -195,6 +253,39 @@ caixa.innerHTML = dadosDoUsuario; // ⚠️ risco de XSS</code></pre>
         <div class="caixa ambar">
           Continua valendo: validação no cliente é <strong>UX</strong>, não segurança. A definitiva é no servidor.
         </div>
+      </section>
+
+      <!-- Demo interativa: validação em tempo real -->
+      <section data-background-color="#16172E">
+        <h2>Validação em tempo real</h2>
+        <div class="demo" data-lang="html" data-scripts data-altura="240px">
+          <script type="text/plain">
+            <style>
+              input { padding: 8px; width: 100%; box-sizing: border-box;
+                      border: 2px solid #ccc; border-radius: 6px }
+              input.ok { border-color: #28a745 }
+              input.erro { border-color: #e53935 }
+              p { font-family: system-ui; font-size: 14px }
+            </style>
+            <input id="email" type="email" placeholder="voce@exemplo.com">
+            <p id="msg">Digite um e-mail…</p>
+            <script>
+              const email = document.querySelector('#email');
+              const msg = document.querySelector('#msg');
+              email.addEventListener('input', () => {
+                const ok = email.value && email.validity.valid;
+                email.className = email.value ? (ok ? 'ok' : 'erro') : '';
+                msg.textContent = !email.value ? 'Digite um e-mail…'
+                  : ok ? '✔ E-mail válido' : '✖ E-mail inválido';
+              });
+            <\/script>
+          </script>
+        </div>
+        <aside class="notes">
+          Digite no campo à direita — a borda e a mensagem mudam a cada tecla, usando o evento
+          input e a Constraint Validation API (email.validity.valid). Lembre: isto é UX; a
+          validação de segurança é no servidor.
+        </aside>
       </section>
 
       <!-- Frase-âncora APIs -->
@@ -283,6 +374,8 @@ caixa.innerHTML = dadosDoUsuario; // ⚠️ risco de XSS</code></pre>
   <script src="../assets/reveal/dist/reveal.js"></script>
   <script src="../assets/reveal/plugin/notes/notes.js"></script>
   <script src="../assets/reveal/plugin/highlight/highlight.js"></script>
+  <!-- Gera as demos "código + resultado" antes de inicializar (para o realce de sintaxe) -->
+  <script src="../assets/js/code-demo.js"></script>
   <script>
     Reveal.initialize({
       hash: true,
