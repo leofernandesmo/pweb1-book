@@ -193,6 +193,34 @@
         </section>
       </section>
 
+      <!-- Demo ao vivo: estrutura semântica renderizada -->
+      <section data-background-color="#16172E">
+        <h2>A estrutura semântica, renderizada</h2>
+        <div class="demo" data-lang="html" data-altura="300px">
+          <script type="text/plain">
+            <style>
+              body { font-size: 13px }
+              header, nav, main, aside, footer {
+                border: 2px solid #5C6BC0; border-radius: 6px;
+                padding: 8px; margin: 6px 0;
+              }
+              nav { background: #eef2ff }
+              aside { background: #fff7e6 }
+            </style>
+            <header>header — logo + título</header>
+            <nav>nav — menu</nav>
+            <main>main — conteúdo principal
+              <aside>aside — lateral</aside>
+            </main>
+            <footer>footer — rodapé</footer>
+          </script>
+        </div>
+        <aside class="notes">
+          Mesmo sem CSS "de verdade", cada região tem significado. Aqui só desenhamos as
+          bordas para tornar as regiões visíveis.
+        </aside>
+      </section>
+
       <!-- Refatoração antes/depois -->
       <section data-background-color="#16172E">
         <section>
@@ -254,6 +282,32 @@
           <p>Se não é uma grade de <em>dados</em>, não é tabela. Use <code>&lt;div&gt;</code> + CSS
           (Flexbox/Grid — Unidade 2).</p>
         </section>
+      </section>
+
+      <!-- Demo ao vivo: tabela acessível renderizada -->
+      <section data-background-color="#16172E">
+        <h2>Uma tabela, renderizada</h2>
+        <div class="demo" data-lang="html" data-altura="240px">
+          <script type="text/plain">
+            <style>
+              table { border-collapse: collapse; width: 100% }
+              caption { font-weight: 600; margin-bottom: 6px }
+              th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left }
+              thead th { background: #eef2ff }
+            </style>
+            <table>
+              <caption>Horário</caption>
+              <thead>
+                <tr><th scope="col">Disciplina</th><th scope="col">Dia</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>PWeb 1</td><td>Sexta</td></tr>
+                <tr><td>Banco de Dados</td><td>Quarta</td></tr>
+              </tbody>
+            </table>
+          </script>
+        </div>
+        <aside class="notes">O caption e os th scope são o que a torna acessível.</aside>
       </section>
 
       <!-- Mídia -->
@@ -343,6 +397,30 @@
         </ul>
       </section>
 
+      <!-- Demo ao vivo: formulário renderizado -->
+      <section data-background-color="#16172E">
+        <h2>Um formulário, renderizado</h2>
+        <div class="demo" data-lang="html" data-altura="280px">
+          <script type="text/plain">
+            <style>
+              label { display: block; margin-top: 8px; font-weight: 600 }
+              input { width: 100%; padding: 6px; box-sizing: border-box }
+              button { margin-top: 10px; padding: .5em 1em }
+            </style>
+            <form>
+              <label for="nome">Nome</label>
+              <input id="nome" name="nome" required>
+              <label for="email">E-mail</label>
+              <input id="email" type="email" name="email">
+              <button type="submit">Enviar</button>
+            </form>
+          </script>
+        </div>
+        <aside class="notes">
+          Campos com label associado (for/id) e o input type=email já validando — tudo HTML nativo.
+        </aside>
+      </section>
+
       <!-- validação -->
       <section class="frase" data-background-color="#0E0F22">
         <p>Validação no navegador não é segurança.</p>
@@ -418,6 +496,8 @@
   <script src="../assets/reveal/dist/reveal.js"></script>
   <script src="../assets/reveal/plugin/notes/notes.js"></script>
   <script src="../assets/reveal/plugin/highlight/highlight.js"></script>
+  <!-- Gera as demos "código + resultado" antes de inicializar (para o realce de sintaxe) -->
+  <script src="../assets/js/code-demo.js"></script>
   <script>
     Reveal.initialize({
       hash: true,

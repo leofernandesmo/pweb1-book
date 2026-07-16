@@ -47,6 +47,31 @@ Alguns decks têm slides **verticais** (aprofundamentos): use as setas para baix
 O workflow do GitHub Actions copia esta pasta para `site/slides/` ao publicar, ficando
 acessível em `https://leofernandesmo.github.io/pweb1-book/slides/`.
 
+## Demos "código + resultado no navegador"
+
+Para mostrar um trecho de código e o resultado renderizado lado a lado (ideal para HTML e
+CSS), use o componente `.demo`. Inclua o script **antes** de `Reveal.initialize()`:
+
+```html
+<script src="../assets/js/code-demo.js"></script>
+```
+
+E no slide:
+
+```html
+<div class="demo" data-lang="html" data-altura="280px">
+  <script type="text/plain">
+    <style> .btn { background: #5C6BC0; color: #fff; padding: .5em 1em } </style>
+    <button class="btn">Enviar</button>
+  </script>
+</div>
+```
+
+O helper lê o código (fonte única de verdade), mostra-o com realce à esquerda e renderiza
+**exatamente o mesmo código** num `<iframe>` com moldura de navegador à direita — funciona
+offline. Atributos: `data-lang` (`html`/`css`/`js`), `data-altura` (altura do resultado) e
+`data-scripts`/`data-lang="js"` para habilitar JavaScript no iframe (demos interativas).
+
 ## Criar um novo deck
 
 Copie `unidade-0/index.html` para uma nova pasta `unidade-N/` e edite o conteúdo. Os caminhos
