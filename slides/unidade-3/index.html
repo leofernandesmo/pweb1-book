@@ -341,6 +341,44 @@ caixa.innerHTML = dadosDoUsuario; // ⚠️ risco de XSS</code></pre>
         </section>
       </section>
 
+      <!-- Demo interativa: fetch real na ViaCEP -->
+      <section data-background-color="#16172E">
+        <h2>Fetch de verdade: ViaCEP</h2>
+        <div class="demo" data-lang="html" data-scripts data-altura="220px">
+          <script type="text/plain">
+            <style>
+              input, button { padding: 8px; font-size: 15px; font-family: system-ui }
+              #saida { margin-top: 10px; font-family: system-ui; white-space: pre-line }
+            </style>
+            <input id="cep" value="01001-000">
+            <button id="buscar">Buscar</button>
+            <div id="saida"></div>
+            <script>
+              const saida = document.querySelector('#saida');
+              document.querySelector('#buscar').addEventListener('click', async () => {
+                const cep = document.querySelector('#cep').value.replace(/\D/g, '');
+                saida.textContent = 'Carregando…';
+                try {
+                  const r = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+                  if (!r.ok) throw new Error('HTTP ' + r.status);
+                  const d = await r.json();
+                  saida.textContent = d.erro ? 'CEP não encontrado'
+                    : `${d.logradouro}\n${d.localidade} - ${d.uf}`;
+                } catch (e) {
+                  saida.textContent = 'Falha de rede';
+                }
+              });
+            <\/script>
+          </script>
+        </div>
+        <aside class="notes">
+          Digite um CEP e clique — busca na API real ViaCEP ao vivo. Note o padrão robusto:
+          estado "Carregando…", checagem de r.ok, tratamento do {erro:true} da ViaCEP e catch
+          de rede. Esta demo (diferente das outras) precisa de INTERNET. Dica: 01001-000
+          resolve; CEPs de "grande usuário" (ex.: 57072-970) retornam erro na ViaCEP.
+        </aside>
+      </section>
+
       <!-- Estados de UX -->
       <section data-background-color="#16172E">
         <h2>Toda tela que carrega tem 4 estados</h2>
