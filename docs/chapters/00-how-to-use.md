@@ -42,13 +42,13 @@ A lógica é simples:
    - Assistir aos vídeos curtos
    - Fazer pequenos exercícios de aquecimento  
 
-3. **Durante a aula:**
+2. **Durante a aula:**
    - Resolver problemas reais
    - Programar em dupla ou em grupo
    - Trabalhar no projeto da disciplina
    - Receber orientação do professor  
 
-5. **Depois da aula:**
+3. **Depois da aula:**
    - Revisar o conteúdo
    - Registrar dúvidas
    - Avançar no projeto  
@@ -81,7 +81,7 @@ Você aprende **fazendo**, não apenas lendo.
 
 Este livro combina diferentes formatos:
 
-- Texto**  
+- **Texto**  
 - Exemplos de código  
 - Vídeos curtos  
 - Exercícios interativos  
@@ -100,7 +100,7 @@ Cada formato tem um propósito:
 
 ---
 
-# Como Consumir o Material Semana a Semana
+## Como Consumir o Material Semana a Semana
 
 ## 1. Leia o capítulo indicado
 O capítulo apresenta:
@@ -151,7 +151,7 @@ Se você não estudar antes, terá dificuldade em acompanhar.
 
 ---
 
-# Ferramentas Utilizadas na Disciplina
+## Ferramentas Utilizadas na Disciplina
 
 Todos os alunos devem:
 
@@ -240,11 +240,11 @@ Usados para:
 - Depurar erros  
 - Documentar endpoints  
 
-Essenciais para a disciplina de backend.
+Serão úteis quando começarmos a consumir APIs (capítulo 16).
 
 ---
 
-# Checklist do Estudante
+## Checklist do Estudante
 
 Antes de começar o semestre, você deve:
 
@@ -258,7 +258,7 @@ Antes de começar o semestre, você deve:
 
 ---
 
-# Conclusão
+## Conclusão
 
 Este material foi pensado para que você aprenda de forma:
 
@@ -268,7 +268,3 @@ Este material foi pensado para que você aprenda de forma:
 - Profissional  
 
 Se você seguir o fluxo recomendado — **estudar antes, praticar durante, revisar depois** — terá um excelente aproveitamento e construirá projetos reais para o seu portfólio.
-
----
-
-Se quiser, posso criar uma **versão com cards**, uma **versão com quizzes**, ou uma **versão com vídeos embutidos** para deixar esse capítulo ainda mais interativo.

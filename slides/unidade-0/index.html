@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unidade 0 — Fundamentos da Web | Programação Web 1</title>
+
+  <link rel="stylesheet" href="../assets/reveal/dist/reset.css">
+  <link rel="stylesheet" href="../assets/reveal/dist/reveal.css">
+  <link rel="stylesheet" href="../assets/reveal/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="../assets/reveal/plugin/highlight/monokai.css">
+  <!-- Tema do curso (sobrescreve o tema base) -->
+  <link rel="stylesheet" href="../assets/css/course-theme.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Capa -->
+      <section class="titulo" data-background-color="#0E0F22">
+        <h1>Programação Web 1</h1>
+        <p class="subtitulo">Unidade 0 &mdash; Fundamentos da Web</p>
+        <p class="rodape">
+          Técnico em Desenvolvimento de Sistemas &middot; IFAL<br>
+          Prof. Leo Fernandes, PhD
+        </p>
+        <aside class="notes">
+          Abertura da disciplina. Objetivo desta unidade: dar o mapa mental de como a Web
+          funciona por dentro antes de escrever a primeira linha de HTML.
+        </aside>
+      </section>
+
+      <!-- Objetivos -->
+      <section data-background-color="#16172E">
+        <h2>Nesta unidade</h2>
+        <ul>
+          <li>Distinguir <strong>Internet</strong> de <strong>Web</strong>.</li>
+          <li>Entender a arquitetura <strong>cliente-servidor</strong> e o papel do navegador.</li>
+          <li>Ler uma troca <strong>HTTP</strong>: requisição, resposta e códigos de status.</li>
+          <li>Seguir o caminho de uma <strong>URL</strong> até a página renderizada.</li>
+          <li>Conhecer as <strong>ferramentas</strong> do curso.</li>
+        </ul>
+        <aside class="notes">
+          Prometa o "aha": ao final, eles vão saber explicar o que acontece quando digitam
+          um endereço e apertam Enter — pergunta clássica de entrevista.
+        </aside>
+      </section>
+
+      <!-- Como funciona a disciplina -->
+      <section data-background-color="#16172E">
+        <h2>Como funciona a disciplina</h2>
+        <div class="colunas">
+          <div>
+            <h3>Antes da aula</h3>
+            <ul class="nota"><li>Ler o capítulo</li><li>Ver os vídeos curtos</li><li>Quizzes de aquecimento</li></ul>
+          </div>
+          <div>
+            <h3>Durante</h3>
+            <ul class="nota"><li>Programar</li><li>Resolver problemas</li><li>Projeto em equipe</li></ul>
+          </div>
+          <div>
+            <h3>Depois</h3>
+            <ul class="nota"><li>Revisar</li><li>Registrar dúvidas</li><li>Avançar o projeto</li></ul>
+          </div>
+        </div>
+        <div class="caixa ambar">
+          Ensino híbrido + sala invertida + PBL. A aula presencial é para <strong>fazer</strong>,
+          não para assistir.
+        </div>
+        <aside class="notes">
+          Reforce o contrato: quem não estuda antes não acompanha a prática. A teoria fica no
+          livro; o tempo de sala é caro demais para gastar com slides expositivos.
+        </aside>
+      </section>
+
+      <!-- Frase-âncora -->
+      <section class="frase" data-background-color="#0E0F22">
+        <p>A Web <em>não</em> é a Internet.</p>
+        <aside class="notes">
+          Pausa. Deixe a provocação no ar antes de explicar. É o erro conceitual mais comum.
+        </aside>
+      </section>
+
+      <!-- Internet vs Web -->
+      <section data-background-color="#16172E">
+        <h2>Internet &times; Web</h2>
+        <table>
+          <thead><tr><th>Internet</th><th>Web</th></tr></thead>
+          <tbody>
+            <tr><td>Infraestrutura <strong>física</strong></td><td>Sistema de <strong>informação</strong></td></tr>
+            <tr><td>Cabos, roteadores, TCP/IP</td><td>Documentos ligados por hiperlinks</td></tr>
+            <tr><td>O "caminho"</td><td>O que trafega <em>sobre</em> o caminho</td></tr>
+          </tbody>
+        </table>
+        <div class="caixa">
+          A Web é uma camada de <strong>hipermídia</strong> sobre a Internet: recursos
+          identificados por <strong>URIs</strong> e ligados por hiperlinks.
+        </div>
+        <aside class="notes">
+          Analogia: a Internet é a malha rodoviária; a Web é um dos serviços que rodam nela
+          (e-mail, streaming e jogos online são outros).
+        </aside>
+      </section>
+
+      <!-- Cliente-servidor (com aprofundamentos verticais) -->
+      <section data-background-color="#16172E">
+        <section>
+          <h2>Arquitetura cliente-servidor</h2>
+          <div class="pipeline">
+            <span class="etapa">Cliente</span><span class="seta">— requisição →</span>
+            <span class="etapa">Servidor</span>
+          </div>
+          <div class="pipeline" style="margin-top:.4em">
+            <span class="etapa">Cliente</span><span class="seta">← resposta —</span>
+            <span class="etapa">Servidor</span>
+          </div>
+          <p class="nota">Três papéis para separar (setas ↓ para aprofundar).</p>
+          <aside class="notes">
+            Cliente = quem inicia. Servidor = quem escuta e responde. O navegador é um tipo
+            específico de cliente. Use as setas para baixo para detalhar cada um.
+          </aside>
+        </section>
+        <section>
+          <h3>Cliente</h3>
+          <p>Software que <strong>inicia</strong> a comunicação (o <em>User Agent</em>).</p>
+          <p class="nota">Navegador, app móvel, <code>curl</code>, bots/crawlers.</p>
+        </section>
+        <section>
+          <h3>Servidor</h3>
+          <p>Software que <strong>escuta</strong> portas (80/443) e responde.</p>
+          <p class="nota">Apache, Nginx, IIS — rodando como processo em segundo plano.</p>
+        </section>
+        <section>
+          <h3>Navegador</h3>
+          <p>Cliente com <strong>motor de renderização</strong>: transforma HTML/CSS/JS em pixels.</p>
+          <p class="nota">Blink (Chrome/Edge), Gecko (Firefox), WebKit (Safari).</p>
+        </section>
+      </section>
+
+      <!-- HTTP: requisição e resposta -->
+      <section data-background-color="#16172E">
+        <section>
+          <h2>HTTP: a conversa</h2>
+          <p>Texto, <strong>sem estado</strong> (stateless), em pares requisição → resposta.</p>
+          <div class="pipeline">
+            <span class="etapa">Request</span><span class="seta">→</span>
+            <span class="etapa">servidor processa</span><span class="seta">→</span>
+            <span class="etapa">Response</span>
+          </div>
+          <aside class="notes">
+            Stateless = cada requisição é independente; o servidor não "lembra" da anterior.
+            Isso é o que permite a Web escalar. Cookies/tokens existem justamente para
+            recriar esse estado quando ele é necessário.
+          </aside>
+        </section>
+        <section>
+          <h3>Uma requisição</h3>
+          <pre><code class="language-http" data-trim data-noescape>GET /produtos HTTP/1.1
+Host: www.exemplo.com
+User-Agent: Mozilla/5.0
+Accept: text/html</code></pre>
+          <p class="nota">Linha de requisição + cabeçalhos (+ corpo, em POST/PUT).</p>
+        </section>
+        <section>
+          <h3>Uma resposta</h3>
+          <pre><code class="language-http" data-trim data-noescape>HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 1024
+
+&lt;!doctype html&gt; ...</code></pre>
+          <p class="nota">Linha de status + cabeçalhos + corpo (o recurso).</p>
+        </section>
+      </section>
+
+      <!-- Códigos de status -->
+      <section data-background-color="#16172E">
+        <h2>Códigos de status</h2>
+        <table>
+          <thead><tr><th>Classe</th><th>Significado</th><th>Exemplos</th></tr></thead>
+          <tbody>
+            <tr><td><strong>2xx</strong></td><td>Sucesso</td><td>200, 201</td></tr>
+            <tr><td><strong>3xx</strong></td><td>Redirecionamento</td><td>301, 302</td></tr>
+            <tr><td><strong>4xx</strong></td><td>Erro do <em>cliente</em></td><td>400, 404</td></tr>
+            <tr><td><strong>5xx</strong></td><td>Erro do <em>servidor</em></td><td>500, 503</td></tr>
+          </tbody>
+        </table>
+        <div class="caixa">
+          Regra prática: <strong>4xx</strong> = "você errou o pedido"; <strong>5xx</strong> =
+          "o servidor falhou".
+        </div>
+        <aside class="notes">
+          Pergunte à turma onde encaixa um 404 (cliente pediu algo que não existe) e um 500
+          (bug no servidor). Mencione 1xx só de passagem.
+        </aside>
+      </section>
+
+      <!-- Frase-âncora URL -->
+      <section class="frase" data-background-color="#0E0F22">
+        <p>O que acontece quando você digita uma URL?</p>
+        <span class="fonte">A pergunta que junta tudo.</span>
+        <aside class="notes">
+          Este é o clímax da unidade. Peça para a turma tentar responder antes de avançar.
+        </aside>
+      </section>
+
+      <!-- Pipeline da URL -->
+      <section data-background-color="#16172E">
+        <section>
+          <h2><code>exemplo.com/produtos</code> → tela</h2>
+          <div class="pipeline">
+            <span class="etapa">cache?</span><span class="seta">→</span>
+            <span class="etapa">DNS</span><span class="seta">→</span>
+            <span class="etapa">TCP/QUIC</span><span class="seta">→</span>
+            <span class="etapa">HTTP</span><span class="seta">→</span>
+            <span class="etapa">render</span>
+          </div>
+          <p class="nota">Tudo isso em milissegundos (seta ↓ para DNS e render).</p>
+          <aside class="notes">
+            Passe rápido pelos passos: verifica cache local; resolve o nome via DNS; abre
+            conexão; envia a requisição; recebe a resposta; renderiza.
+          </aside>
+        </section>
+        <section>
+          <h3>DNS: o nome vira número</h3>
+          <div class="pipeline">
+            <span class="etapa">www.exemplo.com</span><span class="seta">→</span>
+            <span class="etapa">192.0.2.1</span>
+          </div>
+          <p class="nota">Cadeia hierárquica: Root → TLD → Autoritativo. UDP porta 53.</p>
+        </section>
+        <section>
+          <h3>Renderização</h3>
+          <ol class="nota">
+            <li>Lê o HTML → monta o DOM</li>
+            <li>Baixa CSS, JS e imagens</li>
+            <li>Aplica estilos e executa scripts</li>
+            <li>Exibe a página</li>
+          </ol>
+        </section>
+      </section>
+
+      <!-- Ferramentas -->
+      <section data-background-color="#16172E">
+        <h2>Ferramentas do curso</h2>
+        <div class="colunas">
+          <div>
+            <ul>
+              <li><strong>DevTools</strong> — inspecionar e depurar (F12)</li>
+              <li><strong>VS Code</strong> — editor</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><strong>Git + GitHub</strong> — versão e entrega</li>
+              <li><strong>CodePen</strong> — testar no navegador</li>
+            </ul>
+          </div>
+        </div>
+        <div class="caixa ambar">
+          DevTools transforma o navegador em <strong>laboratório</strong>: DOM ao vivo, CSS,
+          rede, performance, dispositivos.
+        </div>
+        <aside class="notes">
+          Abra o DevTools ao vivo numa página qualquer (aba Elements e Network). Nada convence
+          mais que ver o HTML real de um site conhecido.
+        </aside>
+      </section>
+
+      <!-- Estrutura de projeto -->
+      <section data-background-color="#16172E">
+        <h2>Estrutura de um projeto</h2>
+        <pre><code class="language-text" data-trim>meu-projeto/
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+└── assets/
+    └── images/</code></pre>
+        <p class="nota">Separar por tipo, nomes em <code>kebab-case</code>, sem código inline.</p>
+        <aside class="notes">
+          Convenção simples desde o primeiro exercício reduz atrito e prepara para trabalhar
+          em repositório. Mostraremos isso na prática na Unidade 1.
+        </aside>
+      </section>
+
+      <!-- Resumo -->
+      <section class="titulo" data-background-color="#0E0F22">
+        <h2 style="border:none">Resumo</h2>
+        <ul style="display:inline-block; text-align:left">
+          <li>A <strong>Web</strong> roda <em>sobre</em> a Internet.</li>
+          <li><strong>Cliente-servidor</strong> via <strong>HTTP</strong> (stateless).</li>
+          <li>Status: 2xx/3xx/4xx/5xx.</li>
+          <li>URL → <strong>DNS</strong> → conexão → HTTP → <strong>render</strong>.</li>
+          <li>DevTools, VS Code, Git/GitHub são o dia a dia.</li>
+        </ul>
+        <p class="rodape">Livro: capítulos 0 e 1 &middot; Próximo: Unidade 1 — HTML</p>
+        <aside class="notes">
+          Feche amarrando com a frase-âncora: agora eles conseguem responder "o que acontece
+          quando você digita uma URL".
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="../assets/reveal/dist/reveal.js"></script>
+  <script src="../assets/reveal/plugin/notes/notes.js"></script>
+  <script src="../assets/reveal/plugin/highlight/highlight.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: "c/t",
+      transition: "slide",
+      controls: true,
+      progress: true,
+      plugins: [ RevealHighlight, RevealNotes ]
+    });
+  </script>
+</body>
+</html>

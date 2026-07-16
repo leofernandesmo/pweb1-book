@@ -1,0 +1,133 @@
+/*
+ * Tema dos slides — Programação Web 1 (IFAL, Técnico em Desenvolvimento de Sistemas)
+ * Identidade visual: indigo / lavanda / âmbar, alinhada ao site MkDocs (Material indigo).
+ * Estilo "Presentation Zen": fundo escuro, muito espaço em branco, tipografia grande,
+ * uma ideia por slide, pouco texto, contraste alto.
+ * Aplicar depois do reveal.css e do theme/white.css (sobrescreve o tema base).
+ */
+
+:root {
+  --bg:        #16172E;  /* fundo base (indigo bem escuro) */
+  --bg-dark:   #0E0F22;  /* fundo dos slides de título     */
+  --bg-light:  #23244A;  /* fundo dos slides de conteúdo   */
+  --indigo:    #5C6BC0;  /* acento primário indigo         */
+  --lavanda:   #A5B4FC;  /* acento claro (links, ênfase)   */
+  --ambar:     #FBBF24;  /* destaque quente (strong)       */
+  --paper:     #F5F6FF;  /* texto claro                    */
+  --muted:     #9AA0C4;  /* texto secundário / rodapés     */
+  --code-bg:   #1E1F3A;
+  --code-fg:   #C7D2FE;
+}
+
+.reveal-viewport { background: var(--bg-dark); }
+
+.reveal {
+  font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--paper);
+  font-size: 34px;
+}
+
+/* Presentation Zen: alinhamento à esquerda, respiração generosa */
+.reveal .slides section { text-align: left; }
+
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  font-family: "Schibsted Grotesk", system-ui, sans-serif;
+  color: var(--paper);
+  text-transform: none;
+  letter-spacing: -0.015em;
+  line-height: 1.12;
+}
+.reveal h1 { font-size: 2.2em; }
+.reveal h2 { font-size: 1.5em; }
+.reveal h3 { font-size: 1.15em; color: var(--lavanda); }
+
+/* Barra indigo sob os títulos de seção */
+.reveal h2 {
+  border-bottom: 3px solid var(--indigo);
+  padding-bottom: 0.2em;
+  margin-bottom: 0.6em;
+}
+
+.reveal a { color: var(--lavanda); }
+.reveal strong { color: var(--ambar); }
+.reveal em { color: var(--lavanda); font-style: normal; }
+
+/* Slide de título (capa / resumo) */
+.reveal section.titulo { text-align: center; }
+.reveal section.titulo h1 { color: var(--paper); margin-bottom: 0.2em; }
+.reveal section.titulo .subtitulo { color: var(--lavanda); font-size: 1.05em; }
+.reveal section.titulo .rodape { color: var(--muted); font-size: 0.68em; margin-top: 1.4em; }
+
+/* Frase-âncora: um único conceito grande e centralizado (Presentation Zen) */
+.reveal section.frase { text-align: center; }
+.reveal section.frase p {
+  font-size: 1.6em; line-height: 1.25; font-weight: 600; max-width: 15ch;
+  margin: 0 auto;
+}
+.reveal section.frase .fonte { font-size: 0.5em; color: var(--muted); font-weight: 400; }
+
+/* Código */
+.reveal pre { width: 100%; box-shadow: none; font-size: 0.62em; }
+.reveal pre code {
+  font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  background: var(--code-bg);
+  color: var(--code-fg);
+  border-radius: 8px;
+  padding: 1em 1.2em;
+  max-height: 520px;
+}
+.reveal code:not(pre code) {
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  color: var(--ambar);
+  background: rgba(255,255,255,0.06);
+  padding: 0.06em 0.35em;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+
+/* Tabelas */
+.reveal table { font-size: 0.8em; }
+.reveal table th { color: var(--ambar); border-bottom: 2px solid var(--indigo); }
+.reveal table td { border-color: var(--bg-light); }
+
+/* Listas com marcador indigo/âmbar */
+.reveal ul li::marker { color: var(--ambar); }
+.reveal ol li::marker { color: var(--lavanda); }
+.reveal li { margin: 0.25em 0; }
+
+/* Caixa de destaque (admonition-like) */
+.reveal .caixa {
+  background: rgba(92,107,192,0.14);
+  border-left: 4px solid var(--indigo);
+  border-radius: 6px;
+  padding: 0.7em 1em;
+  font-size: 0.85em;
+}
+.reveal .caixa.ambar {
+  background: rgba(251,191,36,0.12);
+  border-left-color: var(--ambar);
+}
+
+/* Pipeline / fluxo simples (chips) */
+.reveal .pipeline {
+  display: flex; flex-wrap: wrap; gap: 0.5em; align-items: center;
+  font-family: "JetBrains Mono", monospace; font-size: 0.7em;
+}
+.reveal .pipeline .etapa {
+  background: var(--bg-light); border: 1px solid var(--indigo);
+  border-radius: 6px; padding: 0.3em 0.6em;
+}
+.reveal .pipeline .seta { color: var(--ambar); }
+
+/* Duas colunas */
+.reveal .colunas { display: flex; gap: 1.4em; align-items: flex-start; }
+.reveal .colunas > * { flex: 1; }
+
+/* Rodapé pequeno recorrente */
+.reveal .nota { font-size: 0.7em; color: var(--muted); }
+
+/* Controles e barra de progresso na cor do curso */
+.reveal .progress { color: var(--indigo); }
+.reveal .controls { color: var(--lavanda); }

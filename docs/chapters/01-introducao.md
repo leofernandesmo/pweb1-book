@@ -31,7 +31,7 @@ O ciclo de vida de uma interação na Web inicia-se quando um "agente de usuári
 O navegador, então, interpreta esses códigos recebidos para renderizar a interface gráfica final para o usuário, ocultando toda a complexidade da troca de dados subjacente.
 
 
-### **Por que entender a arquitetura da Web é importante para uma pessoa desenvolvedora?**
+### Por que entender a arquitetura da Web é importante para uma pessoa desenvolvedora?
 
 A Web é construída sobre uma série de camadas, protocolos e padrões que trabalham juntos para permitir que páginas, aplicações e serviços funcionem. Quando você entende essa arquitetura:
 
@@ -96,7 +96,7 @@ O protocolo HTTP (Hypertext Transfer Protocol) é o alicerce da comunicação en
 HTTP é um protocolo **baseado em texto**, **sem estado** (stateless) e **orientado a requisições**. Isso significa que cada interação entre cliente e servidor é independente, e o servidor não mantém memória das requisições anteriores, a menos que mecanismos adicionais sejam utilizados (cookies, tokens, sessões, etc.). Essa característica, embora simples, é fundamental para a escalabilidade da Web moderna. Cada troca de dados é tratada como uma transação independente e isolada, composta invariavelmente por dois elementos estruturais: uma **Requisição** (Request) enviada pelo cliente e uma **Resposta** (Response) devolvida pelo servidor.
 
 
-#### **A Estrutura de uma Requisição HTTP**
+#### A Estrutura de uma Requisição HTTP
 
 Quando o navegador precisa obter um recurso — seja uma página HTML, um arquivo CSS, um script JavaScript ou uma imagem — ele envia uma **requisição HTTP** ao servidor. Essa requisição é composta por três partes principais:
 
@@ -141,7 +141,7 @@ Métodos como **GET** não enviam corpo, enquanto **POST** e **PUT** frequenteme
 
 ---
 
-#### **A Estrutura de uma Resposta HTTP**
+#### A Estrutura de uma Resposta HTTP
 
 Após processar a requisição, o servidor devolve uma **resposta HTTP**, composta por:
 
@@ -172,7 +172,7 @@ Contém o recurso solicitado: HTML, JSON, imagem, vídeo, etc.
 
 ---
 
-#### **Códigos de Status HTTP**
+#### Códigos de Status HTTP
 
 Os códigos de status são fundamentais para diagnóstico e controle de fluxo. Eles são divididos em classes:
 
@@ -188,7 +188,7 @@ Para desenvolvedores, compreender essas classes é essencial para depuração (l
 
 ---
 
-#### **HTTP como Protocolo Stateless**
+#### HTTP como Protocolo Stateless
 
 A característica *stateless* significa que cada requisição é independente.  
 Isso traz vantagens:
@@ -261,144 +261,78 @@ Quando um usuário digita um domínio mnemônico (como `www.exemplo.com.br`) na 
 
 ---
 
-<div class="box-destaque">
-    <h3 class="box-titulo">O que acontece quando você digita uma URL no navegador?</h3>
-    <p> 
-        Imagine que o usuário digita:
-        
-        ```
-        https://www.exemplo.com/produtos
-        ```
-        
-        O navegador inicia uma sequência complexa de operações. Vamos detalhar cada etapa.        
-          <ol>
-            
-            <li>
-              <h3>Verificação do Cache Local</h3>
-              <p>Antes de ir à web, o navegador tenta economizar tempo e banda verificando se já possui uma cópia recente do recurso solicitado.</p>
-              <p>Ele consulta cabeçalhos como:</p>
-              <ul>
-                <li><strong>Cache-Control</strong></li>
-                <li><strong>Expires</strong></li>
-                <li><strong>ETag</strong></li>
-              </ul>
-              <blockquote>
-                Se o navegador encontrar uma versão válida no cache, ele <strong>não precisa acessar o servidor</strong>. Se <strong>não</strong> encontrar, ele segue para a próxima etapa.
-              </blockquote>
-            </li>
-        
-            <hr>
-        
-            <li>
-              <h3>Resolução de nomes (DNS)</h3>
-              <p>O navegador precisa transformar o nome do domínio:</p>
-              <pre><code>www.exemplo.com</code></pre>
-              <p>Em um endereço IP, como:</p>
-              <ul>
-                <li>IPv4 → <code>192.0.2.1</code></li>
-                <li>IPv6 → <code>2001:db8::1</code></li>
-              </ul>
-              <p>Essa conversão é feita pelo <strong>DNS (Domain Name System)</strong>.</p>
-              
-              <div class="sub-secao">
-                <h4>Como funciona o DNS?</h4>
-                <ol>
-                  <li>O navegador pergunta ao SO: <em>“Você sabe o IP de www.exemplo.com?”</em></li>
-                  <li>Se o sistema não souber, consulta o <strong>servidor DNS configurado</strong> (provedor, Google, etc).</li>
-                  <li>O servidor DNS segue a cadeia hierárquica (Root → TLD → Authoritative).</li>
-                  <li>O servidor autoritativo responde com o IP correto.</li>
-                  <li>O navegador armazena a resposta (TTL).</li>
-                </ol>
-              </div>
-        
-              <div class="sub-secao">
-                <h4>DNS usa UDP ou TCP?</h4>
-                <ul>
-                  <li>Normalmente <strong>UDP porta 53</strong> (rápido e leve).</li>
-                  <li>Em casos específicos, <strong>TCP</strong> (respostas grandes, DNSSEC).</li>
-                </ul>
-              </div>
-            </li>
-        
-            <hr>
-        
-            <li>
-              <h3>Protocolo IP e suas versões</h3>
-              <p>O endereço IP identifica dispositivos na rede.</p>
-              
-              <h4>IPv4</h4>
-              <ul>
-                <li>32 bits</li>
-                <li>~4 bilhões de endereços</li>
-                <li>Exemplo: <code>192.168.0.1</code></li>
-              </ul>
-        
-              <h4>IPv6</h4>
-              <ul>
-                <li>128 bits</li>
-                <li>Quantidade praticamente infinita</li>
-                <li>Exemplo: <code>2001:0db8:85a3::8a2e...</code></li>
-              </ul>
-              <p>A Web moderna funciona com ambos, mas o IPv6 está crescendo rapidamente.</p>
-            </li>
-        
-            <hr>
-        
-            <li>
-              <h3>Estrutura da URL</h3>
-              <p>Uma URL possui três partes principais:</p>
-              <pre><code>https://www.exemplo.com/produtos</code></pre>
-        
-              <ul>
-                <li><strong>1. Protocolo:</strong> Define a comunicação (`http://` ou `https://`).</li>
-                <li><strong>2. Domínio:</strong> Nome registrado que aponta para um servidor (`www.exemplo.com`).</li>
-                <li><strong>3. Caminho:</strong> Indica o recurso solicitado (`/produtos`).</li>
-              </ul>
-            </li>
-        
-            <hr>
-        
-            <li>
-              <h3>Cliente envia requisição ao servidor</h3>
-              <p>Com o IP em mãos, o navegador abre uma conexão (TCP ou QUIC) e envia a requisição:</p>
-              <pre><code>GET /produtos HTTP/1.1
-        Host: www.exemplo.com</code></pre>
-            </li>
-        
-            <hr>
-        
-            <li>
-              <h3>Servidor responde</h3>
-              <p>O servidor processa a requisição e devolve:</p>
-              <ul>
-                <li>Código de status (200, 404, 500…)</li>
-                <li>Cabeçalhos</li>
-                <li>Corpo da resposta (HTML, JSON, imagem, etc.)</li>
-              </ul>
-            </li>
-        
-            <hr>
-        
-            <li>
-              <h3>Navegador renderiza a página</h3>
-              <p>O processo final de renderização:</p>
-              <ol>
-                <li>Lê o HTML.</li>
-                <li>Baixa recursos externos (CSS, JS, Imagens).</li>
-                <li>Monta a árvore DOM.</li>
-                <li>Aplica estilos e executa scripts.</li>
-                <li>Exibe a página ao usuário.</li>
-              </ol>
-            </li>
-        
-          </ol>
-        
-    </p>
-</div>
+#### 🔎 O que acontece quando você digita uma URL no navegador?
+
+Imagine que o usuário digita:
+
+```
+https://www.exemplo.com/produtos
+```
+
+O navegador inicia uma sequência de operações. Vamos detalhar cada etapa.
+
+**1. Verificação do cache local**
+
+Antes de ir à rede, o navegador verifica se já possui uma cópia recente do recurso, consultando cabeçalhos como `Cache-Control`, `Expires` e `ETag`. Se encontrar uma versão válida, **não precisa acessar o servidor**; caso contrário, segue para a próxima etapa.
+
+**2. Resolução de nomes (DNS)**
+
+O navegador precisa transformar o domínio `www.exemplo.com` em um endereço IP (por exemplo, `192.0.2.1` em IPv4 ou `2001:db8::1` em IPv6). Essa conversão é feita pelo **DNS (Domain Name System)**:
+
+1. O navegador pergunta ao sistema operacional se ele conhece o IP.
+2. Se não souber, consulta o servidor DNS configurado (provedor, Google, etc.).
+3. O servidor DNS percorre a cadeia hierárquica (Root → TLD → Autoritativo).
+4. O servidor autoritativo responde com o IP correto.
+5. O navegador armazena a resposta em cache (respeitando o TTL).
+
+O DNS normalmente usa **UDP na porta 53** (rápido e leve); em casos específicos (respostas grandes, DNSSEC) usa **TCP**.
+
+**3. Protocolo IP e suas versões**
+
+|            | IPv4            | IPv6                        |
+| ---------- | --------------- | --------------------------- |
+| Tamanho    | 32 bits         | 128 bits                    |
+| Endereços  | ~4 bilhões      | praticamente infinitos      |
+| Exemplo    | `192.168.0.1`   | `2001:0db8:85a3::8a2e...`    |
+
+A Web moderna funciona com ambos, mas o IPv6 cresce rapidamente.
+
+**4. Estrutura da URL**
+
+```
+https://www.exemplo.com/produtos
+  │            │             │
+protocolo   domínio       caminho
+```
+
+- **Protocolo** — define a forma de comunicação (`http://` ou `https://`);
+- **Domínio** — nome registrado que aponta para um servidor (`www.exemplo.com`);
+- **Caminho** — indica o recurso solicitado (`/produtos`).
+
+**5. Cliente envia a requisição**
+
+Com o IP em mãos, o navegador abre uma conexão (TCP ou QUIC) e envia a requisição:
+
+```
+GET /produtos HTTP/1.1
+Host: www.exemplo.com
+```
+
+**6. Servidor responde**
+
+O servidor processa a requisição e devolve um código de status (200, 404, 500…), os cabeçalhos e o corpo da resposta (HTML, JSON, imagem, etc.).
+
+**7. Navegador renderiza a página**
+
+1. Lê o HTML e monta a árvore DOM.
+2. Baixa os recursos externos (CSS, JS, imagens).
+3. Aplica os estilos e executa os scripts.
+4. Exibe a página ao usuário.
 
 
 
-#### **Atividade de Revisão — Seção 1.1**
+
+#### Atividade de Revisão — Seção 1.1
 
 <div class="quiz" data-answer="b">
   <p><strong>1.</strong> Qual é a diferença fundamental entre a Internet e a World Wide Web (WWW)?</p>
@@ -437,13 +371,13 @@ Quando um usuário digita um domínio mnemônico (como `www.exemplo.com.br`) na 
 
 
 
-### 1.2 — Ferramentas Essenciais para Desenvolvimento Web
+## 1.2 — Ferramentas Essenciais para Desenvolvimento Web
 
 O desenvolvimento Web moderno exige mais do que apenas conhecer linguagens como HTML, CSS e JavaScript. Ele demanda um conjunto de ferramentas que ampliam a produtividade, facilitam o diagnóstico de problemas, automatizam tarefas e permitem versionar e compartilhar código de forma profissional. Nesta seção, exploraremos as ferramentas fundamentais que todo desenvolvedor Web deve dominar desde o início da sua formação.
 
 ---
 
-#### 1.2.1 — Navegadores e DevTools
+### 1.2.1 — Navegadores e DevTools
 
 Os navegadores modernos — como **Google Chrome**, **Mozilla Firefox**, **Microsoft Edge** e **Safari** — são muito mais do que simples programas para acessar páginas. Eles são verdadeiros **ambientes de execução** para aplicações Web, contendo motores de renderização, interpretadores JavaScript, mecanismos de segurança e ferramentas avançadas de inspeção.
 
@@ -479,14 +413,14 @@ As **Ferramentas de Desenvolvedor (DevTools)** são um conjunto de utilitários 
 
 O DevTools é indispensável para qualquer desenvolvedor Web. Ele transforma o navegador em um ambiente de experimentação e diagnóstico, permitindo compreender o comportamento da aplicação em detalhes.
 
-> Para abrir o DevTools (Ferramentas do Desenvolvedor) no Chrome ou Firefox, utilize os atalhos universais F12 ou Ctrl+Shift+I (Windows/Linux) e Cmd+Opt+I (Mac). Alternativamente, clique com o botão direito em qualquer página e selecione "Inspecionar" ou acesse o menu de três pontos > "Mais Ferramentas" > "Ferramentas do desenvolvedor
+> Para abrir o DevTools (Ferramentas do Desenvolvedor) no Chrome ou Firefox, utilize os atalhos universais F12 ou Ctrl+Shift+I (Windows/Linux) e Cmd+Opt+I (Mac). Alternativamente, clique com o botão direito em qualquer página e selecione "Inspecionar" ou acesse o menu de três pontos > "Mais Ferramentas" > "Ferramentas do desenvolvedor".
 >
 > ![Exemplo de uso do DevTools no Chrome](../figures/02_devtools_01.png)
 > 
 
 ---
 
-#### 1.2.2 — Editor de Texto - Opção Atual: VS Code
+### 1.2.2 — Editor de Texto: VS Code
 > **Vídeo: Como usar o VS CODE para programar? **  
 > <iframe width="100%" height="400"
     src="https://www.youtube-nocookie.com/embed/pkH6XxH57O8?rel=0&modestbranding=1"
@@ -510,7 +444,7 @@ O **Visual Studio Code (VS Code)** é hoje o editor de código mais utilizado no
 
 ---
 
-#### 1.2.3 — Git e GitHub (visão inicial)
+### 1.2.3 — Git e GitHub (visão inicial)
 > **Vídeo: O QUE É GIT E GITHUB? - definição e conceitos importantes**  
 > <iframe width="100%" height="400"
     src="https://www.youtube-nocookie.com/embed/DqTITcMq68k?rel=0&modestbranding=1"
@@ -553,7 +487,7 @@ O **GitHub** é um serviço baseado em Git que permite:
 
 ---
 
-#### 1.2.4 — Ambientes online (CodePen, JSFiddle)
+### 1.2.4 — Ambientes online (CodePen, JSFiddle)
 
 > **Vídeo: Por dentro da ferramenta de programação CodePen**  
 > <iframe width="100%" height="400"
@@ -576,7 +510,7 @@ Ambientes online como **CodePen**, **JSFiddle**, **JSBin** e **StackBlitz** perm
 
 ---
  
-##### **Atividades — Seção 1.2**
+### Atividades — Seção 1.2
 
 - **Quiz:** Ferramentas e DevTools *(link será adicionado)*  
 - **GitHub Classroom:** Criar repositório inicial e enviar `hello.html` *(link será adicionado)*  
@@ -587,8 +521,7 @@ Ambientes online como **CodePen**, **JSFiddle**, **JSBin** e **StackBlitz** perm
 
 ---
 
-# TODO - Revisar esta seção
-### 1.3 — Estrutura de um Projeto Web
+## 1.3 — Estrutura de um Projeto Web
 
 > **Vídeo curto explicativo**  
 > *(link será adicionado posteriormente)*
@@ -597,7 +530,7 @@ A organização de arquivos e pastas em um projeto Web é uma decisão prática 
 
 ---
 
-#### 1.3.1 — Arquivos e pastas essenciais
+### 1.3.1 — Arquivos e pastas essenciais
 
 Um projeto Web básico costuma agrupar artefatos por tipo. Cada grupo tem uma função clara:
 
@@ -625,7 +558,7 @@ meu-projeto/
 
 ---
 
-#### 1.3.2 — Estrutura mínima prática e como executar localmente
+### 1.3.2 — Estrutura mínima prática e como executar localmente
 
 Para as primeiras atividades da disciplina, adote a estrutura mínima acima. Além dos arquivos, inclua:
 
@@ -676,7 +609,7 @@ Para as primeiras atividades da disciplina, adote a estrutura mínima acima. Al�
 
 ---
 
-#### 1.3.3 — Boas práticas simples e justificadas
+### 1.3.3 — Boas práticas simples e justificadas
 
 Apresente-se ao hábito de seguir práticas que tornam o trabalho mais claro e profissional, mesmo em projetos iniciais:
 
