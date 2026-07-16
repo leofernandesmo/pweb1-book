@@ -35,7 +35,9 @@
     const fonte = demo.querySelector('script[type="text/plain"]');
     if (!fonte) return;
 
-    const codigo = dedent(fonte.textContent);
+    // Nas demos com JavaScript, o fonte escreve <\/script> para não fechar o bloco
+    // <script type="text/plain"> cedo demais. Normalizamos de volta para </script>.
+    const codigo = dedent(fonte.textContent).replace(/<\\\/script>/g, "</script>");
     const lang = demo.dataset.lang || "html";
     const altura = demo.dataset.altura || "300px";
     // Demos que precisam de JavaScript devem declarar data-lang="js" ou data-scripts.
@@ -59,10 +61,9 @@
     iframe.className = "demo-frame";
     iframe.style.height = altura;
     iframe.setAttribute("loading", "lazy");
-    iframe.setAttribute(
-      "sandbox",
-      permiteScripts ? "allow-scripts allow-same-origin" : ""
-    );
+    // allow-scripts (sem allow-same-origin) basta para a demo manipular o próprio DOM,
+    // e mantém o iframe isolado. Sem scripts, sandbox vazio bloqueia qualquer JS.
+    iframe.setAttribute("sandbox", permiteScripts ? "allow-scripts" : "");
     iframe.setAttribute("title", "Resultado no navegador");
     iframe.srcdoc =
       "<!doctype html><html lang=\"pt-BR\"><head><meta charset=\"utf-8\">" +
