@@ -1,0 +1,14 @@
+{
+  "name": "pweb1-exercicios",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Exercícios com correção automática — Programação Web 1 (IFAL)",
+  "scripts": {
+    "test": "node 01-cartao-curso/avaliar.mjs 01-cartao-curso/solucao",
+    "test:starter": "node 01-cartao-curso/avaliar.mjs 01-cartao-curso/starter"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.0"
+  }
+}

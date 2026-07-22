@@ -1,0 +1,28 @@
+/* Solução de referência — Exercício 1 */
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  margin: 2rem;
+}
+
+.card {
+  max-width: 320px;
+  background-color: #eef2ff;   /* cor de fundo própria */
+  border-radius: 12px;         /* cantos arredondados  */
+  padding: 20px;               /* espaçamento interno  */
+  border: 1px solid #c7d2fe;
+}
+
+#favoritar {
+  border: 0;
+  cursor: pointer;
+  padding: 0.6em 1.2em;
+  border-radius: 6px;
+  background-color: #5c6bc0;   /* fundo do botão */
+  color: #ffffff;              /* cor do texto   */
+}
+
+.card.favorito {
+  background-color: #fff7e6;
+  border-color: #fbbf24;
+}
