@@ -1,5 +1,6 @@
 {
   "slug": "01-cartao-curso",
+  "nomeCurto": "cartao-curso",
   "titulo": "Cartão de curso interativo",
   "unidade": "U3 — JavaScript (integra HTML, CSS e JS)",
   "capitulos": [2, 3, 7, 14],

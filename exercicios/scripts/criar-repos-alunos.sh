@@ -1,42 +1,70 @@
 #!/usr/bin/env bash
 # ─────────────────────────────────────────────────────────────────────────────
 # Cria um repositório por aluno a partir do template do exercício.
-# Substitui o "aceitar a atividade" do GitHub Classroom.
 #
-#   ./criar-repos-alunos.sh <slug> <org> <alunos.txt>
+#   ./criar-repos-alunos.sh <slug> <turma.conf>
+#   ex.: ./criar-repos-alunos.sh 01-cartao-curso turmas/pweb1-2026.1-911a.conf
 #
-# alunos.txt: um usuário do GitHub por linha (linhas com # são ignoradas).
+# Nomes seguem a convenção de lib/convencao.sh:
+#   pweb1-2026.1-911a-cartao-curso-fulanodasilva
+#
+# Acesso (importante):
+#   • cada aluno recebe push APENAS no próprio repositório;
+#   • o Time da turma NÃO recebe acesso aos repositórios individuais — isso
+#     exporia a solução de um aluno aos demais. O Time serve para organizar a
+#     turma e dar leitura ao template.
 # ─────────────────────────────────────────────────────────────────────────────
 set -euo pipefail
 
-SLUG="${1:?uso: criar-repos-alunos.sh <slug> <org> <alunos.txt>}"
-ORG="${2:?informe a organização}"
-LISTA="${3:?informe o arquivo com os usuários}"
-[[ -f "$LISTA" ]] || { echo "✖ lista não encontrada: $LISTA"; exit 1; }
+SLUG="${1:?uso: criar-repos-alunos.sh <slug> <turma.conf>}"
+CONF="${2:?informe o arquivo de configuração da turma}"
 
-TEMPLATE="$ORG/$SLUG-template"
+RAIZ="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+# shellcheck source=../lib/convencao.sh
+source "$RAIZ/lib/convencao.sh"
+carregar_turma "$CONF"
 
-# Leitura portátil (mapfile só existe no bash 4+; o /bin/bash do macOS é 3.2)
-ALUNOS=()
-while IFS= read -r usuario; do
-  [ -n "$usuario" ] && ALUNOS+=("$usuario")
-done < <(grep -vE '^[[:space:]]*(#|$)' "$LISTA" | tr -d '\r' | awk '{print $1}')
+EXERCICIO="$RAIZ/$SLUG"
+[[ -d "$EXERCICIO" ]] || { echo "✖ exercício não encontrado: $EXERCICIO"; exit 1; }
+CURTO=$(nome_curto_exercicio "$EXERCICIO")
+TEMPLATE=$(repo_template "$CURTO")
+ler_alunos
 
-echo "▸ Template : $TEMPLATE"
-echo "▸ Alunos   : ${#ALUNOS[@]}"
-read -rp "Criar ${#ALUNOS[@]} repositórios em $ORG? [s/N] " ok
+echo "▸ Turma      : $DISCIPLINA $PERIODO / $TURMA  (time: $TIME)"
+echo "▸ Template   : $TEMPLATE"
+echo "▸ Exemplo    : $(repo_aluno "$CURTO" "fulanodasilva")"
+echo "▸ Visibilidade: $VISIBILIDADE"
+echo "▸ Alunos     : ${#ALUNOS_LISTA[@]}"
+read -rp "Criar ${#ALUNOS_LISTA[@]} repositórios em $ORG? [s/N] " ok
 [[ "$ok" =~ ^[sS]$ ]] || { echo "cancelado."; exit 0; }
 
-for ALUNO in "${ALUNOS[@]}"; do
-  REPO="$ORG/$SLUG-$ALUNO"
+# ── Time da turma (organização de membros; leitura no template) ──────────────
+if ! gh api "orgs/$ORG/teams/$TIME" &>/dev/null; then
+  gh api -X POST "orgs/$ORG/teams" -f name="$TIME" -f privacy=closed \
+     -f description="Turma $TURMA — $DISCIPLINA $PERIODO" >/dev/null
+  echo "✔ time $TIME criado"
+fi
+gh api -X PUT "orgs/$ORG/teams/$TIME/repos/$TEMPLATE" -f permission=pull >/dev/null 2>&1 || true
+
+# ── Repositórios individuais ─────────────────────────────────────────────────
+for ALUNO in "${ALUNOS_LISTA[@]}"; do
+  REPO=$(repo_aluno "$CURTO" "$ALUNO")
+
   if gh repo view "$REPO" &>/dev/null; then
     echo "• $REPO — já existe, pulando"
     continue
   fi
-  gh repo create "$REPO" --private --template "$TEMPLATE" \
-     --description "$SLUG — $ALUNO" >/dev/null
-  # dá acesso de escrita só ao próprio aluno
-  gh api -X PUT "repos/$REPO/collaborators/$ALUNO" -f permission=push >/dev/null \
-    && echo "✔ $REPO — criado e liberado para @$ALUNO" \
-    || echo "⚠ $REPO — criado, mas falhou ao convidar @$ALUNO (usuário existe?)"
+
+  gh repo create "$REPO" "$FLAG_VISIBILIDADE" --template "$TEMPLATE" \
+     --description "$DISCIPLINA $PERIODO/$TURMA — $CURTO — @$ALUNO" >/dev/null
+
+  # push só para o próprio aluno
+  if gh api -X PUT "repos/$REPO/collaborators/$ALUNO" -f permission=push >/dev/null 2>&1; then
+    echo "✔ $REPO — criado, @$ALUNO convidado"
+  else
+    echo "⚠ $REPO — criado, mas falhou ao convidar @$ALUNO (usuário existe?)"
+  fi
+
+  # membro do time da turma
+  gh api -X PUT "orgs/$ORG/teams/$TIME/memberships/$ALUNO" -f role=member >/dev/null 2>&1 || true
 done

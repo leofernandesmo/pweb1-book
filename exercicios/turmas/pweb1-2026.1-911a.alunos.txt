@@ -1,0 +1,3 @@
+# Um usuário do GitHub por linha. Linhas com # são ignoradas.
+# fulanodasilva
+# ciclanasouza

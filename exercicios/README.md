@@ -66,32 +66,74 @@ npm run test:starter  # corretor contra o starter  → deve dar nota baixa
 
 Sempre rode os dois ao criar um exercício: é o que garante que o corretor **discrimina**.
 
-### 2. Publicar o template no GitHub
+### 2. Configurar a turma
+
+Cada turma/período tem um arquivo em `turmas/`. Copie o exemplo e ajuste:
 
 ```bash
-./scripts/publicar-exercicio.sh 01-cartao-curso engsoft-ifal
+# turmas/pweb1-2026.1-911a.conf
+ORG=engsoft-ifal
+DISCIPLINA=pweb1
+PERIODO=2026.1
+TURMA=911a
+VISIBILIDADE=publico                  # ou privado — veja o trade-off abaixo
+ALUNOS=pweb1-2026.1-911a.alunos.txt   # um usuário do GitHub por linha
 ```
 
-### 3. Criar os repositórios dos alunos
+Todos os scripts recebem esse arquivo, então a convenção fica num lugar só.
 
-Monte um `alunos.txt` com um usuário do GitHub por linha:
+**Convenção de nomes** (definida em `lib/convencao.sh`):
 
-```
-# turma 911A
-fulano-silva
-ciclana-souza
-```
+| | Formato | Exemplo |
+|---|---|---|
+| Template | `<disciplina>-<nomeCurto>-template` | `pweb1-cartao-curso-template` |
+| Repo do aluno | `<disciplina>-<periodo>-<turma>-<nomeCurto>-<usuario>` | `pweb1-2026.1-911a-cartao-curso-fulanodasilva` |
+| Time da turma | `<disciplina>-<periodo>-<turma>` | `pweb1-2026.1-911a` |
+
+O template **não** leva período/turma: é reaproveitado por todos os semestres.
+
+**Público × privado — escolha consciente:**
+
+| | Público | Privado |
+|---|---|---|
+| GitHub Actions | ilimitado e grátis | consome a cota da org (3.000 min/mês no Team) |
+| Portfólio do aluno | fica visível | some se ele sair da organização |
+| Plágio | ⚠️ um aluno vê a solução do outro | isolado |
+
+### 3. Publicar o template do exercício
 
 ```bash
-./scripts/criar-repos-alunos.sh 01-cartao-curso engsoft-ifal alunos.txt
+./scripts/publicar-exercicio.sh 01-cartao-curso turmas/pweb1-2026.1-911a.conf
 ```
 
-### 4. Coletar as notas
+### 4. Criar os repositórios dos alunos
 
 ```bash
-./scripts/coletar-notas.sh 01-cartao-curso engsoft-ifal alunos.txt
-# → notas-01-cartao-curso.csv
+./scripts/criar-repos-alunos.sh 01-cartao-curso turmas/pweb1-2026.1-911a.conf
 ```
+
+Cria o **Time da turma**, dá leitura no template e cria um repo por aluno.
+
+> 🔒 **Acesso:** cada aluno recebe push **apenas no próprio repositório**. O Time da
+> turma **não** recebe acesso aos repositórios individuais — isso exporia a solução de um
+> aluno aos demais.
+
+### 5. Coletar as notas
+
+```bash
+./scripts/coletar-notas.sh 01-cartao-curso turmas/pweb1-2026.1-911a.conf
+# → notas-pweb1-2026.1-911a-cartao-curso.csv
+```
+
+### 6. Ao fim do semestre: arquivar
+
+```bash
+./scripts/arquivar-turma.sh turmas/pweb1-2026.1-911a.conf            # simula
+./scripts/arquivar-turma.sh turmas/pweb1-2026.1-911a.conf --executar # arquiva
+```
+
+Arquivar deixa os repos somente-leitura: somem da lista ativa, o aluno mantém o
+portfólio e nada é apagado (é reversível).
 
 ## Integridade da nota
 
