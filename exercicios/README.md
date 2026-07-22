@@ -105,6 +105,35 @@ Por isso há duas execuções com papéis diferentes:
   **canônico deste repositório**, ignorando o que estiver no repo do aluno. Editar o
   próprio corretor não muda a nota.
 
+## Opcional: usar com o Classroom 50
+
+O [Classroom 50](https://github.com/foundation50/classroom50) é o sucessor open-source do
+GitHub Classroom (Fifty Foundation / CS50). O corretor deste repositório **funciona nele
+sem reescrita**: o mesmo `avaliar.mjs` roda no `npm test` do aluno, no `coletar-notas.sh`
+e como autograder do Classroom 50.
+
+A ponte é `classroom50/autograder.py`, que o C50 executa dentro da entrega e que:
+
+1. instala Playwright + Chromium;
+2. roda o corretor Node sobre a pasta entregue;
+3. traduz o `nota.json` para o **`result.json`** no schema `classroom50/result/v1`
+   (`score`, `max-score` e uma linha por verificação, com o motivo da falha no `test-name`).
+
+```bash
+# instala nosso corretor no repo de config do Classroom 50
+./scripts/instalar-autograder-c50.sh 01-cartao-curso ~/classroom50 pweb1
+cd ~/classroom50 && git add . && git commit -m "Autograder" && git push
+```
+
+> **Vantagem relevante:** o C50 busca a lógica de correção do repo de config **em tempo de
+> execução**. O corretor não fica no repositório do aluno — ou seja, a correção já é
+> naturalmente à prova de adulteração, e atualizar o corretor propaga para todos os alunos
+> no próximo envio, sem mexer repo a repo.
+
+Os testes declarativos do C50 (`io`/`run`/`python`) servem a programas de console e **não**
+dão conta de front-end — por isso usamos o caminho de autograder customizado, que aceita
+qualquer linguagem.
+
 ## Criar um novo exercício
 
 1. Copie `01-cartao-curso/` para `NN-novo-exercicio/`.

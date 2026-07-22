@@ -153,10 +153,27 @@ function relatar(titulo, resultados) {
         `| | Verificação | Pontos | Observação |\n|---|---|---|---|\n${linhas}\n`
     );
   }
-  // Arquivo consumível por scripts de coleta de notas
+  // Arquivo consumível por scripts de coleta de notas e pelo adaptador do
+  // Classroom 50 (que precisa do detalhe por verificação para o result.json).
   fs.writeFileSync(
     "nota.json",
-    JSON.stringify({ titulo, obtido, total, nota }, null, 2)
+    JSON.stringify(
+      {
+        titulo,
+        obtido,
+        total,
+        nota,
+        verificacoes: resultados.map((r) => ({
+          nome: r.nome,
+          ok: r.ok,
+          pontos: r.pontos,
+          obtidos: r.ok ? r.pontos : 0,
+          motivo: r.ok ? "" : r.motivo,
+        })),
+      },
+      null,
+      2
+    )
   );
 
   return { obtido, total, nota };
