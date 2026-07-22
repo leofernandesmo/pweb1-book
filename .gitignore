@@ -13,6 +13,11 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 
+# Node (exercícios com correção automática)
+node_modules/
+package-lock.json
+nota.json
+
 # Sistema operacional / editores
 .DS_Store
 Thumbs.db

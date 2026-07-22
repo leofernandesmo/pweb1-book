@@ -1,0 +1,29 @@
+/* ─────────────────────────────────────────────────────────────
+   Exercício 1 — Cartão de curso interativo
+   Estilize o cartão e o botão. Veja os TODOs abaixo.
+   ───────────────────────────────────────────────────────────── */
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  margin: 2rem;
+}
+
+/* TODO 6: dê ao .card uma cor de fundo própria      (background-color)
+   TODO 7: dê ao .card cantos arredondados           (border-radius)
+   TODO 8: dê ao .card espaçamento interno           (padding)          */
+.card {
+  max-width: 320px;
+}
+
+/* TODO 9: dê ao botão uma cor de fundo e uma cor de texto */
+#favoritar {
+  border: 0;
+  cursor: pointer;
+  padding: 0.6em 1.2em;
+  border-radius: 6px;
+}
+
+/* Sugestão (opcional): mude a aparência quando o cartão for favoritado */
+.card.favorito {
+  /* ... */
+}

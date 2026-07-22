@@ -1,0 +1,40 @@
+# Correção automática — gerado por scripts/publicar-exercicio.sh
+# Roda a cada push do aluno e publica a nota no resumo do Actions.
+name: Correção automática
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  corrigir:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar a entrega
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Instalar dependências
+        run: npm ci || npm install
+
+      - name: Instalar o navegador (Chromium)
+        run: npx playwright install --with-deps chromium
+
+      - name: Corrigir e pontuar
+        run: node avaliar.mjs .
+
+      - name: Guardar a nota
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nota
+          path: nota.json
+          if-no-files-found: ignore

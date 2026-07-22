@@ -1,0 +1,9 @@
+{
+  "slug": "01-cartao-curso",
+  "titulo": "Cartão de curso interativo",
+  "unidade": "U3 — JavaScript (integra HTML, CSS e JS)",
+  "capitulos": [2, 3, 7, 14],
+  "pontos": 100,
+  "descricao": "Construir um cartão de curso com HTML semântico, estilizado com CSS e com um botão de favoritar que altera o estado via JavaScript.",
+  "arquivosDoAluno": ["index.html", "css/style.css", "js/script.js"]
+}
